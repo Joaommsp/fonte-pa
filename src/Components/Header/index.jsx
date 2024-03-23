@@ -2,6 +2,8 @@ import React from "react";
 
 import LogoImage from "../../assets/images/oficial/logo.png";
 
+import Button from "../Button";
+
 import {
   HeaderContainer,
   Logo,
@@ -22,6 +24,7 @@ const Header = () => {
           <HeaderLink><a href="" className="headerLink">Infantil</a></HeaderLink>
         </HeaderLinks>
       </HeaderLinksContainer>
+      <Button bgColor="#E5E5E5" />
     </HeaderContainer>
   );
 };
