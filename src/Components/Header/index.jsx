@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import LogoImage from "../../assets/images/oficial/logo.png";
@@ -13,17 +13,19 @@ import {
   HeaderLink,
 } from "./styles";
 
-const Header = () => {
-  
-  const [indexLInk, setIndexLInk] = useState(1);
+const Header = (props) => {
+  const [indexLInk, setIndexLInk] = useState();
 
-  return (
-    <HeaderContainer>
-      <Logo src={LogoImage} alt="" />
-      <HeaderLinksContainer>
+  useEffect(() => {
+    setIndexLInk(props.pageIndex);
+  }, []);
+
+  const controlHeaderIndex = () => {
+    if (indexLInk == 0) {
+      return (
         <HeaderLinks>
           <HeaderLink>
-            <Link to="/" className="headerLink">
+            <Link to="/" className="headerLink index">
               Cultos
             </Link>
           </HeaderLink>
@@ -43,7 +45,89 @@ const Header = () => {
             </Link>
           </HeaderLink>
         </HeaderLinks>
-      </HeaderLinksContainer>
+      );
+    } else if (indexLInk == 1) {
+      return (
+        <HeaderLinks>
+          <HeaderLink>
+            <Link to="/" className="headerLink">
+              Cultos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ajuda" className="headerLink index">
+              Ajuda
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/escolabiblica" className="headerLink">
+              Escola Bíblica
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/infantil" className="headerLink">
+              Infantil
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
+    } else if (indexLInk == 2) {
+      return (
+        <HeaderLinks>
+          <HeaderLink>
+            <Link to="/" className="headerLink">
+              Cultos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ajuda" className="headerLink">
+              Ajuda
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/escolabiblica" className="headerLink index">
+              Escola Bíblica
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/infantil" className="headerLink">
+              Infantil
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
+    } else if (indexLInk == 3) {
+      return (
+        <HeaderLinks>
+          <HeaderLink>
+            <Link to="/" className="headerLink">
+              Cultos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ajuda" className="headerLink">
+              Ajuda
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/escolabiblica" className="headerLink">
+              Escola Bíblica
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/infantil" className="headerLink index">
+              Infantil
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
+    }
+  };
+
+  return (
+    <HeaderContainer>
+      <Logo src={LogoImage} alt="" />
+      <HeaderLinksContainer>{controlHeaderIndex()}</HeaderLinksContainer>
       <ButtonLink
         bgColor="#E5E5E5"
         textColor="#0F0F0F"

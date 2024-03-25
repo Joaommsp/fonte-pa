@@ -5,7 +5,7 @@ import Header from "../../Components/Header";
 function School() {
   return (
     <SchollContainer>
-      <Header />
+      <Header pageIndex={2}/>
     </SchollContainer>
   );
 }

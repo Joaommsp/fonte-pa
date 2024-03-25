@@ -44,10 +44,15 @@ export const HeaderLinks = styled.ul`
 `;
 
 export const HeaderLink = styled.li`
+
   .headerLink {
     text-decoration: none;
     color: ${colors.text_dark};
     font-family: ${font.poppins};
     font-weight: 500;
+  }
+
+  .index {
+    border-bottom: 3px solid #3EC8D4;
   }
 `;

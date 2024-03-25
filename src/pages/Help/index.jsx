@@ -5,7 +5,7 @@ import Header from "../../Components/Header";
 function Help() {
   return (
     <HelpContainer>
-      <Header />
+      <Header pageIndex={1} />
     </HelpContainer>
   );
 }
