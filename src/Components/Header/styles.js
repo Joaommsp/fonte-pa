@@ -14,7 +14,8 @@ const colors = {
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 10vh;
-  background-color: red;
+
+  padding: 0 5rem;
 
   display: flex;
   align-items: center;

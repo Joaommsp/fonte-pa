@@ -1,12 +1,11 @@
-import Home from "./pages/Home"
+import AppRoutes from "./Routes";
 
 function App() {
-
   return (
     <>
-     <Home></Home>
+      <AppRoutes></AppRoutes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
