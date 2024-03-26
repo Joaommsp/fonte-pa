@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import LogoImage from "../../assets/images/oficial/logo.png";
 
@@ -18,7 +19,7 @@ const Header = (props) => {
 
   useEffect(() => {
     setIndexLInk(props.pageIndex);
-  }, []);
+  }, [props.pageIndex]);
 
   const controlHeaderIndex = () => {
     if (indexLInk == 0) {
@@ -138,5 +139,9 @@ const Header = (props) => {
     </HeaderContainer>
   );
 };
+
+Header.propTypes = {
+  pageIndex : PropTypes.string.isRequired
+}
 
 export default Header;
