@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Help from "./pages/Help";
-import ForKids from "./pages/ForKids";
+import Ministries from "./pages/Ministries";
 import School from "./pages/School";
+import Youtube from "./pages/Youtube";
 
 const AppRoutes = () => {
   return (
@@ -12,7 +13,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/ajuda" element={<Help />} />
         <Route path="/escolabiblica" element={<School />} />
-        <Route path="/infantil" element={<ForKids />} />
+        <Route path="/ministerios" element={<Ministries />} />
+        <Route path="/videos" element={<Youtube />} />
       </Routes>
     </BrowserRouter>
   );

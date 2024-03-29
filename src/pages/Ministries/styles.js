@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ForKidsContainer = styled.div `
+export const MinistriesContainer = styled.div `
   width: 100%;
   height: 90vh;
 `

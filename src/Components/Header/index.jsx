@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { gsap } from "gsap";
 
 import LogoImage from "../../assets/images/oficial/logo.png";
 
@@ -18,6 +19,8 @@ const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
 
   useEffect(() => {
+    gsap.to(".headerLinks__Container", { opacity: 1, y: 0, duration: 1 });
+
     setIndexLInk(props.pageIndex);
   }, [props.pageIndex]);
 
@@ -27,7 +30,7 @@ const Header = (props) => {
         <HeaderLinks>
           <HeaderLink>
             <Link to="/" className="headerLink index">
-              Cultos
+              Fonte
             </Link>
           </HeaderLink>
           <HeaderLink>
@@ -41,8 +44,8 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="/infantil" className="headerLink">
-              Infantil
+            <Link to="/ministerios" className="headerLink">
+              Ministérios
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -52,7 +55,7 @@ const Header = (props) => {
         <HeaderLinks>
           <HeaderLink>
             <Link to="/" className="headerLink">
-              Cultos
+              Fonte
             </Link>
           </HeaderLink>
           <HeaderLink>
@@ -66,8 +69,8 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="/infantil" className="headerLink">
-              Infantil
+            <Link to="/ministerios" className="headerLink">
+              Ministérios
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -77,7 +80,7 @@ const Header = (props) => {
         <HeaderLinks>
           <HeaderLink>
             <Link to="/" className="headerLink">
-              Cultos
+              Fonte
             </Link>
           </HeaderLink>
           <HeaderLink>
@@ -91,8 +94,8 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="/infantil" className="headerLink">
-              Infantil
+            <Link to="/ministerios" className="headerLink">
+              Ministérios
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -102,7 +105,7 @@ const Header = (props) => {
         <HeaderLinks>
           <HeaderLink>
             <Link to="/" className="headerLink">
-              Cultos
+              Fonte
             </Link>
           </HeaderLink>
           <HeaderLink>
@@ -116,8 +119,8 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="/infantil" className="headerLink index">
-              Infantil
+            <Link to="/ministerios" className="headerLink index">
+            Ministérios
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -128,7 +131,9 @@ const Header = (props) => {
   return (
     <HeaderContainer>
       <Logo src={LogoImage} alt="" />
-      <HeaderLinksContainer>{controlHeaderIndex()}</HeaderLinksContainer>
+      <HeaderLinksContainer className="headerLinks__Container">
+        {controlHeaderIndex()}
+      </HeaderLinksContainer>
       <ButtonLink
         bgColor="#E5E5E5"
         textColor="#0F0F0F"
@@ -141,7 +146,7 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  pageIndex : PropTypes.string.isRequired
-}
+  pageIndex: PropTypes.number.isRequired,
+};
 
 export default Header;

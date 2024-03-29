@@ -28,7 +28,7 @@ export const Logo = styled.img`
 
 export const HeaderLinksContainer = styled.div`
   height: 100%;
-
+  opacity: 0;
   align-items: center;
   justify-content: center;
 `;
