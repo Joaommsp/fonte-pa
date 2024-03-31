@@ -2,6 +2,7 @@ import Header from "../../Components/Header";
 import Card from "../../Components/Card";
 import CardReverse from "../../Components/CardReverse";
 import Media from "../../Components/Media";
+import Footer from "../../Components/Footer";
 
 import LogoImage from "../../assets/images/oficial/banner.svg";
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
@@ -145,6 +146,8 @@ const Home = () => {
         <TriangleTop></TriangleTop>
         <TriangleBottom></TriangleBottom>
       </BannerContainer>
+
+      <Footer></Footer>
     </HomeContainer>
   );
 };

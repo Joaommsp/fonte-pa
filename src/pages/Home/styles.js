@@ -12,6 +12,7 @@ export const BannerContainer = styled.div`
   padding: 0rem 1rem 1rem 1rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const YoutubeContainer = styled.div`
+export const SpotifyContainer = styled.div`
   width: 100%;
 
   background-color: #181a20;
@@ -14,7 +14,7 @@ export const YoutubeContainer = styled.div`
   overflow: hidden;
 `;
 
-export const YoutubeContent = styled.div`
+export const SpotifyContent = styled.div`
   width: 90%;
   padding: 1rem 1rem;
   z-index: 5;
@@ -24,6 +24,11 @@ export const YoutubeContent = styled.div`
   .videoContainer {
     margin-bottom: 2rem;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
   }
 
   .videoContainer iframe {
@@ -42,34 +47,35 @@ export const TextContent = styled.div`
   align-items: flex-start;
 `;
 
-export const YoutubeTitle = styled.h1`
+export const SpotifyTitle = styled.h1`
   font-size: 2rem;
-  color: #52ccd2;
+  color: #46D76E;
   font-weight: 400;
 `;
 
-export const YoutubeDescription = styled.p`
+export const SpotifyDescription = styled.p`
   color: #ffffff;
   margin-bottom: 2rem;
 `;
 
 export const PhoneMockUp = styled.img`
-  width: 300px;
-  height: 600px;
+  width: 350px;
+  height: 650px;
   margin-left: 5rem;
   filter: drop-shadow(18px 13px 5px #00000070);
   margin-right: 2rem;
   margin-bottom: 2rem;
 `;
 
-export const YoutubeLink = styled.a`
+export const SpotifyLink = styled.a`
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
+  font-weight: 500;
 
   display: flex;
   align-items: center;
 
-  background-color: #fb0008;
+  background-color: #46D76E;
   padding: 0.5rem 5rem;
 
   border-radius: 5px;
