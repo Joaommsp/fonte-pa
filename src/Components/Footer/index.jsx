@@ -3,12 +3,9 @@ import MapsIcon from "../../assets/images/svg/icons/maps-icon.svg";
 import {
   FooterContainer,
   AdressContainer,
-  Logo,
   GoogleMapsLink,
   Passage,
 } from "./styles";
-
-import LogoImage from "../../assets/images/oficial/banner.svg";
 
 const Footer = () => {
   return (
@@ -32,8 +29,8 @@ const Footer = () => {
         <a href="">Telegram</a>
       </AdressContainer>
       <Passage className="passage">
-        No qual todo o edifício é ajustado e cresce para tornar-se um santuário
-        santo no Senhor. - Efésios 2:21
+        &quot;No qual todo o edifício é ajustado e cresce para tornar-se um
+        santuário santo no Senhor.&quot; - Efésios 2:21
       </Passage>
     </FooterContainer>
   );

@@ -1,11 +1,14 @@
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
+import { ContactCard } from "../../Components/ContactCard";
 
-import InstagramIcon from "../../assets/images/svg/icons/instagram-icon-dark.svg";
-import FacebookIcon from "../../assets/images/svg/icons/facebook-icon-dark.svg";
-import YoutubeIcon from "../../assets/images/svg/icons/youtube-icon-dark.svg";
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
-import HelpImageImage from "../../assets/images/svg/helpImage.svg";
+import WhatsAppIconBlue from "../../assets/images/svg/icons/whatsapp-icon-blue.svg";
+import BibleIcon from "../../assets/images/svg/icons/bible-icon.svg";
+import ChurchIcon from "../../assets/images/svg/icons/church-icon.svg";
+
+
+import HelpImageImage from "../../assets/images/helpImage.jpg";
 
 import {
   HelpContainer,
@@ -15,10 +18,12 @@ import {
   HelpSubTitle,
   HelpImage,
   WhatsAppLInk,
-  SocialMedia,
-  SocialMediaLinks,
-  SocilaMediaLink,
-  FormLink
+  FormLink,
+  ContactsContainer,
+  Verse,
+  ContactsContent,
+  ContactsTitle,
+  Contacts,
 } from "./styles";
 
 function Help() {
@@ -35,42 +40,50 @@ function Help() {
             conselheiros da Igreja Batista Fonte.{" "}
             <strong>Teremos o prazer em te ajudar!</strong>
           </HelpSubTitle>
-          <FormLink>
-
-          </FormLink>
+          <FormLink></FormLink>
         </HelpTextContent>
 
         <HelpImageContainer>
           <HelpImage src={HelpImageImage} />
+          <span className="attribution">vecteezy.com</span>
         </HelpImageContainer>
         <WhatsAppLInk href="" target="_blank">
           <img src={WhatsAppIcon} alt="" />
           Fale Conosco
         </WhatsAppLInk>
-
-        <SocialMedia>
-          <SocialMediaLinks>
-            <SocilaMediaLink>
-              {" "}
-              <a href="">
-                <img src={InstagramIcon} alt="" />{" "}
-              </a>
-            </SocilaMediaLink>
-            <SocilaMediaLink>
-              {" "}
-              <a href="">
-                <img src={FacebookIcon} alt="" />{" "}
-              </a>
-            </SocilaMediaLink>
-            <SocilaMediaLink>
-              {" "}
-              <a href="">
-                <img src={YoutubeIcon} alt="" />{" "}
-              </a>{" "}
-            </SocilaMediaLink>
-          </SocialMediaLinks>
-        </SocialMedia>
       </HelpContainer>
+      <ContactsContainer>
+        <Verse>
+          &quot;Levem os fardos pesados uns dos outros e, assim, cumpram a lei
+          de Cristo.&quot; <strong>Gálatas 6:2</strong>
+        </Verse>
+        <ContactsContent>
+          <Contacts>
+            <ContactCard
+              title="WhatsApp"
+              content="Vamos conversar! Mande uma mensagem para gente."
+              icon={WhatsAppIconBlue}
+              link="#"
+              linkText="Converse conosco"
+            />
+            <ContactCard
+              title="Aconselhamento Bíblico"
+              content="Nossa equipe de conselheiros bíblicos entrará em contato com você."
+              icon={BibleIcon}
+              link="#"
+              linkText="Entre em contato"
+            />
+            <ContactCard
+              title="Visite-nos"
+              content="Venha nos visitar ! adoraríamos tê-lo(a) conosco."
+              icon={ChurchIcon}
+              link="#"
+              linkText="Onde nos encontrar"
+            />
+          </Contacts>
+          <ContactsTitle>Converse conosco</ContactsTitle>
+        </ContactsContent>
+      </ContactsContainer>
       <Footer></Footer>
     </>
   );

@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 export const CardElement = styled.div`
-  width: 300px;
-  height: 490px;
+  width: 396px;
+  height: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #fff7fc;
-  border-radius: 5px;
+  border-radius: 2px;
   z-index: 5;
 `;
 
 export const CardContent = styled.div`
-  width: 300px;
-  height: 40%;
+  width: 396px;
+  height: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-  padding: 2rem 1rem 0 2rem;
+  padding: 1.5rem 1rem 0 2rem;
 `;
 
 export const CardImageContent = styled.div`
@@ -27,7 +28,7 @@ export const CardImageContent = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 60%;
+  height: 70%;
 `;
 
 export const CardTitle = styled.h2`
@@ -51,6 +52,6 @@ export const CardButton = styled.a`
 `;
 
 export const CardImage = styled.img`
-  width: 256px;
-  border-radius: 5px;
+  width: 346px;
+  border-radius: 2px;
 `;

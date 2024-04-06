@@ -2,49 +2,59 @@ import styled from "styled-components";
 
 export const HelpContainer = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100%;
   background-color: #ffffff;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 `;
 
 export const HelpTextContent = styled.div`
-  width: 50%;
+  width: 40%;
   height: 100%;
 
   padding: 5rem 2rem 2rem 5rem;
 `;
 
 export const HelpTitle = styled.h1`
-  color: #17a2d8;
+  color: #181a20;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 500;
 `;
 
 export const HelpSubTitle = styled.p`
   strong {
-    color: #17a2d8;
+    color: #1c7ec2;
     font-weight: 500;
   }
 `;
 
-export const FormLink = styled.a`
-  
-`
+export const FormLink = styled.a``;
 
 export const HelpImage = styled.img`
-  width: 556px;
+  width: 500px;
 `;
 
 export const HelpImageContainer = styled.div`
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  .attribution {
+    color: #00000050;
+    position: absolute;
+    bottom: 2rem;
+  }
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -75,23 +85,44 @@ export const WhatsAppLInk = styled.a`
   }
 `;
 
+export const ContactsContainer = styled.div`
+  width: 100%;
 
-export const SocialMedia = styled.div`
-  position: fixed;
-  bottom: 3rem;
-  left: 3rem;
-`;
-
-export const SocialMediaLinks = styled.ul`
-  list-style: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
+
+  margin-bottom: 2rem;
 `;
 
-export const SocilaMediaLink = styled.li`
-  img {
-    width: 26px;
+export const Verse = styled.p`
+  width: 50%;
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+  strong {
+    font-weight: 500;
   }
+`;
+
+export const ContactsContent = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+export const Contacts = styled.div`
+  width: 70%;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2rem 2rem 2rem 5rem;
+`;
+
+export const ContactsTitle = styled.h2`
+  font-weight: 500;
+  margin-right: 2rem;
+  font-size: 2.5rem;
+  color: #181a20;
 `;

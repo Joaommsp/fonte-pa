@@ -9,7 +9,6 @@ import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 import InstagramIcon from "../../assets/images/svg/icons/instagram-icon.svg";
 import FacebookIcon from "../../assets/images/svg/icons/facebook-icon.svg";
 import YoutubeIcon from "../../assets/images/svg/icons/youtube-icon.svg";
-import SpotifyIcon from "../../assets/images/svg/icons/spotify-icon.svg";
 import TelegramIcon from "../../assets/images/svg/icons/telegram-icon.svg";
 import ArrowRight from "../../assets/images/svg/icons/arrow-right-icon.svg";
 import YoutubeDarkIcon from "../../assets/images/svg/icons/youtube-icon-dark.svg";
@@ -28,6 +27,14 @@ import EbdImage from "../../assets/images/ebd.jpg";
 
 import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
 
+import ComunityImage1 from "../../assets/images/comunity1.jpg"
+import ComunityImage2 from "../../assets/images/comunity2.jpg"
+import ComunityImage3 from "../../assets/images/comunity3.jpg"
+import ComunityImage4 from "../../assets/images/comunity4.jpg"
+import ComunityImage5 from "../../assets/images/comunity5.jpg"
+import ComunityImage6 from "../../assets/images/comunity6.jpg"
+import ComunityImage7 from "../../assets/images/comunity7.jpg"
+
 import {
   HomeContainer,
   BannerContainer,
@@ -45,7 +52,6 @@ import {
   SocialMediaLinks,
   SocilaMediaLink,
   TriangleTop,
-  TriangleBottom,
   CardsContainer,
   CardsSubTitle,
   Cards,
@@ -55,9 +61,46 @@ import {
   MediaTextContent,
   MediaTitle,
   MediaCardsContainer,
+  ComunityContainer,
+  ComunityTitle,
+  ComunityDescription,
 } from "./styles";
 
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+
 const Home = () => {
+  const images = [
+    {
+      original: ComunityImage1,
+      thumbnail: ComunityImage1,
+    },
+    {
+      original: ComunityImage2,
+      thumbnail: ComunityImage2,
+    },
+    {
+      original: ComunityImage3,
+      thumbnail: ComunityImage3,
+    },
+    {
+      original: ComunityImage4,
+      thumbnail: ComunityImage4,
+    },
+    {
+      original: ComunityImage5,
+      thumbnail: ComunityImage5,
+    },
+    {
+      original: ComunityImage6,
+      thumbnail: ComunityImage6,
+    },
+    {
+      original: ComunityImage7,
+      thumbnail: ComunityImage7,
+    },
+  ];
+
   return (
     <HomeContainer>
       <Header pageIndex={0} />
@@ -222,6 +265,16 @@ const Home = () => {
               </MediaCardsContainer>
             </MediaTextContent>
           </MediaContainer>
+
+          <ComunityContainer>
+            <ComunityTitle>Igreja Fonte Paulo Afonso</ComunityTitle>
+            <ComunityDescription>
+              Somos uma nova e crescente <strong>comunidade cristã</strong>, desejosa em ver o
+              caráter de Cristo espelhado e espalhado especialmente por toda a
+              região do semi-árido brasileiro, conforme as Escrituras Sagradas
+            </ComunityDescription>
+            <ImageGallery items={images} />
+          </ComunityContainer>
 
           <WhatsAppLInk href="" target="_blank">
             <img src={WhatsAppIcon} alt="" />

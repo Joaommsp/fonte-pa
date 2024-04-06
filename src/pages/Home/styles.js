@@ -9,7 +9,8 @@ export const HomeContainer = styled.header`
 
 export const BannerContainer = styled.div`
   width: 100%;
-  background-color: #fff7fc;
+  /* background-color: #FFFFFF; */
+  background-color: #ffffff;
 
   display: flex;
   flex-direction: column;
@@ -340,4 +341,34 @@ export const MediaCardsContainer = styled.div`
   justify-content: flex-end;
   gap: 26px;
   flex-wrap: wrap;
+`;
+
+export const ComunityContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5rem;
+
+  margin-bottom: 4rem;
+`;
+
+export const ComunityTitle = styled.h2`
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #181a20;
+
+  margin-bottom: 1rem;
+`;
+
+export const ComunityDescription = styled.p`
+  width: 80%;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  strong {
+    color: #1c7ec2;
+    font-weight: 500;
+  }
 `;
