@@ -4,6 +4,7 @@ import {
   MediaElement,
   MediaDescription,
   MediaTitle,
+  About,
   Descripion,
   MediaImage,
 } from "./styles";
@@ -13,9 +14,10 @@ const Media = (props) => {
     <MediaElement $bgColor={props.bgColor}>
       <MediaDescription>
         <MediaTitle>{props.title}</MediaTitle>
-        <Descripion>{props.descripion}</Descripion>
+        <MediaImage src={props.image} />
       </MediaDescription>
-      <MediaImage src={props.image} />
+      <About>{props.descripion}</About>
+      <Descripion>{props.content}</Descripion>
     </MediaElement>
   );
 };
@@ -25,6 +27,7 @@ Media.propTypes = {
   descripion: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default Media;

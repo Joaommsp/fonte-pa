@@ -1,31 +1,44 @@
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
-import CardReverse from "../../Components/CardReverse";
 import Media from "../../Components/Media";
 import Footer from "../../Components/Footer";
+import ButtonLink from "../../Components/ButtonLink";
 
 import LogoImage from "../../assets/images/oficial/banner.svg";
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 import InstagramIcon from "../../assets/images/svg/icons/instagram-icon.svg";
 import FacebookIcon from "../../assets/images/svg/icons/facebook-icon.svg";
 import YoutubeIcon from "../../assets/images/svg/icons/youtube-icon.svg";
-import SpotifyIcon from "../../assets/images/svg/icons/spotify-icon.svg"
-import TelegramIcon from "../../assets/images/svg/icons/telegram-icon.svg"
+import SpotifyIcon from "../../assets/images/svg/icons/spotify-icon.svg";
+import TelegramIcon from "../../assets/images/svg/icons/telegram-icon.svg";
+import ArrowRight from "../../assets/images/svg/icons/arrow-right-icon.svg";
+import YoutubeDarkIcon from "../../assets/images/svg/icons/youtube-icon-dark.svg";
+import SpotifyDarkIcon from "../../assets/images/svg/icons/spotify-icon-dark.svg";
+
+import LoyaltyIcon from "../../assets/images/svg/icons/loyalty-icon.svg";
+import IntegrityIcon from "../../assets/images/svg/icons/integrity-icon.svg";
+import DivertisyIcon from "../../assets/images/svg/icons/diversity-icon.svg";
+import PersonalityIcon from "../../assets/images/svg/icons/psychology-icon.svg";
 
 import CultoImage from "../../assets/images/oficial/cultos.png";
 import KoinoImage from "../../assets/images/koino.jpg";
 import ServeImage from "../../assets/images/serve.png";
+import QuixabaImage from "../../assets/images/quixaba.jpg";
+import EbdImage from "../../assets/images/ebd.jpg";
+
+import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
 
 import {
   HomeContainer,
   BannerContainer,
   Banner,
   BannerTextContent,
+  TextContent,
   BannerVisualsContent,
   LogoContainer,
   Logo,
   HashTags,
-  Title,
+  Hashtag,
   SubTitle,
   WhatsAppLInk,
   SocialMedia,
@@ -34,9 +47,15 @@ import {
   TriangleTop,
   TriangleBottom,
   CardsContainer,
+  CardsSubTitle,
+  Cards,
   MediaContainer,
+  MockUpContainer,
+  MockUpImage,
+  MediaTextContent,
+  MediaTitle,
+  MediaCardsContainer,
 } from "./styles";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -47,104 +66,170 @@ const Home = () => {
           <BannerVisualsContent>
             <LogoContainer>
               <Logo src={LogoImage} alt="" />
-              <HashTags>
-                <span>#fidelidade</span>
-                <span>#integridade</span>
-                <span>#pluralidade</span>
-                <span>#pessoalidade</span>
-              </HashTags>
+
+              <SocialMedia>
+                <SocialMediaLinks>
+                  <SocilaMediaLink>
+                    {" "}
+                    <a href="">
+                      <img src={InstagramIcon} alt="" />{" "}
+                    </a>
+                  </SocilaMediaLink>
+                  <SocilaMediaLink>
+                    {" "}
+                    <a href="">
+                      <img src={FacebookIcon} alt="" />{" "}
+                    </a>
+                  </SocilaMediaLink>
+                  <SocilaMediaLink>
+                    {" "}
+                    <a href="">
+                      <img src={YoutubeIcon} alt="" />{" "}
+                    </a>{" "}
+                  </SocilaMediaLink>
+                </SocialMediaLinks>
+              </SocialMedia>
             </LogoContainer>
           </BannerVisualsContent>
+          <HashTags>
+            <Hashtag>
+              <img src={LoyaltyIcon} alt="" />
+              <span>#fidelidade</span>
+              {/* <span>#integridade</span>
+                  <span>#pluralidade</span>
+                  <span>#pessoalidade</span> */}
+            </Hashtag>
+
+            <Hashtag>
+              <img src={IntegrityIcon} alt="" />
+              <span>#integridade</span>
+              {/* <span>#integridade</span>
+                  <span>#pluralidade</span>
+                  <span>#pessoalidade</span> */}
+            </Hashtag>
+
+            <Hashtag>
+              <img src={DivertisyIcon} alt="" />
+              <span>#pluralidade</span>
+              {/* <span>#integridade</span>
+                  <span>#pluralidade</span>
+                  <span>#pessoalidade</span> */}
+            </Hashtag>
+            <Hashtag>
+              <img src={PersonalityIcon} alt="" />
+              <span>#pessoalidade</span>
+              {/* <span>#integridade</span>
+                  <span>#pluralidade</span>
+                  <span>#pessoalidade</span> */}
+            </Hashtag>
+          </HashTags>
 
           <BannerTextContent>
-            <Title>Bem-vindo a Fonte!</Title>
-            <SubTitle>
-              Fazer, equipar e enviar discípulos de Cristo é a nossa missão!
-            </SubTitle>
+            <TextContent>
+              <SubTitle>
+                Fazer, equipar e enviar discípulos de Cristo é a nossa{" "}
+                <strong>missão!</strong>
+              </SubTitle>
+              <ButtonLink
+                bgColor="#1C7EC2"
+                textContent="Conheça-nos"
+                textColor="#FFFFFF"
+                href="#sobre"
+                textSize="1.2rem"
+              />
+            </TextContent>
           </BannerTextContent>
-
-          <CardsContainer>
-            <Card
-              title="Cultos"
-              text="Aos Domingos às 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas"
-              href="#"
-              linkText="Participe"
-              image={CultoImage}
-            ></Card>
-            <CardReverse
-              title="Grupos de Estudo Bíblico "
-              text="Koinonias | Reuniões nos lares em diferentes dias e locais. Junte-se a um grupo!"
-              href="#"
-              linkText="Saiba Mais"
-              image={KoinoImage}
-            ></CardReverse>
-            <Card
-              title="Sirva junto à Igreja Fonte"
-              text="Queremos contar com seus dons e talentos para servir nosso Deus."
-              href="#"
-              linkText="Participe"
-              image={ServeImage}
-            ></Card>
+          <CardsContainer id="sobre">
+            <img src={ArrowRight} alt="" className="arrowRight" />
+            <CardsSubTitle>
+              Saiba mais sobre a <strong>Fonte Paulo Afonso</strong>
+            </CardsSubTitle>
+            <Cards>
+              <Card
+                title="Cultos"
+                text="Aos Domingos às 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas"
+                href="#"
+                linkText="Participe"
+                image={CultoImage}
+              ></Card>
+              <Card
+                title="Escola Bíblica"
+                text="Aos domingos | 09h30 - Quando o ensino teológico e prático se encontram.s"
+                href="#"
+                linkText="Participe"
+                image={EbdImage}
+              ></Card>
+              <Card
+                title="Sirva junto à Igreja Fonte"
+                text="Queremos contar com seus dons e talentos para servir nosso Deus."
+                href="#"
+                linkText="Participe"
+                image={ServeImage}
+              ></Card>
+              <Card
+                title="Grupos de Estudo Bíblico nos Lares"
+                text="Koinonias | Reuniões nos lares em diferentes dias e locais. Junte-se a um grupo!"
+                href="#"
+                linkText="Participe"
+                image={KoinoImage}
+              ></Card>
+              <Card
+                title="Mais Que Um Carpinteiro"
+                text="Nossa escola de artes e ofícios no povoado da Quixaba, município de Glória-BA."
+                href="#"
+                linkText="Conheça"
+                image={QuixabaImage}
+              ></Card>
+            </Cards>
           </CardsContainer>
 
           <MediaContainer>
-            <Link to="/videos">
-              <Media
-                title="Youtube"
-                descripion="Nossos recursos em videos"
-                image={YoutubeIcon}
-                bgColor="#FB0008"
-              ></Media>
-            </Link>
-             <a href="#">
-              <Media
-                title="Spotify"
-                descripion="Nossos recursos em áudio"
-                image={SpotifyIcon}
-                bgColor="#3ED866"
-              ></Media>
-            </a>
-            <a href="#">
-              <Media
-                title="Telegram"
-                descripion="Nosso canal de divulgações"
-                image={TelegramIcon}
-                bgColor="#39A9E4"
-              ></Media>
-            </a>
+            <MockUpContainer>
+              <MockUpImage src={MockUpPhone} />
+            </MockUpContainer>
+            <MediaTextContent>
+              <MediaTitle>
+                Acompanhe a Fonte em <strong>qualquer lugar</strong>
+              </MediaTitle>
+              <MediaCardsContainer>
+                <a href="#">
+                  <Media
+                    title="Youtube"
+                    descripion="Nossos recursos em videos"
+                    image={YoutubeDarkIcon}
+                    bgColor="#C21010"
+                    content="Pregações, eventos especiais, mensagens e ensinamentos sobre a palavra de Deus."
+                  ></Media>
+                </a>
+                <a href="#">
+                  <Media
+                    title="Spotify"
+                    descripion="Nossos recursos em áudio"
+                    image={SpotifyDarkIcon}
+                    bgColor="#064420"
+                    content="Escute as mensagens que foram pregadas na Fonte. Estudo da Bíblia e aulas em áudio."
+                  ></Media>
+                </a>
+                <a href="#">
+                  <Media
+                    title="Telegram"
+                    descripion="Nosso canal de divulgações"
+                    image={TelegramIcon}
+                    content="Canal de comunicação e divulgação,  mantenha-se os informado sobre eventos, atividades na igreja"
+                    bgColor="#1C7EC2"
+                  ></Media>
+                </a>
+              </MediaCardsContainer>
+            </MediaTextContent>
           </MediaContainer>
 
           <WhatsAppLInk href="" target="_blank">
             <img src={WhatsAppIcon} alt="" />
             Fale Conosco
           </WhatsAppLInk>
-
-          <SocialMedia>
-            <SocialMediaLinks>
-              <SocilaMediaLink>
-                {" "}
-                <a href="">
-                  <img src={InstagramIcon} alt="" />{" "}
-                </a>
-              </SocilaMediaLink>
-              <SocilaMediaLink>
-                {" "}
-                <a href="">
-                  <img src={FacebookIcon} alt="" />{" "}
-                </a>
-              </SocilaMediaLink>
-              <SocilaMediaLink>
-                {" "}
-                <a href="">
-                  <img src={YoutubeIcon} alt="" />{" "}
-                </a>{" "}
-              </SocilaMediaLink>
-            </SocialMediaLinks>
-          </SocialMedia>
         </Banner>
 
         <TriangleTop></TriangleTop>
-        <TriangleBottom></TriangleBottom>
       </BannerContainer>
 
       <Footer></Footer>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ButtonLinkElement = styled.button ` 
   background-color: ${(element) => element.$bgColor};
 
-  padding: .8rem 1.5rem;
+  padding: .5rem 1.5rem;
 
   border: 0;
   border-radius: 50px;
@@ -17,6 +17,7 @@ export const ButtonLinkElement = styled.button `
     font-family: "Poppins", sans-serif;
     color: ${(element) => element.$textColor};
     font-weight: 500;
+    font-size: ${(element) => element.$textSize};
   }
 
 `

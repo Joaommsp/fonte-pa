@@ -140,6 +140,7 @@ const Header = (props) => {
         textContent="Como chegar?"
         href="https://www.google.com/maps/place/Fonte+Baptist+Church/@-9.4005532,-38.2449099,16.75z/data=!4m6!3m5!1s0x7093097213da37b:0xf2d4508b9d89bd1!8m2!3d-9.400342!4d-38.2446643!16s%2Fg%2F11ggt1n4tw?entry=ttu"
         target="_blank"
+        textSize=".9rem"
       />
     </HeaderContainer>
   );

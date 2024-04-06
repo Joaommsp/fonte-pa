@@ -6,6 +6,7 @@ import {
   CardTitle,
   CardText,
   CardButton,
+  CardImageContent,
   CardImage,
 } from "./styles";
 
@@ -17,9 +18,9 @@ const Card = (props) => {
         <CardText>{props.text}</CardText>
         <CardButton href={props.href}>{props.linkText}</CardButton>
       </CardContent>
-      <CardContent>
+      <CardImageContent>
         <CardImage src={props.image} />
-      </CardContent>
+      </CardImageContent>
     </CardElement>
   );
 };

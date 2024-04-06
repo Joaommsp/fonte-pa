@@ -4,8 +4,8 @@ import { ButtonLinkElement } from "./styles";
 
 function ButtonLink(props) {
   return (
-    <ButtonLinkElement $bgColor={props.bgColor} $textColor={props.textColor}>
-      <a href={props.href} target={props.target}>
+    <ButtonLinkElement $bgColor={props.bgColor} $textColor={props.textColor} $textSize={props.textSize}>
+      <a href={props.href} target={props.target} >
         {props.textContent}
       </a>
     </ButtonLinkElement>
@@ -18,6 +18,7 @@ ButtonLink.propTypes = {
   textContent: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   target: PropTypes.string.isRequired,
+  textSize: PropTypes.string.isRequired
 };
 
 export default ButtonLink;

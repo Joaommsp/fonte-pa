@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import SecondBannerImage from "../../assets/images/svg/secondBannerImage.svg";
+
 export const HomeContainer = styled.header`
   width: 100%;
   height: 100%;
@@ -7,9 +9,7 @@ export const HomeContainer = styled.header`
 
 export const BannerContainer = styled.div`
   width: 100%;
-  height: 90vh;
-  background-color: #181a20;
-  padding: 0rem 1rem 1rem 1rem;
+  background-color: #fff7fc;
 
   display: flex;
   flex-direction: column;
@@ -17,29 +17,15 @@ export const BannerContainer = styled.div`
   justify-content: center;
 
   position: relative;
-  overflow: hidden;
-
-  .banner::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  .banner::-webkit-scrollbar-track {
-    background-color: #181a20;
-    border-radius: 100px;
-  }
-
-  .banner::-webkit-scrollbar-thumb {
-    background-color: #181a20;
-    border-radius: 100px;
-  }
 `;
 
 export const Banner = styled.div`
   width: 100%;
-  height: 85vh;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   background-position: center;
   background-size: cover;
@@ -48,22 +34,37 @@ export const Banner = styled.div`
   border-radius: 5px;
 
   position: relative;
-  overflow-y: scroll;
 `;
 
 export const BannerTextContent = styled.div`
-  width: 100%;
+  width: 70%;
+  height: 500px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+
+  background-image: url(${SecondBannerImage});
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 400px;
 
   padding: 2rem;
 `;
 
+export const TextContent = styled.div`
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
 export const BannerVisualsContent = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,12 +73,15 @@ export const BannerVisualsContent = styled.div`
 
 export const LogoContainer = styled.div`
   width: 100%;
-  height: 100vh;
-
+  height: 450px;
+  padding: 2rem 0;
+  background-color: #181a20;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 2rem;
 
   position: relative;
 `;
@@ -89,24 +93,58 @@ export const Logo = styled.img`
 `;
 
 export const HashTags = styled.div`
+  width: 100%;
   display: flex;
+  gap: 86px;
+  justify-content: center;
+
+  margin-bottom: 2rem;
+`;
+
+export const Hashtag = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
 
+  width: 100px;
+  height: 156px;
+
+  position: relative;
+
+  img {
+    width: 86px;
+  }
+
   span {
-    color: #ffffff;
+    height: 40px;
+    padding-top: 1rem;
+    color: #181a20;
+    position: absolute;
+    bottom: 0;
+    background-color: #ffffff;
   }
 `;
 
 export const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 500;
-  color: #ffffff;
+  color: #181a20;
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 1.2rem;
+  width: 50%;
+  text-align: right;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
   font-weight: 500;
-  color: #ffffff;
+  color: #181a20;
+
+  strong {
+    color: #1c7ec2;
+    font-weight: 500;
+  }
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -138,7 +176,7 @@ export const WhatsAppLInk = styled.a`
 `;
 
 export const SocialMedia = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 3rem;
   left: 3rem;
 `;
@@ -200,27 +238,106 @@ export const BigShape = styled.img`
 export const CardsContainer = styled.div`
   width: 100%;
 
-  padding: 2rem 5rem;
-
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  position: relative;
+
+  padding: 2rem 0;
+
+  background-color: #1c7ec020;
+
+  .arrowRight {
+    position: absolute;
+    right: 5rem;
+    top: 8rem;
+
+    width: 26px;
+  }
+`;
+
+export const CardsSubTitle = styled.h2`
+  width: 50%;
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #181a20;
+
+  padding-left: 5rem;
+
+  strong {
+    color: #1c7ec2;
+    font-weight: 500;
+  }
+`;
+
+export const Cards = styled.div`
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 56px;
+  justify-content: flex-start;
+  gap: 26px;
+
+  overflow-x: scroll;
 `;
 
 export const MediaContainer = styled.div`
   width: 100%;
 
-  z-index: 5;
+  background-color: #ffffff;
 
-  padding: 2rem 5rem;
+  padding: 4rem 5rem;
+
+  margin-bottom: 5rem;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 24px;
 
   a {
     text-decoration: none;
   }
+`;
+
+export const MockUpContainer = styled.div``;
+
+export const MockUpImage = styled.img`
+  width: 500px;
+`;
+
+export const MediaTextContent = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 2rem;
+`;
+
+export const MediaTitle = styled.h2`
+  width: 100%;
+
+  color: #181a20;
+
+  margin-bottom: 4rem;
+
+  font-size: 2.5rem;
+  text-align: right;
+  font-weight: 500;
+
+  strong {
+    font-weight: 500;
+    color: #1c7ec2;
+  }
+`;
+
+export const MediaCardsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 26px;
+  flex-wrap: wrap;
 `;
