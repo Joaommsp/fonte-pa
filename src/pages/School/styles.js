@@ -93,14 +93,14 @@ export const ContactsContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 `;
 
 export const Verse = styled.p`
   width: 50%;
   text-align: center;
 
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 
   strong {
     font-weight: 500;
@@ -111,8 +111,50 @@ export const ContactsContent = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 2rem 5rem;
+  gap: 16px;
+  overflow-x: scroll;
+`;
 
-  gap: 26px;
+export const FamilyContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 4rem;
+`;
+
+export const FamilyImageContainer = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5rem;
+`;
+
+export const FamilyImage = styled.img`
+  width: 356px;
+`;
+
+export const FamilyContent = styled.div`
+  width: 50%;
+  padding-right: 5rem;
+`;
+
+export const FamilyTitle = styled.h2`
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #181a20;
+  margin-bottom: 1rem;
+`;
+
+export const FamilyText = styled.p`
+  padding-right: 4rem;
+  color: #181a20;
+
+  strong {
+    font-weight: 500;
+    color: #1c7ec2;
+  }
 `;

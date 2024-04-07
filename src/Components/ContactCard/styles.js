@@ -22,7 +22,7 @@ export const CardIcon = styled.img`
 export const CardTitle = styled.span`
   display: block;
   margin-bottom: 1rem;
-  color: #ef4659;
+  color: #23B40D;
 `;
 
 export const CardContent = styled.p`

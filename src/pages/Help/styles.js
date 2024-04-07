@@ -112,9 +112,9 @@ export const ContactsContent = styled.div`
 `;
 
 export const Contacts = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
-  justify-content: left;
+  justify-content: right;
   flex-wrap: wrap;
   gap: 20px;
   padding: 2rem 2rem 2rem 5rem;
@@ -126,3 +126,14 @@ export const ContactsTitle = styled.h2`
   font-size: 2.5rem;
   color: #181a20;
 `;
+
+export const GrowTogetherContainer = styled.div`
+  width: 100%;
+`
+
+export const GrowImageContainer = styled.div`
+  width: 50%;
+`
+
+export const GrowTextContent = styled.div`
+`

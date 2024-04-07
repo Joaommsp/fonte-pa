@@ -273,7 +273,7 @@ const Home = () => {
               caráter de Cristo espelhado e espalhado especialmente por toda a
               região do semi-árido brasileiro, conforme as Escrituras Sagradas
             </ComunityDescription>
-            <ImageGallery items={images} />
+            {/* <ImageGallery items={images} /> */}
           </ComunityContainer>
 
           <WhatsAppLInk href="" target="_blank">

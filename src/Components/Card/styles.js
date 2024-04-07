@@ -7,7 +7,7 @@ export const CardElement = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff7fc;
+  background-color: transparent;
   border-radius: 2px;
   z-index: 5;
 `;

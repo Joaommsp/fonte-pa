@@ -5,6 +5,8 @@ import Card from "../../Components/Card";
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 
 import SchoolImageImage from "../../assets/images/schoolImage.jpg";
+import SchoolImageImage2 from "../../assets/images/svg/family-school.svg";
+
 import InfantilImage from "../../assets/images/infantil.jpg";
 import EscolaImage from "../../assets/images/escola2.jpg";
 import EscolaImage2 from "../../assets/images/escola1.jpg";
@@ -21,6 +23,12 @@ import {
   ContactsContainer,
   Verse,
   ContactsContent,
+  FamilyContainer,
+  FamilyContent,
+  FamilyImage,
+  FamilyImageContainer,
+  FamilyText,
+  FamilyTitle,
 } from "./styles";
 
 function School() {
@@ -54,6 +62,24 @@ function School() {
           &quot;A tua palavra é lâmpada que ilumina os meus passos e luz que
           clareia o meu caminho. &quot; <strong>Gálatas 6:2</strong>
         </Verse>
+
+        <FamilyContainer>
+          <FamilyImageContainer>
+            <FamilyImage src={SchoolImageImage2} />
+          </FamilyImageContainer>
+          <FamilyContent>
+            <FamilyTitle>Com Amor, respeito e perdão</FamilyTitle>
+            <FamilyText>
+              <strong>Servir a Deus é uma escolha</strong>. Josué, como líder de sua casa, tomou
+              essa decisão. A partir que ele tomou essa escolha, ele teve a
+              responsabilidade de dar o exemplo e conduzir a sua família aos
+              caminhos do Senhor. Seja exemplo para seus filhos, dê bom
+              testemunho de Cristo e conduza a sua família no caminho da
+              Salvação.
+            </FamilyText>
+          </FamilyContent>
+        </FamilyContainer>
+
         <ContactsContent>
           <Card
             title="Ensino Infantil"

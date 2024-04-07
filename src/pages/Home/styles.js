@@ -116,6 +116,7 @@ export const Hashtag = styled.div`
 
   img {
     width: 86px;
+    opacity: 90%;
   }
 
   span {

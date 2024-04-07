@@ -24,6 +24,7 @@ import {
   ContactsContent,
   ContactsTitle,
   Contacts,
+  GrowTogetherContainer
 } from "./styles";
 
 function Help() {
@@ -83,6 +84,9 @@ function Help() {
           </Contacts>
           <ContactsTitle>Converse conosco</ContactsTitle>
         </ContactsContent>
+        <GrowTogetherContainer>
+
+        </GrowTogetherContainer>
       </ContactsContainer>
       <Footer></Footer>
     </>
