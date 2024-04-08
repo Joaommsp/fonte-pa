@@ -133,18 +133,19 @@ export const GrowTogetherContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 4rem;
 `;
 
 export const GrowImageContainer = styled.div`
   width: 50%;
-  padding-left: 3em;
+  padding-left: 2em;
 `;
 export const GrowImage = styled.img`
   width: 556px;
 `;
 
 export const GrowTextContent = styled.div`
-  width: 30%;
+  width: 35%;
 `;
 
 export const GrowTitle = styled.h2`
