@@ -7,8 +7,8 @@ import WhatsAppIconBlue from "../../assets/images/svg/icons/whatsapp-icon-blue.s
 import BibleIcon from "../../assets/images/svg/icons/bible-icon.svg";
 import ChurchIcon from "../../assets/images/svg/icons/church-icon.svg";
 
-
 import HelpImageImage from "../../assets/images/helpImage.jpg";
+import GrowImageImage from "../../assets/images/svg/grow-together.svg";
 
 import {
   HelpContainer,
@@ -24,7 +24,12 @@ import {
   ContactsContent,
   ContactsTitle,
   Contacts,
-  GrowTogetherContainer
+  GrowTogetherContainer,
+  GrowImageContainer,
+  GrowImage,
+  GrowTextContent,
+  GrowTitle,
+  GrowText,
 } from "./styles";
 
 function Help() {
@@ -85,7 +90,23 @@ function Help() {
           <ContactsTitle>Converse conosco</ContactsTitle>
         </ContactsContent>
         <GrowTogetherContainer>
-
+          <GrowImageContainer>
+            <GrowImage src={GrowImageImage} />
+          </GrowImageContainer>
+          <GrowTextContent>
+            <GrowTitle>Vamos crescer juntos</GrowTitle>
+            <GrowText>
+              Em um corpo, todos os membros crescem juntos. Se um dedo ficar
+              separado do resto do corpo, não pode continuar a crescer, nem
+              mesmo consegue viver. Da mesma forma, todos precisamos estar
+              unidos a Jesus, que é a cabeça, para ter vida. E, nessa vida com
+              Jesus, também precisamos dos outros membros do corpo.<strong>
+                 Juntos,
+                crescemos e ficamos mais fortes.
+              </strong>
+            </GrowText>
+            <GrowText></GrowText>
+          </GrowTextContent>
         </GrowTogetherContainer>
       </ContactsContainer>
       <Footer></Footer>

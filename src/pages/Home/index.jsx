@@ -20,10 +20,10 @@ import DivertisyIcon from "../../assets/images/svg/icons/diversity-icon.svg";
 import PersonalityIcon from "../../assets/images/svg/icons/psychology-icon.svg";
 
 import CultoImage from "../../assets/images/oficial/cultos.png";
-import KoinoImage from "../../assets/images/koino.jpg";
+import KoinoImage from "../../assets/images/koino.png";
 import ServeImage from "../../assets/images/serve.png";
-import QuixabaImage from "../../assets/images/quixaba.jpg";
-import EbdImage from "../../assets/images/ebd.jpg";
+import QuixabaImage from "../../assets/images/quixaba.png";
+import EbdImage from "../../assets/images/ebd.png";
 
 import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
 
@@ -51,7 +51,7 @@ import {
   SocialMedia,
   SocialMediaLinks,
   SocilaMediaLink,
-  TriangleTop,
+  Assignment,
   CardsContainer,
   CardsSubTitle,
   Cards,
@@ -132,6 +132,8 @@ const Home = () => {
                   </SocilaMediaLink>
                 </SocialMediaLinks>
               </SocialMedia>
+
+              <Assignment>image from vecteezy.com</Assignment>
             </LogoContainer>
           </BannerVisualsContent>
           <HashTags>
@@ -281,8 +283,6 @@ const Home = () => {
             Fale Conosco
           </WhatsAppLInk>
         </Banner>
-
-        <TriangleTop></TriangleTop>
       </BannerContainer>
 
       <Footer></Footer>

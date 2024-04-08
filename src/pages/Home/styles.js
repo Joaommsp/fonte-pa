@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import SecondBannerImage from "../../assets/images/svg/secondBannerImage.svg";
+import LogoBackground from "../../assets/images/logoBackground.png"
 
 export const HomeContainer = styled.header`
   width: 100%;
@@ -76,7 +77,10 @@ export const LogoContainer = styled.div`
   width: 100%;
   height: 450px;
   padding: 2rem 0;
-  background-color: #181a20;
+  background-image: url(${LogoBackground});
+  background-size: cover;
+  background-position: center;
+  background-repeat: n;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,23 +199,6 @@ export const SocilaMediaLink = styled.li`
   img {
     width: 26px;
   }
-`;
-
-export const TriangleTop = styled.div`
-  width: 350px;
-  height: 300px;
-  clip-path: polygon(0 0, 0% 100%, 100% 0);
-
-  background: rgb(35, 37, 45);
-  background: linear-gradient(
-    5deg,
-    rgba(35, 37, 45, 1) 31%,
-    rgba(65, 68, 78, 0.8869922969187675) 100%
-  );
-
-  position: absolute;
-  top: 0;
-  left: 0%;
 `;
 
 export const TriangleBottom = styled.div`
@@ -373,3 +360,12 @@ export const ComunityDescription = styled.p`
     font-weight: 500;
   }
 `;
+
+export const Assignment = styled.span`
+  color: #00000080;
+  font-size: .8rem;
+
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+`

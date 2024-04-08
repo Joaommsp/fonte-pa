@@ -109,6 +109,8 @@ export const Verse = styled.p`
 export const ContactsContent = styled.div`
   width: 100%;
   display: flex;
+
+  margin-bottom: 4rem;
 `;
 
 export const Contacts = styled.div`
@@ -129,11 +131,36 @@ export const ContactsTitle = styled.h2`
 
 export const GrowTogetherContainer = styled.div`
   width: 100%;
-`
+  display: flex;
+  justify-content: center;
+`;
 
 export const GrowImageContainer = styled.div`
   width: 50%;
-`
+  padding-left: 3em;
+`;
+export const GrowImage = styled.img`
+  width: 556px;
+`;
 
 export const GrowTextContent = styled.div`
-`
+  width: 30%;
+`;
+
+export const GrowTitle = styled.h2`
+  color: #181a20;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+
+  text-align: right;
+`;
+
+export const GrowText = styled.p`
+  color: #181a20;
+
+  strong {
+    color: #1c7ec2;
+    font-weight: 500;
+  }
+`;
