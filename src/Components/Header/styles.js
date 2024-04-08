@@ -20,17 +20,43 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.3s ease-in-out;
+
+  @media only screen and (max-width: 480px) {
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+
+    height: fit-content;
+
+    position: absolute;
+    top: 0;
+    z-index: 100;
+
+    background-color: #ffffff;
+  }
 `;
 
 export const Logo = styled.img`
   width: 124px;
+
+  @media only screen and (max-width: 480px) {
+    width: 100px;
+  }
 `;
 
 export const HeaderLinksContainer = styled.div`
   height: 100%;
   opacity: 0;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
+  transition: 0.3s ease-in-out;
+
+  @media only screen and (max-width: 480px) {
+    z-index: 10;
+        transition: max-height 0.3s ease-in-out;
+  }
 `;
 
 export const HeaderLinks = styled.ul`
@@ -41,10 +67,14 @@ export const HeaderLinks = styled.ul`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 
 export const HeaderLink = styled.li`
-
   .headerLink {
     text-decoration: none;
     color: ${colors.text_dark};
@@ -53,6 +83,12 @@ export const HeaderLink = styled.li`
   }
 
   .index {
-    border-bottom: 3px solid #3EC8D4;
+    border-bottom: 3px solid #3ec8d4;
   }
+`;
+
+export const HeaderControl = styled.img`
+  width: 28px;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 `;

@@ -7,9 +7,9 @@ import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 import SchoolImageImage from "../../assets/images/schoolImage.jpg";
 import SchoolImageImage2 from "../../assets/images/svg/family-school.svg";
 
-import InfantilImage from "../../assets/images/infantil.jpg";
-import EscolaImage from "../../assets/images/escola2.jpg";
-import EscolaImage2 from "../../assets/images/escola1.jpg";
+import InfantilImage from "../../assets/images/infantil.png";
+import EscolaImage from "../../assets/images/escola2.png";
+import EscolaImage2 from "../../assets/images/escola1.png";
 
 import {
   SchoolContainer,
@@ -84,16 +84,17 @@ function School() {
           <Card
             title="Ensino Infantil"
             image={InfantilImage}
-            text="Então disse Jesus: Deixem vir a mim as crianças e não as impeçam pois o Reino dos céus pertence aos que são semelhantes a elas"
+            text='Então disse Jesus: "Deixem vir a mim as crianças e não as impeçam pois o Reino dos céus pertence aos que são semelhantes a elas"'
           />
           <Card
             title="Aprenda da Palavra"
             image={EscolaImage}
-            text="Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça, "
+            text='"Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça"'
           />
           <Card
-            title="Fale da Palavra"
-            text="Fala com sabedoria e ensina com amor. Se o seu dom é servir, sirva; se é ensinar, ensine;"
+            title="Esteja em comunhão"
+            text='"Um novo mandamento dou a vocês: Amem-se uns aos outros. Como eu os amei, vocês devem amar-se uns aos outros."
+            João 13:34'
             image={EscolaImage2}
           />
         </ContactsContent>

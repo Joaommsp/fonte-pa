@@ -22,18 +22,18 @@ import PersonalityIcon from "../../assets/images/svg/icons/psychology-icon.svg";
 import CultoImage from "../../assets/images/oficial/cultos.png";
 import KoinoImage from "../../assets/images/koino.png";
 import ServeImage from "../../assets/images/serve.png";
-import QuixabaImage from "../../assets/images/quixaba.png";
+import adviceImage from "../../assets/images/aconselhamento.png";
 import EbdImage from "../../assets/images/ebd.png";
 
 import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
 
-import ComunityImage1 from "../../assets/images/comunity1.jpg"
-import ComunityImage2 from "../../assets/images/comunity2.jpg"
-import ComunityImage3 from "../../assets/images/comunity3.jpg"
-import ComunityImage4 from "../../assets/images/comunity4.jpg"
-import ComunityImage5 from "../../assets/images/comunity5.jpg"
-import ComunityImage6 from "../../assets/images/comunity6.jpg"
-import ComunityImage7 from "../../assets/images/comunity7.jpg"
+import ComunityImage1 from "../../assets/images/comunity1.jpg";
+import ComunityImage2 from "../../assets/images/comunity2.jpg";
+import ComunityImage3 from "../../assets/images/comunity3.jpg";
+import ComunityImage4 from "../../assets/images/comunity4.jpg";
+import ComunityImage5 from "../../assets/images/comunity5.jpg";
+import ComunityImage6 from "../../assets/images/comunity6.jpg";
+import ComunityImage7 from "../../assets/images/comunity7.jpg";
 
 import {
   HomeContainer,
@@ -179,8 +179,10 @@ const Home = () => {
                 bgColor="#1C7EC2"
                 textContent="Conheça-nos"
                 textColor="#FFFFFF"
-                href="#sobre"
                 textSize="1.2rem"
+                click={() => {
+                  window.scrollBy(0, 500);
+                }}
               />
             </TextContent>
           </BannerTextContent>
@@ -192,38 +194,28 @@ const Home = () => {
             <Cards>
               <Card
                 title="Cultos"
-                text="Aos Domingos às 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas"
-                href="#"
-                linkText="Participe"
+                text="Aos Domingos às 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas."
                 image={CultoImage}
               ></Card>
               <Card
                 title="Escola Bíblica"
-                text="Aos domingos | 09h30 - Quando o ensino teológico e prático se encontram.s"
-                href="#"
-                linkText="Participe"
+                text="Aos domingos | 09h30 - Quando o ensino teológico e prático se encontram."
                 image={EbdImage}
               ></Card>
               <Card
                 title="Sirva junto à Igreja Fonte"
                 text="Queremos contar com seus dons e talentos para servir nosso Deus."
-                href="#"
-                linkText="Participe"
                 image={ServeImage}
               ></Card>
               <Card
                 title="Grupos de Estudo Bíblico nos Lares"
                 text="Koinonias | Reuniões nos lares em diferentes dias e locais. Junte-se a um grupo!"
-                href="#"
-                linkText="Participe"
                 image={KoinoImage}
               ></Card>
               <Card
-                title="Mais Que Um Carpinteiro"
-                text="Nossa escola de artes e ofícios no povoado da Quixaba, município de Glória-BA."
-                href="#"
-                linkText="Conheça"
-                image={QuixabaImage}
+                title="Aconselhamento bíblico"
+                text=" Traga seus questionamentos, suas dores e suas esperanças, e vamos buscar juntos a orientação divina que nos sustenta e fortalece."
+                image={adviceImage}
               ></Card>
             </Cards>
           </CardsContainer>
@@ -271,9 +263,10 @@ const Home = () => {
           <ComunityContainer>
             <ComunityTitle>Igreja Fonte Paulo Afonso</ComunityTitle>
             <ComunityDescription>
-              Somos uma nova e crescente <strong>comunidade cristã</strong>, desejosa em ver o
-              caráter de Cristo espelhado e espalhado especialmente por toda a
-              região do semi-árido brasileiro, conforme as Escrituras Sagradas
+              Somos uma nova e crescente <strong>comunidade cristã</strong>,
+              desejosa em ver o caráter de Cristo espelhado e espalhado
+              especialmente por toda a região do semi-árido brasileiro, conforme
+              as Escrituras Sagradas
             </ComunityDescription>
             {/* <ImageGallery items={images} /> */}
           </ComunityContainer>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardElement = styled.div`
   width: 396px;
-  height: 540px;
+  height: 486px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,12 +43,6 @@ export const CardTitle = styled.h2`
 
 export const CardText = styled.p`
   font-size: 0.9rem;
-`;
-
-export const CardButton = styled.a`
-  text-decoration: none;
-  color: #2870b2;
-  margin-top: 1rem;
 `;
 
 export const CardImage = styled.img`
