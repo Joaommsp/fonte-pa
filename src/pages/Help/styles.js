@@ -9,6 +9,14 @@ export const HelpContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const HelpTextContent = styled.div`
@@ -16,6 +24,16 @@ export const HelpTextContent = styled.div`
   height: 100%;
 
   padding: 5rem 2rem 2rem 5rem;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    padding: 5rem 2rem 2rem 2rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
+    padding: 5rem 2rem 2rem 2rem;
+  }
 `;
 
 export const HelpTitle = styled.h1`
@@ -23,6 +41,16 @@ export const HelpTitle = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 `;
 
 export const HelpSubTitle = styled.p`
@@ -30,12 +58,28 @@ export const HelpSubTitle = styled.p`
     color: #1c7ec2;
     font-weight: 500;
   }
+
+  @media only screen and (max-width: 480px) {
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 export const FormLink = styled.a``;
 
 export const HelpImage = styled.img`
   width: 500px;
+
+  @media only screen and (max-width: 480px) {
+    width: 300px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 420px;
+  }
 `;
 
 export const HelpImageContainer = styled.div`
@@ -54,6 +98,14 @@ export const HelpImageContainer = styled.div`
     color: #00000050;
     position: absolute;
     bottom: 2rem;
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
   }
 `;
 
@@ -83,6 +135,16 @@ export const WhatsAppLInk = styled.a`
   img {
     margin-right: 0.5rem;
   }
+
+  @media only screen and (max-width: 480px) {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    right: 2rem;
+    bottom: 2rem;
+  }
 `;
 
 export const ContactsContainer = styled.div`
@@ -104,6 +166,14 @@ export const Verse = styled.p`
   strong {
     font-weight: 500;
   }
+
+  @media only screen and (max-width: 480px) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 70%;
+  }
 `;
 
 export const ContactsContent = styled.div`
@@ -111,6 +181,14 @@ export const ContactsContent = styled.div`
   display: flex;
 
   margin-bottom: 4rem;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const Contacts = styled.div`
@@ -120,6 +198,18 @@ export const Contacts = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   padding: 2rem 2rem 2rem 5rem;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+  }
 `;
 
 export const ContactsTitle = styled.h2`
@@ -127,6 +217,15 @@ export const ContactsTitle = styled.h2`
   margin-right: 2rem;
   font-size: 2.5rem;
   color: #181a20;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    padding: 0 2rem;
+    font-size: 2rem;
+  }
 `;
 
 export const GrowTogetherContainer = styled.div`
@@ -134,18 +233,61 @@ export const GrowTogetherContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 4rem;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const GrowImageContainer = styled.div`
   width: 50%;
   padding-left: 2em;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
+
 export const GrowImage = styled.img`
   width: 556px;
+
+  @media only screen and (max-width: 480px) {
+    width: 356px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 420px;
+  }
 `;
 
 export const GrowTextContent = styled.div`
   width: 35%;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
+    padding: 2rem;
+  }
 `;
 
 export const GrowTitle = styled.h2`
@@ -155,6 +297,16 @@ export const GrowTitle = styled.h2`
   font-weight: 500;
 
   text-align: right;
+
+  @media only screen and (max-width: 480px) {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    text-align: right;
+    font-size: 2rem;
+  }
 `;
 
 export const GrowText = styled.p`
@@ -163,5 +315,13 @@ export const GrowText = styled.p`
   strong {
     color: #1c7ec2;
     font-weight: 500;
+  }
+
+  @media only screen and (max-width: 480px) {
+    text-align: justify;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    text-align: justify;
   }
 `;

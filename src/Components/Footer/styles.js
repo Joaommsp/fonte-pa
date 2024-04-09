@@ -19,6 +19,15 @@ export const FooterContainer = styled.div`
     padding: 2rem 2rem;
     gap: 26px;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 2rem 2rem;
+    gap: 26px;
+  }
 `;
 
 export const AdressContainer = styled.div`
@@ -48,8 +57,11 @@ export const AdressContainer = styled.div`
 
   @media only screen and (max-width: 480px) {
     width: 100%;
-  } 
+  }
 
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 50%;
+  }
 `;
 
 export const Logo = styled.img`
@@ -74,5 +86,9 @@ export const Passage = styled.p`
 
   @media only screen and (max-width: 480px) {
     width: 100%;
-  } 
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 40%;
+  }
 `;

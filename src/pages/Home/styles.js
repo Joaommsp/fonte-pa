@@ -61,10 +61,22 @@ export const BannerTextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: none;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.5);
     background-blend-mode: overlay;
-    margin-bottom: 4rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: overlay;
+    background-image: none;
   }
 `;
 
@@ -82,7 +94,16 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -115,6 +136,11 @@ export const LogoContainer = styled.div`
     height: 92vh;
     background-position: right;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    height: 92vh;
+    background-position: right;
+  }
 `;
 
 export const Logo = styled.img`
@@ -124,6 +150,10 @@ export const Logo = styled.img`
 
   @media only screen and (max-width: 480px) {
     width: 300px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 500px;
   }
 `;
 
@@ -150,6 +180,11 @@ export const HashTags = styled.div`
     gap: 26px;
     justify-content: center;
     align-items: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    padding: 0 2rem;
+    flex-wrap: wrap;
   }
 `;
 
@@ -201,6 +236,12 @@ export const SubTitle = styled.h2`
     font-size: 1.5rem;
     text-align: center;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 80%;
+    font-size: 2rem;
+    text-align: center;
+  }
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -234,6 +275,11 @@ export const WhatsAppLInk = styled.a`
     right: 1rem;
     bottom: 1rem;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    right: 2rem;
+    bottom: 2rem;
+  }
 `;
 
 export const SocialMedia = styled.div`
@@ -244,6 +290,11 @@ export const SocialMedia = styled.div`
   @media only screen and (max-width: 480px) {
     bottom: 1rem;
     left: 1rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    bottom: 2rem;
+    left: 2rem;
   }
 `;
 
@@ -256,6 +307,10 @@ export const SocialMediaLinks = styled.ul`
 
   @media only screen and (max-width: 480px) {
     gap: 16px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    gap: 20px;
   }
 `;
 
@@ -321,6 +376,13 @@ export const CardsContainer = styled.div`
       right: 2rem;
     }
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    .arrowRight {
+      top: 2.5rem;
+      right: 2rem;
+    }
+  }
 `;
 
 export const CardsSubTitle = styled.h2`
@@ -341,6 +403,11 @@ export const CardsSubTitle = styled.h2`
     padding-left: 2rem;
     font-size: 1.5rem;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    padding-left: 2rem;
+    font-size: 2rem;
+  }
 `;
 
 export const Cards = styled.div`
@@ -355,6 +422,11 @@ export const Cards = styled.div`
   overflow-x: scroll;
 
   @media only screen and (max-width: 480px) {
+    padding: 2rem 0rem;
+    gap: 0px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
     padding: 2rem 0rem;
     gap: 0px;
   }
@@ -382,6 +454,11 @@ export const MediaContainer = styled.div`
     flex-direction: column;
     padding: 4rem 1rem;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    flex-direction: column;
+    padding: 4rem 1rem;
+  }
 `;
 
 export const MockUpContainer = styled.div``;
@@ -391,6 +468,10 @@ export const MockUpImage = styled.img`
 
   @media only screen and (max-width: 480px) {
     width: 320px;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 420px;
   }
 `;
 
@@ -402,6 +483,12 @@ export const MediaTextContent = styled.div`
   padding-right: 2rem;
 
   @media only screen and (max-width: 480px) {
+    width: 100%;
+    align-items: center;
+    padding-right: 0rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 100%;
     align-items: center;
     padding-right: 0rem;
@@ -428,6 +515,11 @@ export const MediaTitle = styled.h2`
     font-size: 1.5rem;
     text-align: center;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    font-size: 2rem;
+    text-align: center;
+  }
 `;
 
 export const MediaCardsContainer = styled.div`
@@ -438,6 +530,10 @@ export const MediaCardsContainer = styled.div`
   flex-wrap: wrap;
 
   @media only screen and (max-width: 480px) {
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
     justify-content: center;
   }
 `;
@@ -455,6 +551,10 @@ export const ComunityContainer = styled.div`
   @media only screen and (max-width: 480px) {
     padding: 0 2rem;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const ComunityTitle = styled.h2`
@@ -466,6 +566,11 @@ export const ComunityTitle = styled.h2`
 
   @media only screen and (max-width: 480px) {
     font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    font-size: 2rem;
     text-align: center;
   }
 `;
@@ -483,6 +588,10 @@ export const ComunityDescription = styled.p`
   @media only screen and (max-width: 480px) {
     font-size: 0.9rem;
   }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Assignment = styled.span`
@@ -494,6 +603,12 @@ export const Assignment = styled.span`
   right: 2rem;
 
   @media only screen and (max-width: 480px) {
+    font-size: 0.7rem;
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
     font-size: 0.7rem;
     bottom: 1.5rem;
     right: 1rem;
