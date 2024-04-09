@@ -13,6 +13,11 @@ export const MediaElement = styled.div`
   /* background-color: ${(element) => element.$bgColor}; */
   border-bottom: 3px solid ${(element) => element.$bgColor};
   z-index: 5;
+
+  @media only screen and (max-width: 480px) {
+    width: 280px;
+    height: 250px;
+  }
 `;
 
 export const MediaDescription = styled.div`
@@ -28,6 +33,10 @@ export const MediaTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 500;
   color: #181a20;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const About = styled.span`
@@ -43,8 +52,16 @@ export const Descripion = styled.p`
   font-weight: 300;
   color: #181a20;
   text-align: left;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const MediaImage = styled.img`
   width: 36px;
+
+  @media only screen and (max-width: 480px) {
+    width: 26px;
+  }
 `;

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import { ContactCard } from "../../Components/ContactCard";
@@ -33,6 +35,11 @@ import {
 } from "./styles";
 
 function Help() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header pageIndex={1} />
@@ -100,10 +107,8 @@ function Help() {
               separado do resto do corpo, não pode continuar a crescer, nem
               mesmo consegue viver. Da mesma forma, todos precisamos estar
               unidos a Jesus, que é a cabeça, para ter vida. E, nessa vida com
-              Jesus, também precisamos dos outros membros do corpo.<strong>
-                 Juntos,
-                crescemos e ficamos mais fortes.
-              </strong>
+              Jesus, também precisamos dos outros membros do corpo.
+              <strong>Juntos, crescemos e ficamos mais fortes.</strong>
             </GrowText>
             <GrowText></GrowText>
           </GrowTextContent>

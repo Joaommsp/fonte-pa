@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
 import Media from "../../Components/Media";
@@ -70,6 +72,10 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const images = [
     {
       original: ComunityImage1,

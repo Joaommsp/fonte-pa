@@ -28,12 +28,11 @@ export const HeaderContainer = styled.div`
 
     height: fit-content;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 100;
 
     background-color: #ffffff;
-    border-bottom: 2px solid #3ec8d4;
   }
 
 `;

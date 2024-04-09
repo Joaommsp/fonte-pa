@@ -20,4 +20,10 @@ export const ButtonLinkElement = styled.button `
     font-size: ${(element) => element.$textSize};
   }
 
+  @media only screen and (max-width: 480px) {
+    a {
+      font-size: .9rem;
+    }
+  }  
+
 `

@@ -8,6 +8,7 @@ import LogoImage from "../../assets/images/oficial/logo.png";
 import ButtonLink from "../ButtonLink";
 
 import MenuIcon from "../../assets/images/svg/icons/menu-icon.svg";
+import CloseMenuIcon from "../../assets/images/svg/icons/close-icon.svg";
 
 import {
   HeaderContainer,
@@ -22,6 +23,7 @@ import {
 const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
   const [menuOpen, setMenuOpen] = useState("none");
+  const [menuIcon, setMenuIcon] = useState(MenuIcon);
 
   useEffect(() => {
     gsap.to(".headerLinks__Container", { opacity: 1, y: 0, duration: 0.1 });
@@ -29,11 +31,11 @@ const Header = (props) => {
     setIndexLInk(props.pageIndex);
   }, [props.pageIndex]);
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   const controlHeader = () => {
-    menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none")
+    menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none");
+    menuIcon == MenuIcon ? setMenuIcon(CloseMenuIcon) : setMenuIcon(MenuIcon);
   };
 
   const controlHeaderIndex = () => {
@@ -144,7 +146,7 @@ const Header = (props) => {
     <HeaderContainer>
       <Logo src={LogoImage} alt="" />
       <HeaderLinksContainer className="headerLinks__Container">
-        <HeaderControl src={MenuIcon} onClick={() => controlHeader()} />
+        <HeaderControl src={menuIcon} onClick={() => controlHeader()} />
         {controlHeaderIndex()}
       </HeaderLinksContainer>{" "}
       <CalltoActionContainer>

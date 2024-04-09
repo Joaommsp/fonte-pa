@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import SecondBannerImage from "../../assets/images/svg/secondBannerImage.svg";
-import LogoBackground from "../../assets/images/logoBackground.png"
+import LogoBackground from "../../assets/images/logoBackground.png";
 
 export const HomeContainer = styled.header`
   width: 100%;
@@ -54,6 +54,18 @@ export const BannerTextContent = styled.div`
   background-size: 400px;
 
   padding: 2rem;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: overlay;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const TextContent = styled.div`
@@ -63,6 +75,15 @@ export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media only screen and (max-width: 480px) {
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
 `;
 
 export const BannerVisualsContent = styled.div`
@@ -89,12 +110,19 @@ export const LogoContainer = styled.div`
   margin-bottom: 2rem;
 
   position: relative;
+
+  @media only screen and (max-width: 480px) {
+  }
 `;
 
 export const Logo = styled.img`
   z-index: 10;
   width: 664px;
   filter: drop-shadow(13px 5px 3px #00000060);
+
+  @media only screen and (max-width: 480px) {
+    width: 300px;
+  }
 `;
 
 export const HashTags = styled.div`
@@ -104,6 +132,23 @@ export const HashTags = styled.div`
   justify-content: center;
 
   margin-bottom: 2rem;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    gap: 26px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Hashtag = styled.div`
@@ -131,12 +176,9 @@ export const Hashtag = styled.div`
     bottom: 0;
     background-color: #ffffff;
   }
-`;
 
-export const Title = styled.h1`
-  font-size: 4rem;
-  font-weight: 500;
-  color: #181a20;
+  @media only screen and (max-width: 480px) {
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -150,6 +192,12 @@ export const SubTitle = styled.h2`
   strong {
     color: #1c7ec2;
     font-weight: 500;
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 90%;
+    font-size: 1.5rem;
+    text-align: center;
   }
 `;
 
@@ -185,6 +233,11 @@ export const SocialMedia = styled.div`
   position: absolute;
   bottom: 3rem;
   left: 3rem;
+
+  @media only screen and (max-width: 480px) {
+    bottom: 1rem;
+    left: 1rem;
+  }
 `;
 
 export const SocialMediaLinks = styled.ul`
@@ -193,11 +246,21 @@ export const SocialMediaLinks = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  @media only screen and (max-width: 480px) {
+    gap: 16px;
+  }
 `;
 
 export const SocilaMediaLink = styled.li`
   img {
     width: 26px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    img {
+      width: 22px;
+    }
   }
 `;
 
@@ -244,6 +307,13 @@ export const CardsContainer = styled.div`
 
     width: 26px;
   }
+
+  @media only screen and (max-width: 480px) {
+    .arrowRight {
+      top: 2.5rem;
+      right: 2rem;
+    }
+  }
 `;
 
 export const CardsSubTitle = styled.h2`
@@ -259,6 +329,11 @@ export const CardsSubTitle = styled.h2`
     color: #1c7ec2;
     font-weight: 500;
   }
+
+  @media only screen and (max-width: 480px) {
+    padding-left: 2rem;
+    font-size: 1.5rem;
+  }
 `;
 
 export const Cards = styled.div`
@@ -271,6 +346,11 @@ export const Cards = styled.div`
   gap: 26px;
 
   overflow-x: scroll;
+
+  @media only screen and (max-width: 480px) {
+    padding: 2rem 0rem;
+    gap: 0px;
+  }
 `;
 
 export const MediaContainer = styled.div`
@@ -290,12 +370,21 @@ export const MediaContainer = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 4rem 1rem;
+  }
 `;
 
 export const MockUpContainer = styled.div``;
 
 export const MockUpImage = styled.img`
   width: 500px;
+
+  @media only screen and (max-width: 480px) {
+    width: 320px;
+  }
 `;
 
 export const MediaTextContent = styled.div`
@@ -304,6 +393,12 @@ export const MediaTextContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding-right: 2rem;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    align-items: center;
+    padding-right: 0rem;
+  }
 `;
 
 export const MediaTitle = styled.h2`
@@ -321,6 +416,11 @@ export const MediaTitle = styled.h2`
     font-weight: 500;
     color: #1c7ec2;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 `;
 
 export const MediaCardsContainer = styled.div`
@@ -329,6 +429,10 @@ export const MediaCardsContainer = styled.div`
   justify-content: flex-end;
   gap: 26px;
   flex-wrap: wrap;
+
+  @media only screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `;
 
 export const ComunityContainer = styled.div`
@@ -340,6 +444,10 @@ export const ComunityContainer = styled.div`
   padding: 0 5rem;
 
   margin-bottom: 4rem;
+
+  @media only screen and (max-width: 480px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const ComunityTitle = styled.h2`
@@ -348,6 +456,11 @@ export const ComunityTitle = styled.h2`
   color: #181a20;
 
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 `;
 
 export const ComunityDescription = styled.p`
@@ -359,13 +472,23 @@ export const ComunityDescription = styled.p`
     color: #1c7ec2;
     font-weight: 500;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Assignment = styled.span`
-  color: #00000080;
-  font-size: .8rem;
+  color: #dddddd60;
+  font-size: 0.8rem;
 
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-`
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.7rem;
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+`;
