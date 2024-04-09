@@ -227,6 +227,11 @@ export const WhatsAppLInk = styled.a`
   img {
     margin-right: 0.5rem;
   }
+
+  @media only screen and (max-width: 480px) {
+    right: 1rem;
+    bottom: 1rem;
+  }
 `;
 
 export const SocialMedia = styled.div`
