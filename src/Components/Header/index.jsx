@@ -30,7 +30,6 @@ const Header = (props) => {
   }, [props.pageIndex]);
 
   useEffect(() => {
-    console.log(menuOpen)
   }, []);
 
   const controlHeader = () => {

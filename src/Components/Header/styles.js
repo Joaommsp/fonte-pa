@@ -33,6 +33,7 @@ export const HeaderContainer = styled.div`
     z-index: 100;
 
     background-color: #ffffff;
+    border-bottom: 2px solid #3ec8d4;
   }
 
 `;
@@ -73,6 +74,7 @@ export const HeaderLinks = styled.ul`
     flex-direction: column;
     align-items: flex-end;
     display: ${(element) => element.$show};
+    margin-bottom: 1rem;
   }
 `;
 
