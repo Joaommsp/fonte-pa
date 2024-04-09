@@ -78,6 +78,11 @@ export const BannerTextContent = styled.div`
     background-blend-mode: overlay;
     background-image: none;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 80%;
+    height: 600px;
+  }
 `;
 
 export const TextContent = styled.div`
@@ -141,6 +146,10 @@ export const LogoContainer = styled.div`
     height: 92vh;
     background-position: right;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    height: 650px;
+  }
 `;
 
 export const Logo = styled.img`
@@ -185,6 +194,10 @@ export const HashTags = styled.div`
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     padding: 0 2rem;
     flex-wrap: wrap;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    gap: 56px;
   }
 `;
 
@@ -242,6 +255,10 @@ export const SubTitle = styled.h2`
     font-size: 2rem;
     text-align: center;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    font-size: 2.2rem;
+  }
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -280,6 +297,11 @@ export const WhatsAppLInk = styled.a`
     right: 2rem;
     bottom: 2rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    right: 2rem;
+    bottom: 2rem;
+  }
 `;
 
 export const SocialMedia = styled.div`
@@ -293,6 +315,11 @@ export const SocialMedia = styled.div`
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     bottom: 2rem;
     left: 2rem;
   }
@@ -383,6 +410,13 @@ export const CardsContainer = styled.div`
       right: 2rem;
     }
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .arrowRight {
+      top: 2.5rem;
+      right: 2rem;
+    }
+  }
 `;
 
 export const CardsSubTitle = styled.h2`
@@ -408,6 +442,11 @@ export const CardsSubTitle = styled.h2`
     padding-left: 2rem;
     font-size: 2rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding-left: 2rem;
+    font-size: 2.2rem;
+  }
 `;
 
 export const Cards = styled.div`
@@ -428,6 +467,11 @@ export const Cards = styled.div`
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     padding: 2rem 0rem;
+    gap: 0px;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 2rem 2rem;
     gap: 0px;
   }
 `;

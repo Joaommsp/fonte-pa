@@ -28,6 +28,11 @@ export const FooterContainer = styled.div`
     padding: 2rem 2rem;
     gap: 26px;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    gap: 36px;
+    padding: 0 2rem;
+  }
 `;
 
 export const AdressContainer = styled.div`

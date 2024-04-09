@@ -17,6 +17,10 @@ export const HelpContainer = styled.div`
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     flex-direction: column;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    overflow: hidden;
+  }
 `;
 
 export const HelpTextContent = styled.div`
@@ -33,6 +37,12 @@ export const HelpTextContent = styled.div`
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 100%;
     padding: 5rem 2rem 2rem 2rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 60%;
+    padding: 5rem 2rem 2rem 4rem;
+    z-index: 10;
   }
 `;
 
@@ -78,6 +88,10 @@ export const HelpImage = styled.img`
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 420px;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     width: 420px;
   }
 `;
@@ -142,6 +156,11 @@ export const WhatsAppLInk = styled.a`
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     right: 2rem;
     bottom: 2rem;
   }
@@ -210,6 +229,11 @@ export const Contacts = styled.div`
     padding: 2rem;
     justify-content: center;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 100%;
+    padding: 2rem 2rem 2rem 2rem;
+  }
 `;
 
 export const ContactsTitle = styled.h2`
@@ -262,6 +286,10 @@ export const GrowImageContainer = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 0;
+  }
 `;
 
 export const GrowImage = styled.img`
@@ -272,6 +300,10 @@ export const GrowImage = styled.img`
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
+    width: 420px;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     width: 420px;
   }
 `;
@@ -287,6 +319,11 @@ export const GrowTextContent = styled.div`
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 100%;
     padding: 2rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 50%;
+    padding-right: 2rem;
   }
 `;
 

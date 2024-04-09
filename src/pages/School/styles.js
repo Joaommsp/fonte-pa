@@ -34,6 +34,12 @@ export const SchoolTextContent = styled.div`
     width: 100%;
     padding: 5rem 3rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 50%;
+    padding: 5rem 3rem;
+    z-index: 10;
+  }
 `;
 
 export const SchoolTitle = styled.h1`
@@ -78,6 +84,10 @@ export const SchoolImage = styled.img`
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 420px;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 430px;
   }
 `;
 
@@ -152,6 +162,11 @@ export const WhatsAppLInk = styled.a`
     right: 2rem;
     bottom: 2rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    right: 2rem;
+    bottom: 2rem;
+  }
 `;
 
 export const ContactsContainer = styled.div`
@@ -200,9 +215,13 @@ export const ContactsContent = styled.div`
     padding: 2rem 0rem;
   }
 
-   @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
     padding: 2rem 1rem;
-   }
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 2rem 2rem;
+  }
 `;
 
 export const FamilyContainer = styled.div`
@@ -253,6 +272,10 @@ export const FamilyImage = styled.img`
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 320px;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 320px;
+  }
 `;
 
 export const FamilyContent = styled.div`
@@ -270,6 +293,11 @@ export const FamilyContent = styled.div`
     padding: 3rem;
     padding-right: 3rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding-right: 3rem;
+  }
+  
 `;
 
 export const FamilyTitle = styled.h2`
