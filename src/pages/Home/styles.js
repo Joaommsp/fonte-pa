@@ -112,6 +112,8 @@ export const LogoContainer = styled.div`
   position: relative;
 
   @media only screen and (max-width: 480px) {
+    height: 92vh;
+    background-position: right;
   }
 `;
 
