@@ -64,7 +64,7 @@ export const BannerTextContent = styled.div`
     background-position: center;
     background-color: rgba(255, 255, 255, 0.5);
     background-blend-mode: overlay;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 `;
 
@@ -82,7 +82,7 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
   }
 `;
 
