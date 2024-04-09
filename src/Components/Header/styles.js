@@ -22,7 +22,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   transition: 0.3s ease-in-out;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 800px) {
     align-items: flex-start;
     padding: 0.5rem 1rem;
 
@@ -34,12 +34,13 @@ export const HeaderContainer = styled.div`
 
     background-color: #ffffff;
   }
+
 `;
 
 export const Logo = styled.img`
   width: 124px;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 800px) {
     width: 100px;
   }
 `;
@@ -53,7 +54,7 @@ export const HeaderLinksContainer = styled.div`
   justify-content: center;
   transition: 0.3s ease-in-out;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 800px) {
     z-index: 10;
         transition: max-height 0.3s ease-in-out;
   }
@@ -68,9 +69,10 @@ export const HeaderLinks = styled.ul`
   align-items: center;
   gap: 1.5rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: flex-end;
+    display: ${(element) => element.$show};
   }
 `;
 
@@ -91,4 +93,16 @@ export const HeaderControl = styled.img`
   width: 28px;
   margin-top: .5rem;
   margin-bottom: .5rem;
+  display: none;
+
+  @media only screen and (max-width: 800px) {
+    display: block;
+  }
 `;
+
+export const CalltoActionContainer = styled.div`
+
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+`

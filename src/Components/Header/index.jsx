@@ -16,11 +16,12 @@ import {
   HeaderLinks,
   HeaderLink,
   HeaderControl,
+  CalltoActionContainer,
 } from "./styles";
 
 const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState("none");
 
   useEffect(() => {
     gsap.to(".headerLinks__Container", { opacity: 1, y: 0, duration: 0.1 });
@@ -29,21 +30,17 @@ const Header = (props) => {
   }, [props.pageIndex]);
 
   useEffect(() => {
-    checkScreenSize()
-  }, [])
-
-  const checkScreenSize = () => {
-    window.innerWidth < 500 ? setMenuOpen(false) : setMenuOpen(true)
-  }
+    console.log(menuOpen)
+  }, []);
 
   const controlHeader = () => {
-    menuOpen == true ? setMenuOpen(false) : setMenuOpen(true)
-  } 
+    menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none")
+  };
 
   const controlHeaderIndex = () => {
     if (indexLInk == 0) {
       return (
-        menuOpen ? <HeaderLinks>
+        <HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink index">
               Fonte
@@ -64,12 +61,11 @@ const Header = (props) => {
               Ministérios
             </Link>
           </HeaderLink>
-        </HeaderLinks> :
-        null
+        </HeaderLinks>
       );
     } else if (indexLInk == 1) {
       return (
-        <HeaderLinks>
+        <HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink">
               Fonte
@@ -94,7 +90,7 @@ const Header = (props) => {
       );
     } else if (indexLInk == 2) {
       return (
-         menuOpen ? <HeaderLinks>
+        <HeaderLinks HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink">
               Fonte
@@ -115,11 +111,11 @@ const Header = (props) => {
               Ministérios
             </Link>
           </HeaderLink>
-        </HeaderLinks> : null
+        </HeaderLinks>
       );
     } else if (indexLInk == 3) {
       return (
-        <HeaderLinks>
+        <HeaderLinks HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink">
               Fonte
@@ -148,19 +144,11 @@ const Header = (props) => {
   return (
     <HeaderContainer>
       <Logo src={LogoImage} alt="" />
-      {window.innerWidth < 500 ?
-      
       <HeaderLinksContainer className="headerLinks__Container">
-        <HeaderControl src={MenuIcon}  onClick={() => controlHeader()}/>
+        <HeaderControl src={MenuIcon} onClick={() => controlHeader()} />
         {controlHeaderIndex()}
-      </HeaderLinksContainer> :
-      
-      <HeaderLinksContainer className="headerLinks__Container">
-        {controlHeaderIndex()}
-      </HeaderLinksContainer> 
-      }
-
-      {window.innerWidth > 1000 ? (
+      </HeaderLinksContainer>{" "}
+      <CalltoActionContainer>
         <ButtonLink
           bgColor="#E5E5E5"
           textColor="#0F0F0F"
@@ -168,8 +156,9 @@ const Header = (props) => {
           href="https://www.google.com/maps/place/Fonte+Baptist+Church/@-9.4005532,-38.2449099,16.75z/data=!4m6!3m5!1s0x7093097213da37b:0xf2d4508b9d89bd1!8m2!3d-9.400342!4d-38.2446643!16s%2Fg%2F11ggt1n4tw?entry=ttu"
           target="_blank"
           textSize=".9rem"
+          click={() => null}
         />
-      ) : null}
+      </CalltoActionContainer>
     </HeaderContainer>
   );
 };
