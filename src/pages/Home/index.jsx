@@ -21,7 +21,7 @@ import IntegrityIcon from "../../assets/images/svg/icons/integrity-icon.svg";
 import DivertisyIcon from "../../assets/images/svg/icons/diversity-icon.svg";
 import PersonalityIcon from "../../assets/images/svg/icons/psychology-icon.svg";
 
-import CultoImage from "../../assets/images/oficial/cultos.png";
+import CultoImage from "../../assets/images/cultos.png";
 import KoinoImage from "../../assets/images/koino.png";
 import ServeImage from "../../assets/images/serve.png";
 import adviceImage from "../../assets/images/aconselhamento.png";
@@ -267,7 +267,7 @@ const Home = () => {
           </MediaContainer>
 
           <ComunityContainer>
-            <ComunityTitle>Igreja Fonte Paulo Afonso</ComunityTitle>
+            <ComunityTitle>Igreja Batista Fonte</ComunityTitle>
             <ComunityDescription>
               Somos uma nova e crescente <strong>comunidade cristã</strong>,
               desejosa em ver o caráter de Cristo espelhado e espalhado

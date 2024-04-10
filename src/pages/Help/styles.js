@@ -51,6 +51,7 @@ export const HelpTitle = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  line-height: 100%;
 
   @media only screen and (max-width: 480px) {
     font-size: 2rem;
@@ -241,6 +242,7 @@ export const ContactsTitle = styled.h2`
   margin-right: 2rem;
   font-size: 2.5rem;
   color: #181a20;
+  line-height: 100%;
 
   @media only screen and (max-width: 480px) {
     display: none;
@@ -332,6 +334,7 @@ export const GrowTitle = styled.h2`
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  line-height: 100%;
 
   text-align: right;
 

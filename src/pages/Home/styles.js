@@ -426,6 +426,8 @@ export const CardsSubTitle = styled.h2`
   font-weight: 500;
   color: #181a20;
 
+  line-height: 100%;
+
   padding-left: 5rem;
 
   strong {
@@ -541,6 +543,7 @@ export const MediaTextContent = styled.div`
 
 export const MediaTitle = styled.h2`
   width: 100%;
+  line-height: 100%;
 
   color: #181a20;
 

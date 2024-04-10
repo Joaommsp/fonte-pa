@@ -47,6 +47,7 @@ export const SchoolTitle = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  line-height: 100%;
 
   @media only screen and (max-width: 480px) {
     font-size: 2rem;
@@ -305,6 +306,7 @@ export const FamilyTitle = styled.h2`
   font-weight: 500;
   color: #181a20;
   margin-bottom: 1rem;
+  line-height: 100%;
 
   @media only screen and (max-width: 480px) {
     font-size: 2rem;

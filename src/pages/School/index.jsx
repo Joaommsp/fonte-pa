@@ -1,3 +1,5 @@
+import {useEffect} from "react"
+
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Card from "../../Components/Card";
@@ -32,6 +34,11 @@ import {
 } from "./styles";
 
 function School() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header pageIndex={2} />
