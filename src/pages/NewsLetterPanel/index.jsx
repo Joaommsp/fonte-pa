@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 import { auth, db, storage } from "../../services/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+
 import { NewsLetterPanelContainer } from "./style";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
+import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
+import logoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
 
 const NewsLetterPanel = () => {
   const [posts, setPosts] = useState([]);
@@ -18,7 +24,34 @@ const NewsLetterPanel = () => {
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState("");
 
+  const [aouthCheck, setAothCheck] = useState(0);
+
   const postsColletcionRef = collection(db, "news");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeAothCheck = setTimeout(() => {
+      setAothCheck(1);
+      clearTimeout(timeAothCheck);
+    }, 3000);
+
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate("/newsletterlogin");
+      }
+    });
+
+    return () => {
+      listen();
+    };
+  }, []);
+
+  const userSignOut = () => {
+    signOut(auth).then(() => {
+      console.log("saiu com sucesso");
+    });
+  };
 
   const createPost = async () => {
     if (
@@ -103,54 +136,66 @@ const NewsLetterPanel = () => {
   };
 
   return (
-    <NewsLetterPanelContainer>
-      controlador
-      <div>
-        {posts.map((post, index) => {
-          return (
-            <div className="testediv" key={index}>
-              <h2>{post.title}</h2>
-              <span>{post.subtitle}</span>
-              <img src={post.image} alt="" />
-              <p>{post.text}</p>
-              <span>{post.data}</span>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="title"
-          onChange={(event) => setNewTitle(event.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="subtitle"
-          onChange={(event) => setNewSubTitle(event.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="content"
-          onChange={(event) => setNewText(event.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="data"
-          onChange={(event) => setNewData(event.target.value)}
-        />
-        <button onClick={createPost}>CREATE</button>
-        <form onSubmit={uploadImage}>
-          <input type="file" />
-          <button type="submit">Enviar</button>
-          <div>
-            <img src={previewImageUrl} alt="" />
-            {!newImageUrl && <progress value={progress} max={100} />}
+    aouthCheck != 0 && (
+      <NewsLetterPanelContainer>
+        <div className="header">
+          <Link to={"/"} className="homeLink">
+            {" "}
+            <img src={ArrowLeftIcon} alt="" /> Página Inicial
+          </Link>
+          <button className="logoutBtn" onClick={userSignOut}>
+            Logout <img src={logoutIcon} alt="" />{" "}
+          </button>
+        </div>
+        <div className="mainContainer">
+          <div className="createContainer">
+            <input
+              type="text"
+              placeholder="title"
+              onChange={(event) => setNewTitle(event.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="subtitle"
+              onChange={(event) => setNewSubTitle(event.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="content"
+              onChange={(event) => setNewText(event.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="data"
+              onChange={(event) => setNewData(event.target.value)}
+            />
+            <button onClick={createPost}>CREATE</button>
+            <form onSubmit={uploadImage}>
+              <input type="file" />
+              <button type="submit">Enviar</button>
+              <div>
+                <img src={previewImageUrl} alt="" />
+                {!newImageUrl && <progress value={progress} max={100} />}
+              </div>
+            </form>
+            <div>{missingItems(envStatus)}</div>
           </div>
-        </form>
-        <div>{missingItems(envStatus)}</div>
-      </div>
-    </NewsLetterPanelContainer>
+          <div className="cardsContainer">
+            {posts.map((post, index) => {
+              return (
+                <div className="card" key={index}>
+                  <h2 className="cardTitle" >{post.title}</h2>
+                  <span className="cardSubtitle">{post.subtitle}</span>
+                  <img  className="cardImage" src={post.image} alt="" />
+                  <p className="cardText">{post.text}</p>
+                  <span className="cardData">{post.data}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </NewsLetterPanelContainer>
+    )
   );
 };
 

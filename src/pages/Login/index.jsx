@@ -19,15 +19,27 @@ const Login = () => {
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAothUser(user);
+        navigate("/");
+      } else {
+        console.log("MACACO não logou: ");
+        setAothUser(null);
+      }
+    });
 
-    })
-  }, [])
+    return () => {
+      listen();
+    };
+  }, []);
 
   const login = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
-        navigate("/")
+        if (userCredentials) {
+          navigate("/");
+        }
       })
       .catch((error) => console.log(error));
   };
