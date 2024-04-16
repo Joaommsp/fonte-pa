@@ -1,42 +1,36 @@
 import { useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
 import LoginIcon from "../../assets/images/svg/icons/login-icon-light.svg";
-
 import Logo from "../../assets/images/newsletter-logo.png";
 
 import { LoginContainer, Header, FormContainer } from "./styles";
+
 import { auth } from "../../services/firebase";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [aothUser, setAothUser] = useState("");
   const navigate = useNavigate();
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
 
-  function handleLogin(e) {
-    e.preventDefault();
-    signInWithEmailAndPassword(email, password);
-  }
+    })
+  }, [])
 
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  if (user) {
-    navigate("/adminpanel");
-  }
+  const login = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        navigate("/")
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <LoginContainer>
@@ -49,13 +43,14 @@ const Login = () => {
       <FormContainer>
         <img src={Logo} alt="" className="logo" />
         <span>Por favor , faça login para continuar</span>
-        <form>
+        <form onSubmit={login}>
           <div className="inputContainer">
             <label htmlFor="email">E-mail</label>
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
+              required
               placeholder="youremail@mail.com"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -66,13 +61,14 @@ const Login = () => {
             <input
               type="password"
               name="password"
+              required
               id="password"
               placeholder="********"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <button className="button" onClick={handleLogin}>
+          <button className="button" onClick={login}>
             Entrar <img src={LoginIcon} alt="" />
           </button>
         </form>
