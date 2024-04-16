@@ -9,7 +9,11 @@ import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
-import logoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
+import LogoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
+import DeleteIcon from "../../assets/images/svg/icons/delete-icon.svg";
+import DefaultImage from "../../assets/images/default-image.png";
+
+import flatpickr from "flatpickr";
 
 const NewsLetterPanel = () => {
   const [posts, setPosts] = useState([]);
@@ -22,13 +26,21 @@ const NewsLetterPanel = () => {
 
   const [newImageUrl, setNewImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
-  const [previewImageUrl, setPreviewImageUrl] = useState("");
+  const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
 
   const [aouthCheck, setAothCheck] = useState(0);
 
   const postsColletcionRef = collection(db, "news");
 
   const navigate = useNavigate();
+
+  flatpickr("#dataSelect", {
+    minDate: "today",
+    maxDate: new Date().fp_incr(14),
+    onChange: (selectedDates, dateStr, instance) => {
+      setNewData(dateStr);
+    },
+  });
 
   useEffect(() => {
     const timeAothCheck = setTimeout(() => {
@@ -54,6 +66,8 @@ const NewsLetterPanel = () => {
   };
 
   const createPost = async () => {
+    console.log(newData);
+
     if (
       newTitle == "" ||
       newSubTitle == "" ||
@@ -82,8 +96,9 @@ const NewsLetterPanel = () => {
     } else {
       setInterval(() => {
         setEnvStatus(0);
+        clearInterval();
       }, 5000);
-      return <span>por favor, preencha todos os campos</span>;
+      return <span>Por favor, preencha todos os campos</span>;
     }
   };
 
@@ -144,51 +159,81 @@ const NewsLetterPanel = () => {
             <img src={ArrowLeftIcon} alt="" /> Página Inicial
           </Link>
           <button className="logoutBtn" onClick={userSignOut}>
-            Logout <img src={logoutIcon} alt="" />{" "}
+            Logout <img src={LogoutIcon} alt="" />{" "}
           </button>
         </div>
         <div className="mainContainer">
           <div className="createContainer">
+            <label htmlFor="title">Título</label>
             <input
               type="text"
-              placeholder="title"
+              placeholder="Title"
+              maxLength="25"
+              id="title"
+              name="title"
               onChange={(event) => setNewTitle(event.target.value)}
             />
+            <label htmlFor="subtitle">SubTítulo</label>
             <input
               type="text"
-              placeholder="subtitle"
+              placeholder="Subtitle"
+              maxLength="55"
+              id="subtitle"
+              name="subtitle"
               onChange={(event) => setNewSubTitle(event.target.value)}
             />
+            <label htmlFor="content">Descrição</label>
             <input
               type="text"
-              placeholder="content"
+              placeholder="Description"
+              maxLength="120"
+              id="content"
+              name="content"
               onChange={(event) => setNewText(event.target.value)}
             />
+            <label htmlFor="data">Data</label>
             <input
               type="text"
-              placeholder="data"
+              placeholder="Date"
+              id="dataSelect"
+              value={newData}
               onChange={(event) => setNewData(event.target.value)}
             />
-            <button onClick={createPost}>CREATE</button>
             <form onSubmit={uploadImage}>
-              <input type="file" />
-              <button type="submit">Enviar</button>
+              <input
+                type="file"
+                accept="image/jpeg, image/png"
+                className="inputImage"
+              />
+              <button type="submit" className="uploadImageBtn">
+                Carregar Imagem
+              </button>
               <div>
-                <img src={previewImageUrl} alt="" />
-                {!newImageUrl && <progress value={progress} max={100} />}
+                <img className="prevUploadImage" src={previewImageUrl} alt="" />
               </div>
             </form>
-            <div>{missingItems(envStatus)}</div>
+            <button className="createBtn" onClick={createPost}>
+              CRIAR POSTAGEM
+            </button>
+            <div className="envStatusContainer">
+              <span>{missingItems(envStatus)}</span>
+            </div>
           </div>
           <div className="cardsContainer">
+            <span>Prévias</span>
             {posts.map((post, index) => {
               return (
                 <div className="card" key={index}>
-                  <h2 className="cardTitle" >{post.title}</h2>
+                  <button className="deleteBtn">
+                    <img src={DeleteIcon} alt="" />
+                  </button>
+                  <h2 className="cardTitle">{post.title}</h2>
                   <span className="cardSubtitle">{post.subtitle}</span>
-                  <img  className="cardImage" src={post.image} alt="" />
-                  <p className="cardText">{post.text}</p>
-                  <span className="cardData">{post.data}</span>
+                  <img className="cardImage" src={post.image} alt="" />
+                  <div className="cardBotton">
+                    <p className="cardText">{post.text}</p>
+                    <span className="cardData">{post.data}</span>
+                  </div>
                 </div>
               );
             })}
