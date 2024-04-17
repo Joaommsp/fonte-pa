@@ -1,13 +1,17 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-// eslint-disable-next-line no-undef
-const path = require("path");
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    // eslint-disable-next-line no-undef
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "/src") }],
-  },
-});
+
+export default defineConfig(({ command }) => {
+  const config = {
+    plugins: [react()],
+    base: '/',
+  }
+
+  if (command !== 'serve') {
+    config.base = '/fonte-paulo-afonso/'
+  }
+
+  return config
+})
