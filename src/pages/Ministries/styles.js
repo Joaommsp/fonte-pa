@@ -241,7 +241,7 @@ export const FamilyImageContainer = styled.div`
 `;
 
 export const FamilyImage = styled.img`
-  width: 356px;
+  width: 256px;
 
   @media only screen and (max-width: 480px) {
     width: 320px;
