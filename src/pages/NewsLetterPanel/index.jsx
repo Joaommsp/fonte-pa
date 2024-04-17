@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 import { auth, db, storage } from "../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-import { NewsLetterPanelContainer } from "./style";
+import { NewsLetterPanelContainer, LoaderContainer } from "./style";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
@@ -13,9 +13,11 @@ import LogoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
 import DeleteIcon from "../../assets/images/svg/icons/delete-icon.svg";
 import DefaultImage from "../../assets/images/default-image.png";
 
-import flatpickr from "flatpickr";
+import BarLoader from "react-spinners/BarLoader";
 
 const NewsLetterPanel = () => {
+  const [loading, setLoading] = useState(true);
+
   const [posts, setPosts] = useState([]);
 
   const [newTitle, setNewTitle] = useState("");
@@ -34,15 +36,12 @@ const NewsLetterPanel = () => {
 
   const navigate = useNavigate();
 
-  flatpickr("#dataSelect", {
-    minDate: "today",
-    maxDate: new Date().fp_incr(14),
-    onChange: (selectedDates, dateStr, instance) => {
-      setNewData(dateStr);
-    },
-  });
-
   useEffect(() => {
+    let loadingTime = setInterval(() => {
+      setLoading(false);
+      clearInterval(loadingTime);
+    }, 3000);
+
     const timeAothCheck = setTimeout(() => {
       setAothCheck(1);
       clearTimeout(timeAothCheck);
@@ -150,97 +149,104 @@ const NewsLetterPanel = () => {
     return formatter.format(dataToFormat).toString();
   };
 
-  return (
-    aouthCheck != 0 && (
-      <NewsLetterPanelContainer>
-        <div className="header">
-          <Link to={"/"} className="homeLink">
-            {" "}
-            <img src={ArrowLeftIcon} alt="" /> Página Inicial
-          </Link>
-          <button className="logoutBtn" onClick={userSignOut}>
-            Logout <img src={LogoutIcon} alt="" />{" "}
-          </button>
-        </div>
-        <div className="mainContainer">
-          <div className="createContainer">
-            <label htmlFor="title">Título</label>
+  return aouthCheck == 0 && loading == true ? (
+    <LoaderContainer>
+      <BarLoader
+        color="#1662a1"
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      ></BarLoader>
+    </LoaderContainer>
+  ) : (
+    <NewsLetterPanelContainer>
+      <div className="header">
+        <Link to={"/"} className="homeLink">
+          {" "}
+          <img src={ArrowLeftIcon} alt="" /> Página Inicial
+        </Link>
+        <button className="logoutBtn" onClick={userSignOut}>
+          Logout <img src={LogoutIcon} alt="" />{" "}
+        </button>
+      </div>
+      <div className="mainContainer">
+        <div className="createContainer">
+          <label htmlFor="title">Título</label>
+          <input
+            type="text"
+            placeholder="Title"
+            maxLength="25"
+            id="title"
+            name="title"
+            onChange={(event) => setNewTitle(event.target.value)}
+          />
+          <label htmlFor="subtitle">SubTítulo</label>
+          <input
+            type="text"
+            placeholder="Subtitle"
+            maxLength="55"
+            id="subtitle"
+            name="subtitle"
+            onChange={(event) => setNewSubTitle(event.target.value)}
+          />
+          <label htmlFor="content">Descrição</label>
+          <input
+            type="text"
+            placeholder="Description"
+            maxLength="120"
+            id="content"
+            name="content"
+            onChange={(event) => setNewText(event.target.value)}
+          />
+          <label htmlFor="data">Data</label>
+          <input
+            type="date"
+            name="data"
+            id="data"
+            value={newData}
+            onChange={(event) => setNewData(event.target.value)}
+          />
+          <form onSubmit={uploadImage}>
             <input
-              type="text"
-              placeholder="Title"
-              maxLength="25"
-              id="title"
-              name="title"
-              onChange={(event) => setNewTitle(event.target.value)}
+              type="file"
+              accept="image/jpeg, image/png"
+              className="inputImage"
             />
-            <label htmlFor="subtitle">SubTítulo</label>
-            <input
-              type="text"
-              placeholder="Subtitle"
-              maxLength="55"
-              id="subtitle"
-              name="subtitle"
-              onChange={(event) => setNewSubTitle(event.target.value)}
-            />
-            <label htmlFor="content">Descrição</label>
-            <input
-              type="text"
-              placeholder="Description"
-              maxLength="120"
-              id="content"
-              name="content"
-              onChange={(event) => setNewText(event.target.value)}
-            />
-            <label htmlFor="data">Data</label>
-            <input
-              type="text"
-              placeholder="Date"
-              id="dataSelect"
-              value={newData}
-              onChange={(event) => setNewData(event.target.value)}
-            />
-            <form onSubmit={uploadImage}>
-              <input
-                type="file"
-                accept="image/jpeg, image/png"
-                className="inputImage"
-              />
-              <button type="submit" className="uploadImageBtn">
-                Carregar Imagem
-              </button>
-              <div>
-                <img className="prevUploadImage" src={previewImageUrl} alt="" />
-              </div>
-            </form>
-            <button className="createBtn" onClick={createPost}>
-              CRIAR POSTAGEM
+            <button type="submit" className="uploadImageBtn">
+              Carregar Imagem
             </button>
-            <div className="envStatusContainer">
-              <span>{missingItems(envStatus)}</span>
+            <div>
+              <img className="prevUploadImage" src={previewImageUrl} alt="" />
             </div>
-          </div>
-          <div className="cardsContainer">
-            <span>Prévias</span>
-            {posts.map((post, index) => {
-              return (
-                <div className="card" key={index}>
-                  <button className="deleteBtn">
-                    <img src={DeleteIcon} alt="" />
-                  </button>
-                  <h2 className="cardTitle">{post.title}</h2>
-                  <span className="cardSubtitle">{post.subtitle}</span>
-                  <img className="cardImage" src={post.image} alt="" />
-                  <div className="cardBotton">
-                    <p className="cardText">{post.text}</p>
-                    <span className="cardData">{post.data}</span>
-                  </div>
-                </div>
-              );
-            })}
+          </form>
+          <button className="createBtn" onClick={createPost}>
+            CRIAR POSTAGEM
+          </button>
+          <div className="envStatusContainer">
+            <span>{missingItems(envStatus)}</span>
           </div>
         </div>
-      </NewsLetterPanelContainer>
-    )
+        <div className="cardsContainer">
+          <span>Prévias</span>
+          {posts.map((post, index) => {
+            return (
+              <div className="card" key={index}>
+                <button className="deleteBtn">
+                  <img src={DeleteIcon} alt="" />
+                </button>
+                <h2 className="cardTitle">{post.title}</h2>
+                <span className="cardSubtitle">{post.subtitle}</span>
+                <img className="cardImage" src={post.image} alt="" />
+                <div className="cardBotton">
+                  <p className="cardText">{post.text}</p>
+                  <span className="cardData">{post.data}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </NewsLetterPanelContainer>
   );
 };
 

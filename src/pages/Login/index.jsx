@@ -21,7 +21,7 @@ const Login = () => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
         setAothUser(user);
-        navigate("/");
+        navigate("/adminpanel");
       } else {
         console.log("MACACO não logou: ");
         setAothUser(null);
@@ -38,7 +38,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         if (userCredentials) {
-          navigate("/");
+          navigate("/adminpanel");
         }
       })
       .catch((error) => console.log(error));

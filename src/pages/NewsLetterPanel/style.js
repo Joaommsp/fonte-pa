@@ -229,3 +229,12 @@ export const NewsLetterPanelContainer = styled.div`
     color: #e72929;
   }
 `;
+
+export const LoaderContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
