@@ -99,7 +99,8 @@ const Login = () => {
             {!filled && (
               <span>
                 {" "}
-                <img src={AlertIcon} alt="" /> Preencha todos os campos
+                <img src={AlertIcon} alt="" />{" "}
+                Preencha todos os campos
               </span>
             )}
           </p>

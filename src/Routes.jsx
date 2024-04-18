@@ -15,7 +15,7 @@ const AppRoutes = () => {
         <Route path="/ajuda" element={<Help />} />
         <Route path="/escolabiblica" element={<School />} />
         <Route path="/ministerios" element={<Ministries />} />
-        <Route path="/newsletterlogin" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/adminpanel" element={<NewsLetterPanel />} />
       </Routes>
     </HashRouter>
