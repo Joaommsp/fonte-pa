@@ -4,6 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
+import Footer from "../../Components/Footer";
+
 import { NewsLetterPanelContainer, LoaderContainer } from "./style";
 import {
   collection,
@@ -18,6 +20,7 @@ import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
 import LogoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
 import DeleteIcon from "../../assets/images/svg/icons/delete-icon.svg";
 import DefaultImage from "../../assets/images/default-image.png";
+import Logo from "../../assets/images/oficial/banner.svg";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -100,7 +103,7 @@ const NewsLetterPanel = () => {
 
     await deleteDoc(postDoc);
 
-    window.location.reload()
+    window.location.reload();
   };
 
   const missingItems = (status) => {
@@ -120,8 +123,9 @@ const NewsLetterPanel = () => {
 
     const file = event.target[0]?.files[0];
 
-    if (!file) return;
+    if (!file) alert("Nenhuma Imagem Selecionada");
 
+    event.target.value = "Carregando Imagem"
     const storageRef = ref(storage, `postsImages/${file.name}`);
     const uploadTaks = uploadBytesResumable(storageRef, file);
 
@@ -167,8 +171,9 @@ const NewsLetterPanel = () => {
       <div className="header">
         <Link to={"/"} className="homeLink">
           {" "}
-          <img src={ArrowLeftIcon} alt="" /> Página Inicial
+          <img src={ArrowLeftIcon} alt="" /> Início
         </Link>
+        <img src={Logo} alt="" className="logo" />
         <button className="logoutBtn" onClick={userSignOut}>
           Logout <img src={LogoutIcon} alt="" />{" "}
         </button>
@@ -253,6 +258,7 @@ const NewsLetterPanel = () => {
           })}
         </div>
       </div>
+      <Footer></Footer>
     </NewsLetterPanelContainer>
   );
 };

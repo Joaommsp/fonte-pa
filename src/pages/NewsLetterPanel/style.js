@@ -12,6 +12,13 @@ export const NewsLetterPanelContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 1rem 5rem;
+
+    background-color: #181a20;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    width: 128px;
   }
 
   .header .homeLink {
@@ -20,6 +27,7 @@ export const NewsLetterPanelContainer = styled.div`
 
     display: flex;
     align-items: center;
+    color: #ffffff;
   }
 
   .header .homeLink img {
@@ -31,13 +39,14 @@ export const NewsLetterPanelContainer = styled.div`
     background-color: transparent;
 
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
 
-    color: #e72929;
+    color: #ee4266;
     cursor: pointer;
 
     display: flex;
     align-items: center;
+    font-family: "Poppins", sans-serif;
   }
 
   .header .logoutBtn img {
@@ -47,6 +56,7 @@ export const NewsLetterPanelContainer = styled.div`
   .mainContainer {
     width: 100%;
     display: flex;
+    padding: 0 2rem;
   }
 
   .createContainer {
@@ -131,11 +141,14 @@ export const NewsLetterPanelContainer = styled.div`
 
   .cardsContainer {
     width: 60%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
+
+    overflow-y: scroll;
   }
 
   .card {
@@ -213,7 +226,7 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .deleteBtn img {
-    width: 24px;
+    width: 20px;
   }
 
   .envStatusContainer {
@@ -229,7 +242,23 @@ export const NewsLetterPanelContainer = styled.div`
     color: #e72929;
   }
 
-  @media only screen and (max-width: 1000px){
+  @media only screen and (max-width: 1000px) {
+    .header {
+      padding: 1rem;
+    }
+
+    .header .homeLink {
+      font-size: 0.8rem;
+    }
+
+    .header .logoutBtn {
+      font-size: 0.8rem;
+    }
+
+    .logo {
+      width: 86px;
+    }
+
     .mainContainer {
       flex-direction: column;
     }
@@ -247,9 +276,33 @@ export const NewsLetterPanelContainer = styled.div`
       justify-content: flex-start;
       padding: 1rem;
     }
-  
-  }
 
+    .prevUploadImage {
+      width: 300px;
+      height: 169px;
+    }
+
+    .cardImage {
+      width: 300px;
+      height: 169px;
+    }
+
+    .card {
+      min-width: 310px;
+      height: 450px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem;
+
+      border: 2px solid #00000020;
+      border-radius: 5px;
+
+      position: relative;
+    }
+  }
 `;
 
 export const LoaderContainer = styled.div`
