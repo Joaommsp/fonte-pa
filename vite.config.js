@@ -5,11 +5,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => {
   const config = {
-    plugins: [react()]
-  }
-
-  if (command !== 'serve') {
-    config.base = '/fonte-paulo-afonso/'
+    plugins: [react()],
+    base: './',
   }
 
   return config
