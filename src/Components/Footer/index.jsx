@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import MapsIcon from "../../assets/images/svg/icons/maps-icon.svg";
+import ArrowRightIcon from "../../assets/images/svg/icons/arrow-right-light-icon.svg";
 
 import {
   FooterContainer,
@@ -32,6 +35,9 @@ const Footer = () => {
         &quot;No qual todo o edifício é ajustado e cresce para tornar-se um
         santuário santo no Senhor.&quot; - Efésios 2:21
       </Passage>
+      <Link className="adminLink" to={"/newsletterlogin"}>
+        Admin <img src={ArrowRightIcon} alt="" />{" "}
+      </Link>
     </FooterContainer>
   );
 };

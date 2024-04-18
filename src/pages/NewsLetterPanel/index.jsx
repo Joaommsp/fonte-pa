@@ -5,7 +5,13 @@ import { auth, db, storage } from "../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 import { NewsLetterPanelContainer, LoaderContainer } from "./style";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
@@ -89,6 +95,14 @@ const NewsLetterPanel = () => {
     }
   };
 
+  const deletePost = async (id) => {
+    const postDoc = doc(db, "news", id);
+
+    await deleteDoc(postDoc);
+
+    window.location.reload()
+  };
+
   const missingItems = (status) => {
     if (status == 0) {
       return <span></span>;
@@ -138,16 +152,6 @@ const NewsLetterPanel = () => {
 
     getPosts();
   }, []);
-
-  const formatadorDeData = (dataToFormat) => {
-    let formatter = new Intl.DateTimeFormat("pt-BR", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-    return formatter.format(dataToFormat).toString();
-  };
 
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
@@ -231,7 +235,10 @@ const NewsLetterPanel = () => {
           {posts.map((post, index) => {
             return (
               <div className="card" key={index}>
-                <button className="deleteBtn">
+                <button
+                  className="deleteBtn"
+                  onClick={() => deletePost(post.id)}
+                >
                   <img src={DeleteIcon} alt="" />
                 </button>
                 <h2 className="cardTitle">{post.title}</h2>

@@ -140,7 +140,7 @@ export const NewsLetterPanelContainer = styled.div`
 
   .card {
     width: 523px;
-    height: 353px;
+    height: 410px;
     margin-top: 1rem;
     margin-bottom: 2rem;
 
@@ -237,4 +237,4 @@ export const LoaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;

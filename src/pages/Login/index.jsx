@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
 import LoginIcon from "../../assets/images/svg/icons/login-icon-light.svg";
 import Logo from "../../assets/images/newsletter-logo.png";
+import AlertIcon from "../../assets/images/svg/icons/alert-icon-red.svg";
 
 import { LoginContainer, Header, FormContainer } from "./styles";
 
@@ -15,6 +16,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [aothUser, setAothUser] = useState("");
+  const [filled, setFilled] = useState(true);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,6 +37,15 @@ const Login = () => {
   }, []);
 
   const login = (event) => {
+    if (email == "" || password == "") {
+      setFilled(false);
+
+      const restartFormTime = setInterval(() => {
+        setFilled(true);
+        clearInterval(restartFormTime);
+      }, 3000);
+    }
+
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
@@ -83,6 +95,14 @@ const Login = () => {
           <button className="button" onClick={login}>
             Entrar <img src={LoginIcon} alt="" />
           </button>
+          <p className="formStatus">
+            {!filled && (
+              <span>
+                {" "}
+                <img src={AlertIcon} alt="" /> Preencha todos os campos
+              </span>
+            )}
+          </p>
         </form>
       </FormContainer>
     </LoginContainer>

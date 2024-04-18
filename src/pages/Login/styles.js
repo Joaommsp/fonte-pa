@@ -132,4 +132,21 @@ export const FormContainer = styled.div`
     margin-left: 0.5rem;
     width: 22px;
   }
+
+  .formStatus {
+    display: block;
+    height: 50px;
+  }
+
+  .formStatus span {
+    color: #e72929;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media only screen and (max-width: 580px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `;
