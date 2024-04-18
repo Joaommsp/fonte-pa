@@ -55,7 +55,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        if (email != "" || password != "") {
+        if (email !== "" && password !== "") {
           setErrorMessage(true);
 
           const resetErrorMessage = setInterval(() => {
@@ -112,6 +112,8 @@ const Login = () => {
                 <img src={AlertIcon} alt="" /> Preencha todos os campos
               </span>
             )}
+          </p>
+          <p className="formStatus">
             {errorMessage && (
               <span>
                 {" "}

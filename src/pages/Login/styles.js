@@ -32,6 +32,10 @@ export const Header = styled.div`
       margin-right: 0.5rem;
     }
   }
+
+  @media only screen and (max-width: 700px) {
+    padding: 0.5rem 1rem;
+  }
 `;
 
 export const FormContainer = styled.div`

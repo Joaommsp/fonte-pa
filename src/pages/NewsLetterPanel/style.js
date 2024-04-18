@@ -265,6 +265,7 @@ export const NewsLetterPanelContainer = styled.div`
     }
 
     .mainContainer {
+      padding: 1rem 0.5rem;
       flex-direction: column;
     }
 
@@ -288,12 +289,12 @@ export const NewsLetterPanelContainer = styled.div`
     }
 
     .cardImage {
-      width: 300px;
-      height: 169px;
+      width: 242px;
+      height: 136px;
     }
 
     .card {
-      min-width: 310px;
+      min-width: 300px;
       height: 450px;
       margin-top: 1rem;
       margin-bottom: 2rem;
