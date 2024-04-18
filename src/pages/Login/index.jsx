@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
+import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon-dark.svg";
 import LoginIcon from "../../assets/images/svg/icons/login-icon-light.svg";
 import Logo from "../../assets/images/newsletter-logo.png";
 import AlertIcon from "../../assets/images/svg/icons/alert-icon-red.svg";
@@ -17,6 +17,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [aothUser, setAothUser] = useState("");
   const [filled, setFilled] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,7 +27,6 @@ const Login = () => {
         setAothUser(user);
         navigate("/adminpanel");
       } else {
-        console.log("MACACO não logou: ");
         setAothUser(null);
       }
     });
@@ -53,7 +53,17 @@ const Login = () => {
           navigate("/adminpanel");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        if (email != "" || password != "") {
+          setErrorMessage(true);
+
+          const resetErrorMessage = setInterval(() => {
+            setErrorMessage(false);
+            clearInterval(resetErrorMessage);
+          }, 3000);
+        }
+      });
   };
 
   return (
@@ -99,8 +109,13 @@ const Login = () => {
             {!filled && (
               <span>
                 {" "}
-                <img src={AlertIcon} alt="" />{" "}
-                Preencha todos os campos
+                <img src={AlertIcon} alt="" /> Preencha todos os campos
+              </span>
+            )}
+            {errorMessage && (
+              <span>
+                {" "}
+                <img src={AlertIcon} alt="" /> E-mail e/ou senha incorretos
               </span>
             )}
           </p>

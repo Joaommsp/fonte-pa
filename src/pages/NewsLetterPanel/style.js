@@ -151,6 +151,11 @@ export const NewsLetterPanelContainer = styled.div`
     overflow-y: scroll;
   }
 
+  .cardsPreviewsTitle {
+    font-size: 1.5rem;
+    color: #181a20;
+  }
+
   .card {
     min-width: 523px;
     height: 410px;
@@ -310,6 +315,7 @@ export const LoaderContainer = styled.div`
   height: 100vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;

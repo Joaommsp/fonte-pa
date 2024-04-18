@@ -125,7 +125,6 @@ const NewsLetterPanel = () => {
 
     if (!file) alert("Nenhuma Imagem Selecionada");
 
-    event.target.value = "Carregando Imagem"
     const storageRef = ref(storage, `postsImages/${file.name}`);
     const uploadTaks = uploadBytesResumable(storageRef, file);
 
@@ -236,7 +235,7 @@ const NewsLetterPanel = () => {
           </div>
         </div>
         <div className="cardsContainer">
-          <span>Prévias</span>
+          <span className="cardsPreviewsTitle">Prévias</span>
           {posts.map((post, index) => {
             return (
               <div className="card" key={index}>

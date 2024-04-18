@@ -14,23 +14,6 @@ export const FooterContainer = styled.div`
 
   position: relative;
 
-  .adminLink {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.8rem;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .adminLink img {
-    margin-left: 0.5rem;
-  }
-
   @media only screen and (max-width: 480px) {
     height: 100%;
     flex-direction: column;

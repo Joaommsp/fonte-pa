@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
@@ -15,6 +16,7 @@ import TelegramIcon from "../../assets/images/svg/icons/telegram-icon.svg";
 import ArrowRight from "../../assets/images/svg/icons/arrow-right-icon.svg";
 import YoutubeDarkIcon from "../../assets/images/svg/icons/youtube-icon-dark.svg";
 import SpotifyDarkIcon from "../../assets/images/svg/icons/spotify-icon-dark.svg";
+import ArrowRightIcon from "../../assets/images/svg/icons/arrow-right-light-icon.svg";
 
 import LoyaltyIcon from "../../assets/images/svg/icons/loyalty-icon.svg";
 import IntegrityIcon from "../../assets/images/svg/icons/integrity-icon.svg";
@@ -76,37 +78,6 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const images = [
-    {
-      original: ComunityImage1,
-      thumbnail: ComunityImage1,
-    },
-    {
-      original: ComunityImage2,
-      thumbnail: ComunityImage2,
-    },
-    {
-      original: ComunityImage3,
-      thumbnail: ComunityImage3,
-    },
-    {
-      original: ComunityImage4,
-      thumbnail: ComunityImage4,
-    },
-    {
-      original: ComunityImage5,
-      thumbnail: ComunityImage5,
-    },
-    {
-      original: ComunityImage6,
-      thumbnail: ComunityImage6,
-    },
-    {
-      original: ComunityImage7,
-      thumbnail: ComunityImage7,
-    },
-  ];
-
   return (
     <HomeContainer>
       <Header pageIndex={0} />
@@ -114,6 +85,10 @@ const Home = () => {
         <Banner className="banner">
           <BannerVisualsContent>
             <LogoContainer>
+              <Link className="adminLink" to={"/login"}>
+                Admin <img src={ArrowRightIcon} alt="" />{" "}
+              </Link>
+
               <Logo src={LogoImage} alt="" />
 
               <SocialMedia>
