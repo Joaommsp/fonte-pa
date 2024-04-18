@@ -32,7 +32,7 @@ import {
   GrowTextContent,
   GrowTitle,
   GrowText,
-} from "./styles";
+} from "./styles.js";
 
 function Help() {
   

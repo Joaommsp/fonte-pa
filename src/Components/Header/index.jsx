@@ -91,7 +91,7 @@ const Header = (props) => {
       );
     } else if (indexLInk == 2) {
       return (
-        <HeaderLinks HeaderLinks $show={menuOpen}>
+        <HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink">
               Fonte
@@ -116,7 +116,7 @@ const Header = (props) => {
       );
     } else if (indexLInk == 3) {
       return (
-        <HeaderLinks HeaderLinks $show={menuOpen}>
+        <HeaderLinks $show={menuOpen}>
           <HeaderLink>
             <Link to="/" className="headerLink">
               Fonte

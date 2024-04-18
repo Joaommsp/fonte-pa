@@ -55,7 +55,7 @@ const NewsLetterPanel = () => {
 
     const listen = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        navigate("/newsletterlogin");
+        navigate("/login");
       }
     });
 

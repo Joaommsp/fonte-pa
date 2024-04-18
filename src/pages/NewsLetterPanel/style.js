@@ -50,7 +50,7 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .createContainer {
-    width: 50%;
+    width: 40%;
     padding: 2rem;
 
     display: flex;
@@ -130,7 +130,7 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .cardsContainer {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,7 +139,7 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .card {
-    width: 523px;
+    min-width: 523px;
     height: 410px;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -228,6 +228,28 @@ export const NewsLetterPanelContainer = styled.div`
     font-size: 0.8rem;
     color: #e72929;
   }
+
+  @media only screen and (max-width: 1000px){
+    .mainContainer {
+      flex-direction: column;
+    }
+
+    .createContainer {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .cardsContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+    }
+  
+  }
+
 `;
 
 export const LoaderContainer = styled.div`
