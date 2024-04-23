@@ -13,7 +13,7 @@ const colors = {
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 10vh;
+  height: 68px;
 
   padding: 0 5rem;
 
@@ -21,6 +21,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 0.3s ease-in-out;
+  z-index: 100;
 
   @media only screen and (max-width: 800px) {
     align-items: flex-start;
@@ -51,11 +52,14 @@ export const HeaderLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   transition: 0.3s ease-in-out;
 
+  padding-top: 1rem;
+
+  z-index: 10;
+
   @media only screen and (max-width: 800px) {
-    z-index: 10;
     transition: max-height 0.3s ease-in-out;
   }
 `;
@@ -66,7 +70,7 @@ export const HeaderLinks = styled.ul`
   height: 100%;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.5rem;
 
   @media only screen and (max-width: 800px) {
@@ -78,11 +82,23 @@ export const HeaderLinks = styled.ul`
 `;
 
 export const HeaderLink = styled.li`
+  padding: 0.5rem;
+
+  background-color: #ffffff;
+
   .headerLink {
     text-decoration: none;
     color: ${colors.text_dark};
     font-family: ${font.poppins};
     font-weight: 500;
+
+    display: flex;
+    align-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .headerLink img {
+    margin-left: 0.5rem;
   }
 
   .index {
@@ -100,6 +116,13 @@ export const HeaderControl = styled.img`
     display: block;
   }
 `;
+
+export const SubLinks = styled.ul`
+  list-style: none;
+  background-color: #ffffff;
+`;
+
+export const SubLink = styled.li``;
 
 export const CalltoActionContainer = styled.div`
   @media only screen and (max-width: 1000px) {

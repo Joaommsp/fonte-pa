@@ -9,6 +9,7 @@ import ButtonLink from "../ButtonLink";
 
 import MenuIcon from "../../assets/images/svg/icons/menu-icon.svg";
 import CloseMenuIcon from "../../assets/images/svg/icons/close-icon.svg";
+import ArrowDownIcon from "../../assets/images/svg/icons/arrow-down-icon.svg";
 
 import {
   HeaderContainer,
@@ -18,12 +19,15 @@ import {
   HeaderLink,
   HeaderControl,
   CalltoActionContainer,
+  SubLinks,
+  SubLink,
 } from "./styles";
 
 const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
   const [menuOpen, setMenuOpen] = useState("none");
   const [menuIcon, setMenuIcon] = useState(MenuIcon);
+  const [extendMenu, setExtendMenu] = useState(false);
 
   useEffect(() => {
     gsap.to(".headerLinks__Container", { opacity: 1, y: 0, duration: 0.1 });
@@ -52,15 +56,27 @@ const Header = (props) => {
               Ajuda
             </Link>
           </HeaderLink>
-          <HeaderLink>
-            <Link to="/escolabiblica" className="headerLink">
-              Escola Bíblica
-            </Link>
-          </HeaderLink>
-          <HeaderLink>
-            <Link to="/ministerios" className="headerLink">
+          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
+            <Link
+              to="/ministerios"
+              className="headerLink"
+              onMouseEnter={() => setExtendMenu(true)}
+            >
               Ministérios
+              <img src={ArrowDownIcon} alt="" />
             </Link>
+            {extendMenu && (
+              <SubLinks>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerLink">
+                    Escola Bíblica
+                  </Link>
+                </SubLink>
+                <SubLink>test2</SubLink>
+                <SubLink>test4</SubLink>
+              </SubLinks>
+            )}
           </HeaderLink>
         </HeaderLinks>
       );
@@ -144,7 +160,9 @@ const Header = (props) => {
 
   return (
     <HeaderContainer>
-      <Logo src={LogoImage} alt="" />
+      <Link to={"/login"}>
+        <Logo src={LogoImage} alt="" />
+      </Link>
       <HeaderLinksContainer className="headerLinks__Container">
         <HeaderControl src={menuIcon} onClick={() => controlHeader()} />
         {controlHeaderIndex()}

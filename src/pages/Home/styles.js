@@ -137,39 +137,14 @@ export const LogoContainer = styled.div`
 
   position: relative;
 
-  .adminLink {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-
-    text-decoration: none;
-    color: #ffffff50;
-    font-size: 0.8rem;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .adminLink img {
-    margin-left: 0.5rem;
-  }
-
   @media only screen and (max-width: 480px) {
     height: 92vh;
     background-position: right;
-
-    .adminLink {
-      top: 5rem;
-    }
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     height: 92vh;
     background-position: right;
-
-    .adminLink {
-      top: 5rem;
-    }
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {

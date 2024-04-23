@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
@@ -16,7 +15,6 @@ import TelegramIcon from "../../assets/images/svg/icons/telegram-icon.svg";
 import ArrowRight from "../../assets/images/svg/icons/arrow-right-icon.svg";
 import YoutubeDarkIcon from "../../assets/images/svg/icons/youtube-icon-dark.svg";
 import SpotifyDarkIcon from "../../assets/images/svg/icons/spotify-icon-dark.svg";
-import ArrowRightIcon from "../../assets/images/svg/icons/arrow-right-light-icon.svg";
 
 import LoyaltyIcon from "../../assets/images/svg/icons/loyalty-icon.svg";
 import IntegrityIcon from "../../assets/images/svg/icons/integrity-icon.svg";
@@ -30,14 +28,6 @@ import adviceImage from "../../assets/images/aconselhamento.png";
 import EbdImage from "../../assets/images/ebd.png";
 
 import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
-
-import ComunityImage1 from "../../assets/images/comunity1.jpg";
-import ComunityImage2 from "../../assets/images/comunity2.jpg";
-import ComunityImage3 from "../../assets/images/comunity3.jpg";
-import ComunityImage4 from "../../assets/images/comunity4.jpg";
-import ComunityImage5 from "../../assets/images/comunity5.jpg";
-import ComunityImage6 from "../../assets/images/comunity6.jpg";
-import ComunityImage7 from "../../assets/images/comunity7.jpg";
 
 import {
   HomeContainer,
@@ -70,7 +60,6 @@ import {
   ComunityDescription,
 } from "./styles";
 
-import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const Home = () => {
@@ -79,16 +68,12 @@ const Home = () => {
   }, []);
 
   return (
-    <HomeContainer>
+    <HomeContainer >
       <Header pageIndex={0} />
       <BannerContainer>
         <Banner className="banner">
           <BannerVisualsContent>
             <LogoContainer>
-              <Link className="adminLink" to={"/login"}>
-                Admin <img src={ArrowRightIcon} alt="" />{" "}
-              </Link>
-
               <Logo src={LogoImage} alt="" />
 
               <SocialMedia>
