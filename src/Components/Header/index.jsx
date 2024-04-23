@@ -57,24 +57,27 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <Link
-              to="/ministerios"
+            <span
               className="headerLink"
               onMouseEnter={() => setExtendMenu(true)}
+              onClick={() => setExtendMenu(true)}
             >
               Ministérios
               <img src={ArrowDownIcon} alt="" />
-            </Link>
+            </span>
             {extendMenu && (
               <SubLinks>
+                <SubLink>
+                  <Link to={"/ministerios"} className="headerLink">
+                    Sobre
+                  </Link>
+                </SubLink>
                 <SubLink>
                   {" "}
                   <Link to="/escolabiblica" className="headerLink">
                     Escola Bíblica
                   </Link>
                 </SubLink>
-                <SubLink>test2</SubLink>
-                <SubLink>test4</SubLink>
               </SubLinks>
             )}
           </HeaderLink>
