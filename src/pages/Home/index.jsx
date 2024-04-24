@@ -5,6 +5,7 @@ import Card from "../../Components/Card";
 import Media from "../../Components/Media";
 import Footer from "../../Components/Footer";
 import ButtonLink from "../../Components/ButtonLink";
+import PostsSection from "../../Components/PostsSection";
 
 import LogoImage from "../../assets/images/oficial/banner.svg";
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
@@ -26,6 +27,7 @@ import KoinoImage from "../../assets/images/koino.png";
 import ServeImage from "../../assets/images/serve.png";
 import adviceImage from "../../assets/images/aconselhamento.png";
 import EbdImage from "../../assets/images/ebd.png";
+import DiscipuladoImage from "../../assets/images/discipulado.png";
 
 import MockUpPhone from "../../assets/images/smartPhone-mockup.png";
 
@@ -58,6 +60,8 @@ import {
   ComunityContainer,
   ComunityTitle,
   ComunityDescription,
+  PostsSectionContainer,
+  PostsSectionTitle,
 } from "./styles";
 
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -68,7 +72,7 @@ const Home = () => {
   }, []);
 
   return (
-    <HomeContainer >
+    <HomeContainer>
       <Header pageIndex={0} />
       <BannerContainer>
         <Banner className="banner">
@@ -160,31 +164,36 @@ const Home = () => {
             <Cards>
               <Card
                 title="Cultos"
-                text="Aos Domingos às 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas."
+                text="Aos domingos | 18h30 - Louve e conheça a Deus segundo as Escrituras Sagradas."
                 image={CultoImage}
               ></Card>
               <Card
                 title="Escola Bíblica"
-                text="Aos domingos | 09h30 - Quando o ensino teológico e prático se encontram."
+                text="Aos domingos | 09h30 – Do aprendizado bíblico à vida cristã piedosa."
                 image={EbdImage}
               ></Card>
               <Card
-                title="Sirva junto à Igreja Fonte"
-                text="Queremos contar com seus dons e talentos para servir nosso Deus."
-                image={ServeImage}
-              ></Card>
-              <Card
-                title="Grupos de Estudo Bíblico nos Lares"
-                text="Koinonias | Reuniões nos lares em diferentes dias e locais. Junte-se a um grupo!"
+                title="Koinonias"
+                text="Vários dias da semana | Reuniões nos lares para comunhão, oração e aprendizado da Palavra. "
                 image={KoinoImage}
               ></Card>
               <Card
                 title="Aconselhamento bíblico"
-                text=" Traga seus questionamentos, suas dores e suas esperanças, e vamos buscar juntos a orientação divina que nos sustenta e fortalece."
+                text="Com agendamento | Para aqueles que precisam e querem orientação bíblica para os desafios e dificuldades da vida."
                 image={adviceImage}
+              ></Card>
+              <Card
+                title="Discipulado"
+                text="Faça parte de um grupo | Irmãos que juntos buscam conhecer o Senhor e caminham para o mesmo propósito."
+                image={DiscipuladoImage}
               ></Card>
             </Cards>
           </CardsContainer>
+
+          <PostsSectionContainer>
+            <PostsSectionTitle>Últimas Publicações</PostsSectionTitle>
+            <PostsSection></PostsSection>
+          </PostsSectionContainer>
 
           <MediaContainer>
             <MockUpContainer>

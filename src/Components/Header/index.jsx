@@ -51,9 +51,62 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
+          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
+            <span
+              className="headerLink"
+              onMouseEnter={() => setExtendMenu(true)}
+              onClick={() => setExtendMenu(true)}
+            >
+              Ministérios
+              <img src={ArrowDownIcon} alt="" />
+            </span>
+            {extendMenu && (
+              <SubLinks>
+                <SubLink>
+                  <Link to={"/ministerios"} className="headerSubLink">
+                    Sobre
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerSubLink">
+                    Escola Bíblica
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerSubLink">
+                    Infantil
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerSubLink">
+                    Louvor
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerSubLink">
+                    Casais
+                  </Link>
+                </SubLink>
+              </SubLinks>
+            )}
+          </HeaderLink>
           <HeaderLink>
             <Link to="/ajuda" className="headerLink">
               Ajuda
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
+    } else if (indexLInk == 1) {
+      return (
+        <HeaderLinks $show={menuOpen}>
+          <HeaderLink>
+            <Link to="/" className="headerLink ">
+              Fonte
             </Link>
           </HeaderLink>
           <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
@@ -68,42 +121,22 @@ const Header = (props) => {
             {extendMenu && (
               <SubLinks>
                 <SubLink>
-                  <Link to={"/ministerios"} className="headerLink">
+                  <Link to={"/ministerios"} className="headerSubLink">
                     Sobre
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerLink">
+                  <Link to="/escolabiblica" className="headerSubLink">
                     Escola Bíblica
                   </Link>
                 </SubLink>
               </SubLinks>
             )}
           </HeaderLink>
-        </HeaderLinks>
-      );
-    } else if (indexLInk == 1) {
-      return (
-        <HeaderLinks $show={menuOpen}>
-          <HeaderLink>
-            <Link to="/" className="headerLink">
-              Fonte
-            </Link>
-          </HeaderLink>
           <HeaderLink>
             <Link to="/ajuda" className="headerLink index">
               Ajuda
-            </Link>
-          </HeaderLink>
-          <HeaderLink>
-            <Link to="/escolabiblica" className="headerLink">
-              Escola Bíblica
-            </Link>
-          </HeaderLink>
-          <HeaderLink>
-            <Link to="/ministerios" className="headerLink">
-              Ministérios
             </Link>
           </HeaderLink>
         </HeaderLinks>

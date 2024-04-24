@@ -9,7 +9,7 @@ import NewsLetterPanel from "./pages/NewsLetterPanel";
 
 const AppRoutes = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ajuda" element={<Help />} />
@@ -18,7 +18,7 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/adminpanel" element={<NewsLetterPanel />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

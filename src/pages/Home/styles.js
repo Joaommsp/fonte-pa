@@ -226,9 +226,6 @@ export const Hashtag = styled.div`
     bottom: 0;
     background-color: #ffffff;
   }
-
-  @media only screen and (max-width: 480px) {
-  }
 `;
 
 export const SubTitle = styled.h2`
@@ -659,5 +656,38 @@ export const Assignment = styled.span`
     font-size: 0.7rem;
     bottom: 1.5rem;
     right: 1rem;
+  }
+`;
+
+export const PostsSectionContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 5rem;
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    padding: 2rem;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 2rem;
+  }
+`;
+
+export const PostsSectionTitle = styled.h2`
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #181a20;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    font-size: 2rem;
   }
 `;

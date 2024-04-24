@@ -158,7 +158,7 @@ export const NewsLetterPanelContainer = styled.div`
 
   .card {
     min-width: 523px;
-    height: 410px;
+    height: 450px;
     margin-top: 1rem;
     margin-bottom: 2rem;
 
@@ -205,7 +205,8 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .cardText {
-    width: 100%;
+    display: block;
+    width: 500px;
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -247,7 +248,7 @@ export const NewsLetterPanelContainer = styled.div`
     color: #e72929;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (min-width: 400px) and (max-width: 1000px) {
     .header {
       padding: 1rem;
     }
@@ -293,11 +294,85 @@ export const NewsLetterPanelContainer = styled.div`
       height: 136px;
     }
 
+    .cardText {
+      width: 300px;
+    }
+
     .card {
       min-width: 300px;
       height: 450px;
       margin-top: 1rem;
       margin-bottom: 2rem;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem;
+
+      border: 2px solid #00000020;
+      border-radius: 5px;
+
+      position: relative;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .header {
+      padding: 1rem;
+    }
+
+    .header .homeLink {
+      font-size: 0.8rem;
+    }
+
+    .header .logoutBtn {
+      font-size: 0.8rem;
+    }
+
+    .logo {
+      width: 86px;
+    }
+
+    .mainContainer {
+      padding: 1rem 0.5rem;
+      flex-direction: column;
+    }
+
+    .createContainer {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .cardsContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+    }
+
+    .prevUploadImage {
+      width: 242px;
+      height: 136px;
+    }
+
+    .cardImage {
+      width: 242px;
+      height: 136px;
+    }
+
+    .cardText {
+      width: 270px;
+    }
+
+    .card {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 400px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      background-color: red;
 
       display: flex;
       flex-direction: column;

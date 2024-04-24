@@ -14,14 +14,15 @@ const colors = {
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 68px;
-
   padding: 0 5rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: 0.3s ease-in-out;
-  z-index: 100;
+  z-index: 1000;
+
+  transition: 0.5s ease-in-out;
 
   @media only screen and (max-width: 800px) {
     align-items: flex-start;
@@ -31,7 +32,7 @@ export const HeaderContainer = styled.div`
 
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 
     background-color: #ffffff;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.41);
@@ -43,6 +44,7 @@ export const Logo = styled.img`
 
   @media only screen and (max-width: 800px) {
     width: 100px;
+    margin-top: 1rem;
   }
 `;
 
@@ -57,7 +59,7 @@ export const HeaderLinksContainer = styled.div`
 
   padding-top: 1rem;
 
-  z-index: 10;
+  z-index: 1000;
 
   @media only screen and (max-width: 800px) {
     transition: max-height 0.3s ease-in-out;
@@ -71,20 +73,18 @@ export const HeaderLinks = styled.ul`
 
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
 
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: flex-end;
     display: ${(element) => element.$show};
     margin-bottom: 1rem;
+    height: 100vh;
   }
 `;
 
 export const HeaderLink = styled.li`
-  padding: 0.5rem;
-
-  background-color: #ffffff;
+  margin: 0 0.5rem;
 
   .headerLink {
     text-decoration: none;
@@ -95,6 +95,7 @@ export const HeaderLink = styled.li`
     display: flex;
     align-content: center;
     margin-bottom: 0.5rem;
+    padding: 0.5rem;
   }
 
   .headerLink img {
@@ -119,7 +120,33 @@ export const HeaderControl = styled.img`
 
 export const SubLinks = styled.ul`
   list-style: none;
-  background-color: #ffffff;
+  background-color: #1c7ec2;
+  border-radius: 5px;
+
+  box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.16),
+    0px 0px 12px rgba(0, 0, 0, 0.32);
+
+  .headerSubLink {
+    text-decoration: none;
+    color: ${colors.text_light};
+    font-family: ${font.poppins};
+    font-weight: 500;
+
+    display: flex;
+    align-content: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .headerSubLink:hover {
+    opacity: 90%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 
 export const SubLink = styled.li``;
