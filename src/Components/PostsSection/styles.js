@@ -6,6 +6,10 @@ export const NewsSectionContainer = styled.div`
 
   display: flex;
   justify-content: flex-start;
+
+  @media only screen and (min-width: 560px) and (max-width: 700px) {
+    height: 500px;
+  }
 `;
 
 export const CardsContainer = styled.div`
@@ -16,6 +20,7 @@ export const CardsContainer = styled.div`
   justify-content: flex-start;
   gap: 24px;
 
+  overflow-y: hidden;
   overflow-x: scroll;
 
   .card {
@@ -69,10 +74,10 @@ export const CardsContainer = styled.div`
     color: #00000060;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (min-width: 560px) and (max-width: 700px) {
     .card {
       width: 500px;
-      height: 554px;
+      height: 450px;
       padding: 0;
     }
 
@@ -93,7 +98,12 @@ export const CardsContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (min-width: 470px) and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
     .card {
       width: 400px;
       height: 554px;
@@ -114,6 +124,40 @@ export const CardsContainer = styled.div`
     .cardText {
       display: block;
       width: 390px;
+    }
+  }
+
+  @media only screen and (max-width: 470px) {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .card {
+      width: 324px;
+      height: 554px;
+      padding: 0;
+    }
+
+    .cardTitle {
+      font-size: 1rem;
+    }
+
+    .cardImage {
+      width: 324px;
+      height: 182px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .cardText {
+      display: block;
+      width: 324px;
+    }
+
+    .cardData {
+      top: 0;
+      font-size: 0.8rem;
     }
   }
 `;

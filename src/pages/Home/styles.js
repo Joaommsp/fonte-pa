@@ -673,7 +673,7 @@ export const PostsSectionContainer = styled.div`
   }
 
   @media only screen and (max-width: 480px) {
-    padding: 2rem;
+    padding: 1rem;
   }
 `;
 

@@ -60,7 +60,10 @@ function Ministries() {
         <SchoolImageContainer>
           <SchoolImage src={MistriesImageImage} />
         </SchoolImageContainer>
-        <WhatsAppLInk href="" target="_blank">
+        <WhatsAppLInk
+          href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
+          target="_blank"
+        >
           <img src={WhatsAppIcon} alt="" />
           Fale Conosco
         </WhatsAppLInk>

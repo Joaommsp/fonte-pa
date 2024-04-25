@@ -25,8 +25,9 @@ export const HeaderContainer = styled.div`
   transition: 0.5s ease-in-out;
 
   @media only screen and (max-width: 800px) {
+    height: 48px;
     align-items: flex-start;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
 
     height: fit-content;
 

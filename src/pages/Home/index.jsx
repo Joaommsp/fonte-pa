@@ -84,19 +84,28 @@ const Home = () => {
                 <SocialMediaLinks>
                   <SocilaMediaLink>
                     {" "}
-                    <a href="">
+                    <a
+                      href="https://www.instagram.com/ibfonte.pa/"
+                      target="_blank"
+                    >
                       <img src={InstagramIcon} alt="" />{" "}
                     </a>
                   </SocilaMediaLink>
                   <SocilaMediaLink>
                     {" "}
-                    <a href="">
+                    <a
+                      href="https://www.facebook.com/igrejafonte.pa/"
+                      target="_blank"
+                    >
                       <img src={FacebookIcon} alt="" />{" "}
                     </a>
                   </SocilaMediaLink>
                   <SocilaMediaLink>
                     {" "}
-                    <a href="">
+                    <a
+                      href="https://www.youtube.com/@igrejafontepa"
+                      target="_blank"
+                    >
                       <img src={YoutubeIcon} alt="" />{" "}
                     </a>{" "}
                   </SocilaMediaLink>
@@ -204,7 +213,10 @@ const Home = () => {
                 Acompanhe a Fonte em <strong>qualquer lugar</strong>
               </MediaTitle>
               <MediaCardsContainer>
-                <a href="#">
+                <a
+                  href="https://www.youtube.com/@igrejafontepa"
+                  target="_blank"
+                >
                   <Media
                     title="Youtube"
                     descripion="Nossos recursos em videos"
@@ -213,7 +225,10 @@ const Home = () => {
                     content="Pregações, eventos especiais, mensagens e ensinamentos sobre a palavra de Deus."
                   ></Media>
                 </a>
-                <a href="#">
+                <a
+                  href="https://podcasters.spotify.com/pod/show/igrejafontepa"
+                  target="_blank"
+                >
                   <Media
                     title="Spotify"
                     descripion="Nossos recursos em áudio"
@@ -222,7 +237,7 @@ const Home = () => {
                     content="Escute as mensagens que foram pregadas na Fonte. Estudo da Bíblia e aulas em áudio."
                   ></Media>
                 </a>
-                <a href="#">
+                <a href="https://t.me/+RiV4i1GT9Mb4ohxG" target="_blank">
                   <Media
                     title="Telegram"
                     descripion="Nosso canal de divulgações"
@@ -246,7 +261,10 @@ const Home = () => {
             {/* <ImageGallery items={images} /> */}
           </ComunityContainer>
 
-          <WhatsAppLInk href="" target="_blank">
+          <WhatsAppLInk
+            href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
+            target="_blank"
+          >
             <img src={WhatsAppIcon} alt="" />
             Fale Conosco
           </WhatsAppLInk>

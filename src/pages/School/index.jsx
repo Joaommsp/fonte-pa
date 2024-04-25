@@ -1,4 +1,4 @@
-import {useEffect} from "react"
+import { useEffect } from "react";
 
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
@@ -34,14 +34,13 @@ import {
 } from "./styles";
 
 function School() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <Header pageIndex={2} />
+      <Header pageIndex={3} />
       <SchoolContainer>
         <SchoolTextContent>
           <SchoolTitle>Escola Bíblica Dominical</SchoolTitle>
@@ -59,7 +58,10 @@ function School() {
           <SchoolImage src={SchoolImageImage} />
           <span className="attribution">vectorjuice on Freepik</span>
         </SchoolImageContainer>
-        <WhatsAppLInk href="" target="_blank">
+        <WhatsAppLInk
+          href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
+          target="_blank"
+        >
           <img src={WhatsAppIcon} alt="" />
           Fale Conosco
         </WhatsAppLInk>
@@ -77,11 +79,11 @@ function School() {
           <FamilyContent>
             <FamilyTitle>Com Amor, respeito e perdão</FamilyTitle>
             <FamilyText>
-              <strong>Servir a Deus é uma escolha</strong>. Josué, como líder de sua casa, tomou
-              essa decisão. A partir que ele tomou essa escolha, ele teve a
-              responsabilidade de dar o exemplo e conduzir a sua família aos
-              caminhos do Senhor. Seja exemplo para seus filhos, dê bom
-              testemunho de Cristo e conduza a sua família no caminho da
+              <strong>Servir a Deus é uma escolha</strong>. Josué, como líder de
+              sua casa, tomou essa decisão. A partir que ele tomou essa escolha,
+              ele teve a responsabilidade de dar o exemplo e conduzir a sua
+              família aos caminhos do Senhor. Seja exemplo para seus filhos, dê
+              bom testemunho de Cristo e conduza a sua família no caminho da
               Salvação.
             </FamilyText>
           </FamilyContent>

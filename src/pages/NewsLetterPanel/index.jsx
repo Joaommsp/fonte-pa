@@ -192,7 +192,7 @@ const NewsLetterPanel = () => {
           <input
             type="text"
             placeholder="Subtitle"
-            maxLength="55"
+            maxLength="36"
             id="subtitle"
             name="subtitle"
             onChange={(event) => setNewSubTitle(event.target.value)}
