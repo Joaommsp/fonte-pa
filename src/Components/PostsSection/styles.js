@@ -143,6 +143,10 @@ export const CardsContainer = styled.div`
       font-size: 1rem;
     }
 
+    .cardSubtitle {
+      font-size: 0.8rem;
+    }
+
     .cardImage {
       width: 324px;
       height: 182px;
@@ -153,6 +157,7 @@ export const CardsContainer = styled.div`
     .cardText {
       display: block;
       width: 324px;
+      font-size: 0.9rem;
     }
 
     .cardData {
