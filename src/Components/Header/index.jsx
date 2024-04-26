@@ -75,19 +75,19 @@ const Header = (props) => {
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/infantil" className="headerSubLink">
                     Infantil
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/louvor" className="headerSubLink">
                     Louvor
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/casais" className="headerSubLink">
                     Casais
                   </Link>
                 </SubLink>
@@ -133,19 +133,19 @@ const Header = (props) => {
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/infantil" className="headerSubLink">
                     Infantil
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/louvor" className="headerSubLink">
                     Louvor
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/casais" className="headerSubLink">
                     Casais
                   </Link>
                 </SubLink>
@@ -191,19 +191,19 @@ const Header = (props) => {
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/infantil" className="headerSubLink">
                     Infantil
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                   <Link to="/louvor" className="headerSubLink">
                     Louvor
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/casais" className="headerSubLink">
                     Casais
                   </Link>
                 </SubLink>
@@ -249,19 +249,19 @@ const Header = (props) => {
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/infantil" className="headerSubLink">
                     Infantil
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/louvor" className="headerSubLink">
                     Louvor
                   </Link>
                 </SubLink>
                 <SubLink>
                   {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
+                  <Link to="/casais" className="headerSubLink">
                     Casais
                   </Link>
                 </SubLink>

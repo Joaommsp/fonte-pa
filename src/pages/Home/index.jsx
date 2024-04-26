@@ -183,7 +183,7 @@ const Home = () => {
               ></Card>
               <Card
                 title="Koinonias"
-                text="Vários dias da semana | Reuniões nos lares para comunhão, oração e aprendizado da Palavra. "
+                text="Diferentes dias da semana | Reuniões nos lares para comunhão, oração e aprendizado da Palavra. "
                 image={KoinoImage}
               ></Card>
               <Card
@@ -219,10 +219,10 @@ const Home = () => {
                 >
                   <Media
                     title="Youtube"
-                    descripion="Nossos recursos em videos"
+                    descripion="Nossos recursos em video"
                     image={YoutubeDarkIcon}
                     bgColor="#C21010"
-                    content="Pregações, eventos especiais, mensagens e ensinamentos sobre a palavra de Deus."
+                    content="Pregações, aulas e eventos que marcam o nosso aprendizado da Palavra de Deus."
                   ></Media>
                 </a>
                 <a
@@ -234,7 +234,7 @@ const Home = () => {
                     descripion="Nossos recursos em áudio"
                     image={SpotifyDarkIcon}
                     bgColor="#064420"
-                    content="Escute as mensagens que foram pregadas na Fonte. Estudo da Bíblia e aulas em áudio."
+                    content="Escute as pregações e aulas que foram ensinadas na Fonte."
                   ></Media>
                 </a>
                 <a href="https://t.me/+RiV4i1GT9Mb4ohxG" target="_blank">
@@ -242,7 +242,7 @@ const Home = () => {
                     title="Telegram"
                     descripion="Nosso canal de divulgações"
                     image={TelegramIcon}
-                    content="Canal de comunicação e divulgação,  mantenha-se os informado sobre eventos, atividades na igreja"
+                    content="Receba diretamente no seu dispositivo eletrônico nossos últimos recursos de ensino da Palavra de Deus."
                     bgColor="#1C7EC2"
                   ></Media>
                 </a>
@@ -256,7 +256,7 @@ const Home = () => {
               Somos uma nova e crescente <strong>comunidade cristã</strong>,
               desejosa em ver o caráter de Cristo espelhado e espalhado
               especialmente por toda a região do semi-árido brasileiro, conforme
-              as Escrituras Sagradas
+              as Escrituras Sagradas.
             </ComunityDescription>
             {/* <ImageGallery items={images} /> */}
           </ComunityContainer>
