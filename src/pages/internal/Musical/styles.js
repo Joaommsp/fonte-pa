@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import kidsBg from "../../assets/images/kids-background.png";
+import kidsBg from "../../../assets/images/kids-background.png";
 
 export const SchoolContainer = styled.div`
   width: 100%;

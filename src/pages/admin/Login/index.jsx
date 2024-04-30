@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon-dark.svg";
-import LoginIcon from "../../assets/images/svg/icons/login-icon-light.svg";
-import Logo from "../../assets/images/newsletter-logo.png";
-import AlertIcon from "../../assets/images/svg/icons/alert-icon-red.svg";
+import ArrowLeftIcon from "../../../assets/images/svg/icons/arrow-left-icon-dark.svg";
+import LoginIcon from "../../../assets/images/svg/icons/login-icon-light.svg";
+import Logo from "../../../assets/images/newsletter-logo.png";
+import AlertIcon from "../../../assets/images/svg/icons/alert-icon-red.svg";
 
 import { LoginContainer, Header, FormContainer } from "./styles";
 
-import { auth } from "../../services/firebase";
+import { auth } from "../../../services/firebase";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
-import { auth, db, storage } from "../../services/firebase";
+import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-import Footer from "../../Components/Footer";
+import Footer from "../../../Components/Footer";
 
 import { NewsLetterPanelContainer, LoaderContainer } from "./style";
 import {
@@ -16,11 +15,11 @@ import {
 } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-import ArrowLeftIcon from "../../assets/images/svg/icons/arrow-left-icon.svg";
-import LogoutIcon from "../../assets/images/svg/icons/logout-icon.svg";
-import DeleteIcon from "../../assets/images/svg/icons/delete-icon.svg";
-import DefaultImage from "../../assets/images/default-image.png";
-import Logo from "../../assets/images/oficial/banner.svg";
+import ArrowLeftIcon from "../../../assets/images/svg/icons/arrow-left-icon.svg";
+import LogoutIcon from "../../../assets/images/svg/icons/logout-icon.svg";
+import DeleteIcon from "../../../assets/images/svg/icons/delete-icon.svg";
+import DefaultImage from "../../../assets/images/default-image.png";
+import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 
 import BarLoader from "react-spinners/BarLoader";
 

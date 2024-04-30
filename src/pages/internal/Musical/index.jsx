@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
-import Card from "../../Components/Card";
+import Header from "../../../Components/Header";
+import Footer from "../../../Components/Footer";
+import InfoCard from "../../../Components/InfoCard";
 
-import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
+import WhatsAppIcon from "../../../assets/images/svg/icons/whatsapp-icon.svg";
 
-import CoupleImageSource from "../../assets/images/svg/coupleImage.svg";
-import SchoolImageImage2 from "../../assets/images/svg/family-school.svg";
+import KidsImageSource from "../../../assets/images/svg/kidsImage.svg";
+import SchoolImageImage2 from "../../../assets/images/svg/family-school.svg";
 
-import InfantilImage from "../../assets/images/infantil.png";
-import EscolaImage from "../../assets/images/escola2.png";
-import EscolaImage2 from "../../assets/images/escola1.png";
+import InfantilImage from "../../../assets/images/infantil.png";
+import EscolaImage from "../../../assets/images/escola2.png";
+import EscolaImage2 from "../../../assets/images/escola1.png";
 
 import {
   SchoolContainer,
@@ -33,7 +33,7 @@ import {
   FamilyTitle,
 } from "./styles";
 
-function Couples() {
+function Musical() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -43,7 +43,7 @@ function Couples() {
       <Header pageIndex={3} />
       <SchoolContainer>
         <SchoolTextContent>
-          <SchoolTitle>Ministério de Casais</SchoolTitle>
+          <SchoolTitle>Ministério de Louvor</SchoolTitle>
           <SchoolSubTitle>
             Dedicados ao cuidado, ensino e desenvolvimento espiritual de
             crianças dentro da comunidade da igreja, nutrir a fé das crianças,
@@ -54,7 +54,7 @@ function Couples() {
         </SchoolTextContent>
 
         <SchoolImageContainer>
-          <SchoolImage src={CoupleImageSource} />
+          <SchoolImage src={KidsImageSource} />
         </SchoolImageContainer>
         <WhatsAppLInk
           href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
@@ -88,17 +88,17 @@ function Couples() {
         </FamilyContainer>
 
         <ContactsContent>
-          <Card
+          <InfoCard
             title="Ensino Infantil"
             image={InfantilImage}
             text='Então disse Jesus: "Deixem vir a mim as crianças e não as impeçam pois o Reino dos céus pertence aos que são semelhantes a elas"'
           />
-          <Card
+          <InfoCard
             title="Aprenda da Palavra"
             image={EscolaImage}
             text='"Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça"'
           />
-          <Card
+          <InfoCard
             title="Esteja em comunhão"
             text='"Um novo mandamento dou a vocês: Amem-se uns aos outros. Como eu os amei, vocês devem amar-se uns aos outros."
             João 13:34'
@@ -111,4 +111,4 @@ function Couples() {
   );
 }
 
-export default Couples;
+export default Musical;

@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
-import Card from "../../Components/Card";
+import Header from "../../../Components/Header";
+import Footer from "../../../Components/Footer";
+import InfoCard from "../../../Components/InfoCard";
 
-import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
+import WhatsAppIcon from "../../../assets/images/svg/icons/whatsapp-icon.svg";
 
-import MistriesImageImage from "../../assets/images/svg/ministriesImage.svg";
-import SchoolImageImage2 from "../../assets/images/svg/family-school.svg";
-import SocialHeartImage from "../../assets/images/svg/socialheart.svg";
+import MistriesImageImage from "../../../assets/images/svg/ministriesImage.svg";
+import SchoolImageImage2 from "../../../assets/images/svg/family-school.svg";
+import SocialHeartImage from "../../../assets/images/svg/socialheart.svg";
 
-import InfantilMinister from "../../assets/images/infantilMinisterio.png";
-import MusicMinister from "../../assets/images/louvorMinisterio.png";
-import CoupleMinister from "../../assets/images/casaisMinisterio.png";
-import SocialMinister from "../../assets/images/social.png";
+import InfantilMinister from "../../../assets/images/infantilMinisterio.png";
+import MusicMinister from "../../../assets/images/louvorMinisterio.png";
+import CoupleMinister from "../../../assets/images/casaisMinisterio.png";
+import SocialMinister from "../../../assets/images/social.png";
 
 import {
   SchoolContainer,
@@ -74,22 +74,22 @@ function Ministries() {
           clareia o meu caminho. &quot; <strong>Gálatas 6:2</strong>
         </Verse> */}
         <ContactsContent>
-          <Card
+          <InfoCard
             title="Ministério Infantil"
             image={InfantilMinister}
             text="Ensinando as crianças sobre a Bíblia e o amor de Deus, a crescerem em seu relacionamento com Cristo e a se tornarem discípulos de Jesus"
           />
-          <Card
+          <InfoCard
             title="Ministério de Louvor"
             image={MusicMinister}
             text="Ministério de Louvor e Adoração é exaltar a Deus, glorificar e honrar Teu nome, reconhecendo Sua grandeza, bondade e amor."
           />
-          <Card
+          <InfoCard
             title="Casais"
             text="Fornecendo apoio, orientação e recursos para casais em seus relacionamentos , reflitindo os princípios cristãos."
             image={CoupleMinister}
           />
-          <Card
+          <InfoCard
             title="Social"
             text="Demonstrando o amor e o cuidado de Deus pelos necessitados e pela comunidade através de ações sociais na região."
             image={SocialMinister}

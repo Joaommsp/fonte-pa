@@ -2,13 +2,13 @@ import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Help from "./pages/Help";
-import Ministries from "./pages/Ministries";
+import Ministries from "./pages/internal/Ministries"
 import School from "./pages/School";
-import Login from "./pages/Login";
-import NewsLetterPanel from "./pages/NewsLetterPanel";
-import Kids from "./pages/kids";
-import Musical from "./pages/Musical";
-import Couples from "./pages/Couples";
+import Kids from "./pages/internal/Kids"
+import Musical from "./pages/internal/Musical"
+import Couples from "./pages/internal/Couples"
+import Login from "./pages/admin/Login"
+import NewsLetterPanel from "./pages/admin/NewsLetterPanel"
 
 const AppRoutes = () => {
   return (

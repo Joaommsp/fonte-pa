@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { gsap } from "gsap";
 
-import LogoImage from "../../assets/images/oficial/logo.png";
+import LogoImage from "../../assets/images/imagens-oficiais/logo.png";
 
-import ButtonLink from "../ButtonLink";
+import ButtonWithLink from "../ButtonWithLink";
 
 import MenuIcon from "../../assets/images/svg/icons/menu-icon.svg";
 import CloseMenuIcon from "../../assets/images/svg/icons/close-icon.svg";
@@ -288,7 +288,7 @@ const Header = (props) => {
         {controlHeaderIndex()}
       </HeaderLinksContainer>{" "}
       <CalltoActionContainer>
-        <ButtonLink
+        <ButtonWithLink
           bgColor="#E5E5E5"
           textColor="#0F0F0F"
           textContent="Como chegar?"

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import Card from "../../Components/Card";
+import InfoCard from "../../Components/InfoCard";
 
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 
@@ -90,17 +90,17 @@ function School() {
         </FamilyContainer>
 
         <ContactsContent>
-          <Card
+          <InfoCard
             title="Ensino Infantil"
             image={InfantilImage}
             text='Então disse Jesus: "Deixem vir a mim as crianças e não as impeçam pois o Reino dos céus pertence aos que são semelhantes a elas"'
           />
-          <Card
+          <InfoCard
             title="Aprenda da Palavra"
             image={EscolaImage}
             text='"Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça"'
           />
-          <Card
+          <InfoCard
             title="Esteja em comunhão"
             text='"Um novo mandamento dou a vocês: Amem-se uns aos outros. Como eu os amei, vocês devem amar-se uns aos outros."
             João 13:34'

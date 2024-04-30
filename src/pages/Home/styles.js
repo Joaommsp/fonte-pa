@@ -8,7 +8,7 @@ export const HomeContainer = styled.header`
   height: 100%;
 `;
 
-export const BannerContainer = styled.div`
+export const ContentContainer = styled.div`
   width: 100%;
   /* background-color: #FFFFFF; */
   background-color: #ffffff;
@@ -338,7 +338,7 @@ export const SocialMediaLinks = styled.ul`
   }
 `;
 
-export const SocilaMediaLink = styled.li`
+export const SocialMediaLink = styled.li`
   img {
     width: 26px;
   }
