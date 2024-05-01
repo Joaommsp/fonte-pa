@@ -29,7 +29,7 @@ export const HeaderContainer = styled.div`
 
   transition: 0.5s ease-in-out;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     height: 48px;
     align-items: flex-start;
     padding: 0rem 1rem;
@@ -40,7 +40,7 @@ export const HeaderContainer = styled.div`
     z-index: 1000;
   }
 
-  @media only screen and (min-width: 800px) and (max-width: 1200px) {
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding: 0rem 2rem;
   }
 `;
@@ -48,7 +48,7 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.img`
   width: 124px;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     width: 100px;
     margin-top: 1rem;
   }
@@ -67,7 +67,7 @@ export const HeaderLinksContainer = styled.div`
 
   z-index: 1000;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     transition: max-height 0.3s ease-in-out;
   }
 `;
@@ -80,11 +80,15 @@ export const HeaderLinks = styled.ul`
   display: flex;
   align-items: flex-start;
 
+  .divisor {
+    margin-right: 3rem;
+  }
+
   .helpPageLink {
     text-decoration: none;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
     align-items: flex-end;
     display: ${(element) => element.$show};
@@ -123,7 +127,7 @@ export const HeaderControl = styled.img`
   margin-bottom: 0.5rem;
   display: none;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 `;
@@ -152,7 +156,7 @@ export const SubLinks = styled.ul`
     opacity: 90%;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;

@@ -16,7 +16,6 @@ import {
   HeaderLinks,
   HeaderLink,
   HeaderControl,
-  CalltoActionContainer,
   SubLinks,
   SubLink,
 } from "./styles";
@@ -94,17 +93,17 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
-          <HeaderLink></HeaderLink>
+          <HeaderLink>
+            <Link to="/ofertas" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
           <HeaderLink>
             <Link to="/contato" className="headerLink">
               Contato
             </Link>
           </HeaderLink>
-          <HeaderLink>
-            <Link to="/ajuda" className="headerLink">
-              Contribua
-            </Link>
-          </HeaderLink>
+          <div className="divisor"></div>
           <HeaderLink>
             <Link className="helpPageLink" to={"/ajuda"}>
               <ButtonWithLink
@@ -170,17 +169,17 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
-          <HeaderLink></HeaderLink>
+          <HeaderLink>
+            <Link to="/ofertas" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
           <HeaderLink>
             <Link to="/contato" className="headerLink">
               Contato
             </Link>
           </HeaderLink>
-          <HeaderLink>
-            <Link to="/ajuda" className="headerLink">
-              Contribua
-            </Link>
-          </HeaderLink>
+          <div className="divisor"></div>
           <HeaderLink>
             <Link className="helpPageLink" to={"/ajuda"}>
               <ButtonWithLink
@@ -246,17 +245,17 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
-          <HeaderLink></HeaderLink>
           <HeaderLink>
-            <Link to="/contato" className="headerLink index">
-              Contato
-            </Link>
-          </HeaderLink>
-          <HeaderLink>
-            <Link to="/ajuda" className="headerLink">
+            <Link to="/ofertas" className="headerLink index">
               Contribua
             </Link>
           </HeaderLink>
+          <HeaderLink>
+            <Link to="/contato" className="headerLink">
+              Contato
+            </Link>
+          </HeaderLink>
+          <div className="divisor"></div>
           <HeaderLink>
             <Link className="helpPageLink" to={"/ajuda"}>
               <ButtonWithLink
@@ -275,13 +274,13 @@ const Header = (props) => {
       return (
         <HeaderLinks $show={menuOpen}>
           <HeaderLink>
-            <Link to="/" className="headerLink ">
+            <Link to="/" className="headerLink">
               Fonte
             </Link>
           </HeaderLink>
           <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
             <span
-              className="headerLink index"
+              className="headerLink"
               onMouseEnter={() => setExtendMenu(true)}
               onClick={() => setExtendMenu(true)}
             >
@@ -323,8 +322,26 @@ const Header = (props) => {
             )}
           </HeaderLink>
           <HeaderLink>
-            <Link to="/ajuda" className="headerLink">
-              Ajuda
+            <Link to="/ofertas" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/contato" className="headerLink index">
+              Contato
+            </Link>
+          </HeaderLink>
+          <div className="divisor"></div>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="1rem"
+                click={() => null}
+              />
             </Link>
           </HeaderLink>
         </HeaderLinks>

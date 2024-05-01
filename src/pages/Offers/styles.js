@@ -12,12 +12,12 @@ export const ContentContainer = styled.div`
 
   padding-top: 5rem;
 
-  background-image: url(${backgroundPageImage});
-  background-size: 1000px;
+  /* background-image: url(${backgroundPageImage});
+  background-size: 800px;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left bottom;
   background-color: rgba(255, 255, 255, 0.6);
-  background-blend-mode: overlay;
+  background-blend-mode: overlay; */
 
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const AboutContacts = styled.p`
+export const AboutOffers = styled.p`
   text-align: center;
   strong {
     color: #1c7ec2;
@@ -152,7 +152,67 @@ export const AboutContacts = styled.p`
   }
 `;
 
-export const ContactsCardsContainer = styled.div`
+export const VideoContainer = styled.div`
+  width: 100%;
+  height: 600px;
+
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+
+  .offerVideoIframe {
+    border-radius: 5px;
+    width: 80%;
+    height: 100%;
+  }
+
+  @media only screen and (max-width: 560px) {
+    height: 300px;
+    padding: 0.5rem;
+
+    .offerVideoIframe {
+      width: 100%;
+    }
+  }
+`;
+
+export const OfferWayAboutContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const OfferWayTitle = styled.h2`
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  color: #181a20;
+
+  img {
+    width: 24px;
+  }
+`;
+
+export const OfferWayText = styled.p`
+  text-align: center;
+  width: 50%;
+
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
+`;
+
+export const OffersCardsContainer = styled.div`
   width: 100%;
   padding: 2rem;
 
@@ -161,19 +221,43 @@ export const ContactsCardsContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media only screen and (max-width: 500px) {
+    padding: 1rem;
+  }
 `;
 
-export const MapContainer = styled.div`
+export const OffersImportants = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const OfferDocDonwloadContainer = styled.div`
+  margin-top: 2rem;
+  padding: 2rem;
   width: 100%;
 
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  .mapIframe {
-    border-radius: 5px;
+  .offerDocLink {
+    text-decoration: none;
+    margin-top: 2rem;
   }
 
-  @media only screen and (max-width: 480px) {
-    padding: 0.8rem;
+  .offerDocLink div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .offerDocLink div img {
+    width: 26px;
   }
 `;
 

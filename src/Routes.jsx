@@ -10,6 +10,7 @@ import Couples from "./pages/internal/Couples"
 import Login from "./pages/admin/Login"
 import NewsLetterPanel from "./pages/admin/NewsLetterPanel"
 import Contacts from "./pages/Contacts";
+import Offers from "./pages/Offers";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/adminpanel" element={<NewsLetterPanel />} />
         <Route path="/contato" element={<Contacts />} />
+        <Route path="/ofertas" element={<Offers />} />
       </Routes>
     </HashRouter>
   );
