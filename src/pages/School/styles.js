@@ -10,6 +10,8 @@ export const SchoolContainer = styled.div`
   justify-content: center;
   margin-bottom: 2rem;
 
+  padding-top: 5rem;
+
   @media only screen and (max-width: 480px) {
     flex-direction: column;
   }
@@ -298,7 +300,6 @@ export const FamilyContent = styled.div`
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding-right: 3rem;
   }
-  
 `;
 
 export const FamilyTitle = styled.h2`

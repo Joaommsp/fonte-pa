@@ -40,7 +40,7 @@ function School() {
 
   return (
     <>
-      <Header pageIndex={3} />
+      <Header pageIndex={1} />
       <SchoolContainer>
         <SchoolTextContent>
           <SchoolTitle>Escola Bíblica Dominical</SchoolTitle>

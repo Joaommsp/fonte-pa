@@ -6,6 +6,8 @@ export const SchoolContainer = styled.div`
 
   background-color: #ffffff;
 
+  padding-top: 5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;

@@ -5,6 +5,8 @@ export const HelpContainer = styled.div`
   height: 100%;
   background-color: #ffffff;
 
+  padding-top: 5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;

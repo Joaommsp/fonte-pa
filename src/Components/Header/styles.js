@@ -20,7 +20,12 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 0.3s ease-in-out;
+
+  position: fixed;
+  background-color: #ffffff;
   z-index: 1000;
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.41);
 
   transition: 0.5s ease-in-out;
 
@@ -31,12 +36,12 @@ export const HeaderContainer = styled.div`
 
     height: fit-content;
 
-    position: fixed;
     top: 0;
     z-index: 1000;
+  }
 
-    background-color: #ffffff;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.41);
+  @media only screen and (min-width: 800px) and (max-width: 1200px) {
+    padding: 0rem 2rem;
   }
 `;
 
@@ -74,6 +79,10 @@ export const HeaderLinks = styled.ul`
 
   display: flex;
   align-items: flex-start;
+
+  .helpPageLink {
+    text-decoration: none;
+  }
 
   @media only screen and (max-width: 800px) {
     flex-direction: column;
@@ -154,6 +163,8 @@ export const SubLink = styled.li``;
 
 export const CalltoActionContainer = styled.div`
   @media only screen and (max-width: 1000px) {
-    display: none;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 4rem;
   }
 `;

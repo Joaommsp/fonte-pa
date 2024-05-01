@@ -10,6 +10,9 @@ import LoyaltyIcon from "./loyalty-icon.svg";
 import IntegrityIcon from "./integrity-icon.svg";
 import DivertisyIcon from "./diversity-icon.svg";
 import PersonalityIcon from "./psychology-icon.svg";
+import MenuIcon from "./menu-icon.svg";
+import CloseIcon from "./close-icon.svg";
+import ArrowDown from "./arrow-down-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -24,6 +27,9 @@ const Icons = {
   IntegrityIcon: IntegrityIcon,
   DivertisyIcon: DivertisyIcon,
   PersonalityIcon: PersonalityIcon,
+  MenuIcon: MenuIcon,
+  CloseIcon: CloseIcon,
+  ArrowDown: ArrowDown,
 };
 
 export default Icons;

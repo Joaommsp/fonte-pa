@@ -7,9 +7,7 @@ import LogoImage from "../../assets/images/imagens-oficiais/logo.png";
 
 import ButtonWithLink from "../ButtonWithLink";
 
-import MenuIcon from "../../assets/images/svg/icons/menu-icon.svg";
-import CloseMenuIcon from "../../assets/images/svg/icons/close-icon.svg";
-import ArrowDownIcon from "../../assets/images/svg/icons/arrow-down-icon.svg";
+import Icons from "../../assets/images/svg/icons/iconsExport";
 
 import {
   HeaderContainer,
@@ -26,7 +24,7 @@ import {
 const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
   const [menuOpen, setMenuOpen] = useState("none");
-  const [menuIcon, setMenuIcon] = useState(MenuIcon);
+  const [menuIcon, setMenuIcon] = useState(Icons.MenuIcon);
   const [extendMenu, setExtendMenu] = useState(false);
 
   useEffect(() => {
@@ -39,7 +37,9 @@ const Header = (props) => {
 
   const controlHeader = () => {
     menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none");
-    menuIcon == MenuIcon ? setMenuIcon(CloseMenuIcon) : setMenuIcon(MenuIcon);
+    menuIcon == Icons.MenuIcon
+      ? setMenuIcon(Icons.CloseIcon)
+      : setMenuIcon(Icons.MenuIcon);
   };
 
   const controlHeaderIndex = () => {
@@ -58,7 +58,7 @@ const Header = (props) => {
               onClick={() => setExtendMenu(true)}
             >
               Ministérios
-              <img src={ArrowDownIcon} alt="" />
+              <img src={Icons.ArrowDown} alt="" />
             </span>
             {extendMenu && (
               <SubLinks>
@@ -94,9 +94,27 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
+          <HeaderLink></HeaderLink>
+          <HeaderLink>
+            <Link to="/contato" className="headerLink">
+              Contato
+            </Link>
+          </HeaderLink>
           <HeaderLink>
             <Link to="/ajuda" className="headerLink">
-              Ajuda
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="1rem"
+                click={() => null}
+              />
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -105,18 +123,18 @@ const Header = (props) => {
       return (
         <HeaderLinks $show={menuOpen}>
           <HeaderLink>
-            <Link to="/" className="headerLink ">
+            <Link to="/" className="headerLink">
               Fonte
             </Link>
           </HeaderLink>
           <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
             <span
-              className="headerLink"
+              className="headerLink index"
               onMouseEnter={() => setExtendMenu(true)}
               onClick={() => setExtendMenu(true)}
             >
               Ministérios
-              <img src={ArrowDownIcon} alt="" />
+              <img src={Icons.ArrowDown} alt="" />
             </span>
             {extendMenu && (
               <SubLinks>
@@ -152,9 +170,27 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
+          <HeaderLink></HeaderLink>
           <HeaderLink>
-            <Link to="/ajuda" className="headerLink index">
-              Ajuda
+            <Link to="/contato" className="headerLink">
+              Contato
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ajuda" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="1rem"
+                click={() => null}
+              />
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -163,7 +199,7 @@ const Header = (props) => {
       return (
         <HeaderLinks $show={menuOpen}>
           <HeaderLink>
-            <Link to="/" className="headerLink ">
+            <Link to="/" className="headerLink">
               Fonte
             </Link>
           </HeaderLink>
@@ -174,7 +210,7 @@ const Header = (props) => {
               onClick={() => setExtendMenu(true)}
             >
               Ministérios
-              <img src={ArrowDownIcon} alt="" />
+              <img src={Icons.ArrowDown} alt="" />
             </span>
             {extendMenu && (
               <SubLinks>
@@ -197,7 +233,7 @@ const Header = (props) => {
                 </SubLink>
                 <SubLink>
                   {" "}
-                   <Link to="/louvor" className="headerSubLink">
+                  <Link to="/louvor" className="headerSubLink">
                     Louvor
                   </Link>
                 </SubLink>
@@ -210,9 +246,27 @@ const Header = (props) => {
               </SubLinks>
             )}
           </HeaderLink>
+          <HeaderLink></HeaderLink>
           <HeaderLink>
-            <Link to="/ajuda" className="headerLink index">
-              Ajuda
+            <Link to="/contato" className="headerLink index">
+              Contato
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ajuda" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="1rem"
+                click={() => null}
+              />
             </Link>
           </HeaderLink>
         </HeaderLinks>
@@ -232,7 +286,7 @@ const Header = (props) => {
               onClick={() => setExtendMenu(true)}
             >
               Ministérios
-              <img src={ArrowDownIcon} alt="" />
+              <img src={Icons.ArrowDown} alt="" />
             </span>
             {extendMenu && (
               <SubLinks>
@@ -286,18 +340,7 @@ const Header = (props) => {
       <HeaderLinksContainer className="headerLinks__Container">
         <HeaderControl src={menuIcon} onClick={() => controlHeader()} />
         {controlHeaderIndex()}
-      </HeaderLinksContainer>{" "}
-      <CalltoActionContainer>
-        <ButtonWithLink
-          bgColor="#E5E5E5"
-          textColor="#0F0F0F"
-          textContent="Como chegar?"
-          href="https://www.google.com/maps/place/Igreja+Batista+Fonte/@-9.400342,-38.2472392,17z/data=!3m1!4b1!4m6!3m5!1s0x7093097213da37b:0xf2d4508b9d89bd1!8m2!3d-9.400342!4d-38.2446643!16s%2Fg%2F11ggt1n4tw?entry=tts"
-          target="_blank"
-          textSize=".9rem"
-          click={() => null}
-        />
-      </CalltoActionContainer>
+      </HeaderLinksContainer>
     </HeaderContainer>
   );
 };

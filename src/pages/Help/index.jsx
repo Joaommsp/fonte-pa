@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import { ContactCard } from "../../Components/ContactCard";
+import { HelpChannelsCard } from "../../Components/HelpChannelsCard";
 
 import WhatsAppIcon from "../../assets/images/svg/icons/whatsapp-icon.svg";
 import WhatsAppIconBlue from "../../assets/images/svg/icons/whatsapp-icon-blue.svg";
@@ -74,21 +74,21 @@ function Help() {
         </Verse>
         <ContactsContent>
           <Contacts>
-            <ContactCard
+            <HelpChannelsCard
               title="WhatsApp"
               content="Vamos conversar! Mande uma mensagem para gente."
               icon={WhatsAppIconBlue}
               link="#"
               linkText="Converse conosco"
             />
-            <ContactCard
+            <HelpChannelsCard
               title="Aconselhamento Bíblico"
               content="Nossa equipe de conselheiros bíblicos entrará em contato com você."
               icon={BibleIcon}
               link="#"
               linkText="Entre em contato"
             />
-            <ContactCard
+            <HelpChannelsCard
               title="Visite-nos"
               content="Venha nos visitar ! adoraríamos tê-lo(a) conosco."
               icon={ChurchIcon}

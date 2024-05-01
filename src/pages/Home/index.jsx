@@ -118,7 +118,7 @@ const Home = () => {
                   <span>#pessoalidade</span> */}
             </Hashtag>
             <Hashtag>
-              <img src={Icons.DivertisyIcon} alt="" />
+              <img src={Icons.PersonalityIcon} alt="" />
               <span>#pessoalidade</span>
               {/* <span>#integridade</span>
                   <span>#pluralidade</span>
@@ -172,7 +172,7 @@ const Home = () => {
               <InfoCard
                 title="Discipulado"
                 text="Faça parte de um grupo | Irmãos que juntos buscam conhecer o Senhor e caminham para o mesmo propósito."
-                image={HomePageImages.AdviceImage}
+                image={HomePageImages.DiscipuladoImage}
               ></InfoCard>
             </Cards>
           </CardsContainer>

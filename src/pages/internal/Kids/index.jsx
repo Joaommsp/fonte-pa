@@ -40,7 +40,7 @@ function Kids() {
 
   return (
     <>
-      <Header pageIndex={3} />
+      <Header pageIndex={1} />
       <SchoolContainer>
         <SchoolTextContent>
           <SchoolTitle>Ministério Infantil</SchoolTitle>

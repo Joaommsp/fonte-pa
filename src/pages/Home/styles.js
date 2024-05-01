@@ -10,6 +10,8 @@ export const HomeContainer = styled.header`
 
 export const ContentContainer = styled.div`
   width: 100%;
+
+  padding-top: 2rem;
   /* background-color: #FFFFFF; */
   background-color: #ffffff;
 
@@ -122,7 +124,7 @@ export const BannerVisualsContent = styled.div`
 
 export const LogoContainer = styled.div`
   width: 100%;
-  height: 450px;
+  height: 550px;
   padding: 2rem 0;
   background-image: url(${LogoBackground});
   background-size: cover;
