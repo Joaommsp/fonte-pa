@@ -8,7 +8,7 @@ export const ContacCardElementLink = styled.a`
   align-items: center;
   justify-content: center;
 
-  background-color: #1c7ec2;
+  background-color: transparent;
 
   width: 146px;
   height: 146px;
@@ -21,6 +21,6 @@ export const LinkIcon = styled.img`
 `;
 
 export const LinkName = styled.span`
-  font-size: 1rem;
-  color: #ffffff;
+  font-size: 1.3rem;
+  color: #181a20;
 `;

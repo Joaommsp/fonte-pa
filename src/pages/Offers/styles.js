@@ -71,6 +71,7 @@ export const BannerTextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
@@ -79,6 +80,7 @@ export const BannerTextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -101,7 +103,6 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
@@ -110,7 +111,6 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
   }
 `;
 
@@ -157,13 +157,14 @@ export const VideoContainer = styled.div`
   height: 600px;
 
   padding: 2rem;
+  margin-bottom: 2rem;
 
   display: flex;
   justify-content: center;
 
   .offerVideoIframe {
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
     height: 100%;
   }
 
@@ -184,6 +185,8 @@ export const OfferWayAboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 0 1rem;
 `;
 
 export const OfferWayTitle = styled.h2`
@@ -196,6 +199,10 @@ export const OfferWayTitle = styled.h2`
 
   img {
     width: 24px;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -215,6 +222,7 @@ export const OfferWayText = styled.p`
 export const OffersCardsContainer = styled.div`
   width: 100%;
   padding: 2rem;
+  margin-bottom: 2em;
 
   display: flex;
   align-items: center;
@@ -232,6 +240,8 @@ export const OffersImportants = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 1rem;
 `;
 
 export const OfferDocDonwloadContainer = styled.div`
@@ -246,7 +256,12 @@ export const OfferDocDonwloadContainer = styled.div`
 
   .offerDocLink {
     text-decoration: none;
+    color: #ffffff;
     margin-top: 2rem;
+    text-align: center;
+    background-color: #b6bbc4;
+    padding: 1rem;
+    border-radius: 5px;
   }
 
   .offerDocLink div {

@@ -78,7 +78,7 @@ function Help() {
               title="WhatsApp"
               content="Vamos conversar! Mande uma mensagem para gente."
               icon={WhatsAppIconBlue}
-              link="#"
+              link="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
               linkText="Converse conosco"
             />
             <HelpChannelsCard
@@ -92,11 +92,11 @@ function Help() {
               title="Visite-nos"
               content="Venha nos visitar ! adoraríamos tê-lo(a) conosco."
               icon={ChurchIcon}
-              link="#"
+              link="https://www.google.com/maps/place/Igreja+Batista+Fonte/@-9.400342,-38.2446643,17z/data=!4m7!3m6!1s0x7093097213da37b:0xf2d4508b9d89bd1!8m2!3d-9.400342!4d-38.2446643!10e5!16s%2Fg%2F11ggt1n4tw?entry=ttu"
               linkText="Onde nos encontrar"
             />
           </Contacts>
-          <ContactsTitle>Converse conosco</ContactsTitle>
+          <ContactsTitle>Converse conosco !</ContactsTitle>
         </ContactsContent>
         <GrowTogetherContainer>
           <GrowImageContainer>

@@ -38,13 +38,11 @@ const Offers = () => {
         <Banner className="banner">
           <BannerTextContent>
             <TextContent>
-              <Title>Ofertas</Title>
+              <Title>Contribuições e Ofertas</Title>
               <AboutOffers>
-                Tem interesse em contribuir financeiramente com a Fonte?
-              </AboutOffers>
-              <AboutOffers>
-                Assista o video abaixo para saber como realizar sua oferta à
-                Igreja Batista Fonte.
+                Contribua financeiramente com a Fonte. Assista o video abaixo
+                para saber como realizar sua oferta a Igreja Batista Fonte -
+                Paulo Afonso.
               </AboutOffers>
             </TextContent>
           </BannerTextContent>
@@ -66,7 +64,7 @@ const Offers = () => {
           <OfferWayAboutContainer>
             <OfferWayTitle>Realize sua contribuição</OfferWayTitle>
             <OfferWayText>
-              Seguem as formas disponíveis para sua oferta, você também pode
+              Seguem as formas disponíveis para sua oferta. Você também pode
               ofertar diretamente na Igreja.
             </OfferWayText>
           </OfferWayAboutContainer>

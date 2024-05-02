@@ -10,10 +10,10 @@ export const HomeContainer = styled.header`
 export const ContentContainer = styled.div`
   width: 100%;
 
-  padding-top: 5rem;
+  padding-top: 11rem;
 
   background-image: url(${backgroundPageImage});
-  background-size: 1000px;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(255, 255, 255, 0.6);
@@ -32,7 +32,13 @@ export const ContentContainer = styled.div`
 
   @media only screen and (max-width: 480px) {
     background-position: center;
-    background-size: 440px;
+    background-size: 650px;
+    padding-top: 5rem;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 900px) {
+    background-position: center;
+    padding-top: 3rem;
   }
 `;
 
@@ -71,6 +77,7 @@ export const BannerTextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
@@ -79,6 +86,7 @@ export const BannerTextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -160,7 +168,7 @@ export const ContactsCardsContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 56px;
 `;
 
 export const MapContainer = styled.div`
@@ -174,6 +182,7 @@ export const MapContainer = styled.div`
 
   @media only screen and (max-width: 480px) {
     padding: 0.8rem;
+    margin-bottom: 1rem;
   }
 `;
 

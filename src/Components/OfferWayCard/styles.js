@@ -8,12 +8,12 @@ export const OfferWayCardElement = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   border-radius: 5px;
 
   @media only screen and (max-width: 500px) {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -22,10 +22,10 @@ export const WayIIconContainer = styled.div`
 `;
 
 export const WayIIcon = styled.img`
-  width: 56px;
+  width: 46px;
 
   @media only screen and (max-width: 500px) {
-    width: 36px;
+    width: 26px;
   }
 `;
 
@@ -53,4 +53,3 @@ export const WayInfo = styled.span`
     font-size: 0.8rem;
   }
 `;
-

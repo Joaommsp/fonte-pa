@@ -10,9 +10,7 @@ function ButtonLink(props) {
       $textSize={props.textSize}
       onClick={props.click}
     >
-      <a href={props.href} target={props.target}>
-        {props.textContent}
-      </a>
+      {props.textContent}
     </ButtonLinkElement>
   );
 }
@@ -22,7 +20,6 @@ ButtonLink.propTypes = {
   textColor: PropTypes.string.isRequired,
   textContent: PropTypes.string.isRequired,
   textSize: PropTypes.string.isRequired,
-  href: PropTypes.string,
   target: PropTypes.string,
   click: PropTypes.func.isRequired,
 };

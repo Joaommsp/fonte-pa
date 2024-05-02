@@ -16,7 +16,9 @@ export const HelpChannelsCard = (props) => {
       </CardHeader>
       <CardTitle>{props.title}</CardTitle>
       <CardContent>{props.content}</CardContent>
-      <CardLink href={props.link}>{props.linkText}</CardLink>
+      <CardLink href={props.link} target="_blank">
+        {props.linkText}
+      </CardLink>
     </ContactCardElement>
   );
 };

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const ButtonLinkElement = styled.button ` 
+export const ButtonLinkElement = styled.button`
   background-color: ${(element) => element.$bgColor};
 
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 
   border: 0;
   border-radius: 50px;
@@ -12,18 +12,11 @@ export const ButtonLinkElement = styled.button `
   align-items: center;
   justify-content: center;
 
-  a {
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-    color: ${(element) => element.$textColor};
-    font-weight: 500;
-    font-size: ${(element) => element.$textSize};
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+
+  &:hover {
+    cursor: pointer;
   }
-
-  @media only screen and (max-width: 480px) {
-    a {
-      font-size: .9rem;
-    }
-  }  
-
-`
+`;

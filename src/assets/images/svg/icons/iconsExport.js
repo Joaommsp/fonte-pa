@@ -1,4 +1,5 @@
 import WhatsAppIcon from "./whatsapp-icon.svg";
+import WhatsAppIconBlue from "./whatsapp-icon-blue.svg";
 import InstagramIcon from "./instagram-icon.svg";
 import FacebookIcon from "./facebook-icon.svg";
 import YoutubeIcon from "./youtube-icon.svg";
@@ -40,6 +41,7 @@ const Icons = {
   BankIcon: BankIcon,
   AlertIconRed: AlertIconRed,
   DownloadIcon: DownloadIcon,
+  WhatsAppIconBlue: WhatsAppIconBlue,
 };
 
 export default Icons;
