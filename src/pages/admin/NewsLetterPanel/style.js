@@ -175,9 +175,12 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .cardTitle {
+    width: 500px;
     font-weight: 500;
     color: #181a20;
     font-size: 1.2rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .cardSubtitle {
@@ -185,6 +188,9 @@ export const NewsLetterPanelContainer = styled.div`
     color: #181a20;
     font-size: 0.8rem;
     margin-bottom: 1rem;
+    width: 500px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .cardImage {

@@ -668,7 +668,7 @@ export const PostsSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 2rem 5rem;
+  padding: 1rem 5rem;
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     padding: 2rem;

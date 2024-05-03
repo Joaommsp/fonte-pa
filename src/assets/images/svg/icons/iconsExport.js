@@ -13,12 +13,14 @@ import PersonalityIcon from "./diversity-icon.svg";
 import DivertisyIcon from "./psychology-icon.svg";
 import MenuIcon from "./menu-icon.svg";
 import CloseIcon from "./close-icon.svg";
+import CloseIconLight from "./close-icon-light.svg";
 import ArrowDown from "./arrow-down-icon.svg";
 import EmailIcon from "./email-icon.svg";
 import PixIcon from "./pix-icon.svg";
 import BankIcon from "./bank-icon.svg";
 import AlertIconRed from "./alert-icon-red.svg";
 import DownloadIcon from "./download-icon.svg";
+import WhatsAppIconGreen from "./whatsapp-icon-green.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -42,6 +44,8 @@ const Icons = {
   AlertIconRed: AlertIconRed,
   DownloadIcon: DownloadIcon,
   WhatsAppIconBlue: WhatsAppIconBlue,
+  CloseIconLight: CloseIconLight,
+  WhatsAppIconGreen: WhatsAppIconGreen,
 };
 
 export default Icons;

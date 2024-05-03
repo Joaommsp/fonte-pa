@@ -25,6 +25,8 @@ export const CardsContainer = styled.div`
 
   position: relative;
 
+  padding: 1rem 1rem;
+
   .card {
     width: 650px;
     height: 554px;
@@ -36,16 +38,20 @@ export const CardsContainer = styled.div`
     align-items: flex-start;
 
     position: relative;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.3);
   }
 
   .cardHeader {
     width: 100%;
+    height: 72px;
     border-bottom: 2px solid #1c7ec2;
     margin-bottom: 1rem;
   }
 
   .cardTitle {
-    width: 100%;
+    width: 80%;
     font-size: 1.4rem;
     color: #181a20;
   }
@@ -199,7 +205,7 @@ export const CardsContainer = styled.div`
 
 export const PopUpContainer = styled.div`
   width: 90vw;
-  height: 550px;
+  height: 650px;
 
   display: flex;
   flex-direction: column;
@@ -214,8 +220,6 @@ export const PopUpContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
 
-  padding: 1rem;
-
   border-radius: 5px;
 
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
@@ -225,33 +229,54 @@ export const PopUpContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem 1rem 2rem 1rem;
 
-    border-top: 5px solid #1c7ec2;
-    padding: 1rem;
-
-    margin-bottom: 1rem;
-
-    background-color: #f6f5f2;
+    background-color: #181a20;
+    margin-bottom: 2rem;
   }
 
   .popUpCardTitle {
-    color: #181a20;
-    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.5rem;
   }
 
   .popUpCardSubtitle {
-    color: #181a2090;
+    color: #b5c0d0;
     font-size: 1rem;
   }
 
   .popUpCardImage {
-    width: 810px;
-    height: 456px;
+    width: 664px;
+    height: 376px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 1rem;
-
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.23);
+    margin-bottom: 1rem;
+  }
+
+  .PopUpCardAuthor {
+    font-weight: 500;
+  }
+
+  .PopUpCardData {
+    color: #181a20;
+  }
+
+  .popUpCardInfos__shareLinks a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    background-color: #1c7ec2;
+
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+  }
+
+  .popUpCardInfos__shareLinks a img {
+    margin-left: 0.5rem;
+    width: 26px;
   }
 
   .popUpCardBotton {
@@ -260,7 +285,24 @@ export const PopUpContainer = styled.div`
     flex-direction: column;
     align-items: center;
 
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 0rem 2rem 1rem 2rem;
+  }
+
+  .popUpCardInfos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .popUpCardInfos__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popUpLogo {
+    width: 156px;
   }
 
   .popUpCardText {
@@ -287,5 +329,54 @@ export const PopUpContainer = styled.div`
 
   .closePopUpBtn img {
     width: 26px;
+  }
+
+  @media only screen and (max-width: 560px) {
+    .popUpCardHeader {
+    }
+
+    .popUpCardTitle {
+      text-align: center;
+      font-size: 1rem;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .popUpCardSubtitle {
+      color: #b5c0d0;
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+
+    .popUpCardImage {
+      width: 280px;
+      height: 158px;
+    }
+
+    .popUpCardBotton {
+      width: 100%;
+    }
+
+    .PopUpCardAuthor,
+    .PopUpCardData {
+      font-size: 0.8rem;
+    }
+
+    .popUpCardInfos__shareLinks a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      background-color: #1c7ec2;
+      font-size: 0.8rem;
+
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
+
+    .popUpCardInfos__shareLinks a img {
+      margin-left: 0.5rem;
+      width: 16px;
+    }
   }
 `;
