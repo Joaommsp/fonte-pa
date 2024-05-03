@@ -257,7 +257,7 @@ export const PopUpContainer = styled.div`
   .popUpCardText {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
 

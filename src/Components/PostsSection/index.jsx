@@ -49,6 +49,7 @@ const PostsSection = () => {
                   <div className="popUpCardBotton">
                     <p className="popUpCardText">{post.text}</p>
                     <span className="PopUpCardData">{post.data}</span>
+                    <span className="PopUpCardData">{post.author}</span>
                   </div>
                 </PopUpContainer>
               )}
