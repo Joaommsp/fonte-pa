@@ -84,6 +84,10 @@ export const CardsContainer = styled.div`
     border-radius: 5px;
     padding: 0.3rem 1rem;
 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
     color: #1c7ec2;
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
@@ -176,13 +180,18 @@ export const CardsContainer = styled.div`
     .cardText {
       display: block;
       width: 324px;
+      height: 90px;
       font-size: 0.9rem;
-      height: 100px;
       text-overflow: ellipsis;
+      margin-bottom: 2rem;
     }
 
     .cardData {
       top: 0;
+      font-size: 0.8rem;
+    }
+
+    .readAllBtn {
       font-size: 0.8rem;
     }
   }
