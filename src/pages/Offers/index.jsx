@@ -52,7 +52,7 @@ const Offers = () => {
               className="offerVideoIframe"
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/admnwfMrgWs?si=re_85OZu14HGTmsU"
+              src="https://www.youtube.com/embed/NEg_WPH4he0?si=Z1Xx4BUEHpSWvpRD"
               title="YouTube video player"
               frameBorder="0" // Use frameBorder instead of frameborder for React
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

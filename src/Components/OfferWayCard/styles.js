@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const OfferWayCardElement = styled.div`
-  width: 500px;
+  width: 450px;
 
-  background-color: #1c7ec2;
+  background-color: transparent;
 
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,7 @@ export const OfferWayCardElement = styled.div`
   padding: 1rem 2rem;
 
   border-radius: 5px;
+  border: 1px solid #00000030;
 
   @media only screen and (max-width: 500px) {
     padding: 0.5rem 1rem;
@@ -18,7 +19,7 @@ export const OfferWayCardElement = styled.div`
 `;
 
 export const WayIIconContainer = styled.div`
-  width: 30%;
+  width: 20%;
 `;
 
 export const WayIIcon = styled.img`
@@ -38,7 +39,7 @@ export const WayTextContent = styled.div`
 
 export const WayName = styled.span`
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #1c7ec2;
 
   @media only screen and (max-width: 500px) {
     font-size: 1rem;
@@ -46,7 +47,7 @@ export const WayName = styled.span`
 `;
 
 export const WayInfo = styled.span`
-  color: #ffffff;
+  color: #181a20;
   text-align: center;
 
   @media only screen and (max-width: 500px) {

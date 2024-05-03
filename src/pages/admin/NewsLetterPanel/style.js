@@ -148,6 +148,8 @@ export const NewsLetterPanelContainer = styled.div`
     justify-content: flex-start;
     padding: 2rem;
 
+    flex-grow: 1;
+
     overflow-y: scroll;
   }
 
@@ -158,7 +160,7 @@ export const NewsLetterPanelContainer = styled.div`
 
   .card {
     min-width: 523px;
-    height: 450px;
+    min-height: fit-content;
     margin-top: 1rem;
     margin-bottom: 2rem;
 
@@ -186,8 +188,8 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .cardImage {
-    width: 321px;
-    height: 180px;
+    width: 374px;
+    height: 211px;
     overflow: hidden;
     object-fit: cover;
 
@@ -201,7 +203,7 @@ export const NewsLetterPanelContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    height: 100px;
+    height: fit-content;
   }
 
   .cardText {
@@ -300,7 +302,6 @@ export const NewsLetterPanelContainer = styled.div`
 
     .card {
       min-width: 300px;
-      height: 450px;
       margin-top: 1rem;
       margin-bottom: 2rem;
 
@@ -368,7 +369,6 @@ export const NewsLetterPanelContainer = styled.div`
     .card {
       min-width: 300px;
       max-width: 300px;
-      min-height: 400px;
       margin-top: 1rem;
       margin-bottom: 2rem;
 

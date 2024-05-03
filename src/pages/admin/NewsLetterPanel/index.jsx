@@ -32,6 +32,8 @@ const NewsLetterPanel = () => {
   const [newSubTitle, setNewSubTitle] = useState("");
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
+  const [newAuthor, setNewAuthor] = useState("");
+
   const [envStatus, setEnvStatus] = useState(0);
 
   const [newImageUrl, setNewImageUrl] = useState("");
@@ -80,7 +82,8 @@ const NewsLetterPanel = () => {
       newSubTitle == "" ||
       newText == "" ||
       newData == "" ||
-      newImageUrl == ""
+      newImageUrl == "" ||
+      newAuthor == ""
     ) {
       setEnvStatus(1);
     } else {
@@ -90,6 +93,7 @@ const NewsLetterPanel = () => {
         text: newText,
         data: newData,
         image: newImageUrl,
+        author: newAuthor,
       });
 
       window.location.reload();
@@ -200,7 +204,6 @@ const NewsLetterPanel = () => {
           <input
             type="text"
             placeholder="Description"
-            maxLength="120"
             id="content"
             name="content"
             onChange={(event) => setNewText(event.target.value)}
@@ -212,6 +215,15 @@ const NewsLetterPanel = () => {
             id="data"
             value={newData}
             onChange={(event) => setNewData(event.target.value)}
+          />
+          <label htmlFor="author">Autor</label>
+          <input
+            type="text"
+            placeholder="Author"
+            maxLength="50"
+            id="author"
+            name="author"
+            onChange={(event) => setNewAuthor(event.target.value)}
           />
           <form onSubmit={uploadImage}>
             <input
@@ -250,6 +262,7 @@ const NewsLetterPanel = () => {
                 <div className="cardBotton">
                   <p className="cardText">{post.text}</p>
                   <span className="cardData">{post.data}</span>
+                  <span className="cardAuthor">{post.author}</span>
                 </div>
               </div>
             );
