@@ -236,7 +236,11 @@ export const OfferWayText = styled.p`
   text-align: center;
 
   strong {
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   @media only screen and (max-width: 900px) {

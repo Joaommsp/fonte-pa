@@ -73,25 +73,24 @@ export const BannerTextContent = styled.div`
 
   @media only screen and (max-width: 480px) {
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    margin-bottom: 0;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    margin-bottom: 0;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     width: 80%;
-    height: 600px;
   }
 `;
 
@@ -111,12 +110,14 @@ export const TextContent = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 480px) {
-    width: 80%;
+    width: 100%;
     height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+
+    padding: 0 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
@@ -125,7 +126,7 @@ export const TextContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 `;
 
@@ -144,7 +145,7 @@ export const Title = styled.h2`
 
   @media only screen and (max-width: 480px) {
     width: 90%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 
@@ -165,6 +166,10 @@ export const AboutContacts = styled.p`
     color: #1c7ec2;
     font-weight: 500;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ContactsCardsContainer = styled.div`
@@ -176,6 +181,10 @@ export const ContactsCardsContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 56px;
+
+  @media only screen and (max-width: 480px) {
+    gap: 26px;
+  }
 `;
 
 export const MapContainer = styled.div`

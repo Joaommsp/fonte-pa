@@ -92,7 +92,7 @@ const Offers = () => {
             </OfferWayTitle>
             <OfferWayText>
               Ao realizar a sua contribuição, envie o comprovante para
-              <strong> ofertasfontepa@gmail.com</strong>, dessa forma podemos
+              <strong><a href="mailto:ofertasfontepa@gmail.com"> ofertasfontepa@gmail.com</a></strong>, dessa forma podemos
               organizar melhor nossas finanças e garantir que as ofertas sejam
               em prol da Igreja Batista Fonte de Paulo Afonso, em apoio da nossa
               missão.
