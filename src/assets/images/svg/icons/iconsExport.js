@@ -21,6 +21,8 @@ import BankIcon from "./bank-icon.svg";
 import AlertIconRed from "./alert-icon-red.svg";
 import DownloadIcon from "./download-icon.svg";
 import WhatsAppIconGreen from "./whatsapp-icon-green.svg";
+import ArrowRightSlim from "./arrow-right-slim.svg";
+import ArrowRightSlimLight from "./arrow-right-slim-light.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -46,6 +48,8 @@ const Icons = {
   WhatsAppIconBlue: WhatsAppIconBlue,
   CloseIconLight: CloseIconLight,
   WhatsAppIconGreen: WhatsAppIconGreen,
+  ArrowRightSlim: ArrowRightSlim,
+  ArrowRightSlimLight: ArrowRightSlimLight,
 };
 
 export default Icons;

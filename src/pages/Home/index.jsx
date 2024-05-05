@@ -41,6 +41,7 @@ import {
   ComunityTitle,
   ComunityDescription,
   PostsSectionContainer,
+  DivisorLine,
   PostsSectionTitle,
 } from "./styles";
 
@@ -178,6 +179,7 @@ const Home = () => {
           </CardsContainer>
 
           <PostsSectionContainer>
+            <DivisorLine></DivisorLine>
             <PostsSectionTitle>Últimas Publicações</PostsSectionTitle>
             <PostsSection></PostsSection>
           </PostsSectionContainer>

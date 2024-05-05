@@ -57,7 +57,7 @@ export const BannerTextContent = styled.div`
 
   padding: 2rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -69,7 +69,7 @@ export const BannerTextContent = styled.div`
     background-blend-mode: overlay;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -95,7 +95,7 @@ export const TextContent = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 80%;
     height: 100%;
     flex-direction: column;
@@ -104,7 +104,7 @@ export const TextContent = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 80%;
     height: 100%;
     flex-direction: column;
@@ -139,12 +139,12 @@ export const LogoContainer = styled.div`
 
   position: relative;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     height: 92vh;
     background-position: right;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     height: 92vh;
     background-position: right;
   }
@@ -159,11 +159,11 @@ export const Logo = styled.img`
   width: 664px;
   filter: drop-shadow(13px 5px 3px #00000060);
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 300px;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 500px;
   }
 `;
@@ -186,14 +186,14 @@ export const HashTags = styled.div`
     background-color: transparent;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     flex-direction: column;
     gap: 26px;
     justify-content: center;
     align-items: center;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding: 0 2rem;
     flex-wrap: wrap;
   }
@@ -243,13 +243,13 @@ export const SubTitle = styled.h2`
     font-weight: 500;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 90%;
     font-size: 1.5rem;
     text-align: center;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 80%;
     font-size: 2rem;
     text-align: center;
@@ -287,12 +287,12 @@ export const WhatsAppLInk = styled.a`
     margin-right: 0.5rem;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     right: 1rem;
     bottom: 1rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     right: 2rem;
     bottom: 2rem;
   }
@@ -308,12 +308,12 @@ export const SocialMedia = styled.div`
   bottom: 3rem;
   left: 3rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     bottom: 1rem;
     left: 1rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     bottom: 2rem;
     left: 2rem;
   }
@@ -331,11 +331,11 @@ export const SocialMediaLinks = styled.ul`
   justify-content: center;
   gap: 24px;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     gap: 16px;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     gap: 20px;
   }
 `;
@@ -345,7 +345,7 @@ export const SocialMediaLink = styled.li`
     width: 26px;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     img {
       width: 22px;
     }
@@ -396,14 +396,14 @@ export const CardsContainer = styled.div`
     width: 26px;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     .arrowRight {
       top: 2.5rem;
       right: 2rem;
     }
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     .arrowRight {
       top: 2.5rem;
       right: 2rem;
@@ -434,12 +434,12 @@ export const CardsSubTitle = styled.h2`
     font-weight: 500;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     padding-left: 2rem;
     font-size: 1.5rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding-left: 2rem;
     font-size: 2rem;
   }
@@ -461,12 +461,12 @@ export const Cards = styled.div`
 
   overflow-x: scroll;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     padding: 2rem 0rem;
     gap: 0px;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding: 2rem 0rem;
     gap: 0px;
   }
@@ -495,12 +495,12 @@ export const MediaContainer = styled.div`
     text-decoration: none;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     flex-direction: column;
     padding: 4rem 1rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     flex-direction: column;
     padding: 4rem 1rem;
   }
@@ -511,11 +511,11 @@ export const MockUpContainer = styled.div``;
 export const MockUpImage = styled.img`
   width: 500px;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 320px;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 420px;
   }
 `;
@@ -527,13 +527,13 @@ export const MediaTextContent = styled.div`
   align-items: flex-start;
   padding-right: 2rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     width: 100%;
     align-items: center;
     padding-right: 0rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     width: 100%;
     align-items: center;
     padding-right: 0rem;
@@ -557,12 +557,12 @@ export const MediaTitle = styled.h2`
     color: #1c7ec2;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     font-size: 2rem;
     text-align: center;
   }
@@ -575,11 +575,11 @@ export const MediaCardsContainer = styled.div`
   gap: 26px;
   flex-wrap: wrap;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     justify-content: center;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     justify-content: center;
   }
 `;
@@ -594,11 +594,11 @@ export const ComunityContainer = styled.div`
 
   margin-bottom: 4rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     padding: 0 2rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding: 0 2rem;
   }
 `;
@@ -610,12 +610,12 @@ export const ComunityTitle = styled.h2`
 
   margin-bottom: 1rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     font-size: 2rem;
     text-align: center;
   }
@@ -631,11 +631,11 @@ export const ComunityDescription = styled.p`
     font-weight: 500;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     font-size: 0.9rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     font-size: 0.9rem;
   }
 `;
@@ -648,13 +648,13 @@ export const Assignment = styled.span`
   bottom: 2rem;
   right: 2rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 560px) {
     font-size: 0.7rem;
     bottom: 1.5rem;
     right: 1rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     font-size: 0.7rem;
     bottom: 1.5rem;
     right: 1rem;
@@ -667,31 +667,41 @@ export const PostsSectionContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   background-color: #f4f4f4;
 
-  padding: 1rem 5rem;
+  padding: 2rem 5rem 2rem 5rem;
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding: 2rem;
   }
 
-  @media only screen and (max-width: 480px) {
-    padding: 0.4rem;
+  @media only screen and (max-width: 560px) {
+    padding: 2rem 0.4rem 2rem 0.4rem;
   }
 `;
 
+export const DivisorLine = styled.div`
+  width: 124px;
+  height: 3px;
+  background-color: #1c7ec2;
+  margin-bottom: 2rem;
+`;
+
 export const PostsSectionTitle = styled.h2`
+  width: 100%;
+  text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
   font-weight: 500;
   color: #181a20;
 
-  @media only screen and (max-width: 480px) {
-    font-size: 1.5rem;
+  @media only screen and (max-width: 560px) {
+    font-size: 1.2rem;
   }
 
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
     font-size: 2rem;
   }
 `;

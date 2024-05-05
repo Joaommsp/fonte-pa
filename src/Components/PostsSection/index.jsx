@@ -5,6 +5,7 @@ import { getDocs, collection } from "firebase/firestore";
 
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import logo from "../../assets/images/imagens-oficiais/banner.svg";
+import PopUpBannerImage from "../../assets/images/popUpPostBanner.jpg";
 
 import { NewsSectionContainer, CardsContainer, PopUpContainer } from "./styles";
 
@@ -40,12 +41,21 @@ const PostsSection = () => {
               {openPopupIndex === index && (
                 <PopUpContainer className="fullPopUp">
                   <button onClick={handleClosePopup} className="closePopUpBtn">
+                    Voltar
                     <img
-                      src={Icons.CloseIconLight}
+                      src={Icons.ArrowRightSlimLight}
                       alt="Icone para fechar conteúdo"
                       title="Fechar"
                     />
                   </button>
+                  <div className="popUpCardBannerContainer">
+                    <div className="bannerImageCover"></div>
+                    <img
+                      src={PopUpBannerImage}
+                      alt=""
+                      className="popUpCardBanner"
+                    />
+                  </div>
                   <div className="popUpCardHeader">
                     <div className="popUpCardHeader__About">
                       <img
@@ -55,17 +65,17 @@ const PostsSection = () => {
                       />
                     </div>
                     <h2 className="popUpCardTitle">{post.title}</h2>
-                    <span className="popUpCardSubtitle">{post.subtitle}</span>
+                    <div className="popUpCardInfos__text">
+                      <span className="PopUpCardAuthor">
+                        Por: {post.author} | 
+                      </span>
+                      <span className="PopUpCardData"> {post.data}</span>
+                    </div>
                   </div>
                   <img className="popUpCardImage" src={post.image} alt="" />
                   <div className="popUpCardBotton">
+                    <p className="popUpCardSubtitle">{post.subtitle}</p>
                     <div className="popUpCardInfos">
-                      <div className="popUpCardInfos__text">
-                        <span className="PopUpCardAuthor">
-                          Por: {post.author}
-                        </span>
-                        <span className="PopUpCardData">{post.data}</span>
-                      </div>
                       <div className="popUpCardInfos__shareLinks">
                         <a
                           href={`https://api.whatsapp.com/send?text=${
@@ -93,13 +103,16 @@ const PostsSection = () => {
               </div>
               <img className="cardImage" src={post.image} alt="" />
               <div className="cardBotton">
-                <p className="cardText">{post.text}</p>
+                <div className="cardTextContainer">
+                  <p className="cardText">{post.text}</p>
+                </div>
                 <span className="cardData">{post.data}</span>
                 <button
                   onClick={() => handleOpenPopup(index)}
                   className="readAllBtn"
                 >
                   Ler tudo
+                  <img src={Icons.ArrowRightSlim} alt="" />
                 </button>
               </div>
             </div>

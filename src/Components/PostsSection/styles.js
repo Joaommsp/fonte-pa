@@ -31,7 +31,7 @@ export const CardsContainer = styled.div`
 
   .card {
     width: 650px;
-    height: 554px;
+    height: 564px;
     padding: 1rem;
 
     display: flex;
@@ -57,11 +57,9 @@ export const CardsContainer = styled.div`
     width: 80%;
     font-size: 1.4rem;
     color: #181a20;
-  }
-
-  .cardSubtitle {
-    display: block;
-    color: #181a20;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .cardImage {
@@ -69,11 +67,21 @@ export const CardsContainer = styled.div`
     height: 346px;
     object-fit: cover;
     margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  .cardBotton {
+    width: 100%;
+  }
+
+  .cardTextContainer {
+    width: 100%;
   }
 
   .cardText {
     display: block;
-    width: 600px;
+    width: 100%;
+    text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
     height: 50px;
@@ -85,6 +93,7 @@ export const CardsContainer = styled.div`
     top: 1rem;
     right: 1rem;
     color: #00000060;
+    font-size: 0.8rem;
   }
 
   .readAllBtn {
@@ -93,24 +102,37 @@ export const CardsContainer = styled.div`
     border-radius: 5px;
     padding: 0.3rem 1rem;
 
+    display: flex;
+    align-items: center;
+
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0.5rem;
+    right: 0.5rem;
 
     color: #1c7ec2;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .readAllBtn img {
+    margin-left: 0.3rem;
   }
 
   .readAllBtn:hover {
+    opacity: 50%;
     cursor: pointer;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 700px) {
     .card {
       width: 500px;
-      height: 450px;
-      padding: 0;
+      height: 474px;
+      padding: 0.5rem;
+
+      flex-direction: column;
+      align-items: center;
     }
 
     .cardTitle {
@@ -118,8 +140,8 @@ export const CardsContainer = styled.div`
     }
 
     .cardImage {
-      width: 487px;
-      height: 274px;
+      width: 444px;
+      height: 250px;
       object-fit: cover;
       margin-bottom: 1rem;
     }
@@ -130,41 +152,7 @@ export const CardsContainer = styled.div`
     }
   }
 
-  @media only screen and (min-width: 470px) and (max-width: 560px) {
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0.5rem;
-
-    .card {
-      width: 400px;
-      height: 554px;
-      padding: 0;
-    }
-
-    .cardData {
-      display: none;
-    }
-
-    .cardTitle {
-      font-size: 1.2rem;
-    }
-
-    .cardImage {
-      width: 390px;
-      height: 215px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .cardText {
-      display: block;
-      width: 390px;
-    }
-  }
-
-  @media only screen and (max-width: 470px) {
+  @media only screen and (max-width: 560px) {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
@@ -207,8 +195,7 @@ export const CardsContainer = styled.div`
       display: block;
       width: 100%;
       height: 90px;
-      font-size: 0.9rem;
-      text-overflow: ellipsis;
+      font-size: 0.8rem;
       margin-bottom: 2rem;
       padding: 0 1rem;
     }
@@ -226,8 +213,8 @@ export const CardsContainer = styled.div`
 `;
 
 export const PopUpContainer = styled.div`
-  width: 90vw;
-  height: 650px;
+  width: 854px;
+  height: 85vh;
 
   display: flex;
   flex-direction: column;
@@ -246,26 +233,52 @@ export const PopUpContainer = styled.div`
 
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
 
+  .popUpCardBannerContainer {
+    width: 100%;
+    height: 156px;
+    position: relative;
+  }
+
+  .bannerImageCover {
+    width: 100%;
+    height: 100%;
+    background-color: #181a2080;
+
+    position: absolute;
+    top: 0;
+  }
+
+  .popUpCardBanner {
+    width: 100%;
+    height: 156px;
+    object-fit: cover;
+  }
+
   .popUpCardHeader {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 1rem 2rem 1rem;
-
-    background-color: #181a20;
-    margin-bottom: 2rem;
+    padding: 1rem;
   }
 
   .popUpCardTitle {
-    color: #ffffff;
+    width: 80%;
+    color: #181a20;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .popUpCardSubtitle {
-    color: #b5c0d0;
+    width: 100%;
+    color: #181a20;
     font-size: 1rem;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .popUpCardImage {
@@ -319,8 +332,14 @@ export const PopUpContainer = styled.div`
   }
 
   .popUpCardInfos__text {
+    width: 80%;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .popUpCardInfos__text span {
+    font-size: 0.9rem;
   }
 
   .popUpLogo {
@@ -347,10 +366,21 @@ export const PopUpContainer = styled.div`
 
     display: flex;
     align-items: center;
+
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+
+    transition: 0.3s ease-in-out;
+    z-index: 5000;
   }
 
   .closePopUpBtn img {
-    width: 26px;
+    width: 24px;
+    margin-left: 0.5rem;
+  }
+
+  .closePopUpBtn:hover {
+    opacity: 50%;
   }
 
   @media only screen and (max-width: 560px) {
