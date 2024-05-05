@@ -12,6 +12,7 @@ import {
   HomeContainer,
   ContentContainer,
   Banner,
+  DivisorLine,
   BannerTextContent,
   TextContent,
   Title,
@@ -37,10 +38,12 @@ const Offers = () => {
       <ContentContainer>
         <Banner className="banner">
           <BannerTextContent>
+            <DivisorLine></DivisorLine>
             <TextContent>
               <Title>Contribuições e Ofertas</Title>
               <AboutOffers>
-                Contribua financeiramente com a Fonte. Assista o video abaixo
+                Contribua financeiramente com a Fonte.{" "}
+                <strong>Assista o video abaixo </strong>
                 para saber como realizar sua oferta a Igreja Batista Fonte -
                 Paulo Afonso.
               </AboutOffers>
@@ -62,6 +65,7 @@ const Offers = () => {
           </VideoContainer>
 
           <OfferWayAboutContainer>
+            <DivisorLine></DivisorLine>
             <OfferWayTitle>Realize sua contribuição</OfferWayTitle>
             <OfferWayText>
               Seguem as formas disponíveis para sua oferta. Você também pode

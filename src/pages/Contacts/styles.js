@@ -62,7 +62,7 @@ export const Banner = styled.div`
 export const BannerTextContent = styled.div`
   width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -93,6 +93,13 @@ export const BannerTextContent = styled.div`
     width: 80%;
     height: 600px;
   }
+`;
+
+export const DivisorLine = styled.div`
+  width: 124px;
+  height: 3px;
+  background-color: #1c7ec2;
+  margin-bottom: 2rem;
 `;
 
 export const TextContent = styled.div`

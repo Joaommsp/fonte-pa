@@ -10,6 +10,7 @@ import {
   HomeContainer,
   ContentContainer,
   Banner,
+  DivisorLine,
   BannerTextContent,
   TextContent,
   Title,
@@ -30,6 +31,7 @@ const Contacts = () => {
       <ContentContainer>
         <Banner className="banner">
           <BannerTextContent>
+            <DivisorLine></DivisorLine>
             <TextContent>
               <Title>Formas de Contato</Title>
               <AboutContacts>

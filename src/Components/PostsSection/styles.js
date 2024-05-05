@@ -40,7 +40,6 @@ export const CardsContainer = styled.div`
     position: relative;
 
     border-radius: 5px;
-    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.3);
   }
 
   .cardHeader {

@@ -5,19 +5,14 @@ import backgroundPageImage from "../../assets/images/contact-page-background.png
 export const HomeContainer = styled.header`
   width: 100%;
   height: 100%;
+
+  background-color: #f4f4f4;
 `;
 
 export const ContentContainer = styled.div`
   width: 100%;
 
   padding-top: 5rem;
-
-  /* background-image: url(${backgroundPageImage});
-  background-size: 800px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-color: rgba(255, 255, 255, 0.6);
-  background-blend-mode: overlay; */
 
   display: flex;
   flex-direction: column;
@@ -56,7 +51,7 @@ export const Banner = styled.div`
 export const BannerTextContent = styled.div`
   width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -84,13 +79,18 @@ export const BannerTextContent = styled.div`
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     width: 80%;
-    height: 600px;
   }
+`;
+
+export const DivisorLine = styled.div`
+  width: 124px;
+  height: 3px;
+  background-color: #1c7ec2;
+  margin-bottom: 2rem;
 `;
 
 export const TextContent = styled.div`
   width: 80%;
-  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@ export const Title = styled.h2`
 
   @media only screen and (max-width: 480px) {
     width: 90%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 
@@ -152,12 +152,13 @@ export const AboutOffers = styled.p`
 
   @media only screen and (max-width: 560px) {
     text-align: justify;
+    font-size: 0.9rem;
   }
 `;
 
 export const VideoContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: 100%;
 
   padding: 2rem;
 
@@ -166,24 +167,27 @@ export const VideoContainer = styled.div`
 
   .offerVideoIframe {
     border-radius: 5px;
-    width: 90%;
-    height: 100%;
+    width: 874px;
+    height: 491px;
     border: 1px solid #00000030;
   }
 
   @media only screen and (max-width: 560px) {
-    height: 250px;
+    height: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
 
     .offerVideoIframe {
-      width: 100%;
+      width: 298px;
+      height: 168px;
     }
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
-    width: 100%;
-    height: 418px;
+    .offerVideoIframe {
+      width: 661px;
+      height: 372px;
+    }
   }
 `;
 
@@ -195,7 +199,9 @@ export const OfferWayAboutContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 0 1rem;
+  padding: 2rem 1rem 0 1rem;
+
+  background-color: #ffffff;
 `;
 
 export const OfferWayTitle = styled.h2`
@@ -206,12 +212,21 @@ export const OfferWayTitle = styled.h2`
   font-weight: 400;
   color: #181a20;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   img {
     width: 24px;
+    margin-left: 0.5rem;
   }
 
   @media only screen and (max-width: 560px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
+    img {
+      width: 18px;
+    }
   }
 `;
 
@@ -231,6 +246,7 @@ export const OfferWayText = styled.p`
   @media only screen and (max-width: 400px) {
     width: 100%;
     text-align: justify;
+    font-size: 0.9rem;
   }
 `;
 
@@ -239,6 +255,8 @@ export const OffersCardsContainer = styled.div`
   padding: 2rem;
   margin-bottom: 0em;
 
+  background-color: #ffffff;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,15 +264,18 @@ export const OffersCardsContainer = styled.div`
   gap: 24px;
 
   @media only screen and (max-width: 500px) {
-    padding: 1rem;
+    padding: 1rem 2rem;
   }
 `;
 
 export const OffersImportants = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  background-color: #ffffff;
 
   padding: 1rem;
 `;
@@ -273,7 +294,7 @@ export const OfferDocDonwloadContainer = styled.div`
     color: #ffffff;
     margin-top: 2rem;
     text-align: center;
-    background-color: #181a20;
+    background-color: #1c7ec2;
     padding: 1rem;
     border-radius: 5px;
   }
@@ -290,6 +311,8 @@ export const OfferDocDonwloadContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
+    padding: 1rem;
+
     .offerDocLink {
       font-size: 0.8rem;
     }
