@@ -4,6 +4,8 @@ export const NewsSectionContainer = styled.div`
   width: 100%;
   height: 600px;
 
+  background-color: #f4f4f4;
+
   display: flex;
   justify-content: flex-start;
 
@@ -40,6 +42,8 @@ export const CardsContainer = styled.div`
     position: relative;
 
     border-radius: 5px;
+
+    background-color: #ffffff;
   }
 
   .cardHeader {
@@ -131,11 +135,16 @@ export const CardsContainer = styled.div`
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 0.5rem;
 
     .card {
       width: 400px;
       height: 554px;
       padding: 0;
+    }
+
+    .cardData {
+      display: none;
     }
 
     .cardTitle {
@@ -160,15 +169,27 @@ export const CardsContainer = styled.div`
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 0;
 
     .card {
-      width: 324px;
-      height: 554px;
-      padding: 0;
+      width: 100%;
+      height: fit-content;
+      padding: 0.5rem;
+
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cardHeader {
+      width: 100%;
+      height: fit-content;
+      border-bottom: 2px solid #1c7ec2;
+      margin-bottom: 1rem;
     }
 
     .cardTitle {
       font-size: 1rem;
+      padding-bottom: 0.5rem;
     }
 
     .cardSubtitle {
@@ -176,24 +197,26 @@ export const CardsContainer = styled.div`
     }
 
     .cardImage {
-      width: 324px;
-      height: 182px;
+      width: 290px;
+      height: 163px;
       object-fit: cover;
       margin-bottom: 1rem;
     }
 
     .cardText {
       display: block;
-      width: 324px;
+      width: 100%;
       height: 90px;
       font-size: 0.9rem;
       text-overflow: ellipsis;
       margin-bottom: 2rem;
+      padding: 0 1rem;
     }
 
     .cardData {
       top: 0;
       font-size: 0.8rem;
+      display: none;
     }
 
     .readAllBtn {

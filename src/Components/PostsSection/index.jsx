@@ -11,7 +11,6 @@ import { NewsSectionContainer, CardsContainer, PopUpContainer } from "./styles";
 const PostsSection = () => {
   const [posts, setPosts] = useState([]);
   const [openPopupIndex, setOpenPopupIndex] = useState(null);
-  const [theme, setTheme] = useState("light");
 
   const postsColletcionRef = collection(db, "news");
 
@@ -31,8 +30,6 @@ const PostsSection = () => {
   const handleClosePopup = () => {
     setOpenPopupIndex(null);
   };
-
-  const switchTheme = () => {};
 
   return (
     <NewsSectionContainer>

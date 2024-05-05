@@ -668,6 +668,8 @@ export const PostsSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  background-color: #f4f4f4;
+
   padding: 1rem 5rem;
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
@@ -675,7 +677,7 @@ export const PostsSectionContainer = styled.div`
   }
 
   @media only screen and (max-width: 480px) {
-    padding: 1rem;
+    padding: 0.4rem;
   }
 `;
 
