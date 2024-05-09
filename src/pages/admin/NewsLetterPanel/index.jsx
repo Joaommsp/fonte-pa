@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import moment from "moment";
 
 import Footer from "../../../Components/Footer";
 
@@ -25,21 +26,16 @@ import BarLoader from "react-spinners/BarLoader";
 
 const NewsLetterPanel = () => {
   const [loading, setLoading] = useState(true);
-
   const [posts, setPosts] = useState([]);
-
   const [newTitle, setNewTitle] = useState("");
   const [newSubTitle, setNewSubTitle] = useState("");
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
-
   const [envStatus, setEnvStatus] = useState(0);
-
   const [newImageUrl, setNewImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
-
   const [aouthCheck, setAothCheck] = useState(0);
 
   const postsColletcionRef = collection(db, "news");
@@ -76,7 +72,7 @@ const NewsLetterPanel = () => {
 
   const createPost = async () => {
     console.log(newData);
-
+    const formatedDate = moment(newData, "YYYY-MM-DD").format("DD/MM/YYYY");
     if (
       newTitle == "" ||
       newSubTitle == "" ||
@@ -91,7 +87,7 @@ const NewsLetterPanel = () => {
         title: newTitle,
         subtitle: newSubTitle,
         text: newText,
-        data: newData,
+        data: formatedDate,
         image: newImageUrl,
         author: newAuthor,
       });

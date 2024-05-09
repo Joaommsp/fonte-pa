@@ -93,6 +93,7 @@ export const NewsLetterPanelContainer = styled.div`
     min-width: 100%;
     margin-bottom: 1rem;
     font-family: "Poppins", sans-serif;
+    padding: 1rem;
   }
 
   .inputImage {
@@ -228,6 +229,7 @@ export const NewsLetterPanelContainer = styled.div`
     font-weight: 400;
     color: #181a20;
     font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .cardData {
@@ -246,8 +248,9 @@ export const NewsLetterPanelContainer = styled.div`
     cursor: pointer;
     background-color: #ffffff;
     padding: 0.5rem;
-    border-radius: 50%;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 1px solid #00000030;
 
     transition: 0.5s ease-in-out;
   }

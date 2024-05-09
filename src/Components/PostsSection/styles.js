@@ -57,7 +57,7 @@ export const CardsContainer = styled.div`
     width: 80%;
     font-size: 1.4rem;
     color: #181a20;
-    text-align: justify;
+    text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
@@ -361,6 +361,7 @@ export const PopUpContainer = styled.div`
 
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    line-height: 1.3;
   }
 
   .closePopUpBtn {
@@ -451,6 +452,7 @@ export const PopUpContainer = styled.div`
 
     .popUpCardText {
       font-size: 0.8rem;
+      line-height: 1.3;
     }
 
     .popUpCardInfos__shareLinks a {
