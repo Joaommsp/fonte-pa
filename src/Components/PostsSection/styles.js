@@ -279,6 +279,8 @@ export const PopUpContainer = styled.div`
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
   .popUpCardImage {
@@ -298,6 +300,16 @@ export const PopUpContainer = styled.div`
     color: #181a20;
   }
 
+  .popUpCardInfos__shareLinks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 0;
+  }
+
   .popUpCardInfos__shareLinks a {
     text-decoration: none;
     display: flex;
@@ -305,13 +317,15 @@ export const PopUpContainer = styled.div`
     color: #ffffff;
     background-color: #1c7ec2;
 
+    height: 38px;
     padding: 0.5rem 1rem;
     border-radius: 50px;
+    font-size: 0.8rem;
   }
 
   .popUpCardInfos__shareLinks a img {
     margin-left: 0.5rem;
-    width: 26px;
+    width: 18px;
   }
 
   .popUpCardBotton {
@@ -321,14 +335,6 @@ export const PopUpContainer = styled.div`
     align-items: center;
 
     padding: 0rem 2rem 1rem 2rem;
-  }
-
-  .popUpCardInfos {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
   }
 
   .popUpCardInfos__text {
@@ -353,6 +359,7 @@ export const PopUpContainer = styled.div`
     white-space: pre-wrap;
     word-wrap: break-word;
 
+    font-size: 0.9rem;
     margin-bottom: 1rem;
   }
 
@@ -384,7 +391,30 @@ export const PopUpContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
+    width: 95vw;
+    height: 80vh;
+
+    .closePopUpBtn {
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .popUpCardBannerContainer {
+      height: 86px;
+    }
+
+    .popUpCardBanner {
+      width: 100%;
+      height: 86px;
+      object-fit: cover;
+    }
+
     .popUpCardHeader {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
     }
 
     .popUpCardTitle {
@@ -394,23 +424,32 @@ export const PopUpContainer = styled.div`
       margin-bottom: 1rem;
     }
 
+    .PopUpCardAuthor,
+    .PopUpCardData {
+      font-size: 0.8rem;
+    }
+
     .popUpCardSubtitle {
-      color: #b5c0d0;
       font-size: 0.9rem;
-      text-align: justify;
+      text-align: center;
     }
 
     .popUpCardImage {
-      width: 280px;
-      height: 158px;
+      width: 300px;
+      height: 169px;
     }
 
     .popUpCardBotton {
       width: 100%;
+      padding: 0rem 1rem 1rem 1rem;
     }
 
     .PopUpCardAuthor,
     .PopUpCardData {
+      font-size: 0.8rem;
+    }
+
+    .popUpCardText {
       font-size: 0.8rem;
     }
 
@@ -424,6 +463,94 @@ export const PopUpContainer = styled.div`
 
       padding: 0.5rem 1rem;
       border-radius: 50px;
+    }
+
+    .popUpLogo {
+      width: 86px;
+    }
+
+    .popUpCardInfos__shareLinks a img {
+      margin-left: 0.5rem;
+      width: 16px;
+    }
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    width: 85vw;
+    height: 80vh;
+
+    .closePopUpBtn {
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .popUpCardBannerContainer {
+      height: 104px;
+    }
+
+    .popUpCardBanner {
+      width: 100%;
+      height: 104px;
+      object-fit: cover;
+    }
+
+    .popUpCardHeader {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .popUpCardTitle {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .PopUpCardAuthor,
+    .PopUpCardData {
+      font-size: 0.8rem;
+    }
+
+    .popUpCardSubtitle {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .popUpCardImage {
+      width: 440px;
+      height: 247px;
+    }
+
+    .popUpCardBotton {
+      width: 100%;
+    }
+
+    .PopUpCardAuthor,
+    .PopUpCardData {
+      font-size: 0.8rem;
+    }
+
+    .popUpCardText {
+      font-size: 0.8rem;
+    }
+
+    .popUpCardInfos__shareLinks a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      background-color: #1c7ec2;
+      font-size: 0.8rem;
+
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
+
+    .popUpLogo {
+      width: 86px;
     }
 
     .popUpCardInfos__shareLinks a img {

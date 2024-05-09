@@ -88,6 +88,13 @@ export const NewsLetterPanelContainer = styled.div`
     outline: 0;
   }
 
+  .descriptionTexteArea {
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+
   .inputImage {
     height: 500px;
     display: flex;
@@ -237,10 +244,20 @@ export const NewsLetterPanelContainer = styled.div`
     right: 1rem;
 
     cursor: pointer;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+    transition: 0.5s ease-in-out;
   }
 
   .deleteBtn img {
     width: 20px;
+  }
+
+  .deleteBtn:hover {
+    opacity: 50%;
   }
 
   .envStatusContainer {

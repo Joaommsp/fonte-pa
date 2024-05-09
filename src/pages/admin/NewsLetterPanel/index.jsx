@@ -200,13 +200,16 @@ const NewsLetterPanel = () => {
             onChange={(event) => setNewSubTitle(event.target.value)}
           />
           <label htmlFor="content">Descrição</label>
-          <input
+          <textarea
             type="text"
             placeholder="Description"
             id="content"
             name="content"
+            rows="5"
+            cols="30"
+            className="descriptionTexteArea"
             onChange={(event) => setNewText(event.target.value)}
-          />
+          ></textarea>
           <label htmlFor="data">Data</label>
           <input
             type="date"

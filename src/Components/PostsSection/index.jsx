@@ -57,17 +57,11 @@ const PostsSection = () => {
                     />
                   </div>
                   <div className="popUpCardHeader">
-                    <div className="popUpCardHeader__About">
-                      <img
-                        src={logo}
-                        alt="Logo Igreja Batista Fonte"
-                        className="popUpLogo"
-                      />
-                    </div>
+                    <div className="popUpCardHeader__About"></div>
                     <h2 className="popUpCardTitle">{post.title}</h2>
                     <div className="popUpCardInfos__text">
                       <span className="PopUpCardAuthor">
-                        Por: {post.author} | 
+                        Por: {post.author} |
                       </span>
                       <span className="PopUpCardData"> {post.data}</span>
                     </div>
@@ -75,26 +69,29 @@ const PostsSection = () => {
                   <img className="popUpCardImage" src={post.image} alt="" />
                   <div className="popUpCardBotton">
                     <p className="popUpCardSubtitle">{post.subtitle}</p>
-                    <div className="popUpCardInfos">
-                      <div className="popUpCardInfos__shareLinks">
-                        <a
-                          href={`https://api.whatsapp.com/send?text=${
-                            post.title +
-                            " - " +
-                            post.text +
-                            " Veja mais em https://fonte-pa.vercel.app/"
-                          }`}
-                        >
-                          Compartilhe{" "}
-                          <img
-                            src={Icons.WhatsAppIcon}
-                            alt="WhatsApp Icon"
-                            className="whatsAppShareIcon"
-                          />
-                        </a>
-                      </div>
-                    </div>
                     <p className="popUpCardText">{post.text}</p>
+                    <div className="popUpCardInfos__shareLinks">
+                      <img
+                        src={logo}
+                        alt="Logo Igreja Batista Fonte"
+                        className="popUpLogo"
+                      />
+                      <a
+                        href={`https://api.whatsapp.com/send?text=${
+                          post.title +
+                          " - " +
+                          post.text +
+                          " Veja mais em https://fonte-pa.vercel.app/"
+                        }`}
+                      >
+                        Compartilhe{" "}
+                        <img
+                          src={Icons.WhatsAppIcon}
+                          alt="WhatsApp Icon"
+                          className="whatsAppShareIcon"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </PopUpContainer>
               )}
