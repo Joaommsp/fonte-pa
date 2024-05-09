@@ -27,7 +27,7 @@ const Contacts = () => {
 
   return (
     <HomeContainer>
-      <Header pageIndex={3} />
+      <Header pageIndex={4} />
       <ContentContainer>
         <Banner className="banner">
           <BannerTextContent>

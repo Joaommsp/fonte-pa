@@ -94,6 +94,11 @@ const Header = (props) => {
             )}
           </HeaderLink>
           <HeaderLink>
+            <Link to="/recursos" className="headerLink">
+              Recursos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
             <Link to="/ofertas" className="headerLink">
               Contribua
             </Link>
@@ -168,6 +173,11 @@ const Header = (props) => {
                 </SubLink>
               </SubLinks>
             )}
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/recursos" className="headerLink">
+              Recursos
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/ofertas" className="headerLink">
@@ -246,7 +256,12 @@ const Header = (props) => {
             )}
           </HeaderLink>
           <HeaderLink>
-            <Link to="/ofertas" className="headerLink index">
+            <Link to="/recursos" className="headerLink index">
+              Recursos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ofertas" className="headerLink ">
               Contribua
             </Link>
           </HeaderLink>
@@ -320,6 +335,92 @@ const Header = (props) => {
                 </SubLink>
               </SubLinks>
             )}
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/recursos" className="headerLink">
+              Recursos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ofertas" className="headerLink index">
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/contato" className="headerLink">
+              Contato
+            </Link>
+          </HeaderLink>
+          <div className="divisor"></div>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="1rem"
+                click={() => null}
+              />
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
+    } else if (indexLInk == 4) {
+      return (
+        <HeaderLinks $show={menuOpen}>
+          <HeaderLink>
+            <Link to="/" className="headerLink">
+              Fonte
+            </Link>
+          </HeaderLink>
+          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
+            <span
+              className="headerLink"
+              onMouseEnter={() => setExtendMenu(true)}
+              onClick={() => setExtendMenu(true)}
+            >
+              Ministérios
+              <img src={Icons.ArrowDown} alt="" />
+            </span>
+            {extendMenu && (
+              <SubLinks>
+                <SubLink>
+                  <Link to={"/ministerios"} className="headerSubLink">
+                    Sobre
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/escolabiblica" className="headerSubLink">
+                    Escola Bíblica
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/infantil" className="headerSubLink">
+                    Infantil
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/louvor" className="headerSubLink">
+                    Louvor
+                  </Link>
+                </SubLink>
+                <SubLink>
+                  {" "}
+                  <Link to="/casais" className="headerSubLink">
+                    Casais
+                  </Link>
+                </SubLink>
+              </SubLinks>
+            )}
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/recursos" className="headerLink">
+              Recursos
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/ofertas" className="headerLink">

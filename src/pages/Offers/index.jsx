@@ -34,7 +34,7 @@ const Offers = () => {
 
   return (
     <HomeContainer>
-      <Header pageIndex={2} />
+      <Header pageIndex={3} />
       <ContentContainer>
         <Banner className="banner">
           <BannerTextContent>

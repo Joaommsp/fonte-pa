@@ -2,15 +2,16 @@ import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Help from "./pages/Help";
-import Ministries from "./pages/internal/Ministries"
+import Ministries from "./pages/internal/Ministries";
 import School from "./pages/School";
-import Kids from "./pages/internal/Kids"
-import Musical from "./pages/internal/Musical"
-import Couples from "./pages/internal/Couples"
-import Login from "./pages/admin/Login"
-import NewsLetterPanel from "./pages/admin/NewsLetterPanel"
+import Kids from "./pages/internal/Kids";
+import Musical from "./pages/internal/Musical";
+import Couples from "./pages/internal/Couples";
+import Login from "./pages/admin/Login";
+import NewsLetterPanel from "./pages/admin/NewsLetterPanel";
 import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
+import Resources from "./pages/Resources";
 
 const AppRoutes = () => {
   return (
@@ -27,6 +28,7 @@ const AppRoutes = () => {
         <Route path="/adminpanel" element={<NewsLetterPanel />} />
         <Route path="/contato" element={<Contacts />} />
         <Route path="/ofertas" element={<Offers />} />
+        <Route path="/recursos" element={<Resources />} />
       </Routes>
     </HashRouter>
   );

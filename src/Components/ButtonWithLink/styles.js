@@ -13,7 +13,7 @@ export const ButtonLinkElement = styled.button`
   justify-content: center;
 
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
 
   &:hover {
