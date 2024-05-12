@@ -183,7 +183,7 @@ export const NewsLetterPanelContainer = styled.div`
   }
 
   .cardTitle {
-    width: 500px;
+    width: 400px;
     font-weight: 500;
     color: #181a20;
     font-size: 1.2rem;
@@ -199,6 +199,12 @@ export const NewsLetterPanelContainer = styled.div`
     width: 500px;
     white-space: pre-wrap;
     word-wrap: break-word;
+  }
+
+  .cardHashtags {
+    font-size: 0.9rem;
+    color: #b4b4b8;
+    margin-bottom: 1rem;
   }
 
   .cardImage {
@@ -230,12 +236,14 @@ export const NewsLetterPanelContainer = styled.div`
     color: #181a20;
     font-size: 0.9rem;
     line-height: 1.5;
+
+    margin-bottom: 1rem;
   }
 
   .cardData {
     font-weight: 400;
     color: #181a20;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .deleteBtn {
@@ -276,7 +284,7 @@ export const NewsLetterPanelContainer = styled.div`
     color: #e72929;
   }
 
-  @media only screen and (min-width: 400px) and (max-width: 1000px) {
+  @media only screen and (min-width: 580px) and (max-width: 1000px) {
     .header {
       padding: 1rem;
     }
@@ -323,7 +331,7 @@ export const NewsLetterPanelContainer = styled.div`
     }
 
     .cardText {
-      width: 300px;
+      width: 500px;
     }
 
     .card {
@@ -342,7 +350,7 @@ export const NewsLetterPanelContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 580px) {
     .header {
       padding: 1rem;
     }
@@ -357,6 +365,24 @@ export const NewsLetterPanelContainer = styled.div`
 
     .logo {
       width: 86px;
+    }
+
+    .cardTitle {
+      width: 80%;
+      font-weight: 500;
+      color: #181a20;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .cardSubtitle {
+      width: 100%;
+    }
+
+    .cardHashtags {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .mainContainer {
@@ -389,16 +415,14 @@ export const NewsLetterPanelContainer = styled.div`
     }
 
     .cardText {
-      width: 270px;
+      width: 100%;
     }
 
     .card {
-      min-width: 300px;
-      max-width: 300px;
+      min-width: 100%;
+      max-width: 100%;
       margin-top: 1rem;
       margin-bottom: 2rem;
-
-      background-color: red;
 
       display: flex;
       flex-direction: column;
@@ -408,6 +432,23 @@ export const NewsLetterPanelContainer = styled.div`
       border-radius: 5px;
 
       position: relative;
+    }
+
+    .deleteBtn {
+      position: absolute;
+      border: 0;
+      background-color: transparent;
+
+      right: 1rem;
+
+      cursor: pointer;
+      background-color: #ffffff;
+      padding: 0.5rem;
+      border-radius: 5px;
+      padding: 0.5rem;
+      border: 1px solid #00000030;
+
+      transition: 0.5s ease-in-out;
     }
   }
 `;

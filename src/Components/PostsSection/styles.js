@@ -48,18 +48,23 @@ export const CardsContainer = styled.div`
 
   .cardHeader {
     width: 100%;
-    height: 72px;
+    height: 82px;
     border-bottom: 2px solid #1c7ec2;
     margin-bottom: 1rem;
   }
 
   .cardTitle {
     width: 80%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #181a20;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+  }
+
+  .cardHashtags {
+    font-size: 0.9rem;
+    color: #B4B4B8;
   }
 
   .cardImage {
@@ -136,7 +141,7 @@ export const CardsContainer = styled.div`
     }
 
     .cardTitle {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .cardImage {
@@ -176,7 +181,7 @@ export const CardsContainer = styled.div`
     }
 
     .cardTitle {
-      font-size: 1rem;
+      font-size: rem;
       padding-bottom: 0.5rem;
     }
 

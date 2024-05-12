@@ -25,7 +25,7 @@ const Login = () => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
         setAothUser(user);
-        navigate("/adminpanel");
+        navigate("/dashboard");
       } else {
         setAothUser(null);
       }
@@ -50,7 +50,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         if (userCredentials) {
-          navigate("/adminpanel");
+          navigate("/dashboard");
         }
       })
       .catch((error) => {

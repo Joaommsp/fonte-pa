@@ -12,6 +12,7 @@ import NewsLetterPanel from "./pages/admin/NewsLetterPanel";
 import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
 import Resources from "./pages/Resources";
+import DashBoard from "./pages/admin/DashBoard";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const AppRoutes = () => {
         <Route path="/louvor" element={<Musical />} />
         <Route path="/casais" element={<Couples />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/adminpanel" element={<NewsLetterPanel />} />
         <Route path="/contato" element={<Contacts />} />
         <Route path="/ofertas" element={<Offers />} />

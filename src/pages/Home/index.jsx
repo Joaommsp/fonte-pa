@@ -180,7 +180,7 @@ const Home = () => {
 
           <PostsSectionContainer>
             <DivisorLine></DivisorLine>
-            <PostsSectionTitle>Últimas Publicações</PostsSectionTitle>
+            <PostsSectionTitle>Novidades</PostsSectionTitle>
             <PostsSection></PostsSection>
           </PostsSectionContainer>
 

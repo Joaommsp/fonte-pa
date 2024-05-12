@@ -23,6 +23,9 @@ import DownloadIcon from "./download-icon.svg";
 import WhatsAppIconGreen from "./whatsapp-icon-green.svg";
 import ArrowRightSlim from "./arrow-right-slim.svg";
 import ArrowRightSlimLight from "./arrow-right-slim-light.svg";
+import ArrowLeftIconDark from "./arrow-left-icon-dark.svg";
+import LogoutIconRed from "./logout-icon.svg";
+import DeleteIconRed from "./delete-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -50,6 +53,9 @@ const Icons = {
   WhatsAppIconGreen: WhatsAppIconGreen,
   ArrowRightSlim: ArrowRightSlim,
   ArrowRightSlimLight: ArrowRightSlimLight,
+  ArrowLeftIconDark: ArrowLeftIconDark,
+  LogoutIconRed: LogoutIconRed,
+  DeleteIconRed: DeleteIconRed,
 };
 
 export default Icons;

@@ -6,7 +6,7 @@ import moment from "moment";
 
 import Footer from "../../../Components/Footer";
 
-import { NewsLetterPanelContainer, LoaderContainer } from "./style";
+import { NewsLetterPanelContainer, LoaderContainer } from "./styles";
 import {
   collection,
   getDocs,
@@ -16,9 +16,7 @@ import {
 } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-import ArrowLeftIcon from "../../../assets/images/svg/icons/arrow-left-icon.svg";
-import LogoutIcon from "../../../assets/images/svg/icons/logout-icon.svg";
-import DeleteIcon from "../../../assets/images/svg/icons/delete-icon.svg";
+import Icons from "../../../assets/images/svg/icons/iconsExport";
 import DefaultImage from "../../../assets/images/default-image.png";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 
@@ -29,6 +27,7 @@ const NewsLetterPanel = () => {
   const [posts, setPosts] = useState([]);
   const [newTitle, setNewTitle] = useState("");
   const [newSubTitle, setNewSubTitle] = useState("");
+  const [newHashtags, setNewSHashTags] = useState("");
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
@@ -86,6 +85,7 @@ const NewsLetterPanel = () => {
       await addDoc(postsColletcionRef, {
         title: newTitle,
         subtitle: newSubTitle,
+        hastags: newHashtags,
         text: newText,
         data: formatedDate,
         image: newImageUrl,
@@ -169,11 +169,11 @@ const NewsLetterPanel = () => {
       <div className="header">
         <Link to={"/"} className="homeLink">
           {" "}
-          <img src={ArrowLeftIcon} alt="" /> Início
+          <img src={Icons.ArrowLeftIconDark} alt="" /> Início
         </Link>
         <img src={Logo} alt="" className="logo" />
         <button className="logoutBtn" onClick={userSignOut}>
-          Logout <img src={LogoutIcon} alt="" />{" "}
+          Logout <img src={Icons.LogoutIconRed} alt="" />{" "}
         </button>
       </div>
       <div className="mainContainer">
@@ -193,7 +193,17 @@ const NewsLetterPanel = () => {
             placeholder="Subtitle"
             id="subtitle"
             name="subtitle"
+            maxLength="100"
             onChange={(event) => setNewSubTitle(event.target.value)}
+          />
+          <label htmlFor="subtitle">Hashtags (Inclua 3 no máx.) </label>
+          <input
+            type="text"
+            placeholder="HashTags"
+            id="hashTags"
+            name="hashTags"
+            maxLength="50"
+            onChange={(event) => setNewSHashTags(event.target.value)}
           />
           <label htmlFor="content">Descrição</label>
           <textarea
@@ -252,10 +262,11 @@ const NewsLetterPanel = () => {
                   className="deleteBtn"
                   onClick={() => deletePost(post.id)}
                 >
-                  <img src={DeleteIcon} alt="" />
+                  <img src={Icons.DeleteIconRed} alt="" />
                 </button>
                 <h2 className="cardTitle">{post.title}</h2>
                 <span className="cardSubtitle">{post.subtitle}</span>
+                <span className="cardHashtags">{post.hastags}</span>
                 <img className="cardImage" src={post.image} alt="" />
                 <div className="cardBotton">
                   <p className="cardText">{post.text}</p>

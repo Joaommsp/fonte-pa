@@ -97,6 +97,7 @@ const PostsSection = () => {
               )}
               <div className="cardHeader">
                 <h2 className="cardTitle">{post.title}</h2>
+                <span className="cardHashtags">{post.hastags}</span>
               </div>
               <img className="cardImage" src={post.image} alt="" />
               <div className="cardBotton">

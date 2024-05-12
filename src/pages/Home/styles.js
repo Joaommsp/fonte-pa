@@ -692,7 +692,7 @@ export const DivisorLine = styled.div`
 export const PostsSectionTitle = styled.h2`
   width: 100%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: 500;
   color: #181a20;
