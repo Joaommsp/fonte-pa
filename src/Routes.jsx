@@ -8,7 +8,7 @@ import Kids from "./pages/internal/Kids";
 import Musical from "./pages/internal/Musical";
 import Couples from "./pages/internal/Couples";
 import Login from "./pages/admin/Login";
-import NewsLetterPanel from "./pages/admin/NewsLetterPanel";
+import PostCreator from "./pages/admin/PostCreator";
 import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
 import Resources from "./pages/Resources";
@@ -27,7 +27,7 @@ const AppRoutes = () => {
         <Route path="/casais" element={<Couples />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashBoard />} />
-        <Route path="/adminpanel" element={<NewsLetterPanel />} />
+        <Route path="/postcreator" element={<PostCreator />} />
         <Route path="/contato" element={<Contacts />} />
         <Route path="/ofertas" element={<Offers />} />
         <Route path="/recursos" element={<Resources />} />

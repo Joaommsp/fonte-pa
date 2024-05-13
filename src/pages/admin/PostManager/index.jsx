@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { auth } from "../../../services/firebase";
+import { auth, db } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import "intro.js/introjs.css";
 import introJs from "intro.js";
@@ -11,16 +11,12 @@ import {
   NewsLetterPanelContainer,
   LoaderContainer,
   DashBoardHeader,
+  UserControlDropDown,
+  UserInfos,
   UserInfosContainer,
   UserLinks,
-  UserInfos,
-  UserControlDropDown,
-  DashBoardContent,
-  DashBoardContentHeader,
-  DashBoardTitle,
-  DashBoardCardsContainer,
-  DashBoardCard,
 } from "./styles";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
@@ -28,10 +24,13 @@ import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
-const DashBoard = () => {
-  const [loading, setLoading] = useState(true);
-  const [aouthCheck, setAothCheck] = useState(0);
+const PostManager = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
+  const [aouthCheck, setAothCheck] = useState(0);
+
+  const postsColletcionRef = collection(db, "news");
 
   const navigate = useNavigate();
 
@@ -63,6 +62,23 @@ const DashBoard = () => {
     });
   };
 
+  const deletePost = async (id) => {
+    const postDoc = doc(db, "news", id);
+
+    await deleteDoc(postDoc);
+
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(postsColletcionRef);
+      setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getPosts();
+  }, []);
+
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
       <BarLoader
@@ -74,7 +90,7 @@ const DashBoard = () => {
     </LoaderContainer>
   ) : (
     <NewsLetterPanelContainer>
-      <DashBoardHeader>
+      <DashBoardHeader className="asideMenu">
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>
           <UserInfos>
@@ -113,45 +129,36 @@ const DashBoard = () => {
           )}
         </UserInfosContainer>
       </DashBoardHeader>
-      <DashBoardContent>
-        <DashBoardContentHeader>
-          <DashBoardTitle>Overview</DashBoardTitle>
-        </DashBoardContentHeader>
-        <DashBoardCardsContainer
-          data-title="Aqui estão os recursos disponíveis"
-          data-intro=""
-        >
-          <Link to="/postcreator" className="cardLinkContainer">
-            <DashBoardCard
-              data-title="Criador de Postagens"
-              data-intro="Acesse para criar novas postagens"
-            >
-              <span className="featureName">Criador de postagens</span>
-              <div className="cardImageContainer" id="createPostImageBg">
-                <div className="cardContent">
-                  <div className="defaultLinkImageContainer"></div>
+      <div>
+        <div className="cardsContainer">
+          <span className="cardsPreviewsTitle">Prévias</span>
+          {posts.map((post, index) => {
+            return (
+              <div className="card" key={index}>
+                <button
+                  className="deleteBtn"
+                  onClick={() => deletePost(post.id)}
+                >
+                  <img src={Icons.DeleteIconRed} alt="" />
+                </button>
+                <h2 className="cardTitle">{post.title}</h2>
+                <span className="cardSubtitle">{post.subtitle}</span>
+                <span className="cardHashtags">{post.hastags}</span>
+                <img className="cardImage" src={post.image} alt="" />
+                <div className="cardBotton">
+                  <p className="cardText">{post.text}</p>
+                  <span className="cardData">{post.data}</span>
+                  <span className="cardAuthor">{post.author}</span>
                 </div>
               </div>
-            </DashBoardCard>
-          </Link>
-          <Link to="/" className="cardLinkContainer">
-            <DashBoardCard
-              data-title="Visualizador de Postagem"
-              data-intro="Acesse para visualizar e gerenciar as postagens que estão no ar"
-            >
-              <span className="featureName">Visualizar postagens</span>
-              <div className="cardImageContainer" id="editPostImageBg">
-                <div className="cardContent">
-                  <div className="defaultLinkImageContainer"></div>
-                </div>
-              </div>
-            </DashBoardCard>
-          </Link>
-        </DashBoardCardsContainer>
-      </DashBoardContent>
+            );
+          })}
+        </div>
+        ;
+      </div>
       <Footer></Footer>
     </NewsLetterPanelContainer>
   );
 };
 
-export default DashBoard;
+export default PostManager;
