@@ -5,6 +5,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import moment from "moment";
 import "intro.js/introjs.css";
 import introJs from "intro.js";
+import Quill from "quill";
+import "quill/dist/quill.core.css";
 
 import Footer from "../../../Components/Footer";
 
@@ -147,6 +149,25 @@ const NewsLetterPanel = () => {
     );
   };
 
+  const generateRichTextContainer = () => {
+    const options = {
+      debug: "info",
+      modules: {
+        toolbar: true,
+      },
+      placeholder: "Compose an epic...",
+      theme: "snow",
+    };
+
+    const quill = new Quill("#text", options);
+
+    return quill;
+  };
+
+  useEffect(() => {
+    generateRichTextContainer();
+  }, [aouthCheck]);
+
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
       <BarLoader
@@ -241,7 +262,7 @@ const NewsLetterPanel = () => {
               maxLength="50"
               onChange={(event) => setNewSHashTags(event.target.value)}
             />
-            <label htmlFor="content">Descrição</label>
+            {/* <label htmlFor="content">Descrição</label>
             <textarea
               type="text"
               placeholder="Description"
@@ -251,7 +272,8 @@ const NewsLetterPanel = () => {
               cols="30"
               className="descriptionTexteArea"
               onChange={(event) => setNewText(event.target.value)}
-            ></textarea>
+            ></textarea> */}
+            <div id="text"></div>
             <label htmlFor="data">Data</label>
             <input
               type="date"
@@ -292,7 +314,21 @@ const NewsLetterPanel = () => {
           <PreviewCardContainer>
             <h2 className="previewContainerTitle">Prévia</h2>
             <div className="previewCard">
-              <span className="previewCardTitle">{newTitle}</span>
+              <div className="previewCardHeader">
+                <span className="previewCardTitle">{newTitle}</span>
+                <span className="previewCardSubtitle">{newSubTitle}</span>
+                <span className="previewCardHashtags">{newHashtags}</span>
+              </div>
+              <div className="previewCardContent">
+                <img
+                  className="previewCardUploadImage"
+                  src={previewImageUrl}
+                  alt=""
+                />
+                <p className="previewCardText">{newText}</p>
+                <span className="previewCardAuthor">{newAuthor}</span>
+                <span className="previewCardData">{newData}</span>
+              </div>
             </div>
           </PreviewCardContainer>
         </div>

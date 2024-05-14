@@ -21,11 +21,11 @@ export const PostCreatorContainer = styled.div`
     display: flex;
     padding: 1rem 0;
 
-    gap: 24px;
+    justify-content: space-between;
   }
 
   .createContainer {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
   }
@@ -205,7 +205,7 @@ export const FeatureHeaderContainer = styled.div`
 
 export const DashBoardHeader = styled.aside`
   width: 100%;
-  height: 10vh;
+  height: 56px;
 
   display: flex;
   align-items: center;
@@ -232,13 +232,13 @@ export const DashBoardHeader = styled.aside`
       filter: grayscale(1);
     }
 
-    height: 8vh;
+    height: 50px;
     padding: 0.5rem 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 1000px) {
     padding: 0.5rem 2rem;
-    height: 8vh;
+    height: 56px;
   }
 `;
 
@@ -371,23 +371,128 @@ export const PreviewCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  padding: 1rem;
+
   .previewContainerTitle {
     font-weight: 500;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .previewCard {
     width: 100%;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .previewCardHeader {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00000030;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transition: 0.5s ease-in-out;
+    padding: 1rem;
+
+    margin-bottom: 0.5rem;
   }
 
   .previewCardTitle {
     display: block;
     width: 100%;
-    min-height: 28px;
+    min-height: 36px;
     max-height: fit-content;
-    background-color: red;
 
     padding: 0 1rem;
+    border-radius: 5px;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .previewCardSubtitle {
+    display: block;
+    width: 100%;
+    min-height: 28px;
+    max-height: fit-content;
+
+    padding: 0 1rem;
+    border-radius: 5px;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    font-size: 0.9rem;
+  }
+
+  .previewCardHashtags {
+    display: block;
+    width: 100%;
+    min-height: 28px;
+    max-height: fit-content;
+
+    padding: 0 1rem;
+    border-radius: 5px;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 0.5rem;
+
+    font-size: 0.9rem;
+  }
+
+  .previewCardContent {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .previewCardUploadImage {
+    width: 100%;
+    border-radius: 5px;
+
+    border: 1px solid #00000030;
+    margin-bottom: 1rem;
+  }
+
+  .previewCardText {
+    width: 100%;
+    min-height: 56px;
+    border: 1px solid #00000030;
+    border-radius: 5px;
+
+    padding: 1rem;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .previewCardAuthor {
+    min-width: 156px;
+    max-width: fit-content;
+    min-height: 38px;
+    max-height: fit-content;
+
+    border: 1px solid #00000030;
+    border-radius: 5px;
+
+    padding: 0.5rem;
+
+    font-size: 0.8rem;
+
+    text-align: center;
   }
 `;
 
