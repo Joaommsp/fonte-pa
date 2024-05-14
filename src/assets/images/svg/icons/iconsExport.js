@@ -29,6 +29,7 @@ import LogoutIconRed from "./logout-icon.svg";
 import DeleteIconRed from "./delete-icon.svg";
 import HomeIcon from "./home-icon.svg";
 import DoubtIcon from "./doubt-icon.svg";
+import UploadIconLightBlue from "./upload-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -62,6 +63,7 @@ const Icons = {
   HomeIcon: HomeIcon,
   DoubtIcon: DoubtIcon,
   ArrowLeftIcon: ArrowLeftIcon,
+  UploadIconLightBlue: UploadIconLightBlue,
 };
 
 export default Icons;

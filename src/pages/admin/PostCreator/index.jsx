@@ -5,8 +5,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import moment from "moment";
 import "intro.js/introjs.css";
 import introJs from "intro.js";
-import Quill from "quill";
-import "quill/dist/quill.core.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 import Footer from "../../../Components/Footer";
 
@@ -21,6 +21,7 @@ import {
   PostCreatorContainer,
   FeatureHeaderContainer,
   PreviewCardContainer,
+  TextWriterContainer,
 } from "./styles";
 
 import { collection, addDoc } from "firebase/firestore";
@@ -44,7 +45,7 @@ const NewsLetterPanel = () => {
   const [newAuthor, setNewAuthor] = useState("");
   const [envStatus, setEnvStatus] = useState(0);
   const [newImageUrl, setNewImageUrl] = useState("");
-  const [, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
   const [aouthCheck, setAothCheck] = useState(0);
 
@@ -149,24 +150,31 @@ const NewsLetterPanel = () => {
     );
   };
 
-  const generateRichTextContainer = () => {
-    const options = {
-      debug: "info",
-      modules: {
-        toolbar: true,
-      },
-      placeholder: "Compose an epic...",
-      theme: "snow",
+  function RichTextElement() {
+    const textEditorModules = {
+      toolbar: [
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+        [{ size: [] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [
+          { list: "ordered" },
+          { list: "bullet" },
+          { ident: "-1" },
+          { ident: "+1" },
+        ],
+      ],
     };
 
-    const quill = new Quill("#text", options);
-
-    return quill;
-  };
-
-  useEffect(() => {
-    generateRichTextContainer();
-  }, [aouthCheck]);
+    return (
+      <ReactQuill
+        theme="snow"
+        value={newText}
+        onChange={setNewText}
+        modules={textEditorModules}
+        className="textEditor"
+      />
+    );
+  }
 
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
@@ -237,6 +245,7 @@ const NewsLetterPanel = () => {
           <div className="createContainer">
             <label htmlFor="title">Título</label>
             <input
+              className="grayInput"
               type="text"
               placeholder="Title"
               maxLength="50"
@@ -246,6 +255,7 @@ const NewsLetterPanel = () => {
             />
             <label htmlFor="subtitle">SubTítulo</label>
             <input
+              className="grayInput"
               type="text"
               placeholder="Subtitle"
               id="subtitle"
@@ -255,6 +265,7 @@ const NewsLetterPanel = () => {
             />
             <label htmlFor="subtitle">Hashtags (Inclua 3 no máx.) </label>
             <input
+              className="grayInput"
               type="text"
               placeholder="HashTags"
               id="hashTags"
@@ -262,20 +273,16 @@ const NewsLetterPanel = () => {
               maxLength="50"
               onChange={(event) => setNewSHashTags(event.target.value)}
             />
-            {/* <label htmlFor="content">Descrição</label>
-            <textarea
-              type="text"
-              placeholder="Description"
-              id="content"
-              name="content"
-              rows="5"
-              cols="30"
-              className="descriptionTexteArea"
-              onChange={(event) => setNewText(event.target.value)}
-            ></textarea> */}
+            {
+              <TextWriterContainer>
+                <label>Conteúdo</label>
+                {RichTextElement()}
+              </TextWriterContainer>
+            }
             <div id="text"></div>
             <label htmlFor="data">Data</label>
             <input
+              className="dateInput"
               type="date"
               name="data"
               id="data"
@@ -284,6 +291,7 @@ const NewsLetterPanel = () => {
             />
             <label htmlFor="author">Autor</label>
             <input
+              className="grayInput"
               type="text"
               placeholder="Author"
               maxLength="50"
@@ -298,10 +306,15 @@ const NewsLetterPanel = () => {
                 className="inputImage"
               />
               <button type="submit" className="uploadImageBtn">
-                Carregar Imagem
+                <img src={Icons.UploadIconLightBlue} alt="icone para carregar imagem" />
               </button>
-              <div>
+              <div className="uploadImageContainer">
                 <img className="prevUploadImage" src={previewImageUrl} alt="" />
+                <progress
+                  className="imageUploadProgress"
+                  value={progress}
+                  max="100"
+                ></progress>
               </div>
             </form>
             <button className="createBtn" onClick={createPost}>
@@ -325,7 +338,10 @@ const NewsLetterPanel = () => {
                   src={previewImageUrl}
                   alt=""
                 />
-                <p className="previewCardText">{newText}</p>
+                <div
+                  className="previewCardTextBox"
+                  dangerouslySetInnerHTML={{ __html: newText }}
+                ></div>
                 <span className="previewCardAuthor">{newAuthor}</span>
                 <span className="previewCardData">{newData}</span>
               </div>

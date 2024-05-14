@@ -7,6 +7,10 @@ export const NewsLetterPanelContainer = styled.div`
   height: 100vh;
 
   padding-top: 5rem;
+
+  @media only screen and (max-width: 560px) {
+    padding-top: 4rem;
+  }
 `;
 
 export const PostCreatorContainer = styled.div`
@@ -32,23 +36,33 @@ export const PostCreatorContainer = styled.div`
 
   .createContainer input {
     width: 100%;
-    height: 40px;
-
-    border: 1px solid #00000030;
+    border: 1px solid transparent;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
     margin-bottom: 1rem;
     text-overflow: ellipsis;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .grayInput {
+    background-color: #f0f5f8;
   }
 
   .createContainer input:focus {
-    border: 1px solid #1662a1;
+    background-color: transparent;
+    border: 1px solid #00000050;
   }
 
   .createContainer input:focus,
   input:focus,
   select:focus {
     outline: 0;
+  }
+
+  .dateInput {
+    font-family: "Poppins", sans-serif;
+    background-color: #68d2e8;
   }
 
   .descriptionTexteArea {
@@ -60,16 +74,18 @@ export const PostCreatorContainer = styled.div`
   }
 
   .inputImage {
-    height: 500px;
+    height: 56px;
     display: flex;
     align-items: center;
+    background-color: #68d2e8;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
   }
 
   .uploadImageBtn {
     border: 0;
+    background-color: transparent;
     padding: 0.5rem 1rem;
-    background-color: #1c7ec2;
-    color: #ffffff;
     font-weight: 500;
     border-radius: 5px;
 
@@ -78,9 +94,36 @@ export const PostCreatorContainer = styled.div`
     transition: 0.3s ease-in-out;
   }
 
+  .uploadImageBtn img {
+    width: 36px;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .uploadImageBtn img:hover {
+    transform: scale(1.1);
+  }
+
   .uploadImageBtn:hover {
-    background-color: #1662a1;
     cursor: pointer;
+  }
+
+  .imageUploadProgress {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 50px;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .uploadImageContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .prevUploadImage {
@@ -121,6 +164,45 @@ export const PostCreatorContainer = styled.div`
   .envStatusContainer span {
     font-size: 0.8rem;
     color: #e72929;
+  }
+
+  @media only screen and (max-width: 560px) {
+    padding: 0.5rem 1rem;
+
+    .mainContainer {
+      padding: 1rem 0.5rem;
+      flex-direction: column;
+    }
+
+    .createContainer {
+      width: 100%;
+    }
+
+    .createContainer label {
+      font-size: 0.8rem;
+    }
+
+    .createContainer input {
+      font-size: 0.8rem;
+    }
+
+    .inputImage {
+      height: 46px;
+    }
+
+    .uploadImageBtn img {
+      width: 24px;
+    }
+
+    .prevUploadImage {
+      width: 270px;
+      height: 152px;
+      overflow: hidden;
+      object-fit: cover;
+
+      border: 1px solid #00000020;
+      margin-bottom: 1rem;
+    }
   }
 
   @media only screen and (min-width: 580px) and (max-width: 1000px) {
@@ -201,6 +283,25 @@ export const FeatureHeaderContainer = styled.div`
     font-weight: 500;
     text-shadow: -3px 3px 1px rgba(0, 0, 0, 0.25);
   }
+
+  @media only screen and (max-width: 560px) {
+    height: 124px;
+    background-position: top;
+    margin-bottom: 1rem;
+
+    .featureTitle {
+      font-size: 1.2rem;
+    }
+
+    .featureHeaderGradient {
+      padding: 0.8rem;
+    }
+
+    .backToDashBoardLink {
+      width: 88px;
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const DashBoardHeader = styled.aside`
@@ -258,6 +359,7 @@ export const UserLinks = styled.div`
   gap: 10px;
 
   margin-right: 2rem;
+
   .homeLink {
     background-color: red;
     padding: 0.5rem 0.5rem;
@@ -463,20 +565,41 @@ export const PreviewCardContainer = styled.div`
     margin-bottom: 1rem;
   }
 
-  .previewCardText {
+  .previewCardTextBox {
     width: 100%;
-    min-height: 56px;
+    min-height: 100px;
+    height: 100%;
     border: 1px solid #00000030;
     border-radius: 5px;
-
     padding: 1rem;
+    margin-bottom: 2rem;
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
-    margin-bottom: 1rem;
+    background-color: #ffffff;
+  }
 
-    font-size: 0.9rem;
+  .previewCardTextBox h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: #181a20;
+  }
+
+  .previewCardTextBox strong {
+    font-weight: 600;
+  }
+
+  .previewCardTextBox p {
     line-height: 1.3;
+  }
+
+  .previewCardTextBox blockquote {
+    border-left: 4px solid #cccccc;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    background-color: transparent;
   }
 
   .previewCardAuthor {
@@ -489,10 +612,53 @@ export const PreviewCardContainer = styled.div`
     border-radius: 5px;
 
     padding: 0.5rem;
+    margin-bottom: 0.5rem;
 
     font-size: 0.8rem;
 
     text-align: center;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 100%;
+    padding: 0;
+
+    .previewCardHeader {
+      padding: 0.5rem;
+    }
+
+    .previewCardTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .previewCardSubtitle {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+`;
+
+export const TextWriterContainer = styled.div`
+  width: 100%;
+
+  height: 100%;
+
+  margin-bottom: 6.5rem;
+
+  .textEditor {
+    height: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #181a20;
+  }
+
+  @media only screen and (max-width: 560px) {
+    margin-bottom: 1rem;
   }
 `;
 

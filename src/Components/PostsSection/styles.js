@@ -64,7 +64,7 @@ export const CardsContainer = styled.div`
 
   .cardHashtags {
     font-size: 0.9rem;
-    color: #B4B4B8;
+    color: #b4b4b8;
   }
 
   .cardImage {
@@ -81,6 +81,34 @@ export const CardsContainer = styled.div`
 
   .cardTextContainer {
     width: 100%;
+    height: 64px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .cardTextContainer p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .cardTextContainer h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: #181a20;
+  }
+
+  .cardTextContainer strong {
+    font-weight: 600;
+  }
+
+  .cardTextContainer p {
+    line-height: 1.3;
+  }
+
+  .cardTextContainer blockquote {
+    line-height: 1.3;
   }
 
   .cardText {

@@ -251,7 +251,6 @@ export const DashBoardCard = styled.div`
   .cardImageContainer {
     width: 100%;
     height: 85%;
-    background-color: blue;
     border-radius: 5px;
   }
 

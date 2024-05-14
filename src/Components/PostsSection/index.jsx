@@ -69,7 +69,10 @@ const PostsSection = () => {
                   <img className="popUpCardImage" src={post.image} alt="" />
                   <div className="popUpCardBotton">
                     <p className="popUpCardSubtitle">{post.subtitle}</p>
-                    <p className="popUpCardText">{post.text}</p>
+                    <div
+                      className="popUpCardTextContainer"
+                      dangerouslySetInnerHTML={{ __html: post.text }}
+                    ></div>
                     <div className="popUpCardInfos__shareLinks">
                       <img
                         src={logo}
@@ -101,9 +104,10 @@ const PostsSection = () => {
               </div>
               <img className="cardImage" src={post.image} alt="" />
               <div className="cardBotton">
-                <div className="cardTextContainer">
-                  <p className="cardText">{post.text}</p>
-                </div>
+                <div
+                  className="cardTextContainer"
+                  dangerouslySetInnerHTML={{ __html: post.text }}
+                ></div>
                 <span className="cardData">{post.data}</span>
                 <button
                   onClick={() => handleOpenPopup(index)}
