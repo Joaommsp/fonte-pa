@@ -41,12 +41,12 @@ const PostsSection = () => {
               {openPopupIndex === index && (
                 <PopUpContainer className="fullPopUp">
                   <button onClick={handleClosePopup} className="closePopUpBtn">
-                    Voltar
                     <img
-                      src={Icons.ArrowRightSlimLight}
+                      src={Icons.ArrowLeftIcon}
                       alt="Icone para fechar conteúdo"
                       title="Fechar"
                     />
+                    Voltar
                   </button>
                   <div className="popUpCardBannerContainer">
                     <div className="bannerImageCover"></div>

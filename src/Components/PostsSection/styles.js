@@ -86,11 +86,6 @@ export const CardsContainer = styled.div`
     margin-bottom: 2rem;
   }
 
-  .cardTextContainer p {
-    font-size: 0.9rem;
-    line-height: 1.2;
-  }
-
   .cardTextContainer h1,
   h2,
   h3,
@@ -99,26 +94,24 @@ export const CardsContainer = styled.div`
     color: #181a20;
   }
 
+  .cardTextContainer p {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .cardTextContainer span {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
   .cardTextContainer strong {
     font-weight: 600;
   }
 
-  .cardTextContainer p {
-    line-height: 1.3;
-  }
-
   .cardTextContainer blockquote {
     line-height: 1.3;
-  }
-
-  .cardText {
-    display: block;
-    width: 100%;
-    text-align: justify;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    height: 50px;
-    overflow: hidden;
   }
 
   .cardData {
@@ -179,9 +172,16 @@ export const CardsContainer = styled.div`
       margin-bottom: 1rem;
     }
 
-    .cardText {
-      display: block;
-      width: 480px;
+    .cardTextContainer p {
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .cardTextContainer span {
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: justify;
     }
   }
 
@@ -224,13 +224,16 @@ export const CardsContainer = styled.div`
       margin-bottom: 1rem;
     }
 
-    .cardText {
-      display: block;
-      width: 100%;
-      height: 90px;
-      font-size: 0.8rem;
-      margin-bottom: 2rem;
-      padding: 0 1rem;
+    .cardTextContainer p {
+      font-size: 13px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .cardTextContainer span {
+      font-size: 13px;
+      line-height: 1.2;
+      text-align: justify;
     }
 
     .cardData {
@@ -385,43 +388,67 @@ export const PopUpContainer = styled.div`
     width: 156px;
   }
 
-  .popUpCardText {
-    display: block;
-    width: 100%;
-    text-align: justify;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  .popUpCardTextContainer h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: #181a20;
+  }
 
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+  .popUpCardTextContainer strong {
+    font-weight: 600;
+  }
+
+  .popUpCardTextContainer p {
     line-height: 1.3;
+    text-align: justify;
+    font-size: 0.9rem;
+  }
+
+  .popUpCardTextContainer blockquote {
+    border-left: 4px solid #cccccc;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    background-color: transparent;
+    text-align: justify;
+    font-size: 0.9rem;
   }
 
   .closePopUpBtn {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    border: 0;
-    background-color: transparent;
     cursor: pointer;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    background-color: #31363f60;
 
+    width: 94px;
+    height: 28px;
     display: flex;
     align-items: center;
+
+    text-decoration: none;
+
+    padding: 0.2rem 1rem;
 
     color: #ffffff;
     font-family: "Poppins", sans-serif;
 
+    border-radius: 64px;
+    border: 0;
+
     transition: 0.3s ease-in-out;
-    z-index: 5000;
+    z-index: 1000;
   }
 
   .closePopUpBtn img {
-    width: 24px;
-    margin-left: 0.5rem;
+    margin-right: 0.3rem;
+    width: 18px;
+    transition: 0.5s ease-in-out;
   }
 
-  .closePopUpBtn:hover {
-    opacity: 50%;
+  .closePopUpBtn:hover img {
+    width: 0px;
   }
 
   @media only screen and (max-width: 560px) {
@@ -430,7 +457,7 @@ export const PopUpContainer = styled.div`
 
     .closePopUpBtn {
       top: 1rem;
-      right: 1rem;
+      left: 1rem;
     }
 
     .popUpCardBannerContainer {
