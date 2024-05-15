@@ -108,6 +108,7 @@ export const CardsContainer = styled.div`
 
   .cardTextContainer strong {
     font-weight: 600;
+    font-size: 14px;
   }
 
   .cardTextContainer blockquote {
@@ -234,6 +235,11 @@ export const CardsContainer = styled.div`
       font-size: 13px;
       line-height: 1.2;
       text-align: justify;
+    }
+
+    .cardTextContainer strong {
+      font-weight: 600;
+      font-size: 13px;
     }
 
     .cardData {

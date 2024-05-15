@@ -15,6 +15,8 @@ import {
   UserInfos,
   UserInfosContainer,
   UserLinks,
+  PostManagerContentContainer,
+  FeatureHeaderContainer,
 } from "./styles";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 
@@ -129,9 +131,22 @@ const PostManager = () => {
           )}
         </UserInfosContainer>
       </DashBoardHeader>
-      <div>
+      <PostManagerContentContainer>
+        <FeatureHeaderContainer>
+          <div className="featureHeaderGradient">
+            <div className="featureInfos">
+              <Link to="/dashboard" className="backToDashBoardLink">
+                <img
+                  src={Icons.ArrowLeftIcon}
+                  alt="Icone voltar para a página anterior"
+                />
+                Voltar
+              </Link>
+              <h2 className="featureTitle">Gerenciador de postagens</h2>
+            </div>
+          </div>
+        </FeatureHeaderContainer>
         <div className="cardsContainer">
-          <span className="cardsPreviewsTitle">Prévias</span>
           {posts.map((post, index) => {
             return (
               <div className="card" key={index}>
@@ -155,7 +170,7 @@ const PostManager = () => {
           })}
         </div>
         ;
-      </div>
+      </PostManagerContentContainer>
       <Footer></Footer>
     </NewsLetterPanelContainer>
   );

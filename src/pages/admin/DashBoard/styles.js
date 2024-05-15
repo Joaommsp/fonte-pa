@@ -13,7 +13,7 @@ export const NewsLetterPanelContainer = styled.div`
 
 export const DashBoardHeader = styled.aside`
   width: 100%;
-  height: 10vh;
+  height: 56px;
 
   display: flex;
   align-items: center;

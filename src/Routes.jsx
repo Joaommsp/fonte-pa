@@ -9,6 +9,7 @@ import Musical from "./pages/internal/Musical";
 import Couples from "./pages/internal/Couples";
 import Login from "./pages/admin/Login";
 import PostCreator from "./pages/admin/PostCreator";
+import PostManager from "./pages/admin/PostManager";
 import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
 import Resources from "./pages/Resources";
@@ -28,6 +29,7 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/postcreator" element={<PostCreator />} />
+        <Route path="/postsmanager" element={<PostManager />} />
         <Route path="/contato" element={<Contacts />} />
         <Route path="/ofertas" element={<Offers />} />
         <Route path="/recursos" element={<Resources />} />

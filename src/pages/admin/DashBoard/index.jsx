@@ -134,12 +134,12 @@ const DashBoard = () => {
               </div>
             </DashBoardCard>
           </Link>
-          <Link to="/" className="cardLinkContainer">
+          <Link to="/postsmanager" className="cardLinkContainer">
             <DashBoardCard
-              data-title="Visualizador de Postagem"
+              data-title="Gerenciador de postagens"
               data-intro="Acesse para visualizar e gerenciar as postagens que estão no ar"
             >
-              <span className="featureName">Visualizar postagens</span>
+              <span className="featureName">Gerenciador de postagens</span>
               <div className="cardImageContainer" id="editPostImageBg">
                 <div className="cardContent">
                   <div className="defaultLinkImageContainer"></div>
