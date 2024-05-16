@@ -125,6 +125,7 @@ const NewsLetterPanel = () => {
     event.preventDefault();
 
     const file = event.target[0]?.files[0];
+    console.log(file);
 
     if (!file) alert("Nenhuma Imagem Selecionada");
 
@@ -306,7 +307,10 @@ const NewsLetterPanel = () => {
                 className="inputImage"
               />
               <button type="submit" className="uploadImageBtn">
-                <img src={Icons.UploadIconLightBlue} alt="icone para carregar imagem" />
+                <img
+                  src={Icons.UploadIconLightBlue}
+                  alt="icone para carregar imagem"
+                />
               </button>
               <div className="uploadImageContainer">
                 <img className="prevUploadImage" src={previewImageUrl} alt="" />
