@@ -8,12 +8,13 @@ export const LoginContainer = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   background-image: url(${LoginPageBackground});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
   position: relative;
 `;
@@ -26,7 +27,11 @@ export const BgCover = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
 `;
 
 export const Header = styled.div`
@@ -54,6 +59,8 @@ export const Header = styled.div`
     font-size: 0.9rem;
 
     transition: 0.3s ease-in-out;
+
+    z-index: 1000;
   }
 
   .homeLink img {
@@ -67,14 +74,82 @@ export const Header = styled.div`
   @media only screen and (max-width: 700px) {
     padding: 0.5rem 1rem;
   }
+
+  @media only screen and (max-width: 580px) {
+    padding: 0.5rem 0rem;
+  }
 `;
 
 export const LogoContainer = styled.div`
   width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  .logoContainerText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 284px;
+    filter: drop-shadow(0px 0px 4px #00000070);
+  }
+
+  .aboutThisProjectContainer {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .aboutThisProjectContainer span {
+    font-size: 0.8rem;
+    color: #ffffff;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    height: 40%;
+
+    .logo {
+      width: 156px;
+    }
+
+    .aboutThisProjectContainer {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media only screen and (max-width: 580px) {
+    .aboutThisProjectContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+`;
+
+export const LoginFormContainer = styled.div`
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const FormContainer = styled.div`
-  width: 60%;
+  width: 100%;
   max-width: 500px;
   max-height: 650px;
   height: 95%;
@@ -89,6 +164,13 @@ export const FormContainer = styled.div`
   border-radius: 5px;
 
   padding: 5rem 2rem 2rem 2rem;
+
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 
   .loginPageTitle {
     width: 100%;
@@ -108,11 +190,6 @@ export const FormContainer = styled.div`
     align-items: center;
 
     gap: 24px;
-  }
-
-  .logo {
-    width: 256px;
-    margin-bottom: 2rem;
   }
 
   span {
@@ -213,7 +290,7 @@ export const FormContainer = styled.div`
   }
 
   .loginButton:hover {
-    background-color: #1662a1;
+    background-color: #5ab2ff;
     cursor: pointer;
   }
 
@@ -223,8 +300,10 @@ export const FormContainer = styled.div`
   }
 
   .formStatus {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 50px;
+    align-items: center;
 
     margin-top: 2rem;
   }
@@ -238,8 +317,16 @@ export const FormContainer = styled.div`
     font-weight: 400;
   }
 
+  .formStatus img {
+    width: 32px;
+    margin-bottom: 0.5rem;
+  }
+
   @media only screen and (max-width: 580px) {
+    max-width: 100%;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 0;
   }
 `;

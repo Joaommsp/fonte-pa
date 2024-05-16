@@ -1,18 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
-import ArrowLeftIcon from "../../../assets/images/svg/icons/arrow-left-icon-dark.svg";
-import LoginIcon from "../../../assets/images/svg/icons/login-icon-light.svg";
 import Logo from "../../../assets/images/newsletter-logo.png";
-import AlertIcon from "../../../assets/images/svg/icons/alert-icon-red.svg";
 
 import {
   LoginContainer,
   BgCover,
   Header,
   LogoContainer,
+  LoginFormContainer,
   FormContainer,
 } from "./styles";
 
@@ -22,9 +21,7 @@ import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [aothUser, setAothUser] = useState("");
-  const [filled, setFilled] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(false);
+  const [loginError, setLoginError] = useState(null);
   const [showHidePasswordIcon, setShowHidePasswordIcon] = useState(
     Icons.OpenEye
   );
@@ -34,10 +31,10 @@ const Login = () => {
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAothUser(user);
         navigate("/dashboard");
       } else {
-        setAothUser(null);
+        setLoginError("Faça login para continuar");
+        resetLoginError();
       }
     });
 
@@ -48,12 +45,8 @@ const Login = () => {
 
   const login = (event) => {
     if (email == "" || password == "") {
-      setFilled(false);
-
-      const restartFormTime = setInterval(() => {
-        setFilled(true);
-        clearInterval(restartFormTime);
-      }, 3000);
+      setLoginError("Preencha todos os campos");
+      resetLoginError();
     }
 
     event.preventDefault();
@@ -65,15 +58,18 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        if (email !== "" && password !== "") {
-          setErrorMessage(true);
-
-          const resetErrorMessage = setInterval(() => {
-            setErrorMessage(false);
-            clearInterval(resetErrorMessage);
-          }, 3000);
+        if (email != "" && password != "") {
+          setLoginError("email e/ou senha incorreto(s)");
+          resetLoginError();
         }
       });
+  };
+
+  const resetLoginError = () => {
+    const restartFormTime = setInterval(() => {
+      setLoginError(null);
+      clearInterval(restartFormTime);
+    }, 4000);
   };
 
   const showHidePassword = () => {
@@ -93,6 +89,22 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {
+    gsap.fromTo(
+      "form",
+      {
+        opacity: 0, // Start with opacity 0 (hidden)
+        y: 100, // Start with element 100px off-screen (top)
+      },
+      {
+        opacity: 1, // Animate to opacity 1 (visible)
+        y: 0, // Animate to y position 0 (on-screen)
+        duration: 1, // Duration of the animation in seconds
+        ease: "Power4.easeInOut", // Easing function for a smooth transition
+      }
+    );
+  }, []);
+
   return (
     <LoginContainer>
       <BgCover>
@@ -102,68 +114,66 @@ const Login = () => {
           </Link>
         </Header>
 
-        <LogoContainer></LogoContainer>
-        <FormContainer>
-          {/* <img src={Logo} alt="" className="logo" /> */}
-          <h2 className="loginPageTitle">Fazer login</h2>
-          <form onSubmit={login}>
-            <div className="inputContainer">
-              <label htmlFor="email">Endereço de email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div className="inputContainer">
-              <label htmlFor="password">Senha</label>
-              <div className="inputPasswordContainer">
+        <LogoContainer>
+          <div className="logoContainerText">
+            <img src={Logo} alt="" className="logo" />
+          </div>
+          <div className="aboutThisProjectContainer">
+            <span>2024 João Marcos Melo ©</span>
+          </div>
+        </LogoContainer>
+        <LoginFormContainer id="form">
+          <FormContainer>
+            <h2 className="loginPageTitle">Fazer login</h2>
+            <form onSubmit={login}>
+              <div className="inputContainer">
+                <label htmlFor="email">Endereço de email</label>
                 <input
-                  id="passwordInput"
-                  type="password"
-                  name="password"
+                  type="email"
+                  name="email"
+                  id="email"
                   required
-                  placeholder="********"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <button
-                  className="togglePasswordButton"
-                  type="button"
-                  onClick={(e) => showHidePassword(e.target)}
-                >
-                  <img src={showHidePasswordIcon} alt="" />
+              </div>
+
+              <div className="inputContainer">
+                <label htmlFor="password">Senha</label>
+                <div className="inputPasswordContainer">
+                  <input
+                    id="passwordInput"
+                    type="password"
+                    name="password"
+                    required
+                    placeholder="********"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <button
+                    className="togglePasswordButton"
+                    type="button"
+                    onClick={(e) => showHidePassword(e.target)}
+                  >
+                    <img src={showHidePasswordIcon} alt="" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="loginButtonContainer">
+                <button className="loginButton" onClick={login}>
+                  Continuar
                 </button>
               </div>
-            </div>
-
-            <div className="loginButtonContainer">
-              <button className="loginButton" onClick={login}>
-                Continuar
-              </button>
-            </div>
-            <p className="formStatus">
-              {!filled && (
-                <span>
-                  {" "}
-                  Preencha todos os campos
-                  <img src={AlertIcon} alt="" />
-                </span>
-              )}
-            </p>
-            <p className="formStatus">
-              {errorMessage && (
-                <span>
-                  {" "}
-                  E-mail e/ou senha incorretos
-                  <img src={AlertIcon} alt="" />
-                </span>
-              )}
-            </p>
-          </form>
-        </FormContainer>
+              <div className="formStatus">
+                {loginError != null && (
+                  <>
+                    <img src={Icons.AlertIconRed} alt="" />
+                    <span>{loginError}</span>
+                  </>
+                )}
+              </div>
+            </form>
+          </FormContainer>
+        </LoginFormContainer>
       </BgCover>
     </LoginContainer>
   );
