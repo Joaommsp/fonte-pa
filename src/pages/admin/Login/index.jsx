@@ -2,12 +2,19 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import Icons from "../../../assets/images/svg/icons/iconsExport";
 import ArrowLeftIcon from "../../../assets/images/svg/icons/arrow-left-icon-dark.svg";
 import LoginIcon from "../../../assets/images/svg/icons/login-icon-light.svg";
 import Logo from "../../../assets/images/newsletter-logo.png";
 import AlertIcon from "../../../assets/images/svg/icons/alert-icon-red.svg";
 
-import { LoginContainer, Header, FormContainer } from "./styles";
+import {
+  LoginContainer,
+  BgCover,
+  Header,
+  LogoContainer,
+  FormContainer,
+} from "./styles";
 
 import { auth } from "../../../services/firebase";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
@@ -18,6 +25,9 @@ const Login = () => {
   const [aothUser, setAothUser] = useState("");
   const [filled, setFilled] = useState(true);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [showHidePasswordIcon, setShowHidePasswordIcon] = useState(
+    Icons.OpenEye
+  );
 
   const navigate = useNavigate();
 
@@ -66,63 +76,95 @@ const Login = () => {
       });
   };
 
+  const showHidePassword = () => {
+    const passwordInput = document.getElementById("passwordInput"); // Select the password input element
+
+    if (passwordInput) {
+      // Check if the element exists
+      if (passwordInput.type === "password") {
+        setShowHidePasswordIcon(Icons.ClosedEye);
+        passwordInput.type = "text";
+      } else {
+        setShowHidePasswordIcon(Icons.OpenEye);
+        passwordInput.type = "password";
+      }
+    } else {
+      console.error("Password input element not found!"); // Handle potential error
+    }
+  };
+
   return (
     <LoginContainer>
-      <Header>
-        <Link to={"/"} className="homeLink">
-          <img src={ArrowLeftIcon} alt="" /> Início{" "}
-        </Link>
-      </Header>
+      <BgCover>
+        <Header>
+          <Link to={"/"} className="homeLink">
+            <img src={Icons.ArrowLeftIcon} alt="" /> Voltar ao início{" "}
+          </Link>
+        </Header>
 
-      <FormContainer>
-        <img src={Logo} alt="" className="logo" />
-        <span>Por favor , faça login para continuar</span>
-        <form onSubmit={login}>
-          <div className="inputContainer">
-            <label htmlFor="email">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              placeholder="youremail@mail.com"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+        <LogoContainer></LogoContainer>
+        <FormContainer>
+          {/* <img src={Logo} alt="" className="logo" /> */}
+          <h2 className="loginPageTitle">Fazer login</h2>
+          <form onSubmit={login}>
+            <div className="inputContainer">
+              <label htmlFor="email">Endereço de email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
 
-          <div className="inputContainer">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              name="password"
-              required
-              id="password"
-              placeholder="********"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+            <div className="inputContainer">
+              <label htmlFor="password">Senha</label>
+              <div className="inputPasswordContainer">
+                <input
+                  id="passwordInput"
+                  type="password"
+                  name="password"
+                  required
+                  placeholder="********"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  className="togglePasswordButton"
+                  type="button"
+                  onClick={(e) => showHidePassword(e.target)}
+                >
+                  <img src={showHidePasswordIcon} alt="" />
+                </button>
+              </div>
+            </div>
 
-          <button className="button" onClick={login}>
-            Entrar <img src={LoginIcon} alt="" />
-          </button>
-          <p className="formStatus">
-            {!filled && (
-              <span>
-                {" "}
-                <img src={AlertIcon} alt="" /> Preencha todos os campos
-              </span>
-            )}
-          </p>
-          <p className="formStatus">
-            {errorMessage && (
-              <span>
-                {" "}
-                <img src={AlertIcon} alt="" /> E-mail e/ou senha incorretos
-              </span>
-            )}
-          </p>
-        </form>
-      </FormContainer>
+            <div className="loginButtonContainer">
+              <button className="loginButton" onClick={login}>
+                Continuar
+              </button>
+            </div>
+            <p className="formStatus">
+              {!filled && (
+                <span>
+                  {" "}
+                  Preencha todos os campos
+                  <img src={AlertIcon} alt="" />
+                </span>
+              )}
+            </p>
+            <p className="formStatus">
+              {errorMessage && (
+                <span>
+                  {" "}
+                  E-mail e/ou senha incorretos
+                  <img src={AlertIcon} alt="" />
+                </span>
+              )}
+            </p>
+          </form>
+        </FormContainer>
+      </BgCover>
     </LoginContainer>
   );
 };

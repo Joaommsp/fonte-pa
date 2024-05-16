@@ -159,11 +159,18 @@ export const PostCreatorContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 1rem;
+    height: 128px;
   }
 
   .envStatusContainer span {
     font-size: 0.8rem;
     color: #e72929;
+    display: flex;
+    align-items: center;
+  }
+
+  .envStatusContainer img {
+    margin-left: 0.5rem;
   }
 
   @media only screen and (max-width: 560px) {
@@ -205,7 +212,9 @@ export const PostCreatorContainer = styled.div`
     }
   }
 
-  @media only screen and (min-width: 580px) and (max-width: 1000px) {
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    padding: 0.5rem 3rem;
+
     .mainContainer {
       padding: 1rem 0.5rem;
       flex-direction: column;
@@ -300,6 +309,12 @@ export const FeatureHeaderContainer = styled.div`
     .backToDashBoardLink {
       width: 88px;
       font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    .featureTitle {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -637,6 +652,10 @@ export const PreviewCardContainer = styled.div`
       font-size: 0.8rem;
     }
   }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const TextWriterContainer = styled.div`
@@ -657,7 +676,13 @@ export const TextWriterContainer = styled.div`
     color: #181a20;
   }
 
+  /* Foto de kazuend na Unsplash */
+
   @media only screen and (max-width: 560px) {
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
     margin-bottom: 1rem;
   }
 `;

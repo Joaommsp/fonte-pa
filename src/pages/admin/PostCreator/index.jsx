@@ -48,6 +48,7 @@ const NewsLetterPanel = () => {
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
   const [aouthCheck, setAothCheck] = useState(0);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const postsColletcionRef = collection(db, "news");
 
@@ -92,7 +93,8 @@ const NewsLetterPanel = () => {
       newImageUrl == "" ||
       newAuthor == ""
     ) {
-      setEnvStatus(1);
+      setErrorMessage("Preencha todos os campos");
+      resetErrorMessage();
     } else {
       await addDoc(postsColletcionRef, {
         title: newTitle,
@@ -105,29 +107,32 @@ const NewsLetterPanel = () => {
       });
 
       window.location.reload();
-      missingItems(0);
     }
   };
 
-  const missingItems = (status) => {
-    if (status == 0) {
-      return <span></span>;
-    } else {
-      setInterval(() => {
-        setEnvStatus(0);
-        clearInterval();
-      }, 5000);
-      return <span>Por favor, preencha todos os campos</span>;
-    }
+  const resetErrorMessage = () => {
+    const timeToReset = setInterval(() => {
+      setErrorMessage(null);
+      clearInterval(timeToReset);
+    }, 2000);
   };
 
   const uploadImage = (event) => {
     event.preventDefault();
 
     const file = event.target[0]?.files[0];
-    console.log(file);
 
-    if (!file) alert("Nenhuma Imagem Selecionada");
+    if (!file) {
+      setErrorMessage("Nenhuma Imagem Selecionada");
+      resetErrorMessage();
+      return;
+    }
+
+    if (!isSizeMbMatch()) {
+      setErrorMessage("O arquivo deve ter menos de 2Mb");
+      resetErrorMessage();
+      return;
+    }
 
     const storageRef = ref(storage, `postsImages/${file.name}`);
     const uploadTaks = uploadBytesResumable(storageRef, file);
@@ -151,7 +156,18 @@ const NewsLetterPanel = () => {
     );
   };
 
-  function RichTextElement() {
+  const isSizeMbMatch = (bytes) => {
+    const mb = bytes / (1024 * 1024);
+    const mbFormated = mb.toFixed(2);
+
+    if (mbFormated < 2000) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const RichTextElement = () => {
     const textEditorModules = {
       toolbar: [
         [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -175,7 +191,7 @@ const NewsLetterPanel = () => {
         className="textEditor"
       />
     );
-  }
+  };
 
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
@@ -325,7 +341,7 @@ const NewsLetterPanel = () => {
               CRIAR POSTAGEM
             </button>
             <div className="envStatusContainer">
-              <span>{missingItems(envStatus)}</span>
+              {errorMessage != null && <span>{errorMessage} <img src={Icons.AlertIconRed} alt="Ícone de alerta" /> </span>}
             </div>
           </div>
           <PreviewCardContainer>
