@@ -3,8 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import moment from "moment";
-import "intro.js/introjs.css";
-import introJs from "intro.js";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -43,7 +41,6 @@ const NewsLetterPanel = () => {
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
-  const [envStatus, setEnvStatus] = useState(0);
   const [newImageUrl, setNewImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
@@ -114,10 +111,10 @@ const NewsLetterPanel = () => {
     const timeToReset = setInterval(() => {
       setErrorMessage(null);
       clearInterval(timeToReset);
-    }, 2000);
+    }, 5000);
   };
 
-  const uploadImage = (event) => {
+  const uploadImage = async (event) => {
     event.preventDefault();
 
     const file = event.target[0]?.files[0];
@@ -128,8 +125,10 @@ const NewsLetterPanel = () => {
       return;
     }
 
-    if (!isSizeMbMatch()) {
-      setErrorMessage("O arquivo deve ter menos de 2Mb");
+    const isValidSize = await isSizeMbMatch(file.size);
+
+    if (!isValidSize) {
+      setErrorMessage("Tamanho da imagem excede o limite de 2Mb");
       resetErrorMessage();
       return;
     }
@@ -157,10 +156,12 @@ const NewsLetterPanel = () => {
   };
 
   const isSizeMbMatch = (bytes) => {
+    console.log(bytes);
     const mb = bytes / (1024 * 1024);
     const mbFormated = mb.toFixed(2);
+    console.log(mbFormated);
 
-    if (mbFormated < 2000) {
+    if (mbFormated < 2) {
       return true;
     } else {
       return false;
@@ -208,19 +209,10 @@ const NewsLetterPanel = () => {
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>
           <UserInfos>
-            <UserLinks data-title="Bem vindo painel de controle!" data-intro="">
-              <Link
-                to={"/"}
-                className="homeLink"
-                data-title="Voltar ao início"
-                data-intro="Clique aqui para voltar à página inicial"
-              >
+            <UserLinks>
+              <Link to={"/"} className="homeLink" data-title="Voltar ao início">
                 {" "}
                 <img src={Icons.HomeIcon} alt="" />
-              </Link>
-              <Link className="homeLink" onClick={() => introJs().start()}>
-                {" "}
-                <img src={Icons.DoubtIcon} alt="" />
               </Link>
             </UserLinks>
             <img src={UserPhoto} alt="Foto do usuário" className="userPhoto" />
@@ -230,8 +222,6 @@ const NewsLetterPanel = () => {
               alt=""
               className="openPopUpIcon"
               onMouseEnter={() => setPopUpOpen(true)}
-              data-title="Opções de usuário"
-              data-intro="Cliqui aqui para acessar o menu de opções de usuário"
             />
           </UserInfos>
           {popUpOpen && (
@@ -341,7 +331,12 @@ const NewsLetterPanel = () => {
               CRIAR POSTAGEM
             </button>
             <div className="envStatusContainer">
-              {errorMessage != null && <span>{errorMessage} <img src={Icons.AlertIconRed} alt="Ícone de alerta" /> </span>}
+              {errorMessage != null && (
+                <span>
+                  {errorMessage}{" "}
+                  <img src={Icons.AlertIconRed} alt="Ícone de alerta" />{" "}
+                </span>
+              )}
             </div>
           </div>
           <PreviewCardContainer>

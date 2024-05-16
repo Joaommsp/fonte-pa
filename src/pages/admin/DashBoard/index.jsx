@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import "intro.js/introjs.css";
-import introJs from "intro.js";
 
 import Footer from "../../../Components/Footer";
 
@@ -20,6 +18,7 @@ import {
   DashBoardTitle,
   DashBoardCardsContainer,
   DashBoardCard,
+  FooterContainer,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -78,19 +77,10 @@ const DashBoard = () => {
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>
           <UserInfos>
-            <UserLinks data-title="Bem vindo painel de controle!" data-intro="">
-              <Link
-                to={"/"}
-                className="homeLink"
-                data-title="Voltar ao início"
-                data-intro="Clique aqui para voltar à página inicial"
-              >
+            <UserLinks>
+              <Link to={"/"} className="homeLink" data-title="Voltar ao início">
                 {" "}
                 <img src={Icons.HomeIcon} alt="" />
-              </Link>
-              <Link className="homeLink" onClick={() => introJs().start()}>
-                {" "}
-                <img src={Icons.DoubtIcon} alt="" />
               </Link>
             </UserLinks>
             <img src={UserPhoto} alt="Foto do usuário" className="userPhoto" />
@@ -100,8 +90,6 @@ const DashBoard = () => {
               alt=""
               className="openPopUpIcon"
               onMouseEnter={() => setPopUpOpen(true)}
-              data-title="Opções de usuário"
-              data-intro="Cliqui aqui para acessar o menu de opções de usuário"
             />
           </UserInfos>
           {popUpOpen && (
@@ -117,15 +105,9 @@ const DashBoard = () => {
         <DashBoardContentHeader>
           <DashBoardTitle>Overview</DashBoardTitle>
         </DashBoardContentHeader>
-        <DashBoardCardsContainer
-          data-title="Aqui estão os recursos disponíveis"
-          data-intro=""
-        >
+        <DashBoardCardsContainer>
           <Link to="/postcreator" className="cardLinkContainer">
-            <DashBoardCard
-              data-title="Criador de Postagens"
-              data-intro="Acesse para criar novas postagens"
-            >
+            <DashBoardCard>
               <span className="featureName">Criador de postagens</span>
               <div className="cardImageContainer" id="createPostImageBg">
                 <div className="cardContent">
@@ -135,10 +117,7 @@ const DashBoard = () => {
             </DashBoardCard>
           </Link>
           <Link to="/postsmanager" className="cardLinkContainer">
-            <DashBoardCard
-              data-title="Gerenciador de postagens"
-              data-intro="Acesse para visualizar e gerenciar as postagens que estão no ar"
-            >
+            <DashBoardCard>
               <span className="featureName">Gerenciador de postagens</span>
               <div className="cardImageContainer" id="editPostImageBg">
                 <div className="cardContent">
@@ -149,7 +128,9 @@ const DashBoard = () => {
           </Link>
         </DashBoardCardsContainer>
       </DashBoardContent>
-      <Footer></Footer>
+      <FooterContainer>
+        <Footer></Footer>
+      </FooterContainer>
     </NewsLetterPanelContainer>
   );
 };

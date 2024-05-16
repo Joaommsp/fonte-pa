@@ -33,7 +33,6 @@ const Login = () => {
       if (user) {
         navigate("/dashboard");
       } else {
-        setLoginError("Faça login para continuar");
         resetLoginError();
       }
     });

@@ -56,7 +56,7 @@ export const Header = styled.div`
     display: flex;
     align-content: center;
 
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     transition: 0.3s ease-in-out;
 
@@ -72,11 +72,13 @@ export const Header = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
-    padding: 0.5rem 1rem;
+    height: 8vh;
+    padding: 0;
   }
 
   @media only screen and (max-width: 580px) {
-    padding: 0.5rem 0rem;
+    padding: 0rem;
+    height: 8vh;
   }
 `;
 

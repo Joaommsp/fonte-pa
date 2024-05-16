@@ -308,3 +308,12 @@ export const LoaderContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const FooterContainer = styled.div`
+  width: 100%;
+
+  @media only screen and (min-height: 800px) and (min-width: 1000px) {
+    position: absolute;
+    bottom: 0;
+  }
+`;
