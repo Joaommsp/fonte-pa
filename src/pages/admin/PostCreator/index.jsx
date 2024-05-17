@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import moment from "moment";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -22,7 +21,7 @@ import {
   TextWriterContainer,
 } from "./styles";
 
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -80,8 +79,6 @@ const NewsLetterPanel = () => {
   };
 
   const createPost = async () => {
-    console.log(newData);
-    const formatedDate = moment(newData, "YYYY-MM-DD").format("DD/MM/YYYY");
     if (
       newTitle == "" ||
       newSubTitle == "" ||
@@ -98,7 +95,7 @@ const NewsLetterPanel = () => {
         subtitle: newSubTitle,
         hastags: newHashtags,
         text: newText,
-        data: formatedDate,
+        data: Timestamp.fromDate(new Date(newData)),
         image: newImageUrl,
         author: newAuthor,
       });
@@ -114,7 +111,7 @@ const NewsLetterPanel = () => {
     }, 5000);
   };
 
-  const uploadImage = async (event) => {
+  const uploadImage = (event) => {
     event.preventDefault();
 
     const file = event.target[0]?.files[0];
@@ -125,10 +122,10 @@ const NewsLetterPanel = () => {
       return;
     }
 
-    const isValidSize = await isSizeMbMatch(file.size);
+    const isValidSize = isSizeMbMatch(file.size);
 
     if (!isValidSize) {
-      setErrorMessage("Tamanho da imagem excede o limite de 2Mb");
+      setErrorMessage("Tamanho da imagem excede o limite de 3Mb");
       resetErrorMessage();
       return;
     }
@@ -161,7 +158,7 @@ const NewsLetterPanel = () => {
     const mbFormated = mb.toFixed(2);
     console.log(mbFormated);
 
-    if (mbFormated < 2) {
+    if (mbFormated < 3) {
       return true;
     } else {
       return false;

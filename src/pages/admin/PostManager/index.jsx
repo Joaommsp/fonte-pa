@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import "intro.js/introjs.css";
-import introJs from "intro.js";
+import { query, orderBy } from "firebase/firestore";
 
 import Footer from "../../../Components/Footer";
 
@@ -17,6 +16,7 @@ import {
   UserLinks,
   PostManagerContentContainer,
   FeatureHeaderContainer,
+  CardsContainer,
 } from "./styles";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 
@@ -74,12 +74,31 @@ const PostManager = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsColletcionRef);
+      const queryOrderByDate = query(
+        postsColletcionRef,
+        orderBy("data", "desc")
+      );
+      const data = await getDocs(queryOrderByDate);
       setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log(posts);
     };
 
     getPosts();
   }, []);
+
+  const formateDate = (data) => {
+    const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
+
+    const dataFormatada = new Date(dateInMilliseconds);
+
+    const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+
+    return formatDDMMYYYY;
+  };
 
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
@@ -96,19 +115,10 @@ const PostManager = () => {
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>
           <UserInfos>
-            <UserLinks data-title="Bem vindo painel de controle!" data-intro="">
-              <Link
-                to={"/"}
-                className="homeLink"
-                data-title="Voltar ao início"
-                data-intro="Clique aqui para voltar à página inicial"
-              >
+            <UserLinks>
+              <Link to={"/"} className="homeLink">
                 {" "}
                 <img src={Icons.HomeIcon} alt="" />
-              </Link>
-              <Link className="homeLink" onClick={() => introJs().start()}>
-                {" "}
-                <img src={Icons.DoubtIcon} alt="" />
               </Link>
             </UserLinks>
             <img src={UserPhoto} alt="Foto do usuário" className="userPhoto" />
@@ -118,8 +128,6 @@ const PostManager = () => {
               alt=""
               className="openPopUpIcon"
               onMouseEnter={() => setPopUpOpen(true)}
-              data-title="Opções de usuário"
-              data-intro="Cliqui aqui para acessar o menu de opções de usuário"
             />
           </UserInfos>
           {popUpOpen && (
@@ -146,30 +154,37 @@ const PostManager = () => {
             </div>
           </div>
         </FeatureHeaderContainer>
-        <div className="cardsContainer">
+        <CardsContainer>
           {posts.map((post, index) => {
             return (
               <div className="card" key={index}>
-                <button
-                  className="deleteBtn"
-                  onClick={() => deletePost(post.id)}
-                >
-                  <img src={Icons.DeleteIconRed} alt="" />
-                </button>
-                <h2 className="cardTitle">{post.title}</h2>
-                <span className="cardSubtitle">{post.subtitle}</span>
-                <span className="cardHashtags">{post.hastags}</span>
-                <img className="cardImage" src={post.image} alt="" />
+                <div className="cardHeader">
+                  <h2 className="cardTitle">{post.title}</h2>
+                  <span className="cardHashtags">{post.hastags}</span>
+                </div>
+                <div className="cardHeaderContainer">
+                  <img className="cardImage" src={post.image} alt="" />
+                  <button
+                    className="deletePostBtn"
+                    onClick={() => deletePost(post.id)}
+                  >
+                    <img
+                      src={Icons.DeleteIconRed}
+                      alt="Icone de deletar postagem"
+                    />
+                  </button>
+                </div>
                 <div className="cardBotton">
-                  <p className="cardText">{post.text}</p>
-                  <span className="cardData">{post.data}</span>
-                  <span className="cardAuthor">{post.author}</span>
+                  <div
+                    className="cardTextContainer"
+                    dangerouslySetInnerHTML={{ __html: post.text }}
+                  ></div>
+                  <span className="cardData">{formateDate(post.data)}</span>
                 </div>
               </div>
             );
           })}
-        </div>
-        ;
+        </CardsContainer>
       </PostManagerContentContainer>
       <Footer></Footer>
     </NewsLetterPanelContainer>

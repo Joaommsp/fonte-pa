@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { db } from "../../services/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import { query, orderBy } from "firebase/firestore";
 
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import logo from "../../assets/images/imagens-oficiais/banner.svg";
@@ -17,7 +18,11 @@ const PostsSection = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsColletcionRef);
+      const queryOrderByDate = query(
+        postsColletcionRef,
+        orderBy("data", "desc")
+      );
+      const data = await getDocs(queryOrderByDate);
       setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
@@ -30,6 +35,20 @@ const PostsSection = () => {
 
   const handleClosePopup = () => {
     setOpenPopupIndex(null);
+  };
+
+  const formateDate = (data) => {
+    const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
+
+    const dataFormatada = new Date(dateInMilliseconds);
+
+    const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+
+    return formatDDMMYYYY;
   };
 
   return (
@@ -63,7 +82,7 @@ const PostsSection = () => {
                       <span className="PopUpCardAuthor">
                         Por: {post.author} |
                       </span>
-                      <span className="PopUpCardData"> {post.data}</span>
+                      {/* <span className="PopUpCardData"> {post.data}</span> */}
                     </div>
                   </div>
                   <img className="popUpCardImage" src={post.image} alt="" />
@@ -108,7 +127,7 @@ const PostsSection = () => {
                   className="cardTextContainer"
                   dangerouslySetInnerHTML={{ __html: post.text }}
                 ></div>
-                <span className="cardData">{post.data}</span>
+                <span className="cardData">{formateDate(post.data)}</span>
                 <button
                   onClick={() => handleOpenPopup(index)}
                   className="readAllBtn"

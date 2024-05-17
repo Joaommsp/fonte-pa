@@ -4,7 +4,7 @@ import CreatePostCardBg from "../../../assets/images/editPostCardBg.png";
 
 export const NewsLetterPanelContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   padding-top: 5rem;
 
@@ -274,4 +274,281 @@ export const LoaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const CardsContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  position: relative;
+
+  padding: 1rem 1rem;
+  margin-bottom: 5rem;
+
+  .card {
+    width: 650px;
+    height: 564px;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: relative;
+
+    border-radius: 5px;
+
+    background-color: #ffffff;
+  }
+
+  .cardHeader {
+    width: 100%;
+    height: 82px;
+
+    margin-bottom: 1rem;
+  }
+
+  .cardTitle {
+    width: 80%;
+    font-size: 1.2rem;
+    color: #181a20;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .cardHashtags {
+    font-size: 0.9rem;
+    color: #b4b4b8;
+  }
+
+  .cardHeaderContainer {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+  }
+
+  .deletePostBtn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    background-color: #ffffff;
+    border: 0;
+    padding: 0.5rem;
+
+    border-radius: 5px;
+
+    transition: 0.3s ease-in-out;
+
+    transform: scale(1);
+
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.37);
+  }
+
+  .deletePostBtn img {
+    width: 24px;
+  }
+
+  .deletePostBtn:hover {
+    cursor: pointer;
+    background-color: #ffffff90;
+    transform: scale(1.1);
+  }
+
+  .cardImage {
+    width: 615px;
+    height: 346px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #00000020;
+  }
+
+  .cardBotton {
+    width: 100%;
+  }
+
+  .cardTextContainer {
+    width: 100%;
+    height: 64px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .cardTextContainer h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: #181a20;
+  }
+
+  .cardTextContainer p {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .cardTextContainer span {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .cardTextContainer strong {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .cardTextContainer blockquote {
+    line-height: 1.3;
+  }
+
+  .cardData {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #00000060;
+    font-size: 0.8rem;
+  }
+
+  .readAllBtn {
+    background-color: transparent;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    color: #1c7ec2;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .readAllBtn img {
+    margin-left: 0.3rem;
+  }
+
+  .readAllBtn:hover {
+    opacity: 50%;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 700px) {
+    .card {
+      width: 500px;
+      height: 474px;
+      padding: 0.5rem;
+
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cardTitle {
+      font-size: 1rem;
+    }
+
+    .cardImage {
+      width: 444px;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .cardTextContainer p {
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .cardTextContainer span {
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+
+    .card {
+      width: 100%;
+      height: fit-content;
+      padding: 0.5rem;
+
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cardHeader {
+      width: 100%;
+      height: fit-content;
+      border-bottom: 2px solid #1c7ec2;
+      margin-bottom: 1rem;
+    }
+
+    .cardTitle {
+      font-size: rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .cardSubtitle {
+      font-size: 0.8rem;
+    }
+
+    .cardImage {
+      width: 290px;
+      height: 163px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .cardTextContainer p {
+      font-size: 13px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .cardTextContainer span {
+      font-size: 13px;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .cardTextContainer strong {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .cardData {
+      top: 0;
+      font-size: 0.8rem;
+      display: none;
+    }
+
+    .readAllBtn {
+      font-size: 0.8rem;
+    }
+  }
 `;
