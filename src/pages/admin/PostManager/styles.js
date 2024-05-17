@@ -82,7 +82,7 @@ export const FeatureHeaderContainer = styled.div`
   @media only screen and (max-width: 560px) {
     height: 124px;
     background-position: top;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     .featureTitle {
       font-size: 1.2rem;
@@ -332,6 +332,7 @@ export const CardsContainer = styled.div`
 
   .cardTitle {
     width: 80%;
+    height: 56px;
     font-size: 1.2rem;
     color: #181a20;
     text-align: left;
@@ -342,6 +343,8 @@ export const CardsContainer = styled.div`
   .cardHashtags {
     font-size: 0.9rem;
     color: #b4b4b8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .cardHeaderContainer {
@@ -508,7 +511,6 @@ export const CardsContainer = styled.div`
 
     .card {
       width: 100%;
-      background-color: red;
       height: fit-content;
       padding: 0.5rem;
 
@@ -524,8 +526,9 @@ export const CardsContainer = styled.div`
     }
 
     .cardTitle {
-      font-size: rem;
+      font-size: 1rem;
       padding-bottom: 0.5rem;
+      height: fit-content;
     }
 
     .cardSubtitle {

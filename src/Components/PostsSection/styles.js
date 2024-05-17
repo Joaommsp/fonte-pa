@@ -56,6 +56,7 @@ export const CardsContainer = styled.div`
   .cardTitle {
     width: 80%;
     font-size: 1.2rem;
+    height: 56px;
     color: #181a20;
     text-align: left;
     white-space: pre-wrap;
@@ -65,6 +66,8 @@ export const CardsContainer = styled.div`
   .cardHashtags {
     font-size: 0.9rem;
     color: #b4b4b8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .cardImage {
@@ -212,6 +215,7 @@ export const CardsContainer = styled.div`
     .cardTitle {
       font-size: rem;
       padding-bottom: 0.5rem;
+      height: fit-content;
     }
 
     .cardSubtitle {

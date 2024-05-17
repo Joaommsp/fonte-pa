@@ -39,13 +39,13 @@ export const DashBoardHeader = styled.aside`
       filter: grayscale(1);
     }
 
-    height: 8vh;
+    height: 48px;
     padding: 0.5rem 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 1000px) {
     padding: 0.5rem 2rem;
-    height: 8vh;
+    height: 48px;
   }
 `;
 

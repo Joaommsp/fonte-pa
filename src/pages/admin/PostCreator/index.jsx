@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -10,9 +10,9 @@ import {
   getStorage,
   deleteObject,
 } from "firebase/storage";
-
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { gsap } from "gsap";
 
 import Footer from "../../../Components/Footer";
 
@@ -28,12 +28,14 @@ import {
   FeatureHeaderContainer,
   PreviewCardContainer,
   TextWriterContainer,
+  PostCreatedNoticeModal,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import DefaultImage from "../../../assets/images/default-image.png";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
+import PostCreatedModalImage from "../../../assets/images/svg/postCreatedModalImage.svg";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -47,10 +49,13 @@ const NewsLetterPanel = () => {
   const [newData, setNewData] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
   const [newImageUrl, setNewImageUrl] = useState("");
+  const fileInputRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
   const [aouthCheck, setAothCheck] = useState(0);
   const [errorMessage, setErrorMessage] = useState(null);
+  const modalRef = useRef(null);
+  const [postCreated, setPostCreated] = useState(false);
 
   const postsColletcionRef = collection(db, "news");
 
@@ -106,8 +111,22 @@ const NewsLetterPanel = () => {
         author: newAuthor,
       });
 
-      window.location.reload();
+      clearAllInputs();
+      handleClearFile();
+      setPostCreated(true);
+      resetCreatedPostNotice();
     }
+  };
+
+  const clearAllInputs = () => {
+    setNewTitle("");
+    setNewSubTitle("");
+    setNewSHashTags("");
+    setNewText("");
+    setNewData("");
+    setNewAuthor("");
+    setNewImageUrl("");
+    setPreviewImageUrl("");
   };
 
   const resetErrorMessage = () => {
@@ -128,29 +147,17 @@ const NewsLetterPanel = () => {
       const fileName = imageInput.files[0].name;
       const desertRef = ref(storage, `postsImages/${fileName}`);
 
-      imageInput.addEventListener("click", () => {
-        console.log("enviar imagem");
-      });
-
       await deleteObject(desertRef)
         .then(() => {
-          console.log("deletada com sucesso");
-          clearInputFileList(imageInput.files);
           setPreviewImageUrl("");
+          setNewImageUrl("");
         })
         .catch(() => {
-          clearInputFileList(imageInput.files);
           setPreviewImageUrl("");
-          console.log("Arquivo não encontrado");
+          setNewImageUrl("");
         });
     } else {
       return;
-    }
-  };
-
-  const clearInputFileList = (list) => {
-    for (let i = list.length - 1; i >= 0; i--) {
-      list.pop();
     }
   };
 
@@ -208,6 +215,10 @@ const NewsLetterPanel = () => {
     }
   };
 
+  const handleClearFile = () => {
+    fileInputRef.current.value = "";
+  };
+
   const RichTextElement = () => {
     const textEditorModules = {
       toolbar: [
@@ -234,6 +245,28 @@ const NewsLetterPanel = () => {
     );
   };
 
+  const closeCreatedPostNotice = () => {
+    if (postCreated == true) {
+      setPostCreated(false);
+    }
+  };
+
+  const resetCreatedPostNotice = () => {
+    const timeToColeModal = setInterval(() => {
+      setPostCreated(false);
+      clearInterval(timeToColeModal);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    gsap.from(modalRef.current, {
+      opacity: 0,
+      y: -500, // Offscreen position
+      duration: 2, // Animation duration in seconds
+      ease: "Power3.easeInOut", // Easing function for smooth appearance
+    });
+  }, [postCreated]);
+
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
       <BarLoader
@@ -245,6 +278,26 @@ const NewsLetterPanel = () => {
     </LoaderContainer>
   ) : (
     <NewsLetterPanelContainer>
+      {postCreated && (
+        <PostCreatedNoticeModal ref={modalRef}>
+          <button
+            className="closeCreatedPostModal"
+            onClick={() => closeCreatedPostNotice()}
+          >
+            {" "}
+            <img
+              src={Icons.CloseIcon}
+              alt="Ícone para fechar o aviso de postagem criada"
+            />{" "}
+          </button>
+          <img
+            className="postCreatedModalImage"
+            src={PostCreatedModalImage}
+            alt="Simbolo de confirmação da postagem criada"
+          />
+          <span>Conteúdo publicado com sucesso!</span>
+        </PostCreatedNoticeModal>
+      )}
       <DashBoardHeader className="asideMenu">
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>
@@ -298,6 +351,7 @@ const NewsLetterPanel = () => {
               maxLength="50"
               id="title"
               name="title"
+              value={newTitle}
               onChange={(event) => setNewTitle(event.target.value)}
             />
             <label htmlFor="subtitle">SubTítulo</label>
@@ -308,6 +362,7 @@ const NewsLetterPanel = () => {
               id="subtitle"
               name="subtitle"
               maxLength="100"
+              value={newSubTitle}
               onChange={(event) => setNewSubTitle(event.target.value)}
             />
             <label htmlFor="subtitle">Hashtags (Inclua 3 no máx.) </label>
@@ -318,6 +373,7 @@ const NewsLetterPanel = () => {
               id="hashTags"
               name="hashTags"
               maxLength="50"
+              value={newHashtags}
               onChange={(event) => setNewSHashTags(event.target.value)}
             />
             {
@@ -344,14 +400,17 @@ const NewsLetterPanel = () => {
               maxLength="50"
               id="author"
               name="author"
+              value={newAuthor}
               onChange={(event) => setNewAuthor(event.target.value)}
             />
             <form onSubmit={uploadImage}>
+              <label htmlFor="author">Imagem (Escala 19:9)</label>
               <input
                 type="file"
                 accept="image/jpeg, image/png"
                 className="inputImage"
                 id="imageInput"
+                ref={fileInputRef}
                 onClick={() => verifyFileExistence()}
               />
               <button type="submit" className="uploadImageBtn">

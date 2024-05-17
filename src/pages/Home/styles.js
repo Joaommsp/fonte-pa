@@ -277,7 +277,7 @@ export const WhatsAppLInk = styled.a`
 
   border-radius: 50px;
 
-  z-index: 1500;
+  z-index: 1000;
 
   &:hover {
     opacity: 80%;

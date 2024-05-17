@@ -23,7 +23,7 @@ export const HeaderContainer = styled.div`
 
   position: fixed;
   background-color: #ffffff;
-  z-index: 1000;
+  z-index: 2000;
 
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.41);
 
@@ -65,7 +65,7 @@ export const HeaderLinksContainer = styled.div`
 
   padding-top: 1rem;
 
-  z-index: 1000;
+  z-index: 2000;
 
   @media only screen and (max-width: 1000px) {
     transition: max-height 0.3s ease-in-out;

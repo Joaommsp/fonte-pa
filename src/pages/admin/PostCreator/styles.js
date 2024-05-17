@@ -146,6 +146,7 @@ export const PostCreatorContainer = styled.div`
     color: #ffffff;
     font-weight: 500;
     transition: 0.3s ease-in-out;
+    font-family: "Poppins", sans-serif;
   }
 
   .createBtn:hover {
@@ -529,6 +530,8 @@ export const PreviewCardContainer = styled.div`
 
     font-size: 1.2rem;
     font-weight: 500;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .previewCardSubtitle {
@@ -557,6 +560,7 @@ export const PreviewCardContainer = styled.div`
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
+
     margin-bottom: 0.5rem;
 
     font-size: 0.9rem;
@@ -695,4 +699,60 @@ export const LoaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const PostCreatedNoticeModal = styled.div`
+  width: 400px;
+  height: 250px;
+
+  background-color: #ffffff;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1000;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .closeCreatedPostModal {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+
+    border: 0;
+
+    background-color: transparent;
+
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .closeCreatedPostModal img {
+    width: 16px;
+  }
+
+  .closeCreatedPostModal:hover {
+    cursor: pointer;
+
+    transform: scale(1.1);
+  }
+
+  .postCreatedModalImage {
+    width: 194px;
+    margin-bottom: 1.5rem;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #181a20;
+  }
 `;

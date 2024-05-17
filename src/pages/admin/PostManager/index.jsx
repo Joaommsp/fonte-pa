@@ -71,10 +71,10 @@ const PostManager = () => {
     const postDoc = doc(db, "news", id);
     const desertRef = ref(storage, `${imageUrl}`);
 
-    await deleteObject(desertRef)
+    await deleteDoc(postDoc)
       .then(() => {
-        console.log("imagem deletada");
-        deleteDoc(postDoc);
+        console.log("postagem deletada");
+        deleteObject(desertRef);
       })
       .catch((error) => {
         console.log(error);
