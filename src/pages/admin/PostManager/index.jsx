@@ -3,6 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { auth, db } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { query, orderBy } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 
 import Footer from "../../../Components/Footer";
 
@@ -18,7 +20,6 @@ import {
   FeatureHeaderContainer,
   CardsContainer,
 } from "./styles";
-import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
@@ -64,10 +65,20 @@ const PostManager = () => {
     });
   };
 
-  const deletePost = async (id) => {
-    const postDoc = doc(db, "news", id);
+  const deletePost = async (id, imageUrl) => {
+    const storage = getStorage();
 
-    await deleteDoc(postDoc);
+    const postDoc = doc(db, "news", id);
+    const desertRef = ref(storage, `${imageUrl}`);
+
+    await deleteObject(desertRef)
+      .then(() => {
+        console.log("imagem deletada");
+        deleteDoc(postDoc);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     window.location.reload();
   };
@@ -166,7 +177,7 @@ const PostManager = () => {
                   <img className="cardImage" src={post.image} alt="" />
                   <button
                     className="deletePostBtn"
-                    onClick={() => deletePost(post.id)}
+                    onClick={() => deletePost(post.id, post.image)}
                   >
                     <img
                       src={Icons.DeleteIconRed}

@@ -97,6 +97,12 @@ export const FeatureHeaderContainer = styled.div`
       font-size: 0.8rem;
     }
   }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    .featureTitle {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export const DashBoardHeader = styled.aside`
@@ -264,6 +270,14 @@ export const PostManagerContentContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 0.5rem 5rem;
+
+  @media only screen and (max-width: 560px) {
+    padding: 0.5rem 1rem;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    padding: 0.5rem 3rem;
+  }
 `;
 
 export const LoaderContainer = styled.div`
@@ -494,6 +508,7 @@ export const CardsContainer = styled.div`
 
     .card {
       width: 100%;
+      background-color: red;
       height: fit-content;
       padding: 0.5rem;
 

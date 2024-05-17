@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  getStorage,
+  deleteObject,
+} from "firebase/storage";
+
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -20,9 +29,6 @@ import {
   PreviewCardContainer,
   TextWriterContainer,
 } from "./styles";
-
-import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import DefaultImage from "../../../assets/images/default-image.png";
@@ -109,6 +115,43 @@ const NewsLetterPanel = () => {
       setErrorMessage(null);
       clearInterval(timeToReset);
     }, 5000);
+  };
+
+  const verifyFileExistence = async () => {
+    const storage = getStorage();
+
+    const imageInput = document.getElementById("imageInput");
+    console.log(imageInput.files);
+
+    if (imageInput.files.length > 0) {
+      console.log("hora de deletar");
+      const fileName = imageInput.files[0].name;
+      const desertRef = ref(storage, `postsImages/${fileName}`);
+
+      imageInput.addEventListener("click", () => {
+        console.log("enviar imagem");
+      });
+
+      await deleteObject(desertRef)
+        .then(() => {
+          console.log("deletada com sucesso");
+          clearInputFileList(imageInput.files);
+          setPreviewImageUrl("");
+        })
+        .catch(() => {
+          clearInputFileList(imageInput.files);
+          setPreviewImageUrl("");
+          console.log("Arquivo não encontrado");
+        });
+    } else {
+      return;
+    }
+  };
+
+  const clearInputFileList = (list) => {
+    for (let i = list.length - 1; i >= 0; i--) {
+      list.pop();
+    }
   };
 
   const uploadImage = (event) => {
@@ -308,6 +351,8 @@ const NewsLetterPanel = () => {
                 type="file"
                 accept="image/jpeg, image/png"
                 className="inputImage"
+                id="imageInput"
+                onClick={() => verifyFileExistence()}
               />
               <button type="submit" className="uploadImageBtn">
                 <img
