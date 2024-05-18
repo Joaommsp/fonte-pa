@@ -58,7 +58,9 @@ const Login = () => {
       })
       .catch((error) => {
         if (email != "" && password != "") {
-          setLoginError("email e/ou senha incorreto(s)");
+          let erroMessage = error.message;
+          erroMessage = "Email e/ou senha incorreto(s)";
+          setLoginError(erroMessage);
           resetLoginError();
         }
       });

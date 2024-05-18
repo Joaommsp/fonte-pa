@@ -19,11 +19,13 @@ import {
   PostManagerContentContainer,
   FeatureHeaderContainer,
   CardsContainer,
+  ActionStatusContainer,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
+import SucessDeleteImage from "../../../assets/images/svg/succesDeleteImage.svg";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -32,6 +34,8 @@ const PostManager = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
   const [aouthCheck, setAothCheck] = useState(0);
+  const [actionStatus, setActionStatus] = useState("");
+  const [actionStatusImage, setActionStatusIMage] = useState(null);
 
   const postsColletcionRef = collection(db, "news");
 
@@ -74,12 +78,12 @@ const PostManager = () => {
     await deleteDoc(postDoc)
       .then(() => {
         deleteObject(desertRef);
+        setActionStatus("Conteúdo excluído com sucesso!");
+        setActionStatusIMage(SucessDeleteImage);
       })
       .catch((error) => {
-        console.log(error);
+        setActionStatus(error.message);
       });
-
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -110,6 +114,10 @@ const PostManager = () => {
     return formatDDMMYYYY;
   };
 
+  const closeActionStatusModal = () => {
+    setActionStatus(null);
+  };
+
   return aouthCheck == 0 && loading == true ? (
     <LoaderContainer>
       <BarLoader
@@ -121,6 +129,20 @@ const PostManager = () => {
     </LoaderContainer>
   ) : (
     <NewsLetterPanelContainer>
+      {actionStatus != null && actionStatusImage != null && (
+        <ActionStatusContainer>
+          <button
+            className="closeCreatedPostModal"
+            onClick={() => closeActionStatusModal()}
+          >
+            {" "}
+            <img
+              src={Icons.CloseIcon}
+              alt="Ícone para fechar o aviso de postagem criada"
+            />{" "}
+          </button>
+        </ActionStatusContainer>
+      )}
       <DashBoardHeader className="asideMenu">
         <img src={Logo} alt="" className="logo" />
         <UserInfosContainer>

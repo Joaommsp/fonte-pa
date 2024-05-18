@@ -570,3 +570,58 @@ export const CardsContainer = styled.div`
     }
   }
 `;
+
+export const ActionStatusContainer = styled.div`
+  width: 400px;
+  height: 250px;
+  background-color: red;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1000;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .closeCreatedPostModal {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+
+    border: 0;
+
+    background-color: transparent;
+
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .closeCreatedPostModal img {
+    width: 16px;
+  }
+
+  .closeCreatedPostModal:hover {
+    cursor: pointer;
+
+    transform: scale(1.1);
+  }
+
+  .postCreatedModalImage {
+    width: 194px;
+    margin-bottom: 1.5rem;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #181a20;
+  }
+`;
