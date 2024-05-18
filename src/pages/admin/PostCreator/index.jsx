@@ -89,33 +89,50 @@ const NewsLetterPanel = () => {
     });
   };
 
-  const createPost = async () => {
-    if (
-      newTitle == "" ||
-      newSubTitle == "" ||
-      newText == "" ||
-      newData == "" ||
-      newImageUrl == "" ||
-      newAuthor == ""
-    ) {
-      setErrorMessage("Preencha todos os campos");
-      resetErrorMessage();
-    } else {
-      await addDoc(postsColletcionRef, {
-        title: newTitle,
-        subtitle: newSubTitle,
-        hastags: newHashtags,
-        text: newText,
-        data: Timestamp.fromDate(new Date(newData)),
-        image: newImageUrl,
-        author: newAuthor,
-      });
+  const createPost = () => {
+    uploadImage()
+      .then((imageUrl) => {
+        console.log(imageUrl);
 
-      clearAllInputs();
-      handleClearFile();
-      setPostCreated(true);
-      resetCreatedPostNotice();
-    }
+        if (
+          newTitle === "" ||
+          newSubTitle === "" ||
+          newText === "" ||
+          newData === "" ||
+          newAuthor === ""
+        ) {
+          setErrorMessage("Preencha todos os campos");
+          resetErrorMessage();
+        } else {
+          try {
+            handleClearFile();
+            console.log("URL da imagem: " + imageUrl);
+            createDocOnDataBase(imageUrl);
+            clearAllInputs();
+          } catch (error) {
+            console.error(error);
+          }
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setErrorMessage("Erro no upload da imagem");
+      });
+  };
+
+  const createDocOnDataBase = async (imageUrl) => {
+    await addDoc(postsColletcionRef, {
+      title: newTitle,
+      subtitle: newSubTitle,
+      hashtags: newHashtags,
+      text: newText,
+      data: Timestamp.fromDate(new Date(newData)),
+      image: imageUrl,
+      author: newAuthor,
+    });
+
+    setPostCreated(true);
+    resetCreatedPostNotice();
   };
 
   const clearAllInputs = () => {
@@ -136,70 +153,64 @@ const NewsLetterPanel = () => {
     }, 5000);
   };
 
-  const verifyFileExistence = async () => {
-    const storage = getStorage();
-
-    const imageInput = document.getElementById("imageInput");
-    console.log(imageInput.files);
-
-    if (imageInput.files.length > 0) {
-      console.log("hora de deletar");
-      const fileName = imageInput.files[0].name;
-      const desertRef = ref(storage, `postsImages/${fileName}`);
-
-      await deleteObject(desertRef)
-        .then(() => {
-          setPreviewImageUrl("");
-          setNewImageUrl("");
-        })
-        .catch(() => {
-          setPreviewImageUrl("");
-          setNewImageUrl("");
-        });
-    } else {
-      return;
-    }
-  };
-
-  const uploadImage = (event) => {
+  const previewImage = (event) => {
     event.preventDefault();
 
-    const file = event.target[0]?.files[0];
+    const file = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setPreviewImageUrl(event.target.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const uploadImage = async () => {
+    const file = fileInputRef.current.files[0];
+    console.log(file);
+
+    const isValidSize = isSizeMbMatch(file.size);
 
     if (!file) {
       setErrorMessage("Nenhuma Imagem Selecionada");
       resetErrorMessage();
       return;
-    }
-
-    const isValidSize = isSizeMbMatch(file.size);
-
-    if (!isValidSize) {
+    } else if (!isValidSize) {
       setErrorMessage("Tamanho da imagem excede o limite de 3Mb");
-      resetErrorMessage();
-      return;
+      throw new Error("File size not supported");
+    } else if (file == undefined) {
+      setErrorMessage("Nenhuma imagem selecionada");
+      throw new Error("There is no file selected");
+    } else {
+      const storageRef = ref(storage, `postsImages/${file.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      return new Promise((resolve, reject) => {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            setProgress(progress);
+          },
+          (error) => {
+            console.error(error);
+            reject(new Error("Erro no upload da imagem"));
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref)
+              .then((url) => {
+                console.log(url);
+                resolve(url);
+              })
+              .catch((error) => {
+                console.error(error);
+                reject(new Error("Erro ao obter a URL de download"));
+              });
+          }
+        );
+      });
     }
-
-    const storageRef = ref(storage, `postsImages/${file.name}`);
-    const uploadTaks = uploadBytesResumable(storageRef, file);
-
-    uploadTaks.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setProgress(progress);
-      },
-      (erro) => {
-        alert(erro);
-      },
-      () => {
-        getDownloadURL(uploadTaks.snapshot.ref).then((url) => {
-          setNewImageUrl(url);
-          setPreviewImageUrl(url);
-        });
-      }
-    );
   };
 
   const isSizeMbMatch = (bytes) => {
@@ -403,22 +414,16 @@ const NewsLetterPanel = () => {
               value={newAuthor}
               onChange={(event) => setNewAuthor(event.target.value)}
             />
-            <form onSubmit={uploadImage}>
-              <label htmlFor="author">Imagem (Escala 19:9)</label>
+            <form>
+              <label htmlFor="imageInput">Imagem (Escala 16:9)</label>
               <input
                 type="file"
                 accept="image/jpeg, image/png"
                 className="inputImage"
                 id="imageInput"
                 ref={fileInputRef}
-                onClick={() => verifyFileExistence()}
+                onChange={previewImage}
               />
-              <button type="submit" className="uploadImageBtn">
-                <img
-                  src={Icons.UploadIconLightBlue}
-                  alt="icone para carregar imagem"
-                />
-              </button>
               <div className="uploadImageContainer">
                 <img className="prevUploadImage" src={previewImageUrl} alt="" />
                 <progress

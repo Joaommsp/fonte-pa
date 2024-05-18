@@ -82,18 +82,6 @@ export const PostCreatorContainer = styled.div`
     color: #000000;
   }
 
-  .uploadImageBtn {
-    border: 0;
-    background-color: transparent;
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    border-radius: 5px;
-
-    cursor: pointer;
-    margin-bottom: 1rem;
-    transition: 0.3s ease-in-out;
-  }
-
   .uploadImageBtn img {
     width: 36px;
     transform: scale(1);
