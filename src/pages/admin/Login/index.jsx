@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import Logo from "../../../assets/images/newsletter-logo.png";
+import LogoDark from "../../../assets/images/newsletter-logo-dark.png";
 
 import {
   LoginContainer,
@@ -56,7 +57,6 @@ const Login = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
         if (email != "" && password != "") {
           setLoginError("email e/ou senha incorreto(s)");
           resetLoginError();
@@ -84,7 +84,7 @@ const Login = () => {
         passwordInput.type = "password";
       }
     } else {
-      console.error("Password input element not found!"); // Handle potential error
+      throw new Error("Password Input Element not found");
     }
   };
 
@@ -109,7 +109,7 @@ const Login = () => {
       <BgCover>
         <Header>
           <Link to={"/"} className="homeLink">
-            <img src={Icons.ArrowLeftIcon} alt="" /> Voltar ao início{" "}
+            <img src={Icons.ArrowLeftIconDark} alt="" />
           </Link>
         </Header>
 
@@ -171,7 +171,11 @@ const Login = () => {
                 )}
               </div>
             </form>
+            <img src={LogoDark} alt="" className="logoMobile" />
           </FormContainer>
+          <div className="aboutThisProjectContainerMobile">
+            <span>2024 João Marcos Melo ©</span>
+          </div>
         </LoginFormContainer>
       </BgCover>
     </LoginContainer>

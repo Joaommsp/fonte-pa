@@ -43,6 +43,7 @@ export const PostCreatorContainer = styled.div`
     text-overflow: ellipsis;
 
     transition: 0.3s ease-in-out;
+    font-family: "Noto Sans JP", sans-serif;
   }
 
   .grayInput {
@@ -565,7 +566,8 @@ export const PreviewCardContainer = styled.div`
   }
 
   .previewCardUploadImage {
-    width: 100%;
+    width: 491px;
+    height: 276px;
     border-radius: 5px;
 
     border: 1px solid #00000030;
@@ -626,7 +628,7 @@ export const PreviewCardContainer = styled.div`
     text-align: center;
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (min-width: 470px) and (max-width: 560px) {
     width: 100%;
     padding: 0;
 
@@ -643,10 +645,91 @@ export const PreviewCardContainer = styled.div`
       text-align: center;
       font-size: 0.8rem;
     }
+
+    .previewCardUploadImage {
+      width: 388px;
+      height: 218px;
+    }
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+  @media only screen and (min-width: 378px) and (max-width: 470px) {
     width: 100%;
+    padding: 0;
+
+    .previewCardHeader {
+      padding: 0.5rem;
+    }
+
+    .previewCardTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .previewCardSubtitle {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .previewCardUploadImage {
+      width: 295px;
+      height: 166px;
+    }
+  }
+
+  @media only screen and (max-width: 378px) {
+    width: 100%;
+    padding: 0;
+
+    .previewCardHeader {
+      padding: 0.5rem;
+    }
+
+    .previewCardTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .previewCardSubtitle {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .previewCardUploadImage {
+      width: 236px;
+      height: 136px;
+    }
+  }
+
+  @media only screen and (min-width: 690px) and (max-width: 1000px) {
+    width: 100%;
+
+    .previewCardUploadImage {
+      width: 511px;
+      height: 288px;
+    }
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 690px) {
+    width: 100%;
+
+    .previewCardUploadImage {
+      width: 355px;
+      height: 199px;
+    }
+  }
+
+  @media only screen and (min-width: 1114px) and (max-width: 1268px) {
+    .previewCardUploadImage {
+      width: 410px;
+      height: 231px;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) and (max-width: 1114px) {
+    .previewCardUploadImage {
+      width: 336px;
+      height: 189px;
+    }
   }
 `;
 

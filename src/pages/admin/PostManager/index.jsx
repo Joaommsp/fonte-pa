@@ -61,7 +61,7 @@ const PostManager = () => {
 
   const userSignOut = () => {
     signOut(auth).then(() => {
-      console.log("saiu com sucesso");
+      navigate("/login");
     });
   };
 
@@ -73,7 +73,6 @@ const PostManager = () => {
 
     await deleteDoc(postDoc)
       .then(() => {
-        console.log("postagem deletada");
         deleteObject(desertRef);
       })
       .catch((error) => {

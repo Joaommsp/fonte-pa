@@ -3,13 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { auth, db, storage } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  getStorage,
-  deleteObject,
-} from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { gsap } from "gsap";
@@ -48,7 +42,6 @@ const NewsLetterPanel = () => {
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
-  const [newImageUrl, setNewImageUrl] = useState("");
   const fileInputRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
@@ -85,7 +78,7 @@ const NewsLetterPanel = () => {
 
   const userSignOut = () => {
     signOut(auth).then(() => {
-      console.log("saiu com sucesso");
+      navigate("/login");
     });
   };
 
@@ -110,13 +103,14 @@ const NewsLetterPanel = () => {
             createDocOnDataBase(imageUrl);
             clearAllInputs();
           } catch (error) {
-            console.error(error);
+            setErrorMessage(error.message);
+            resetErrorMessage();
           }
         }
       })
       .catch((error) => {
-        console.error(error);
-        setErrorMessage("Erro no upload da imagem");
+        setErrorMessage(error.message);
+        resetErrorMessage();
       });
   };
 
@@ -142,7 +136,6 @@ const NewsLetterPanel = () => {
     setNewText("");
     setNewData("");
     setNewAuthor("");
-    setNewImageUrl("");
     setPreviewImageUrl("");
   };
 
@@ -167,20 +160,17 @@ const NewsLetterPanel = () => {
 
   const uploadImage = async () => {
     const file = fileInputRef.current.files[0];
-    console.log(file);
+
+    if (!file) {
+      throw new Error("Nenhuma imagem selecionada");
+    }
 
     const isValidSize = isSizeMbMatch(file.size);
 
-    if (!file) {
-      setErrorMessage("Nenhuma Imagem Selecionada");
-      resetErrorMessage();
-      return;
-    } else if (!isValidSize) {
-      setErrorMessage("Tamanho da imagem excede o limite de 3Mb");
-      throw new Error("File size not supported");
+    if (!isValidSize) {
+      throw new Error("Tamanho da imagem excede o limite de 3Mb");
     } else if (file == undefined) {
-      setErrorMessage("Nenhuma imagem selecionada");
-      throw new Error("There is no file selected");
+      throw new Error("Nenhuma imagem selecionada");
     } else {
       const storageRef = ref(storage, `postsImages/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -200,11 +190,11 @@ const NewsLetterPanel = () => {
           () => {
             getDownloadURL(uploadTask.snapshot.ref)
               .then((url) => {
-                console.log(url);
                 resolve(url);
               })
               .catch((error) => {
-                console.error(error);
+                setErrorMessage(error);
+                resetErrorMessage();
                 reject(new Error("Erro ao obter a URL de download"));
               });
           }

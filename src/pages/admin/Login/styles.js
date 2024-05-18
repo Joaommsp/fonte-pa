@@ -31,6 +31,7 @@ export const BgCover = styled.div`
 
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -46,29 +47,27 @@ export const Header = styled.div`
   top: 0;
 
   .homeLink {
-    border-radius: 50px;
+    border-radius: 50%;
 
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
 
-    text-decoration: none;
-    color: #ffffff;
-
+    background-color: #ffffff;
     display: flex;
-    align-content: center;
-
-    font-size: 0.8rem;
-
-    transition: 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
 
     z-index: 1000;
+
+    transition: 0.3s ease-in-out;
   }
 
   .homeLink img {
-    margin-right: 0.5rem;
+    width: 24px;
   }
 
   .homeLink:hover {
     opacity: 80%;
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 700px) {
@@ -77,7 +76,7 @@ export const Header = styled.div`
   }
 
   @media only screen and (max-width: 580px) {
-    padding: 0rem;
+    padding: 0.5rem;
     height: 8vh;
   }
 `;
@@ -107,7 +106,7 @@ export const LogoContainer = styled.div`
   .aboutThisProjectContainer {
     position: absolute;
     bottom: 1rem;
-    left: 1rem;
+    left: 3rem;
   }
 
   .aboutThisProjectContainer span {
@@ -117,10 +116,10 @@ export const LogoContainer = styled.div`
 
   @media only screen and (max-width: 1000px) {
     width: 100%;
-    height: 40%;
+    height: 30%;
 
     .logo {
-      width: 156px;
+      width: 256px;
     }
 
     .aboutThisProjectContainer {
@@ -130,6 +129,8 @@ export const LogoContainer = styled.div`
   }
 
   @media only screen and (max-width: 580px) {
+    display: none;
+
     .aboutThisProjectContainer {
       width: 100%;
       display: flex;
@@ -142,18 +143,49 @@ export const LoginFormContainer = styled.div`
   width: 60%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  .aboutThisProjectContainerMobile {
+    position: absolute;
+    bottom: 2rem;
+    display: none;
+  }
+
+  .aboutThisProjectContainerMobile span {
+    font-size: 0.7rem;
+    color: #31363f;
+  }
+
+  .logoMobile {
+    width: 156px;
+    display: none;
+  }
+
   @media only screen and (max-width: 1000px) {
     width: 100%;
+    height: 50%;
+  }
+
+  @media only screen and (max-width: 580px) {
+    width: 100%;
+    height: 100%;
+
+    .aboutThisProjectContainerMobile {
+      display: block;
+    }
+
+    .logoMobile {
+      display: block;
+    }
   }
 `;
 
 export const FormContainer = styled.div`
   width: 100%;
   max-width: 500px;
-  max-height: 650px;
+  max-height: 500px;
   height: 95%;
 
   display: flex;
@@ -218,6 +250,7 @@ export const FormContainer = styled.div`
     font-size: 0.9rem;
 
     transition: 0.3s ease-in-out;
+    font-family: "Poppins", sans-serif;
   }
 
   .inputContainer input:focus {
@@ -306,8 +339,6 @@ export const FormContainer = styled.div`
     flex-direction: column;
     height: 50px;
     align-items: center;
-
-    margin-top: 2rem;
   }
 
   .formStatus span {
@@ -327,8 +358,14 @@ export const FormContainer = styled.div`
   @media only screen and (max-width: 580px) {
     max-width: 100%;
     width: 100%;
-    padding: 2rem;
+    height: 100%;
+    max-height: 100%;
+    padding: 1rem;
     height: 100%;
     border-radius: 0;
+
+    form {
+      height: 50%;
+    }
   }
 `;
