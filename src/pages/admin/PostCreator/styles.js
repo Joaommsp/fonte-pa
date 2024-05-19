@@ -826,4 +826,19 @@ export const PostCreatedNoticeModal = styled.div`
     font-size: 0.9rem;
     color: #181a20;
   }
+
+  @media only screen and (max-width: 560px) {
+    width: 300px;
+    height: 200px;
+
+    .postCreatedModalImage {
+      width: 134px;
+      margin-bottom: 1.5rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #181a20;
+    }
+  }
 `;

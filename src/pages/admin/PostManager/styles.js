@@ -574,12 +574,12 @@ export const CardsContainer = styled.div`
 export const ActionStatusContainer = styled.div`
   width: 400px;
   height: 250px;
-  background-color: red;
 
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #ffffff;
 
   z-index: 1000;
 
@@ -615,13 +615,28 @@ export const ActionStatusContainer = styled.div`
     transform: scale(1.1);
   }
 
-  .postCreatedModalImage {
-    width: 194px;
+  .actionStatusImage {
+    width: 186px;
     margin-bottom: 1.5rem;
   }
 
   span {
     font-size: 0.9rem;
     color: #181a20;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 300px;
+    height: 200px;
+
+    .actionStatusImage {
+      width: 134px;
+      margin-bottom: 1.5rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #181a20;
+    }
   }
 `;

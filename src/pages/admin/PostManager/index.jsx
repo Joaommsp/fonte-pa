@@ -25,7 +25,8 @@ import {
 import Icons from "../../../assets/images/svg/icons/iconsExport";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
-import SucessDeleteImage from "../../../assets/images/svg/succesDeleteImage.svg";
+import SucessDeleteImage from "../../../assets/images/succesDeleteImage.png";
+import ErrorDeleteImage from "../../../assets/images/error-image.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -35,7 +36,7 @@ const PostManager = () => {
   const [posts, setPosts] = useState([]);
   const [aouthCheck, setAothCheck] = useState(0);
   const [actionStatus, setActionStatus] = useState("");
-  const [actionStatusImage, setActionStatusIMage] = useState(null);
+  const [actionStatusImage, setActionStatusImage] = useState(null);
 
   const postsColletcionRef = collection(db, "news");
 
@@ -69,36 +70,23 @@ const PostManager = () => {
     });
   };
 
-  const deletePost = async (id, imageUrl) => {
-    const storage = getStorage();
-
-    const postDoc = doc(db, "news", id);
-    const desertRef = ref(storage, `${imageUrl}`);
-
-    await deleteDoc(postDoc)
-      .then(() => {
-        deleteObject(desertRef);
-        setActionStatus("Conteúdo excluído com sucesso!");
-        setActionStatusIMage(SucessDeleteImage);
-      })
-      .catch((error) => {
-        setActionStatus(error.message);
-      });
+  const getPosts = async () => {
+    const queryOrderByDate = query(postsColletcionRef, orderBy("data", "desc"));
+    const data = await getDocs(queryOrderByDate);
+    setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-  useEffect(() => {
-    const getPosts = async () => {
-      const queryOrderByDate = query(
-        postsColletcionRef,
-        orderBy("data", "desc")
-      );
-      const data = await getDocs(queryOrderByDate);
-      setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(posts);
-    };
-
-    getPosts();
-  }, []);
+  const verifyOldData = async () => {
+    await getPosts();
+    if (posts.length > 0) {
+      posts.forEach((p) => {
+        if (p.author == "Robinson Dos Santos") {
+          const data = formateDate(p.data);
+          console.log(createDateObject(data));
+        }
+      });
+    }
+  };
 
   const formateDate = (data) => {
     const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
@@ -114,7 +102,48 @@ const PostManager = () => {
     return formatDDMMYYYY;
   };
 
+  const createDateObject = (dateString) => {
+    const [day, month, year] = dateString.split("/");
+    return new Date(year, month - 1, day); //
+  };
+
+  useEffect(() => {
+    verifyOldData();
+  }, []);
+
+  const deletePost = async (id, imageUrl) => {
+    const storage = getStorage();
+
+    const postDoc = doc(db, "news", id);
+    const desertRef = ref(storage, `${imageUrl}`);
+
+    await deleteDoc(postDoc)
+      .then(() => {
+        deleteObject(desertRef);
+        setActionStatus("Conteúdo excluído com sucesso!");
+        setActionStatusImage(SucessDeleteImage);
+        closeActionStatusModal();
+      })
+      .catch((error) => {
+        setActionStatus(error.message);
+        setActionStatusImage(ErrorDeleteImage);
+        closeActionStatusModal();
+      });
+  };
+
   const closeActionStatusModal = () => {
+    const timeToResetErro = setInterval(() => {
+      setActionStatus(null);
+      reloadPage();
+      clearInterval(timeToResetErro);
+    }, 3000);
+  };
+
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
+  const instantCloseActionStatusModal = () => {
     setActionStatus(null);
   };
 
@@ -133,7 +162,7 @@ const PostManager = () => {
         <ActionStatusContainer>
           <button
             className="closeCreatedPostModal"
-            onClick={() => closeActionStatusModal()}
+            onClick={() => instantCloseActionStatusModal()}
           >
             {" "}
             <img
@@ -141,6 +170,8 @@ const PostManager = () => {
               alt="Ícone para fechar o aviso de postagem criada"
             />{" "}
           </button>
+          <img src={actionStatusImage} alt="" className="actionStatusImage" />
+          <span>{actionStatus}</span>
         </ActionStatusContainer>
       )}
       <DashBoardHeader className="asideMenu">

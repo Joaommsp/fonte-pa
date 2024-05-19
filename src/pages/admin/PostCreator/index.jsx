@@ -29,7 +29,7 @@ import Icons from "../../../assets/images/svg/icons/iconsExport";
 import DefaultImage from "../../../assets/images/default-image.png";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
-import PostCreatedModalImage from "../../../assets/images/svg/postCreatedModalImage.svg";
+import PostCreatedModalImage from "../../../assets/images/postCreatedModalImage.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -83,20 +83,20 @@ const NewsLetterPanel = () => {
   };
 
   const createPost = () => {
-    uploadImage()
-      .then((imageUrl) => {
-        console.log(imageUrl);
-
-        if (
-          newTitle === "" ||
-          newSubTitle === "" ||
-          newText === "" ||
-          newData === "" ||
-          newAuthor === ""
-        ) {
-          setErrorMessage("Preencha todos os campos");
-          resetErrorMessage();
-        } else {
+    if (
+      newTitle === "" ||
+      newSubTitle === "" ||
+      newText === "" ||
+      newData === "" ||
+      newAuthor === ""
+    ) {
+      setErrorMessage("Preencha todos os campos");
+      resetErrorMessage();
+      return;
+    } else {
+      uploadImage()
+        .then((imageUrl) => {
+          console.log(imageUrl);
           try {
             handleClearFile();
             console.log("URL da imagem: " + imageUrl);
@@ -106,12 +106,12 @@ const NewsLetterPanel = () => {
             setErrorMessage(error.message);
             resetErrorMessage();
           }
-        }
-      })
-      .catch((error) => {
-        setErrorMessage(error.message);
-        resetErrorMessage();
-      });
+        })
+        .catch((error) => {
+          setErrorMessage(error.message);
+          resetErrorMessage();
+        });
+    }
   };
 
   const createDocOnDataBase = async (imageUrl) => {
