@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../../Components/Header";
 import InfoCard from "../../Components/InfoCard";
@@ -46,7 +45,7 @@ import {
   PostsSectionTitle,
 } from "./styles";
 
-const Home = () => {
+const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -134,15 +133,15 @@ const Home = () => {
                 Fazer, equipar e enviar discípulos de Cristo é a nossa{" "}
                 <strong>missão!</strong>
               </SubTitle>
-              <Link className="aboutUsPageLink" to="/sobrenos">
-                <ButtonWithLink
-                  bgColor="#1C7EC2"
-                  textContent="Conheça-nos"
-                  textColor="#FFFFFF"
-                  textSize="1.2rem"
-                  click={() => null}
-                />
-              </Link>
+              <ButtonWithLink
+                bgColor="#1C7EC2"
+                textContent="Conheça-nos"
+                textColor="#FFFFFF"
+                textSize="1.2rem"
+                click={() => {
+                  window.scrollBy(0, 500);
+                }}
+              />
             </TextContent>
           </BannerTextContent>
           <CardsContainer id="sobre">
@@ -257,4 +256,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AboutUs;

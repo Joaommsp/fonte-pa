@@ -95,10 +95,6 @@ export const TextContent = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
-  .aboutUsPageLink {
-    text-decoration: none;
-  }
-
   @media only screen and (max-width: 560px) {
     width: 80%;
     height: 100%;

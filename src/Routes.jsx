@@ -14,6 +14,7 @@ import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
 import Resources from "./pages/Resources";
 import DashBoard from "./pages/admin/DashBoard";
+import AboutUs from "./pages/AboutUs";
 
 const AppRoutes = () => {
   return (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
         <Route path="/contato" element={<Contacts />} />
         <Route path="/ofertas" element={<Offers />} />
         <Route path="/recursos" element={<Resources />} />
+        <Route path="/sobrenos" element={<AboutUs />} />
       </Routes>
     </HashRouter>
   );

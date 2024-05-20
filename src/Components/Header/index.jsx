@@ -16,15 +16,12 @@ import {
   HeaderLinks,
   HeaderLink,
   HeaderControl,
-  SubLinks,
-  SubLink,
 } from "./styles";
 
 const Header = (props) => {
   const [indexLInk, setIndexLInk] = useState();
   const [menuOpen, setMenuOpen] = useState("none");
   const [menuIcon, setMenuIcon] = useState(Icons.MenuIcon);
-  const [extendMenu, setExtendMenu] = useState(false);
 
   useEffect(() => {
     gsap.to(".headerLinks__Container", { opacity: 1, y: 0, duration: 0.1 });
@@ -51,7 +48,7 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="ministerios" className="headerLink">
+            <Link to="/ministerios" className="headerLink">
               Ministérios
             </Link>
           </HeaderLink>
@@ -94,7 +91,7 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="ministerios" className="headerLink index">
+            <Link to="/ministerios" className="headerLink index">
               Ministérios
             </Link>
           </HeaderLink>
@@ -137,7 +134,7 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="ministerios" className="headerLink">
+            <Link to="/ministerios" className="headerLink">
               Ministérios
             </Link>
           </HeaderLink>
@@ -180,7 +177,7 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="ministerios" className="headerLink">
+            <Link to="/ministerios" className="headerLink">
               Ministérios
             </Link>
           </HeaderLink>
@@ -223,7 +220,7 @@ const Header = (props) => {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link to="ministerios" className="headerLink">
+            <Link to="/ministerios" className="headerLink">
               Ministérios
             </Link>
           </HeaderLink>
