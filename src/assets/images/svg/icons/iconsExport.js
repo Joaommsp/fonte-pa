@@ -32,6 +32,7 @@ import DoubtIcon from "./doubt-icon.svg";
 import UploadIconLightBlue from "./upload-icon.svg";
 import ClosedEye from "./closed-eye-icon.svg";
 import OpenEye from "./open-eye-icon.svg";
+import InfoCicleIcon from "./info-cicle-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -68,6 +69,7 @@ const Icons = {
   UploadIconLightBlue: UploadIconLightBlue,
   ClosedEye: ClosedEye,
   OpenEye: OpenEye,
+  InfoCicleIcon: InfoCicleIcon,
 };
 
 export default Icons;

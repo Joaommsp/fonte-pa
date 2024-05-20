@@ -20,6 +20,7 @@ import {
   FeatureHeaderContainer,
   CardsContainer,
   ActionStatusContainer,
+  NoticeOldPostData,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -76,17 +77,27 @@ const PostManager = () => {
     setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-  const verifyOldData = async () => {
-    await getPosts();
-    if (posts.length > 0) {
-      posts.forEach((p) => {
-        if (p.author == "Robinson Dos Santos") {
-          const data = formateDate(p.data);
-          console.log(createDateObject(data));
-        }
-      });
-    }
-  };
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  useEffect(() => {
+    const verifyOldData = () => {
+      if (posts.length > 0) {
+        const twoMonthsAgo = new Date();
+        twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 5);
+
+        posts.forEach((p) => {
+          const postDate = createDateObject(formateDate(p.data));
+          if (postDate < twoMonthsAgo) {
+            deletePost(p.id, p.image);
+          }
+        });
+      }
+    };
+
+    verifyOldData();
+  }, [posts]);
 
   const formateDate = (data) => {
     const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
@@ -106,10 +117,6 @@ const PostManager = () => {
     const [day, month, year] = dateString.split("/");
     return new Date(year, month - 1, day); //
   };
-
-  useEffect(() => {
-    verifyOldData();
-  }, []);
 
   const deletePost = async (id, imageUrl) => {
     const storage = getStorage();
@@ -217,6 +224,13 @@ const PostManager = () => {
             </div>
           </div>
         </FeatureHeaderContainer>
+        <NoticeOldPostData>
+          <span>
+            {" "}
+            <img src={Icons.InfoCicleIcon} alt="" /> Publicações com mais de 5
+            meses serão excluídas{" "}
+          </span>
+        </NoticeOldPostData>
         <CardsContainer>
           {posts.map((post, index) => {
             return (

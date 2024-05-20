@@ -640,3 +640,27 @@ export const ActionStatusContainer = styled.div`
     }
   }
 `;
+
+export const NoticeOldPostData = styled.div`
+  border: 1px solid #00000050;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+
+  span {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  img {
+    width: 18px;
+    margin-right: 0.5rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    span {
+      font-size: 0.8rem;
+    }
+  }
+`;

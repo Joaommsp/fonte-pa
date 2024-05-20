@@ -55,6 +55,8 @@ const NewsLetterPanel = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("cu" + Date.now());
+
     let loadingTime = setInterval(() => {
       setLoading(false);
       clearInterval(loadingTime);
@@ -172,7 +174,7 @@ const NewsLetterPanel = () => {
     } else if (file == undefined) {
       throw new Error("Nenhuma imagem selecionada");
     } else {
-      const storageRef = ref(storage, `postsImages/${file.name}`);
+      const storageRef = ref(storage, `postsImages/${file.name}${Date.now()}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       return new Promise((resolve, reject) => {

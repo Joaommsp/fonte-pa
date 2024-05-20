@@ -50,48 +50,10 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
-          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <span
-              className="headerLink"
-              onMouseEnter={() => setExtendMenu(true)}
-              onClick={() => setExtendMenu(true)}
-            >
+          <HeaderLink>
+            <Link to="ministerios" className="headerLink">
               Ministérios
-              <img src={Icons.ArrowDown} alt="" />
-            </span>
-            {extendMenu && (
-              <SubLinks>
-                <SubLink>
-                  <Link to={"/ministerios"} className="headerSubLink">
-                    Sobre
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
-                    Escola Bíblica
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/infantil" className="headerSubLink">
-                    Infantil
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/louvor" className="headerSubLink">
-                    Louvor
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/casais" className="headerSubLink">
-                    Casais
-                  </Link>
-                </SubLink>
-              </SubLinks>
-            )}
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/recursos" className="headerLink">
@@ -131,48 +93,10 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
-          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <span
-              className="headerLink index"
-              onMouseEnter={() => setExtendMenu(true)}
-              onClick={() => setExtendMenu(true)}
-            >
+          <HeaderLink>
+            <Link to="ministerios" className="headerLink index">
               Ministérios
-              <img src={Icons.ArrowDown} alt="" />
-            </span>
-            {extendMenu && (
-              <SubLinks>
-                <SubLink>
-                  <Link to={"/ministerios"} className="headerSubLink">
-                    Sobre
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
-                    Escola Bíblica
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/infantil" className="headerSubLink">
-                    Infantil
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/louvor" className="headerSubLink">
-                    Louvor
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/casais" className="headerSubLink">
-                    Casais
-                  </Link>
-                </SubLink>
-              </SubLinks>
-            )}
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/recursos" className="headerLink">
@@ -212,48 +136,10 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
-          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <span
-              className="headerLink"
-              onMouseEnter={() => setExtendMenu(true)}
-              onClick={() => setExtendMenu(true)}
-            >
+          <HeaderLink>
+            <Link to="ministerios" className="headerLink">
               Ministérios
-              <img src={Icons.ArrowDown} alt="" />
-            </span>
-            {extendMenu && (
-              <SubLinks>
-                <SubLink>
-                  <Link to={"/ministerios"} className="headerSubLink">
-                    Sobre
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
-                    Escola Bíblica
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/infantil" className="headerSubLink">
-                    Infantil
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/louvor" className="headerSubLink">
-                    Louvor
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/casais" className="headerSubLink">
-                    Casais
-                  </Link>
-                </SubLink>
-              </SubLinks>
-            )}
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/recursos" className="headerLink index">
@@ -293,48 +179,10 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
-          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <span
-              className="headerLink"
-              onMouseEnter={() => setExtendMenu(true)}
-              onClick={() => setExtendMenu(true)}
-            >
+          <HeaderLink>
+            <Link to="ministerios" className="headerLink">
               Ministérios
-              <img src={Icons.ArrowDown} alt="" />
-            </span>
-            {extendMenu && (
-              <SubLinks>
-                <SubLink>
-                  <Link to={"/ministerios"} className="headerSubLink">
-                    Sobre
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
-                    Escola Bíblica
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/infantil" className="headerSubLink">
-                    Infantil
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/louvor" className="headerSubLink">
-                    Louvor
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/casais" className="headerSubLink">
-                    Casais
-                  </Link>
-                </SubLink>
-              </SubLinks>
-            )}
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/recursos" className="headerLink">
@@ -374,48 +222,10 @@ const Header = (props) => {
               Fonte
             </Link>
           </HeaderLink>
-          <HeaderLink onMouseLeave={() => setExtendMenu(false)}>
-            <span
-              className="headerLink"
-              onMouseEnter={() => setExtendMenu(true)}
-              onClick={() => setExtendMenu(true)}
-            >
+          <HeaderLink>
+            <Link to="ministerios" className="headerLink">
               Ministérios
-              <img src={Icons.ArrowDown} alt="" />
-            </span>
-            {extendMenu && (
-              <SubLinks>
-                <SubLink>
-                  <Link to={"/ministerios"} className="headerSubLink">
-                    Sobre
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/escolabiblica" className="headerSubLink">
-                    Escola Bíblica
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/infantil" className="headerSubLink">
-                    Infantil
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/louvor" className="headerSubLink">
-                    Louvor
-                  </Link>
-                </SubLink>
-                <SubLink>
-                  {" "}
-                  <Link to="/casais" className="headerSubLink">
-                    Casais
-                  </Link>
-                </SubLink>
-              </SubLinks>
-            )}
+            </Link>
           </HeaderLink>
           <HeaderLink>
             <Link to="/recursos" className="headerLink">
