@@ -588,62 +588,6 @@ export const MediaCardsContainer = styled.div`
   }
 `;
 
-export const ComunityContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5rem;
-
-  margin-bottom: 4rem;
-
-  @media only screen and (max-width: 560px) {
-    padding: 0 2rem;
-  }
-
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
-    padding: 0 2rem;
-  }
-`;
-
-export const ComunityTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: #181a20;
-
-  margin-bottom: 1rem;
-
-  @media only screen and (max-width: 560px) {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
-    font-size: 2rem;
-    text-align: center;
-  }
-`;
-
-export const ComunityDescription = styled.p`
-  width: 80%;
-  text-align: center;
-  margin-bottom: 2rem;
-
-  strong {
-    color: #1c7ec2;
-    font-weight: 500;
-  }
-
-  @media only screen and (max-width: 560px) {
-    font-size: 0.9rem;
-  }
-
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
-    font-size: 0.9rem;
-  }
-`;
-
 export const Assignment = styled.span`
   color: #dddddd60;
   font-size: 0.8rem;

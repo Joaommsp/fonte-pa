@@ -38,9 +38,6 @@ import {
   MediaTextContent,
   MediaTitle,
   MediaCardsContainer,
-  ComunityContainer,
-  ComunityTitle,
-  ComunityDescription,
   PostsSectionContainer,
   DivisorLine,
   PostsSectionTitle,
@@ -230,17 +227,6 @@ const Home = () => {
               </MediaCardsContainer>
             </MediaTextContent>
           </MediaContainer>
-
-          <ComunityContainer>
-            <ComunityTitle>Igreja Batista Fonte</ComunityTitle>
-            <ComunityDescription>
-              Somos uma nova e crescente <strong>comunidade cristã</strong>,
-              desejosa em ver o caráter de Cristo espelhado e espalhado
-              especialmente por toda a região do semi-árido brasileiro, conforme
-              as Escrituras Sagradas.
-            </ComunityDescription>
-            {/* <ImageGallery items={images} /> */}
-          </ComunityContainer>
 
           <WhatsAppLInk
             href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
