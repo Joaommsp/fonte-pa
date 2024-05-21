@@ -95,6 +95,7 @@ export const CardsContainer = styled.div`
     height: 64px;
     overflow: hidden;
     margin-bottom: 2rem;
+    text-overflow: ellipsis;
   }
 
   .cardTextContainer h1,

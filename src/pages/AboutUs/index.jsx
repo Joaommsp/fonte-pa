@@ -7,6 +7,7 @@ import AboutUsCard from "../../Components/AboutUsCards";
 import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import PoepleImage from "../../assets/images/usPeopleImage.png";
+import InstagramProfile from "../../assets/images/instagramProfile.png";
 
 import {
   HomeContainer,
@@ -31,6 +32,7 @@ import {
   WhoAreWeTitle,
   WhoAreWeText,
   CardsContainer,
+  InstagramContentContainer,
 } from "./styles";
 
 const AboutUs = () => {
@@ -130,31 +132,71 @@ const AboutUs = () => {
         </WhoAreWeContainer>
 
         <CardsContainer>
+          <div className="cardSection cardSectionBgBlue">
+            <div className="cards">
+              <AboutUsCard
+                title="Missão"
+                text="Fazer, equipar e enviar discípulos de Cristo é a nossa missão fundamental. Acreditamos que cada membro da nossa comunidade
+                 tem um papel vital no cumprimento desse chamado."
+              />
+              <AboutUsCard
+                title="Visão"
+                text=" Queremos ver o sertão brasileiro e além sendo impactados pela mensagem
+              de Jesus. Trabalhando para plantar igrejas, apoiar missionários e
+              desenvolver projetos sociais."
+              />
+            </div>
+            <div
+              className="cardTextContent
+            "
+            >
+              <p className="textEmphasis">
+                Alcançar e transformar , trazendo esperança e renovação através
+                do evangelho e ações concretas de amor e serviço.
+              </p>
+              <div className="cardTextAbout">
+                <p id="cardVerse">
+                  &quot;Foi-me dada toda a autoridade nos céus e na terra.
+                  Portanto, vão e façam discípulos de todas as nações,
+                  batizando-os em nome do Pai e do Filho e do Espírito Santo,
+                  ensinando-os a obedecer a tudo o que eu ordenei a vocês&quot;
+                  <br />
+                </p>
+                <div id="verseDivisor"></div>
+                <span id="cardVerseAdress">Mateus 28:18-20</span>
+              </div>
+            </div>
+          </div>
+          <div className="cardSection cardSectionBgWhite">
+            <div
+              className="cardTextContentLeft
+            "
+            >
+              <p className="textEmphasisLeft">
+                Encorajamos cada membro da nossa comunidade a cultivar uma vida
+                de oração constante, buscando a orientação divina e intercedendo
+                uns pelos outros.
+              </p>
+              <div className="cardText"></div>
+            </div>
+            <div className="cards">
+              <AboutUsCard
+                title="Fé e Oração"
+                text=" Confiamos plenamente em Deus e buscamos Sua direção em todas as nossas atividades e decisões."
+              />
+              <AboutUsCard
+                title="Comunhão e Amor"
+                text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
+              />
+            </div>
+          </div>
           <AboutUsCard
-            title="Visão"
-            text=" Queremos ver o sertão brasileiro e além sendo impactados pela mensagem
-          de Jesus. Trabalhando para plantar igrejas, apoiar missionários e
-          desenvolver projetos sociais que promovam o bem-estar das comunidades
-          onde atuamos."
-          />
-          <AboutUsCard
-            title="Fé e Oração"
-            text=" Confiamos plenamente em Deus e buscamos Sua direção em todas as nossas atividades e decisões."
-          />
-          <AboutUsCard
-            title="Comunhão e Amor"
-            text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
-          />
-          <AboutUsCard
-            title="Comunhão e Amor"
-            text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
-          />
-          <AboutUsCard
-            title="Serviço e Missão"
+            title="Serviço"
             text="Comprometemo-nos a servir aos outros, levando o amor de Cristo."
           />
         </CardsContainer>
         <DivisorLine></DivisorLine>
+        <InstagramContentContainer></InstagramContentContainer>
       </ContentContainer>
       <Footer></Footer>
     </HomeContainer>

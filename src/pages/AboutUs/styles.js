@@ -325,13 +325,106 @@ export const CardsContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 2rem 5rem;
+  padding: 2rem 0rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
 
   margin-bottom: 2rem;
+
+  .cardSection {
+    width: 100%;
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .cardSectionBgBlue {
+    background-color: #e3eff7;
+  }
+
+  .cardSectionBgWhite {
+    background-color: #ffffff;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .cardTextContent {
+    width: 50%;
+    padding: 2rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cardTextContentLeft {
+    width: 50%;
+    padding: 2rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .textEmphasis {
+    font-size: 1.2rem;
+    text-align: right;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .textEmphasisLeft {
+    font-size: 1.2rem;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .cardTextAbout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #cardVerse {
+    width: 80%;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  #verseDivisorContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 124px;
+  }
+
+  #verseDivisor {
+    width: 124px;
+    height: 3px;
+    background-color: #1c7ec2;
+  }
+
+  #cardVerseAdress {
+    width: 100%;
+    width: fit-content;
+    text-align: center;
+    margin-top: 1rem;
+  }
 `;
+
+export const InstagramContentContainer = styled.div``;
