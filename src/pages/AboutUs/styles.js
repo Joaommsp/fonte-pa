@@ -393,6 +393,22 @@ export const CardsContainer = styled.div`
     margin-bottom: 2rem;
   }
 
+  .cardImageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardImageContainer img {
+    width: 356px;
+  }
+
+  .attribution {
+    font-size: 0.7rem;
+    color: #31363f;
+  }
+
   .cardTextAbout {
     width: 100%;
     display: flex;

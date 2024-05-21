@@ -7,6 +7,8 @@ import AboutUsCard from "../../Components/AboutUsCards";
 import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import PoepleImage from "../../assets/images/usPeopleImage.png";
+import PrayImage from "../../assets/images/prayImage.jpg";
+
 import InstagramProfile from "../../assets/images/instagramProfile.png";
 
 import {
@@ -177,7 +179,12 @@ const AboutUs = () => {
                 de oração constante, buscando a orientação divina e intercedendo
                 uns pelos outros.
               </p>
-              <div className="cardText"></div>
+              <div className="cardImageContainer">
+                <img src={PrayImage} alt="Garota de joelhos em oração" />
+                <span className="attribution">
+                  Designed by <strong>storyset</strong> on freepik
+                </span>
+              </div>
             </div>
             <div className="cards">
               <AboutUsCard
@@ -190,13 +197,30 @@ const AboutUs = () => {
               />
             </div>
           </div>
-          <AboutUsCard
-            title="Serviço"
-            text="Comprometemo-nos a servir aos outros, levando o amor de Cristo."
-          />
+          <div className="cardSection cardSectionBgBlue">
+            <div className="cards">
+              <AboutUsCard
+                title="Serviço"
+                text="Comprometemo-nos a servir aos outros, levando o amor de Cristo."
+              />
+            </div>
+            <div
+              className="cardTextContent
+            "
+            >
+              <p className="textEmphasis">
+                Nosso serviço é motivado pelo exemplo de Jesus, que veio não
+                para ser servido, mas para servir. Procuramos atender às
+                necessidades das pessoas em nossa comunidade e além, oferecendo
+                apoio espiritual, emocional e material.
+              </p>
+            </div>
+          </div>
         </CardsContainer>
         <DivisorLine></DivisorLine>
-        <InstagramContentContainer></InstagramContentContainer>
+        <InstagramContentContainer>
+          
+        </InstagramContentContainer>
       </ContentContainer>
       <Footer></Footer>
     </HomeContainer>
