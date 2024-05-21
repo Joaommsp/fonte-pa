@@ -275,6 +275,8 @@ export const WhoAreWeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 2rem;
 `;
 
 export const WhoAreWeImageContainer = styled.div`
@@ -309,8 +311,27 @@ export const WhoAreWeText = styled.p`
   width: 80%;
   text-align: right;
 
+  .emphasis {
+    font-size: 1.2rem;
+  }
+
   strong {
     font-weight: 500;
     color: #1c7ec2;
   }
+`;
+
+export const CardsContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  padding: 2rem 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  margin-bottom: 2rem;
 `;

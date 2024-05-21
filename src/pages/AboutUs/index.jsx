@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
+import AboutUsCard from "../../Components/AboutUsCards";
 
 import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
 import Icons from "../../assets/images/svg/icons/iconsExport";
-
 import PoepleImage from "../../assets/images/usPeopleImage.png";
 
 import {
@@ -30,6 +30,7 @@ import {
   PeopleImg,
   WhoAreWeTitle,
   WhoAreWeText,
+  CardsContainer,
 } from "./styles";
 
 const AboutUs = () => {
@@ -112,9 +113,10 @@ const AboutUs = () => {
           <WhoAreWeTextContainer>
             <WhoAreWeTitle>Quem somos</WhoAreWeTitle>
             <WhoAreWeText>
-              A Igreja Batista Fonte, localizada em Paulo Afonso, Bahia, foi
-              fundada em 2017 com um propósito claro e missionário:
-              <br />
+              <p className="emphasis">
+                A Igreja Batista Fonte, localizada em Paulo Afonso, Bahia, foi
+                fundada em 2017 com um propósito claro e missionário:
+              </p>
               <br />
               fazer, equipar e enviar discípulos de Cristo para o sertão
               brasileiro e confins da Terra. Com base nesses princípios,
@@ -126,6 +128,33 @@ const AboutUs = () => {
             </WhoAreWeText>
           </WhoAreWeTextContainer>
         </WhoAreWeContainer>
+
+        <CardsContainer>
+          <AboutUsCard
+            title="Visão"
+            text=" Queremos ver o sertão brasileiro e além sendo impactados pela mensagem
+          de Jesus. Trabalhando para plantar igrejas, apoiar missionários e
+          desenvolver projetos sociais que promovam o bem-estar das comunidades
+          onde atuamos."
+          />
+          <AboutUsCard
+            title="Fé e Oração"
+            text=" Confiamos plenamente em Deus e buscamos Sua direção em todas as nossas atividades e decisões."
+          />
+          <AboutUsCard
+            title="Comunhão e Amor"
+            text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
+          />
+          <AboutUsCard
+            title="Comunhão e Amor"
+            text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
+          />
+          <AboutUsCard
+            title="Serviço e Missão"
+            text="Comprometemo-nos a servir aos outros, levando o amor de Cristo."
+          />
+        </CardsContainer>
+        <DivisorLine></DivisorLine>
       </ContentContainer>
       <Footer></Footer>
     </HomeContainer>
