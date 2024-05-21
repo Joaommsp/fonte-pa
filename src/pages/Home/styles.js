@@ -97,6 +97,7 @@ export const TextContent = styled.div`
 
   .aboutUsPageLink {
     text-decoration: none;
+    text-decoration: dotted;
   }
 
   @media only screen and (max-width: 560px) {
@@ -220,13 +221,13 @@ export const Hashtag = styled.div`
   position: relative;
 
   img {
-    width: 86px;
+    width: 66px;
     opacity: 90%;
   }
 
   span {
-    height: 40px;
-    padding-top: 1rem;
+    height: 50px;
+    padding-top: 0rem;
     color: #181a20;
     position: absolute;
     bottom: 0;
@@ -237,7 +238,7 @@ export const Hashtag = styled.div`
 export const SubTitle = styled.h2`
   width: 50%;
   text-align: right;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: 500;
   color: #181a20;
@@ -356,29 +357,6 @@ export const SocialMediaLink = styled.li`
   }
 `;
 
-export const TriangleBottom = styled.div`
-  width: 250px;
-  height: 200px;
-  clip-path: polygon(100% 100%, 0% 100%, 100% 0);
-  background: rgb(35, 37, 45);
-  background: linear-gradient(
-    5deg,
-    rgba(35, 37, 45, 1) 31%,
-    rgba(65, 68, 78, 0.8869922969187675) 100%
-  );
-
-  position: absolute;
-  bottom: 0;
-  right: 0;
-`;
-
-export const BigShape = styled.img`
-  width: 100px;
-  position: absolute;
-  right: 1rem;
-  top: 0;
-`;
-
 export const CardsContainer = styled.div`
   width: 100%;
 
@@ -425,7 +403,7 @@ export const CardsContainer = styled.div`
 export const CardsSubTitle = styled.h2`
   width: 50%;
   text-align: left;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: #181a20;
 
@@ -545,14 +523,14 @@ export const MediaTextContent = styled.div`
 `;
 
 export const MediaTitle = styled.h2`
-  width: 100%;
+  width: 80%;
   line-height: 100%;
 
   color: #181a20;
 
   margin-bottom: 4rem;
 
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: right;
   font-weight: 500;
 

@@ -572,6 +572,7 @@ export const PreviewCardContainer = styled.div`
 
     border: 1px solid #00000030;
     margin-bottom: 1rem;
+    object-fit: cover;
   }
 
   .previewCardTextBox {
@@ -609,6 +610,11 @@ export const PreviewCardContainer = styled.div`
     margin-bottom: 0.5rem;
     padding-left: 1rem;
     background-color: transparent;
+  }
+
+  .previewCardTextBox ul,
+  ol {
+    margin-left: 1rem;
   }
 
   .previewCardAuthor {

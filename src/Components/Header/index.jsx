@@ -75,7 +75,7 @@ const Header = (props) => {
                 textColor="#FFFFFF"
                 textContent="Precisa de Ajuda?"
                 href=""
-                textSize="1rem"
+                textSize="0.85rem"
                 click={() => null}
               />
             </Link>
@@ -118,7 +118,7 @@ const Header = (props) => {
                 textColor="#FFFFFF"
                 textContent="Precisa de Ajuda?"
                 href=""
-                textSize="1rem"
+                textSize="0.85rem"
                 click={() => null}
               />
             </Link>
@@ -161,7 +161,7 @@ const Header = (props) => {
                 textColor="#FFFFFF"
                 textContent="Precisa de Ajuda?"
                 href=""
-                textSize="1rem"
+                textSize="0.85rem"
                 click={() => null}
               />
             </Link>
@@ -204,7 +204,7 @@ const Header = (props) => {
                 textColor="#FFFFFF"
                 textContent="Precisa de Ajuda?"
                 href=""
-                textSize="1rem"
+                textSize="0.85rem"
                 click={() => null}
               />
             </Link>
@@ -247,7 +247,7 @@ const Header = (props) => {
                 textColor="#FFFFFF"
                 textContent="Precisa de Ajuda?"
                 href=""
-                textSize="1rem"
+                textSize="0.85rem"
                 click={() => null}
               />
             </Link>

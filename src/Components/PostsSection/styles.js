@@ -30,8 +30,8 @@ export const CardsContainer = styled.div`
   padding: 1rem 1rem;
 
   .card {
-    width: 650px;
-    height: 564px;
+    width: 530px;
+    height: 518px;
     padding: 1rem;
 
     display: flex;
@@ -56,6 +56,7 @@ export const CardsContainer = styled.div`
   .cardTitle {
     width: 80%;
     font-size: 1.2rem;
+    font-weight: 600;
     height: 56px;
     color: #181a20;
     text-align: left;
@@ -70,9 +71,16 @@ export const CardsContainer = styled.div`
     word-wrap: break-word;
   }
 
+  .carImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .cardImage {
-    width: 615px;
-    height: 346px;
+    width: 501px;
+    height: 282px;
     object-fit: cover;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -344,6 +352,7 @@ export const PopUpContainer = styled.div`
 
   .PopUpCardData {
     color: #181a20;
+    margin-left: 0.5rem;
   }
 
   .popUpCardInfos__shareLinks {

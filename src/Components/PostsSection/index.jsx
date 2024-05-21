@@ -38,11 +38,15 @@ const PostsSection = () => {
   };
 
   const formateDate = (data) => {
-    const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
+    const dateInMilliseconds =
+      data.seconds * 1000 + Math.floor(data.nanoseconds / 1000000);
 
     const dataFormatada = new Date(dateInMilliseconds);
 
-    const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
+    const offsetInMilliseconds = dataFormatada.getTimezoneOffset() * 60 * 1000;
+    const localDate = new Date(dateInMilliseconds - offsetInMilliseconds);
+
+    const formatDDMMYYYY = localDate.toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -82,7 +86,10 @@ const PostsSection = () => {
                       <span className="PopUpCardAuthor">
                         Por: {post.author} |
                       </span>
-                      {/* <span className="PopUpCardData"> {post.data}</span> */}
+                      <span className="PopUpCardData">
+                        {" "}
+                        {formateDate(post.data)}
+                      </span>
                     </div>
                   </div>
                   <img className="popUpCardImage" src={post.image} alt="" />
@@ -119,9 +126,11 @@ const PostsSection = () => {
               )}
               <div className="cardHeader">
                 <h2 className="cardTitle">{post.title}</h2>
-                <span className="cardHashtags">{post.hastags}</span>
+                <span className="cardHashtags">{post.hashtags}</span>
               </div>
-              <img className="cardImage" src={post.image} alt="" />
+              <div className="carImageContainer">
+                <img className="cardImage" src={post.image} alt="" />
+              </div>
               <div className="cardBotton">
                 <div
                   className="cardTextContainer"

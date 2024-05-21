@@ -16,6 +16,8 @@ export const ButtonLinkElement = styled.button`
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
 
+  text-decoration: none;
+
   &:hover {
     cursor: pointer;
   }

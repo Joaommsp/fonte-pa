@@ -13,7 +13,7 @@ const colors = {
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 68px;
+  height: 62px;
   padding: 0 5rem;
 
   display: flex;
@@ -46,7 +46,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 124px;
+  width: 104px;
 
   @media only screen and (max-width: 1000px) {
     width: 100px;
@@ -107,6 +107,7 @@ export const HeaderLink = styled.li`
     color: ${colors.text_dark};
     font-family: ${font.poppins};
     font-weight: 500;
+    font-size: 0.85rem;
 
     display: flex;
     align-content: center;
