@@ -93,6 +93,13 @@ export const Logo = styled.img`
   }
 `;
 
+export const AboutUsTitle = styled.h1`
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #01010080;
+`;
+
 export const WhatsAppLInk = styled.a`
   position: fixed;
   right: 3rem;
@@ -269,6 +276,13 @@ export const DivisorLine = styled.div`
   margin-bottom: 2rem;
 `;
 
+export const DivisorLineLight = styled.div`
+  width: 124px;
+  height: 3px;
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+`;
+
 export const WhoAreWeContainer = styled.div`
   width: 100%;
   padding: 0 8rem;
@@ -402,6 +416,7 @@ export const CardsContainer = styled.div`
 
   .cardImageContainer img {
     width: 356px;
+    margin-bottom: 2rem;
   }
 
   .attribution {
@@ -470,6 +485,19 @@ export const InstagramContentTitle = styled.h2`
   color: #181a20;
 
   margin-bottom: 2rem;
+
+  strong {
+    font-weight: 500;
+    background: #833ab4;
+    background: linear-gradient(
+      to right,
+      #833ab4 0%,
+      #fd1d1d 50%,
+      #fcb045 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 export const InstagramImages = styled.div`
@@ -484,9 +512,32 @@ export const InstagramImages = styled.div`
 export const InstagramImageContainer = styled.div`
   width: 164px;
   height: 164px;
+
+  position: relative;
+
+  transition: 0.3s transform ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .collectionIcon {
+    position: absolute;
+    width: 24px;
+    right: 0.5rem;
+    top: 0.5rem;
+    filter: drop-shadow(-2px 4px 3px #00000050);
+    z-index: 1000;
+  }
 `;
 
 export const InstagramImage = styled.img`
   width: 100%;
   border-radius: 5px;
+
+  transition: 0.3s opacity ease-in-out;
+
+  &:hover {
+    opacity: 60%;
+  }
 `;

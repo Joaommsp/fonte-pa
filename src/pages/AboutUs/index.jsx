@@ -18,6 +18,7 @@ import {
   BannerVisualsContent,
   LogoContainer,
   Logo,
+  AboutUsTitle,
   WhatsAppLInk,
   SocialMedia,
   SocialMediaLinks,
@@ -27,6 +28,7 @@ import {
   ComunityTitle,
   ComunityDescription,
   DivisorLine,
+  DivisorLineLight,
   WhoAreWeContainer,
   WhoAreWeImageContainer,
   WhoAreWeTextContainer,
@@ -55,6 +57,8 @@ const AboutUs = () => {
         <Banner className="banner">
           <BannerVisualsContent>
             <LogoContainer>
+              <DivisorLineLight></DivisorLineLight>
+              <AboutUsTitle>Conheça-nos</AboutUsTitle>
               <Logo src={LogoImage} alt="" />
 
               <SocialMedia>
@@ -225,64 +229,127 @@ const AboutUs = () => {
         </CardsContainer>
         <DivisorLine></DivisorLine>
         <InstagramContentContainer>
-          <InstagramContentTitle>Siga nosso Instagram</InstagramContentTitle>
+          <InstagramContentTitle>Siga nosso <strong>Instagram</strong></InstagramContentTitle>
           <InstagramContent>
             <InstagramProfileImage src={InstagramProfile} alt="" />
             <InstagramImages>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage01}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage02}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage03}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage04}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage05}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage06}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage07}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage08}
-                  alt=""
-                />
-              </InstagramImageContainer>
-              <InstagramImageContainer>
-                <InstagramImage
-                  src={InstagramProfileImages.instagramImage09}
-                  alt=""
-                />
-              </InstagramImageContainer>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage01}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage02}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage03}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage04}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage05}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage06}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage07}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage08}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
+              <a href="#">
+                <InstagramImageContainer>
+                  <img
+                    src={Icons.ColletionIcon}
+                    alt=""
+                    className="collectionIcon"
+                  />
+                  <InstagramImage
+                    src={InstagramProfileImages.instagramImage09}
+                    alt=""
+                  />
+                </InstagramImageContainer>
+              </a>
             </InstagramImages>
           </InstagramContent>
         </InstagramContentContainer>
