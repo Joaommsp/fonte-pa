@@ -8,8 +8,8 @@ import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import PoepleImage from "../../assets/images/usPeopleImage.png";
 import PrayImage from "../../assets/images/prayImage.jpg";
-
-import InstagramProfile from "../../assets/images/instagramProfile.png";
+import InstagramProfile from "../../assets/images/instagramProfile.jpg";
+import { InstagramProfileImages } from "../../assets/images/instagram/intagramImagesExport";
 
 import {
   HomeContainer,
@@ -35,6 +35,12 @@ import {
   WhoAreWeText,
   CardsContainer,
   InstagramContentContainer,
+  InstagramContent,
+  InstagramContentTitle,
+  InstagramProfileImage,
+  InstagramImages,
+  InstagramImageContainer,
+  InstagramImage,
 } from "./styles";
 
 const AboutUs = () => {
@@ -219,7 +225,66 @@ const AboutUs = () => {
         </CardsContainer>
         <DivisorLine></DivisorLine>
         <InstagramContentContainer>
-          
+          <InstagramContentTitle>Siga nosso Instagram</InstagramContentTitle>
+          <InstagramContent>
+            <InstagramProfileImage src={InstagramProfile} alt="" />
+            <InstagramImages>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage01}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage02}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage03}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage04}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage05}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage06}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage07}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage08}
+                  alt=""
+                />
+              </InstagramImageContainer>
+              <InstagramImageContainer>
+                <InstagramImage
+                  src={InstagramProfileImages.instagramImage09}
+                  alt=""
+                />
+              </InstagramImageContainer>
+            </InstagramImages>
+          </InstagramContent>
         </InstagramContentContainer>
       </ContentContainer>
       <Footer></Footer>

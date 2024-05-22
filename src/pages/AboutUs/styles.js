@@ -443,4 +443,50 @@ export const CardsContainer = styled.div`
   }
 `;
 
-export const InstagramContentContainer = styled.div``;
+export const InstagramContentContainer = styled.div`
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const InstagramContent = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+`;
+
+export const InstagramProfileImage = styled.img`
+  width: 486px;
+`;
+
+export const InstagramContentTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 500;
+  color: #181a20;
+
+  margin-bottom: 2rem;
+`;
+
+export const InstagramImages = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+`;
+
+export const InstagramImageContainer = styled.div`
+  width: 164px;
+  height: 164px;
+`;
+
+export const InstagramImage = styled.img`
+  width: 100%;
+  border-radius: 5px;
+`;
