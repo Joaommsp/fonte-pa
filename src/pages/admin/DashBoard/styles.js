@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CreatePostCardBg from "../../../assets/images/createPostCardBg.png";
 import DefaultLinkImage from "../../../assets/images/defaultLinkImage.png";
 import EditPostCardBg from "../../../assets/images/editPostCardBg.png";
+import CreateEventCardBg from "../../../assets/images/createEventCardBg.png";
+import EditEventCardBg from "../../../assets/images/editEventCardBg.png";
 
 export const NewsLetterPanelContainer = styled.div`
   width: 100%;
@@ -234,7 +236,7 @@ export const DashBoardCardsContainer = styled.div`
 `;
 
 export const DashBoardCard = styled.div`
-  width: 400px;
+  width: 300px;
   height: 200px;
 
   padding-top: 0.5rem;
@@ -263,6 +265,20 @@ export const DashBoardCard = styled.div`
 
   #editPostImageBg {
     background-image: url(${EditPostCardBg});
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  #createEventImageBg {
+    background-image: url(${CreateEventCardBg});
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  #editEventImageBg {
+    background-image: url(${EditEventCardBg});
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;

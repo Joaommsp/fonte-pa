@@ -10,6 +10,7 @@ import Couples from "./pages/internal/Couples";
 import Login from "./pages/admin/Login";
 import PostCreator from "./pages/admin/PostCreator";
 import PostManager from "./pages/admin/PostManager";
+import EventCreator from "./pages/admin/EventCreator";
 import Contacts from "./pages/Contacts";
 import Offers from "./pages/Offers";
 import Resources from "./pages/Resources";
@@ -35,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/ofertas" element={<Offers />} />
         <Route path="/recursos" element={<Resources />} />
         <Route path="/sobrenos" element={<AboutUs />} />
+        <Route path="/eventcreator" element={<EventCreator />} />
       </Routes>
     </HashRouter>
   );

@@ -126,6 +126,26 @@ const DashBoard = () => {
               </div>
             </DashBoardCard>
           </Link>
+          <Link to="/eventcreator" className="cardLinkContainer">
+            <DashBoardCard>
+              <span className="featureName">Criador de eventos</span>
+              <div className="cardImageContainer" id="createEventImageBg">
+                <div className="cardContent">
+                  <div className="defaultLinkImageContainer"></div>
+                </div>
+              </div>
+            </DashBoardCard>
+          </Link>
+          <Link to="/postcreator" className="cardLinkContainer">
+            <DashBoardCard>
+              <span className="featureName">Gerenciador de eventos</span>
+              <div className="cardImageContainer" id="editEventImageBg">
+                <div className="cardContent">
+                  <div className="defaultLinkImageContainer"></div>
+                </div>
+              </div>
+            </DashBoardCard>
+          </Link>
         </DashBoardCardsContainer>
       </DashBoardContent>
       <FooterContainer>

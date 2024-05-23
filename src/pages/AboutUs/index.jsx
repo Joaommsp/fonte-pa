@@ -367,7 +367,7 @@ const AboutUs = () => {
                 </InstagramImageContainer>
               </a>
               <a
-                href="https://www.instagram.com/p/C6wcC0IRso1/"
+                href="https://www.instagram.com/p/CvqroVNLRZO/?img_index=1/"
                 target="_blank"
               >
                 <InstagramImageContainer>
