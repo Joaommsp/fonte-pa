@@ -595,16 +595,36 @@ export const PostsSectionContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 
   padding: 2rem 5rem 2rem 5rem;
 
+  position: relative;
+
+  .arrowRight {
+    position: absolute;
+    right: 5.5rem;
+    top: 5rem;
+
+    width: 26px;
+  }
+
   @media only screen and (min-width: 560px) and (max-width: 900px) {
     padding: 2rem;
+
+    .arrowRight {
+      top: 2.5rem;
+      right: 2rem;
+    }
   }
 
   @media only screen and (max-width: 560px) {
     padding: 2rem 0.4rem 0rem 0.4rem;
+
+    .arrowRight {
+      top: 2.5rem;
+      right: 2rem;
+    }
   }
 `;
 

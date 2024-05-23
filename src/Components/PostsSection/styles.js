@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const NewsSectionContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: 500px;
 
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 
   display: flex;
   justify-content: flex-start;
@@ -31,12 +31,12 @@ export const CardsContainer = styled.div`
 
   position: relative;
 
-  padding: 1rem 1rem;
+  padding: 1rem 3rem 1rem 1rem;
 
   .card {
-    width: 530px;
-    height: 518px;
-    padding: 1rem;
+    width: 100%;
+    height: 452px;
+    padding: 2rem 2rem;
 
     display: flex;
     flex-direction: column;
@@ -48,6 +48,8 @@ export const CardsContainer = styled.div`
     border-radius: 5px;
 
     background-color: #ffffff;
+    box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.13),
+      0px 0px 12px rgba(0, 0, 0, 0.26);
   }
 
   .cardHeader {
@@ -83,8 +85,8 @@ export const CardsContainer = styled.div`
   }
 
   .cardImage {
-    width: 501px;
-    height: 282px;
+    width: 350px;
+    height: 197px;
     object-fit: cover;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -96,7 +98,7 @@ export const CardsContainer = styled.div`
 
   .cardTextContainer {
     width: 100%;
-    height: 64px;
+    height: 65px;
     overflow: hidden;
     margin-bottom: 2rem;
     text-overflow: ellipsis;
@@ -207,7 +209,7 @@ export const CardsContainer = styled.div`
     .card {
       width: 100%;
       height: 400px;
-      padding: 0.5rem;
+      padding: 1rem;
 
       flex-direction: column;
       align-items: center;
@@ -221,12 +223,17 @@ export const CardsContainer = styled.div`
     }
 
     .cardTitle {
-      font-size: rem;
+      width: 100%;
+      font-size: 0.9rem;
       padding-bottom: 0.5rem;
       height: fit-content;
     }
 
     .cardSubtitle {
+      font-size: 0.8rem;
+    }
+
+    .cardHashtags {
       font-size: 0.8rem;
     }
 

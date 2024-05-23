@@ -177,6 +177,7 @@ const Home = () => {
           </CardsContainer>
 
           <PostsSectionContainer>
+            <img src={Icons.ArrowRight} alt="" className="arrowRight" />
             <DivisorLine></DivisorLine>
             <PostsSectionTitle>Novidades</PostsSectionTitle>
             <PostsSection></PostsSection>
