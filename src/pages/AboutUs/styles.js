@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import LogoBackground from "../../assets/images/logoBackground.png";
+import LogoBackground from "../../assets/images/abousUsBackground.png";
 
 export const HomeContainer = styled.header`
   width: 100%;
@@ -97,7 +97,6 @@ export const AboutUsTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 500;
   color: #ffffff;
-  text-shadow: 2px 2px 2px #01010080;
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -465,6 +464,8 @@ export const InstagramContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 2rem;
 `;
 
 export const InstagramContent = styled.div`
@@ -476,7 +477,7 @@ export const InstagramContent = styled.div`
 `;
 
 export const InstagramProfileImage = styled.img`
-  width: 486px;
+  width: 100%;
 `;
 
 export const InstagramContentTitle = styled.h2`
@@ -501,12 +502,12 @@ export const InstagramContentTitle = styled.h2`
 `;
 
 export const InstagramImages = styled.div`
-  width: 100%;
-  display: flex;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   gap: 24px;
-  flex-wrap: wrap;
 `;
 
 export const InstagramImageContainer = styled.div`

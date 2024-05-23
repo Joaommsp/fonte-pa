@@ -229,11 +229,16 @@ const AboutUs = () => {
         </CardsContainer>
         <DivisorLine></DivisorLine>
         <InstagramContentContainer>
-          <InstagramContentTitle>Siga nosso <strong>Instagram</strong></InstagramContentTitle>
+          <InstagramContentTitle>
+            Siga nosso <strong>Instagram</strong>
+          </InstagramContentTitle>
           <InstagramContent>
             <InstagramProfileImage src={InstagramProfile} alt="" />
             <InstagramImages>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C7HubH1RcdZ/"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -246,7 +251,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C6ZKHSLrSvY/"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -259,7 +267,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C2I4-dgRf28/?img_index=1"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -272,7 +283,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/CxQI460L1g7/?img_index=1"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -285,7 +299,7 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/ibfonte.pa/" target="_blank">
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -298,7 +312,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C7JdMAaOeTd/?img_index=6"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -311,7 +328,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C3DRRiprSBf/?img_index=1"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -324,7 +344,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C6XlZqzt86K/"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
@@ -337,7 +360,10 @@ const AboutUs = () => {
                   />
                 </InstagramImageContainer>
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/C6wcC0IRso1/"
+                target="_blank"
+              >
                 <InstagramImageContainer>
                   <img
                     src={Icons.ColletionIcon}
