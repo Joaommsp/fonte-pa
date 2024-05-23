@@ -247,27 +247,6 @@ export const ComunityDescription = styled.p`
   }
 `;
 
-export const Assignment = styled.span`
-  color: #dddddd60;
-  font-size: 0.8rem;
-
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-
-  @media only screen and (max-width: 560px) {
-    font-size: 0.7rem;
-    bottom: 1.5rem;
-    right: 1rem;
-  }
-
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
-    font-size: 0.7rem;
-    bottom: 1.5rem;
-    right: 1rem;
-  }
-`;
-
 export const DivisorLine = styled.div`
   width: 124px;
   height: 3px;
@@ -319,7 +298,7 @@ export const WhoAreWeTitle = styled.h1`
   margin-bottom: 1rem;
 `;
 
-export const WhoAreWeText = styled.p`
+export const WhoAreWeText = styled.div`
   font-size: 0.9rem;
   width: 80%;
   text-align: right;
@@ -399,11 +378,21 @@ export const CardsContainer = styled.div`
     margin-bottom: 2rem;
   }
 
+  .textEmphasis strong {
+    font-weight: 500;
+    color: #1c7ec2;
+  }
+
   .textEmphasisLeft {
     font-size: 1.2rem;
     text-align: left;
     width: 80%;
     margin-bottom: 2rem;
+  }
+
+  .textEmphasisLeft strong {
+    font-weight: 500;
+    color: #1c7ec2;
   }
 
   .cardImageContainer {
@@ -477,7 +466,13 @@ export const InstagramContent = styled.div`
 `;
 
 export const InstagramProfileImage = styled.img`
-  width: 100%;
+  width: 80%;
+  z-index: 1000;
+  transition: 0.3s transform ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const InstagramContentTitle = styled.h2`
@@ -528,7 +523,7 @@ export const InstagramImageContainer = styled.div`
     right: 0.5rem;
     top: 0.5rem;
     filter: drop-shadow(-2px 4px 3px #00000050);
-    z-index: 1000;
+    z-index: 100;
   }
 `;
 
@@ -540,5 +535,79 @@ export const InstagramImage = styled.img`
 
   &:hover {
     opacity: 60%;
+  }
+`;
+
+export const AdressMapContainer = styled.div`
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3eff7;
+`;
+
+export const AdressMapAbout = styled.div`
+  width: 50%;
+  padding: 0 2rem;
+`;
+
+export const AdressMapTitle = styled.h2`
+  font-weight: 500;
+  font-size: 2rem;
+  color: #181a20;
+  margin-bottom: 0.5rem;
+`;
+
+export const AdressMapText = styled.p`
+  font-size: 0.9rem;
+  color: #181a20;
+  margin-bottom: 1rem;
+`;
+
+export const Address = styled.div`
+  display: flex;
+  justify-content: flex-start;
+
+  padding: 1rem;
+
+  border-radius: 10px;
+  border: 1px solid #b4b4b8;
+
+  background-color: #ffffff;
+
+  img {
+    width: 24px;
+    margin-right: 1rem;
+  }
+
+  .addressInfos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .addressInfos span {
+    text-decoration: none;
+    color: #181a20;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+`;
+
+export const AdressMapMaps = styled.div`
+  width: 50%;
+`;
+
+export const MapContainer = styled.div`
+  width: 100%;
+
+  padding: 2rem;
+
+  .mapIframe {
+    border-radius: 10px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
   }
 `;

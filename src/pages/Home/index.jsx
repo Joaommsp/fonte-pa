@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer";
 import ButtonWithLink from "../../Components/ButtonWithLink";
 import PostsSection from "../../Components/PostsSection";
 
-import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
+import LogoImage from "../../assets/images/imagens-oficiais/banner.png";
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import HomePageImages from "../../assets/images/homePageImagesExport";
 

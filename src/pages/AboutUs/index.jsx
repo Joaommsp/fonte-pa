@@ -4,7 +4,7 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import AboutUsCard from "../../Components/AboutUsCards";
 
-import LogoImage from "../../assets/images/imagens-oficiais/banner.svg";
+import LogoImage from "../../assets/images/imagens-oficiais/banner.png";
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import PoepleImage from "../../assets/images/usPeopleImage.png";
 import PrayImage from "../../assets/images/prayImage.jpg";
@@ -23,7 +23,6 @@ import {
   SocialMedia,
   SocialMediaLinks,
   SocialMediaLink,
-  Assignment,
   ComunityContainer,
   ComunityTitle,
   ComunityDescription,
@@ -43,6 +42,13 @@ import {
   InstagramImages,
   InstagramImageContainer,
   InstagramImage,
+  AdressMapContainer,
+  AdressMapAbout,
+  AdressMapTitle,
+  AdressMapText,
+  AdressMapMaps,
+  Address,
+  MapContainer,
 } from "./styles";
 
 const AboutUs = () => {
@@ -92,8 +98,6 @@ const AboutUs = () => {
                   </SocialMediaLink>
                 </SocialMediaLinks>
               </SocialMedia>
-
-              <Assignment>image from vecteezy.com</Assignment>
             </LogoContainer>
           </BannerVisualsContent>
           <ComunityContainer>
@@ -185,9 +189,9 @@ const AboutUs = () => {
             "
             >
               <p className="textEmphasisLeft">
-                Encorajamos cada membro da nossa comunidade a cultivar uma vida
-                de oração constante, buscando a orientação divina e intercedendo
-                uns pelos outros.
+                Encorajamos cada membro da nossa comunidade a{" "}
+                <strong>cultivar uma vida de oração constante</strong>, buscando
+                a orientação divina e intercedendo uns pelos outros.
               </p>
               <div className="cardImageContainer">
                 <img src={PrayImage} alt="Garota de joelhos em oração" />
@@ -219,10 +223,10 @@ const AboutUs = () => {
             "
             >
               <p className="textEmphasis">
-                Nosso serviço é motivado pelo exemplo de Jesus, que veio não
-                para ser servido, mas para servir. Procuramos atender às
-                necessidades das pessoas em nossa comunidade e além, oferecendo
-                apoio espiritual, emocional e material.
+                Nosso serviço é motivado pelo <strong>exemplo de Jesus</strong>,
+                que veio não para ser servido, mas para servir. Procuramos
+                atender às necessidades das pessoas em nossa comunidade e além,
+                oferecendo apoio espiritual, emocional e material.
               </p>
             </div>
           </div>
@@ -233,7 +237,9 @@ const AboutUs = () => {
             Siga nosso <strong>Instagram</strong>
           </InstagramContentTitle>
           <InstagramContent>
-            <InstagramProfileImage src={InstagramProfile} alt="" />
+            <a href="https://www.instagram.com/ibfonte.pa/" target="_blank">
+              <InstagramProfileImage src={InstagramProfile} alt="" />
+            </a>
             <InstagramImages>
               <a
                 href="https://www.instagram.com/p/C7HubH1RcdZ/"
@@ -379,6 +385,41 @@ const AboutUs = () => {
             </InstagramImages>
           </InstagramContent>
         </InstagramContentContainer>
+        <AdressMapContainer>
+          <AdressMapAbout>
+            <AdressMapTitle>Venha nos visitar</AdressMapTitle>
+            <AdressMapText>
+              {" "}
+              Venha participar, onde buscamos crescer juntos na fé e no amor de
+              Cristo. Nossa comunidade estará de braços abertos para
+              recebê-lo(a)
+            </AdressMapText>
+            <Address>
+              <img src={Icons.MapIcon} alt="Ícone de mapa para endereço" />
+              <div className="addressInfos">
+                <span>R. Mal. Deodoro da Fonseca</span>
+                <span>N° 204</span>
+                <span>Cleriston Andrade </span>
+                <span>Paulo Afonso - BA</span>
+              </div>
+            </Address>
+          </AdressMapAbout>
+          <AdressMapMaps>
+            <MapContainer>
+              <div className="mapTest">
+                <iframe
+                  className="mapIframe"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.2397949883066!2d-38.2446643!3d-9.400342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7093097213da37b%3A0xf2d4508b9d89bd1!2sIgreja%20Batista%20Fonte!5e0!3m2!1spt-BR!2sbr!4v1714577468004!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="350"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </MapContainer>
+          </AdressMapMaps>
+        </AdressMapContainer>
       </ContentContainer>
       <Footer></Footer>
     </HomeContainer>

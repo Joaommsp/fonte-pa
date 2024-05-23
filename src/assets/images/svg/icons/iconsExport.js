@@ -34,6 +34,7 @@ import ClosedEye from "./closed-eye-icon.svg";
 import OpenEye from "./open-eye-icon.svg";
 import InfoCicleIcon from "./info-cicle-icon.svg";
 import ColletionIcon from "./collection-icon.svg";
+import MapIcon from "./map-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -72,6 +73,7 @@ const Icons = {
   OpenEye: OpenEye,
   InfoCicleIcon: InfoCicleIcon,
   ColletionIcon: ColletionIcon,
+  MapIcon: MapIcon,
 };
 
 export default Icons;
