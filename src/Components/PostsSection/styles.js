@@ -12,6 +12,10 @@ export const NewsSectionContainer = styled.div`
   @media only screen and (min-width: 560px) and (max-width: 700px) {
     height: 500px;
   }
+
+  @media only screen and (max-width: 560px) {
+    height: 500px;
+  }
 `;
 
 export const CardsContainer = styled.div`
@@ -199,15 +203,10 @@ export const CardsContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0;
-
+    height: 480px;
     .card {
       width: 100%;
-      height: fit-content;
+      height: 400px;
       padding: 0.5rem;
 
       flex-direction: column;
@@ -216,7 +215,7 @@ export const CardsContainer = styled.div`
 
     .cardHeader {
       width: 100%;
-      height: fit-content;
+      height: 100px;
       border-bottom: 2px solid #1c7ec2;
       margin-bottom: 1rem;
     }
