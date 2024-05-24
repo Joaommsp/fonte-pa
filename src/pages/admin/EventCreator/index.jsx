@@ -40,6 +40,7 @@ const EventCreator = () => {
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
   const [newHour, setNewHour] = useState("");
+  const [newLocal, setNewLocal] = useState("");
   const fileInputRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
@@ -110,6 +111,7 @@ const EventCreator = () => {
       text: newText,
       data: Timestamp.fromDate(new Date(newData)),
       hour: newHour,
+      local: newLocal,
       image: imageUrl,
     });
 
@@ -364,6 +366,14 @@ const EventCreator = () => {
               className="grayInput"
               name="hora"
               onChange={(event) => setNewHour(event.target.value)}
+            />
+            <label htmlFor="data">Local</label>
+            <input
+              type="text"
+              id="local"
+              className="grayInput"
+              name="local"
+              onChange={(event) => setNewLocal(event.target.value)}
             />
             <form>
               <label htmlFor="imageInput">Imagem (Escala 1 : 1)</label>

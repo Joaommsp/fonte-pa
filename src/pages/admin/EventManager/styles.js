@@ -307,7 +307,7 @@ export const CardsContainer = styled.div`
   margin-bottom: 5rem;
 
   .card {
-    width: fit-content;
+    width: 436px;
     height: 100%;
     padding: 1rem;
 
@@ -320,20 +320,18 @@ export const CardsContainer = styled.div`
 
     border-radius: 5px;
 
-    background-color: #ffffff;
+    box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.13),
+      0px 0px 12px rgba(0, 0, 0, 0.26);
   }
 
   .cardHeader {
     width: 100%;
     height: 42px;
-    padding-top: 1rem;
-
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .cardTitle {
     width: 80%;
-    height: 56px;
     font-size: 1rem;
     color: #181a20;
     text-align: left;
@@ -355,14 +353,42 @@ export const CardsContainer = styled.div`
     position: relative;
   }
 
-  .deleteEventBtn {
+  .managementOptions {
     position: absolute;
-    right: 1rem;
     top: 1rem;
+    right: 1rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .updateEventBtn {
     background-color: #ffffff;
     border: 0;
     padding: 0.5rem;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 5px;
+
+    transition: 0.3s ease-in-out;
+
+    transform: scale(1);
+
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.37);
+    display: flex;
+  }
+
+  .deleteEventBtn {
+    background-color: #ffffff;
+    border: 0;
+    padding: 0.5rem;
+
+    width: 40px;
+    height: 40px;
 
     border-radius: 5px;
 
@@ -373,11 +399,13 @@ export const CardsContainer = styled.div`
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.37);
   }
 
-  .deleteEventBtn img {
+  .deleteEventBtn img,
+  .updateEventBtn img {
     width: 24px;
   }
 
-  .deleteEventBtn:hover {
+  .deleteEventBtn:hover,
+  .updateEventBtn:hover {
     cursor: pointer;
     background-color: #ffffff90;
     transform: scale(1.1);
@@ -387,13 +415,15 @@ export const CardsContainer = styled.div`
     width: 404px;
     height: 404px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 5px;
     border: 1px solid #00000020;
   }
 
   .cardBotton {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .cardTextContainer {
@@ -433,11 +463,19 @@ export const CardsContainer = styled.div`
   }
 
   .cardData {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: #00000060;
-    font-size: 0.8rem;
+    display: block;
+    color: #191919;
+    font-size: 0.9rem;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .cardData img {
+    margin-right: 0.5rem;
+    width: 18px;
   }
 
   .readAllBtn {
@@ -471,9 +509,9 @@ export const CardsContainer = styled.div`
 
   @media only screen and (min-width: 560px) and (max-width: 700px) {
     .card {
-      width: 500px;
-      height: 474px;
-      padding: 0.5rem;
+      width: 388px;
+      height: fit-content;
+      padding: 1rem;
 
       flex-direction: column;
       align-items: center;
@@ -504,16 +542,12 @@ export const CardsContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0;
+    padding: 2rem 0.5rem;
 
     .card {
-      width: 100%;
+      width: 310px;
       height: fit-content;
-      padding: 0.5rem;
+      padding: 1rem;
 
       flex-direction: column;
       align-items: center;
@@ -521,15 +555,16 @@ export const CardsContainer = styled.div`
 
     .cardHeader {
       width: 100%;
-      height: fit-content;
+      height: 64px;
       border-bottom: 2px solid #1c7ec2;
       margin-bottom: 1rem;
     }
 
     .cardTitle {
+      width: 100%;
       font-size: 1rem;
       padding-bottom: 0.5rem;
-      height: fit-content;
+      height: 64px;
     }
 
     .cardSubtitle {
@@ -537,8 +572,8 @@ export const CardsContainer = styled.div`
     }
 
     .cardImage {
-      width: 290px;
-      height: 290px;
+      width: 280px;
+      height: 280px;
       object-fit: cover;
       margin-bottom: 1rem;
     }
@@ -561,9 +596,7 @@ export const CardsContainer = styled.div`
     }
 
     .cardData {
-      top: 0;
       font-size: 0.8rem;
-      display: none;
     }
 
     .readAllBtn {
@@ -662,6 +695,86 @@ export const NoticeOldPostData = styled.div`
   @media only screen and (max-width: 560px) {
     span {
       font-size: 0.8rem;
+    }
+  }
+`;
+
+export const PopUpUpdateContainer = styled.div`
+  width: 854px;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  border-radius: 5px;
+
+  padding: 2rem;
+
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
+
+  .closePopUpBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    background-color: #1c7ec2;
+
+    width: 94px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    padding: 0.2rem 1rem;
+
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+
+    border-radius: 64px;
+    border: 0;
+
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .closePopUpBtn img {
+    margin-right: 0.3rem;
+    width: 18px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .closePopUpBtn:hover img {
+    width: 0px;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 95vw;
+    height: 80vh;
+
+    .closePopUpBtn {
+      top: 1rem;
+      left: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    width: 85vw;
+    height: 80vh;
+
+    .closePopUpBtn {
+      top: 1rem;
+      right: 1rem;
     }
   }
 `;

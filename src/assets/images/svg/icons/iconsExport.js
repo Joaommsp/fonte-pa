@@ -35,6 +35,10 @@ import OpenEye from "./open-eye-icon.svg";
 import InfoCicleIcon from "./info-cicle-icon.svg";
 import ColletionIcon from "./collection-icon.svg";
 import MapIcon from "./map-icon.svg";
+import CalendarIcon from "./calendar-icon.svg";
+import ClockIcon from "./clock-icon.svg";
+import MapIconDark from "./map-icon-dark.svg";
+import UpdateIcon from "./update-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -74,6 +78,10 @@ const Icons = {
   InfoCicleIcon: InfoCicleIcon,
   ColletionIcon: ColletionIcon,
   MapIcon: MapIcon,
+  CalendarIcon: CalendarIcon,
+  ClockIcon: ClockIcon,
+  MapIconDark: MapIconDark,
+  UpdateIcon: UpdateIcon,
 };
 
 export default Icons;

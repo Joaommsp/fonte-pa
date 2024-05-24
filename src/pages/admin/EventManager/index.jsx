@@ -3,7 +3,13 @@ import { useNavigate, Link } from "react-router-dom";
 import { auth, db } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { query, orderBy } from "firebase/firestore";
-import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
 
 import Footer from "../../../Components/Footer";
@@ -21,6 +27,7 @@ import {
   CardsContainer,
   ActionStatusContainer,
   NoticeOldPostData,
+  PopUpUpdateContainer,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -38,6 +45,9 @@ const EventManager = () => {
   const [aouthCheck, setAothCheck] = useState(0);
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
+  const [openPopupIndex, setOpenPopupIndex] = useState(null);
+
+  const [newTitle, set
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -143,6 +153,14 @@ const EventManager = () => {
       });
   };
 
+  const updateEvent = async (eventId) => {
+    const eventRef = doc(db, "events", eventId);
+
+    await updateDoc(eventRef, {
+      title: true,
+    });
+  };
+
   const closeActionStatusModal = () => {
     const timeToResetErro = setInterval(() => {
       setActionStatus(null);
@@ -157,6 +175,14 @@ const EventManager = () => {
 
   const instantCloseActionStatusModal = () => {
     setActionStatus(null);
+  };
+
+  const handleOpenPopup = (index) => {
+    setOpenPopupIndex(index);
+  };
+
+  const handleClosePopup = () => {
+    setOpenPopupIndex(null);
   };
 
   return aouthCheck == 0 && loading == true ? (
@@ -240,23 +266,69 @@ const EventManager = () => {
           {events.map((event, index) => {
             return (
               <div className="card" key={index}>
+                {openPopupIndex === index && (
+                  <PopUpUpdateContainer className="fullPopUp">
+                    <button
+                      onClick={handleClosePopup}
+                      className="closePopUpBtn"
+                    >
+                      <img
+                        src={Icons.ArrowLeftIcon}
+                        alt="Icone para fechar conteúdo"
+                        title="Fechar"
+                      />
+                      Voltar
+                    </button>
+                    <div className="editInputs">
+                      <input type="text" defaultValue={event.title} />
+                    </div>
+                    <button onClick={() => updateEvent(event.id)}>
+                      Alterar
+                    </button>
+                  </PopUpUpdateContainer>
+                )}
                 <div className="cardHeader">
                   <h2 className="cardTitle">{event.title}</h2>
                 </div>
                 <div className="cardHeaderContainer">
                   <img className="cardImage" src={event.image} alt="" />
-                  <button
-                    className="deleteEventBtn"
-                    onClick={() => deleteEvent(event.id, event.image)}
-                  >
-                    <img
-                      src={Icons.DeleteIconRed}
-                      alt="Icone de deletar postagem"
-                    />
-                  </button>
+                  <div className="managementOptions">
+                    <button
+                      className="deleteEventBtn"
+                      onClick={() => deleteEvent(event.id, event.image)}
+                    >
+                      <img
+                        src={Icons.DeleteIconRed}
+                        alt="Icone de deletar postagem"
+                      />
+                    </button>
+                    <button
+                      className="updateEventBtn"
+                      onClick={() => handleOpenPopup(index)}
+                    >
+                      <img
+                        src={Icons.UpdateIcon}
+                        alt="Icone de deletar postagem"
+                      />
+                    </button>
+                  </div>
                 </div>
                 <div className="cardBotton">
-                  <span className="cardData">{formateDate(event.data)}</span>
+                  <span className="cardData">
+                    {" "}
+                    <img src={Icons.CalendarIcon} alt="Ícone Calendário" />{" "}
+                    {formateDate(event.data)}
+                  </span>
+                  <span className="cardData">
+                    {" "}
+                    <img src={Icons.ClockIcon} alt="Ícone relógio" />{" "}
+                    {event.hour}
+                  </span>
+                  <span className="cardData">
+                    {" "}
+                    <img src={Icons.MapIconDark} alt="Ícone Mapa Local" />{" "}
+                    {event.local}
+                  </span>
                 </div>
               </div>
             );
