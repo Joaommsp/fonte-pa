@@ -136,7 +136,7 @@ const DashBoard = () => {
               </div>
             </DashBoardCard>
           </Link>
-          <Link to="/postcreator" className="cardLinkContainer">
+          <Link to="/eventsmanager" className="cardLinkContainer">
             <DashBoardCard>
               <span className="featureName">Gerenciador de eventos</span>
               <div className="cardImageContainer" id="editEventImageBg">

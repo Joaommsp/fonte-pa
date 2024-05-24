@@ -42,11 +42,9 @@ const PostsSection = () => {
       data.seconds * 1000 + Math.floor(data.nanoseconds / 1000000);
 
     const dataFormatada = new Date(dateInMilliseconds);
+    dataFormatada.setDate(dataFormatada.getDate() + 1);
 
-    const offsetInMilliseconds = dataFormatada.getTimezoneOffset() * 60 * 1000;
-    const localDate = new Date(dateInMilliseconds - offsetInMilliseconds);
-
-    const formatDDMMYYYY = localDate.toLocaleDateString("pt-BR", {
+    const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -71,14 +69,6 @@ const PostsSection = () => {
                     />
                     Voltar
                   </button>
-                  <div className="popUpCardBannerContainer">
-                    <div className="bannerImageCover"></div>
-                    <img
-                      src={PopUpBannerImage}
-                      alt=""
-                      className="popUpCardBanner"
-                    />
-                  </div>
                   <div className="popUpCardHeader">
                     <div className="popUpCardHeader__About"></div>
                     <h2 className="popUpCardTitle">{post.title}</h2>

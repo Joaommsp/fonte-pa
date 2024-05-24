@@ -31,15 +31,15 @@ import ErrorDeleteImage from "../../../assets/images/error-image.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
-const PostManager = () => {
+const EventManager = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
+  const [events, setEvents] = useState([]);
   const [aouthCheck, setAothCheck] = useState(0);
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
 
-  const postsColletcionRef = collection(db, "news");
+  const eventsColletcionRef = collection(db, "events");
 
   const navigate = useNavigate();
 
@@ -71,39 +71,43 @@ const PostManager = () => {
     });
   };
 
-  const getPosts = async () => {
-    const queryOrderByDate = query(postsColletcionRef, orderBy("data", "desc"));
+  const getEvents = async () => {
+    const queryOrderByDate = query(
+      eventsColletcionRef,
+      orderBy("data", "desc")
+    );
     const data = await getDocs(queryOrderByDate);
-    setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   useEffect(() => {
-    getPosts();
+    getEvents();
   }, []);
 
   useEffect(() => {
     const verifyOldData = () => {
-      if (posts.length > 0) {
+      if (events.length > 0) {
         const twoMonthsAgo = new Date();
         twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 5);
 
-        posts.forEach((p) => {
+        events.forEach((p) => {
           const postDate = createDateObject(formateDate(p.data));
           if (postDate < twoMonthsAgo) {
-            deletePost(p.id, p.image);
+            deleteEvent(p.id, p.image);
           }
         });
       }
     };
 
     verifyOldData();
-  }, [posts]);
+  }, [events]);
 
   const formateDate = (data) => {
     const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
 
-      dataFormatada.setDate(dataFormatada.getDate() + 1);
     const dataFormatada = new Date(dateInMilliseconds);
+
+    dataFormatada.setDate(dataFormatada.getDate() + 1);
 
     const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
       day: "2-digit",
@@ -119,10 +123,10 @@ const PostManager = () => {
     return new Date(year, month - 1, day); //
   };
 
-  const deletePost = async (id, imageUrl) => {
+  const deleteEvent = async (id, imageUrl) => {
     const storage = getStorage();
 
-    const postDoc = doc(db, "news", id);
+    const postDoc = doc(db, "events", id);
     const desertRef = ref(storage, `${imageUrl}`);
 
     await deleteDoc(postDoc)
@@ -221,30 +225,29 @@ const PostManager = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Gerenciador de postagens</h2>
+              <h2 className="featureTitle">Gerenciador de Eventos</h2>
             </div>
           </div>
         </FeatureHeaderContainer>
         <NoticeOldPostData>
           <span>
             {" "}
-            <img src={Icons.InfoCicleIcon} alt="" /> Publicações com mais de 5
-            meses serão excluídas{" "}
+            <img src={Icons.InfoCicleIcon} alt="" /> Eventos com mais de 5 meses
+            serão excluídos{" "}
           </span>
         </NoticeOldPostData>
         <CardsContainer>
-          {posts.map((post, index) => {
+          {events.map((event, index) => {
             return (
               <div className="card" key={index}>
                 <div className="cardHeader">
-                  <h2 className="cardTitle">{post.title}</h2>
-                  <span className="cardHashtags">{post.hastags}</span>
+                  <h2 className="cardTitle">{event.title}</h2>
                 </div>
                 <div className="cardHeaderContainer">
-                  <img className="cardImage" src={post.image} alt="" />
+                  <img className="cardImage" src={event.image} alt="" />
                   <button
-                    className="deletePostBtn"
-                    onClick={() => deletePost(post.id, post.image)}
+                    className="deleteEventBtn"
+                    onClick={() => deleteEvent(event.id, event.image)}
                   >
                     <img
                       src={Icons.DeleteIconRed}
@@ -253,11 +256,7 @@ const PostManager = () => {
                   </button>
                 </div>
                 <div className="cardBotton">
-                  <div
-                    className="cardTextContainer"
-                    dangerouslySetInnerHTML={{ __html: post.text }}
-                  ></div>
-                  <span className="cardData">{formateDate(post.data)}</span>
+                  <span className="cardData">{formateDate(event.data)}</span>
                 </div>
               </div>
             );
@@ -269,4 +268,4 @@ const PostManager = () => {
   );
 };
 
-export default PostManager;
+export default EventManager;

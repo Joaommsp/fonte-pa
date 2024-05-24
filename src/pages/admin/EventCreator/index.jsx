@@ -37,33 +37,29 @@ const EventCreator = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [newTitle, setNewTitle] = useState("");
-  const [newSubTitle, setNewSubTitle] = useState("");
-  const [newHashtags, setNewSHashTags] = useState("");
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
-  const [newAuthor, setNewAuthor] = useState("");
+  const [newHour, setNewHour] = useState("");
   const fileInputRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [previewImageUrl, setPreviewImageUrl] = useState(DefaultImage);
-  const [aouthCheck, setAothCheck] = useState(0);
+  const [authCheck, setAuthCheck] = useState(0);
   const [errorMessage, setErrorMessage] = useState(null);
   const modalRef = useRef(null);
   const [postCreated, setPostCreated] = useState(false);
 
-  const postsColletcionRef = collection(db, "news");
+  const eventsColletcionRef = collection(db, "events");
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("cu" + Date.now());
-
     let loadingTime = setInterval(() => {
       setLoading(false);
       clearInterval(loadingTime);
     }, 3000);
 
     const timeAothCheck = setTimeout(() => {
-      setAothCheck(1);
+      setAuthCheck(1);
       clearTimeout(timeAothCheck);
     }, 3000);
 
@@ -84,24 +80,16 @@ const EventCreator = () => {
     });
   };
 
-  const createPost = () => {
-    if (
-      newTitle === "" ||
-      newSubTitle === "" ||
-      newText === "" ||
-      newData === "" ||
-      newAuthor === ""
-    ) {
+  const createEvent = () => {
+    if (newTitle === "" || newText === "" || newData === "" || newHour == "") {
       setErrorMessage("Preencha todos os campos");
       resetErrorMessage();
       return;
     } else {
       uploadImage()
         .then((imageUrl) => {
-          console.log(imageUrl);
           try {
             handleClearFile();
-            console.log("URL da imagem: " + imageUrl);
             createDocOnDataBase(imageUrl);
             clearAllInputs();
           } catch (error) {
@@ -117,14 +105,12 @@ const EventCreator = () => {
   };
 
   const createDocOnDataBase = async (imageUrl) => {
-    await addDoc(postsColletcionRef, {
+    await addDoc(eventsColletcionRef, {
       title: newTitle,
-      subtitle: newSubTitle,
-      hashtags: newHashtags,
       text: newText,
       data: Timestamp.fromDate(new Date(newData)),
+      hour: newHour,
       image: imageUrl,
-      author: newAuthor,
     });
 
     setPostCreated(true);
@@ -133,11 +119,8 @@ const EventCreator = () => {
 
   const clearAllInputs = () => {
     setNewTitle("");
-    setNewSubTitle("");
-    setNewSHashTags("");
     setNewText("");
     setNewData("");
-    setNewAuthor("");
     setPreviewImageUrl("");
   };
 
@@ -174,7 +157,7 @@ const EventCreator = () => {
     } else if (file == undefined) {
       throw new Error("Nenhuma imagem selecionada");
     } else {
-      const storageRef = ref(storage, `postsImages/${file.name}${Date.now()}`);
+      const storageRef = ref(storage, `eventsImages/${file.name}${Date.now()}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       return new Promise((resolve, reject) => {
@@ -192,6 +175,9 @@ const EventCreator = () => {
           () => {
             getDownloadURL(uploadTask.snapshot.ref)
               .then((url) => {
+                if (typeof url !== "string") {
+                  throw new Error("URL de download inválida");
+                }
                 resolve(url);
               })
               .catch((error) => {
@@ -206,10 +192,8 @@ const EventCreator = () => {
   };
 
   const isSizeMbMatch = (bytes) => {
-    console.log(bytes);
     const mb = bytes / (1024 * 1024);
     const mbFormated = mb.toFixed(2);
-    console.log(mbFormated);
 
     if (mbFormated < 3) {
       return true;
@@ -270,7 +254,7 @@ const EventCreator = () => {
     });
   }, [postCreated]);
 
-  return aouthCheck == 0 && loading == true ? (
+  return authCheck == 0 && loading == true ? (
     <LoaderContainer>
       <BarLoader
         color="#1662a1"
@@ -340,7 +324,7 @@ const EventCreator = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Criador de eventos</h2>
+              <h2 className="featureTitle">Criar eventos</h2>
             </div>
           </div>
         </FeatureHeaderContainer>
@@ -356,28 +340,6 @@ const EventCreator = () => {
               name="title"
               value={newTitle}
               onChange={(event) => setNewTitle(event.target.value)}
-            />
-            <label htmlFor="subtitle">SubTítulo</label>
-            <input
-              className="grayInput"
-              type="text"
-              placeholder="Subtitle"
-              id="subtitle"
-              name="subtitle"
-              maxLength="100"
-              value={newSubTitle}
-              onChange={(event) => setNewSubTitle(event.target.value)}
-            />
-            <label htmlFor="subtitle">Hashtags (Inclua 3 no máx.) </label>
-            <input
-              className="grayInput"
-              type="text"
-              placeholder="HashTags"
-              id="hashTags"
-              name="hashTags"
-              maxLength="50"
-              value={newHashtags}
-              onChange={(event) => setNewSHashTags(event.target.value)}
             />
             {
               <TextWriterContainer>
@@ -395,19 +357,16 @@ const EventCreator = () => {
               value={newData}
               onChange={(event) => setNewData(event.target.value)}
             />
-            <label htmlFor="author">Autor</label>
+            <label htmlFor="data">Horário</label>
             <input
+              type="time"
+              id="hora"
               className="grayInput"
-              type="text"
-              placeholder="Author"
-              maxLength="50"
-              id="author"
-              name="author"
-              value={newAuthor}
-              onChange={(event) => setNewAuthor(event.target.value)}
+              name="hora"
+              onChange={(event) => setNewHour(event.target.value)}
             />
             <form>
-              <label htmlFor="imageInput">Imagem (Escala 16:9)</label>
+              <label htmlFor="imageInput">Imagem (Escala 1 : 1)</label>
               <input
                 type="file"
                 accept="image/jpeg, image/png"
@@ -425,8 +384,8 @@ const EventCreator = () => {
                 ></progress>
               </div>
             </form>
-            <button className="createBtn" onClick={createPost}>
-              CRIAR POSTAGEM
+            <button className="createBtn" onClick={createEvent}>
+              CRIAR EVENTO
             </button>
             <div className="envStatusContainer">
               {errorMessage != null && (
@@ -442,8 +401,6 @@ const EventCreator = () => {
             <div className="previewCard">
               <div className="previewCardHeader">
                 <span className="previewCardTitle">{newTitle}</span>
-                <span className="previewCardSubtitle">{newSubTitle}</span>
-                <span className="previewCardHashtags">{newHashtags}</span>
               </div>
               <div className="previewCardContent">
                 <img
@@ -455,7 +412,6 @@ const EventCreator = () => {
                   className="previewCardTextBox"
                   dangerouslySetInnerHTML={{ __html: newText }}
                 ></div>
-                <span className="previewCardAuthor">{newAuthor}</span>
                 <span className="previewCardData">{newData}</span>
               </div>
             </div>

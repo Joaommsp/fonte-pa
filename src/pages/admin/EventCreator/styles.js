@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import CreatePostCardBg from "../../../assets/images/createPostCardBg.png";
+import CreatePostCardBg from "../../../assets/images/createEventCardBg.png";
 
 export const NewsLetterPanelContainer = styled.div`
   width: 100%;
@@ -116,8 +116,8 @@ export const PostCreatorContainer = styled.div`
   }
 
   .prevUploadImage {
-    width: 321px;
-    height: 180px;
+    width: 221px;
+    height: 221px;
     overflow: hidden;
     object-fit: cover;
 
@@ -129,7 +129,7 @@ export const PostCreatorContainer = styled.div`
     width: 100%;
     border: 0;
     padding: 0.5rem;
-    background-color: #41b06e;
+    background-color: #c40c0c;
     border-radius: 5px;
 
     color: #ffffff;
@@ -139,7 +139,7 @@ export const PostCreatorContainer = styled.div`
   }
 
   .createBtn:hover {
-    background-color: #358c58;
+    background-color: #e72929;
     cursor: pointer;
   }
 
@@ -193,7 +193,7 @@ export const PostCreatorContainer = styled.div`
 
     .prevUploadImage {
       width: 270px;
-      height: 152px;
+      height: 270px;
       overflow: hidden;
       object-fit: cover;
 
@@ -566,8 +566,8 @@ export const PreviewCardContainer = styled.div`
   }
 
   .previewCardUploadImage {
-    width: 491px;
-    height: 276px;
+    width: 405px;
+    height: 405px;
     border-radius: 5px;
 
     border: 1px solid #00000030;
@@ -654,7 +654,7 @@ export const PreviewCardContainer = styled.div`
 
     .previewCardUploadImage {
       width: 388px;
-      height: 218px;
+      height: 388px;
     }
   }
 
@@ -678,7 +678,7 @@ export const PreviewCardContainer = styled.div`
 
     .previewCardUploadImage {
       width: 295px;
-      height: 166px;
+      height: 295px;
     }
   }
 
@@ -702,7 +702,7 @@ export const PreviewCardContainer = styled.div`
 
     .previewCardUploadImage {
       width: 236px;
-      height: 136px;
+      height: 236px;
     }
   }
 
@@ -711,7 +711,7 @@ export const PreviewCardContainer = styled.div`
 
     .previewCardUploadImage {
       width: 511px;
-      height: 288px;
+      height: 511px;
     }
   }
 
@@ -720,21 +720,21 @@ export const PreviewCardContainer = styled.div`
 
     .previewCardUploadImage {
       width: 355px;
-      height: 199px;
+      height: 355px;
     }
   }
 
   @media only screen and (min-width: 1114px) and (max-width: 1268px) {
     .previewCardUploadImage {
       width: 410px;
-      height: 231px;
+      height: 410px;
     }
   }
 
   @media only screen and (min-width: 1000px) and (max-width: 1114px) {
     .previewCardUploadImage {
       width: 336px;
-      height: 189px;
+      height: 336px;
     }
   }
 `;

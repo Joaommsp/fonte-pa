@@ -33,7 +33,7 @@ import PostCreatedModalImage from "../../../assets/images/postCreatedModalImage.
 
 import BarLoader from "react-spinners/BarLoader";
 
-const NewsLetterPanel = () => {
+const PostCreator = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [newTitle, setNewTitle] = useState("");
@@ -55,8 +55,6 @@ const NewsLetterPanel = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("cu" + Date.now());
-
     let loadingTime = setInterval(() => {
       setLoading(false);
       clearInterval(loadingTime);
@@ -98,10 +96,8 @@ const NewsLetterPanel = () => {
     } else {
       uploadImage()
         .then((imageUrl) => {
-          console.log(imageUrl);
           try {
             handleClearFile();
-            console.log("URL da imagem: " + imageUrl);
             createDocOnDataBase(imageUrl);
             clearAllInputs();
           } catch (error) {
@@ -206,10 +202,8 @@ const NewsLetterPanel = () => {
   };
 
   const isSizeMbMatch = (bytes) => {
-    console.log(bytes);
     const mb = bytes / (1024 * 1024);
     const mbFormated = mb.toFixed(2);
-    console.log(mbFormated);
 
     if (mbFormated < 3) {
       return true;
@@ -467,4 +461,4 @@ const NewsLetterPanel = () => {
   );
 };
 
-export default NewsLetterPanel;
+export default PostCreator;

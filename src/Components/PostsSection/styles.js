@@ -24,7 +24,7 @@ export const CardsContainer = styled.div`
 
   display: flex;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 34px;
 
   overflow-y: hidden;
   overflow-x: scroll;
@@ -60,8 +60,8 @@ export const CardsContainer = styled.div`
   }
 
   .cardTitle {
-    width: 80%;
-    font-size: 1.2rem;
+    width: 100%;
+    font-size: 1.1rem;
     font-weight: 600;
     height: 56px;
     color: #181a20;
@@ -275,7 +275,7 @@ export const CardsContainer = styled.div`
 
 export const PopUpContainer = styled.div`
   width: 854px;
-  height: 85vh;
+  height: 80vh;
 
   display: flex;
   flex-direction: column;
@@ -291,6 +291,8 @@ export const PopUpContainer = styled.div`
   overflow-x: hidden;
 
   border-radius: 5px;
+
+  padding: 2rem;
 
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
 
@@ -444,9 +446,9 @@ export const PopUpContainer = styled.div`
   .closePopUpBtn {
     cursor: pointer;
     position: absolute;
-    left: 2rem;
+    right: 2rem;
     top: 2rem;
-    background-color: #31363f60;
+    background-color: #1c7ec2;
 
     width: 94px;
     height: 28px;
