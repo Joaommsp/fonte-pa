@@ -47,7 +47,7 @@ const EventManager = () => {
   const [actionStatusImage, setActionStatusImage] = useState(null);
   const [openPopupIndex, setOpenPopupIndex] = useState(null);
 
-  const [newTitle, set
+  const [newTitle, setNewTitle] = useState("");
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -157,7 +157,7 @@ const EventManager = () => {
     const eventRef = doc(db, "events", eventId);
 
     await updateDoc(eventRef, {
-      title: true,
+      title: newTitle,
     });
   };
 
@@ -268,6 +268,7 @@ const EventManager = () => {
               <div className="card" key={index}>
                 {openPopupIndex === index && (
                   <PopUpUpdateContainer className="fullPopUp">
+                    <h2 className="popUpUpdateTitle">Editar Postagem</h2>
                     <button
                       onClick={handleClosePopup}
                       className="closePopUpBtn"
@@ -280,7 +281,20 @@ const EventManager = () => {
                       Voltar
                     </button>
                     <div className="editInputs">
-                      <input type="text" defaultValue={event.title} />
+                      <label htmlFor="newTitle">Título</label>
+                      <input
+                        type="text"
+                        id="newTitle"
+                        defaultValue={event.title}
+                        onChange={(event) => setNewTitle(event.target.value)}
+                      />
+                      <label htmlFor="newTitle">Título</label>
+                      <input
+                        type="text"
+                        id="newTitle"
+                        defaultValue={event.title}
+                        onChange={(event) => setNewTitle(event.target.value)}
+                      />
                     </div>
                     <button onClick={() => updateEvent(event.id)}>
                       Alterar

@@ -758,6 +758,37 @@ export const PopUpUpdateContainer = styled.div`
     width: 0px;
   }
 
+  .popUpUpdateTitle {
+    font-weight: 500;
+    color: #181a20;
+    margin-bottom: 1rem;
+  }
+
+  .editInputs {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .editInputs input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #f0f5f8;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .editInputs input:focus {
+    background-color: transparent;
+    border: 1px solid #00000050;
+    outline: 0;
+  }
+
   @media only screen and (max-width: 560px) {
     width: 95vw;
     height: 80vh;
