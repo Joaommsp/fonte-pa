@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, db } from "../../../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { query, orderBy } from "firebase/firestore";
+import { query, orderBy, Timestamp } from "firebase/firestore";
 import {
   collection,
   getDocs,
@@ -11,6 +11,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 import Footer from "../../../Components/Footer";
 
@@ -28,6 +30,7 @@ import {
   ActionStatusContainer,
   NoticeOldPostData,
   PopUpUpdateContainer,
+  TextWriterContainer,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -37,6 +40,7 @@ import SucessDeleteImage from "../../../assets/images/succesDeleteImage.png";
 import ErrorDeleteImage from "../../../assets/images/error-image.png";
 
 import BarLoader from "react-spinners/BarLoader";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 const EventManager = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
@@ -46,8 +50,9 @@ const EventManager = () => {
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
   const [openPopupIndex, setOpenPopupIndex] = useState(null);
-
-  const [newTitle, setNewTitle] = useState("");
+  ;
+  const [newText, setNewText] = useState("");
+  const [newData, setNewData] = useState("");
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -156,9 +161,59 @@ const EventManager = () => {
   const updateEvent = async (eventId) => {
     const eventRef = doc(db, "events", eventId);
 
-    await updateDoc(eventRef, {
-      title: newTitle,
-    });
+    const titleInput = document.getElementById("newTitle");
+    const timeInput = document.getElementById("newHour");
+    const localInput = document.getElementById("newLocal");
+
+    if (
+      titleInput.value == "" ||
+      timeInput.value == "" ||
+      localInput.value == ""
+    ) {
+      return;
+    }
+
+    if (newData == "") {
+      await updateDoc(eventRef, {
+        title: titleInput.value,
+        hour: timeInput.value,
+        local: localInput.value,
+      });
+    } else {
+      await updateDoc(eventRef, {
+        title: titleInput.value,
+        hour: timeInput.value,
+        data: Timestamp.fromDate(new Date(newData)),
+        local: localInput.value,
+      });
+    }
+  };
+
+  const RichTextElement = (text) => {
+    const textEditorModules = {
+      toolbar: [
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+        [{ size: [] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [
+          { list: "ordered" },
+          { list: "bullet" },
+          { ident: "-1" },
+          { ident: "+1" },
+        ],
+      ],
+    };
+
+    return (
+      <ReactQuill
+        theme="snow"
+        defaultValue={text}
+        onChange={setNewText}
+        modules={textEditorModules}
+        className="textEditor"
+        id="newText"
+      />
+    );
   };
 
   const closeActionStatusModal = () => {
@@ -268,7 +323,7 @@ const EventManager = () => {
               <div className="card" key={index}>
                 {openPopupIndex === index && (
                   <PopUpUpdateContainer className="fullPopUp">
-                    <h2 className="popUpUpdateTitle">Editar Postagem</h2>
+                    <h2 className="popUpUpdateTitle">Editando Postagem</h2>
                     <button
                       onClick={handleClosePopup}
                       className="closePopUpBtn"
@@ -280,25 +335,53 @@ const EventManager = () => {
                       />
                       Voltar
                     </button>
-                    <div className="editInputs">
+                    <form className="editInputs">
                       <label htmlFor="newTitle">Título</label>
                       <input
                         type="text"
                         id="newTitle"
+                        required
                         defaultValue={event.title}
-                        onChange={(event) => setNewTitle(event.target.value)}
                       />
-                      <label htmlFor="newTitle">Título</label>
+                      <label htmlFor="newText">Sobre o evento</label>
+                      <TextWriterContainer>
+                        {RichTextElement(event.text)}
+                      </TextWriterContainer>
+                      <label htmlFor="data">Data</label>
+                      <input
+                        className="dateInput"
+                        type="date"
+                        name="data"
+                        id="data"
+                        value={newData}
+                        onChange={(event) => setNewData(event.target.value)}
+                      />
+                      <label htmlFor="timeInput">Horário</label>
+                      <input
+                        type="time"
+                        id="newHour"
+                        className="grayInput"
+                        name="hora"
+                        required
+                        defaultValue={event.hour}
+
+                      />
+                      <label htmlFor="newLocal">Local</label>
                       <input
                         type="text"
-                        id="newTitle"
-                        defaultValue={event.title}
-                        onChange={(event) => setNewTitle(event.target.value)}
+                        id="newLocal"
+                        className="grayInput"
+                        name="local"
+                        defaultValue={event.local}
                       />
-                    </div>
-                    <button onClick={() => updateEvent(event.id)}>
-                      Alterar
-                    </button>
+                      <button
+                        type="submit"
+                        className="confirmEditBtn"
+                        onClick={() => updateEvent(event.id)}
+                      >
+                        Atualizar
+                      </button>
+                    </form>
                   </PopUpUpdateContainer>
                 )}
                 <div className="cardHeader">

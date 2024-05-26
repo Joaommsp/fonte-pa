@@ -102,8 +102,8 @@ const PostManager = () => {
   const formateDate = (data) => {
     const dateInMilliseconds = data.seconds * 1000 + data.nanoseconds / 1000000;
 
-      dataFormatada.setDate(dataFormatada.getDate() + 1);
     const dataFormatada = new Date(dateInMilliseconds);
+    dataFormatada.setDate(dataFormatada.getDate() + 1);
 
     const formatDDMMYYYY = dataFormatada.toLocaleDateString("pt-BR", {
       day: "2-digit",

@@ -292,7 +292,7 @@ const EventCreator = () => {
         <UserInfosContainer>
           <UserInfos>
             <UserLinks>
-              <Link to={"/"} className="homeLink" data-title="Voltar ao início">
+              <Link to={"/"} className="homeLink">
                 {" "}
                 <img src={Icons.HomeIcon} alt="" />
               </Link>

@@ -780,6 +780,8 @@ export const PopUpUpdateContainer = styled.div`
     border-radius: 5px;
     background-color: #f0f5f8;
 
+    font-family: "Poppins", sans-serif;
+
     transition: 0.3s ease-in-out;
   }
 
@@ -787,6 +789,24 @@ export const PopUpUpdateContainer = styled.div`
     background-color: transparent;
     border: 1px solid #00000050;
     outline: 0;
+  }
+
+  .confirmEditBtn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 0;
+    background-color: #ffbf00;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .confirmEditBtn:hover {
+    cursor: pointer;
+    background-color: #ff9a00;
   }
 
   @media only screen and (max-width: 560px) {
@@ -807,5 +827,25 @@ export const PopUpUpdateContainer = styled.div`
       top: 1rem;
       right: 1rem;
     }
+  }
+`;
+
+export const TextWriterContainer = styled.div`
+  width: 100%;
+
+  height: 100%;
+
+  margin-bottom: 6.5rem;
+
+  .textEditor {
+    height: 100%;
+  }
+
+  @media only screen and (max-width: 560px) {
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+    margin-bottom: 1rem;
   }
 `;
