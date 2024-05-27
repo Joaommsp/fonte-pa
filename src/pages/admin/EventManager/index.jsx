@@ -31,6 +31,7 @@ import {
   NoticeOldPostData,
   PopUpUpdateContainer,
   TextWriterContainer,
+  ConfirmDeleteModal,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -40,7 +41,6 @@ import SucessDeleteImage from "../../../assets/images/succesDeleteImage.png";
 import ErrorDeleteImage from "../../../assets/images/error-image.png";
 
 import BarLoader from "react-spinners/BarLoader";
-import { text } from "@fortawesome/fontawesome-svg-core";
 
 const EventManager = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
@@ -50,9 +50,13 @@ const EventManager = () => {
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
   const [openPopupIndex, setOpenPopupIndex] = useState(null);
-  ;
   const [newText, setNewText] = useState("");
   const [newData, setNewData] = useState("");
+  const [initialTitle, setInitialTitle] = useState(null);
+  const [initialHour, setInitialHour] = useState(null);
+  const [initialLocal, setInitialLocal] = useState(null);
+  const [statusMessage, setStatusMessage] = useState(null);
+  const [upenConfirmDeletModal, setOpenConfirmDeleteModal] = useState(false);
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -79,6 +83,18 @@ const EventManager = () => {
       listen();
     };
   }, []);
+
+  useEffect(() => {
+    if (openPopupIndex != null) {
+      const titleInput = document.getElementById("newTitle");
+      const timeInput = document.getElementById("newHour");
+      const localInput = document.getElementById("newLocal");
+
+      setInitialTitle(titleInput.value || ""); // Set to empty string if value is falsy
+      setInitialHour(timeInput.value || "");
+      setInitialLocal(localInput.value || "");
+    }
+  }, [openPopupIndex]);
 
   const userSignOut = () => {
     signOut(auth).then(() => {
@@ -171,21 +187,58 @@ const EventManager = () => {
       localInput.value == ""
     ) {
       return;
+    } else if (
+      titleInput.value == initialTitle &&
+      timeInput.value == initialHour &&
+      localInput.value == initialLocal &&
+      newData == "" &&
+      newText == ""
+    ) {
+      setStatusMessage("Nenhuma alteração");
+      hanleCloseStatusMessage();
+      return;
     }
 
-    if (newData == "") {
+    if (newData == "" && newText == "") {
       await updateDoc(eventRef, {
         title: titleInput.value,
         hour: timeInput.value,
         local: localInput.value,
       });
-    } else {
+      reloadPage();
+    } else if (newText != "" && newData != "") {
       await updateDoc(eventRef, {
         title: titleInput.value,
         hour: timeInput.value,
         data: Timestamp.fromDate(new Date(newData)),
         local: localInput.value,
+        text: newText,
       });
+      reloadPage();
+    } else if (newText != "") {
+      await updateDoc(eventRef, {
+        title: titleInput.value,
+        hour: timeInput.value,
+        local: localInput.value,
+        text: newText,
+      });
+      reloadPage();
+    } else if (newData != "") {
+      await updateDoc(eventRef, {
+        title: titleInput.value,
+        hour: timeInput.value,
+        local: localInput.value,
+        data: Timestamp.fromDate(new Date(newData)),
+      });
+      reloadPage();
+    } else {
+      await updateDoc(eventRef, {
+        title: titleInput.value,
+        hour: timeInput.value,
+        local: localInput.value,
+        data: Timestamp.fromDate(new Date(newData)),
+      });
+      reloadPage();
     }
   };
 
@@ -238,6 +291,13 @@ const EventManager = () => {
 
   const handleClosePopup = () => {
     setOpenPopupIndex(null);
+  };
+
+  const hanleCloseStatusMessage = () => {
+    const timeToClose = setInterval(() => {
+      setStatusMessage(null);
+      clearInterval(timeToClose);
+    }, 3000);
   };
 
   return aouthCheck == 0 && loading == true ? (
@@ -320,114 +380,155 @@ const EventManager = () => {
         <CardsContainer>
           {events.map((event, index) => {
             return (
-              <div className="card" key={index}>
-                {openPopupIndex === index && (
-                  <PopUpUpdateContainer className="fullPopUp">
-                    <h2 className="popUpUpdateTitle">Editando Postagem</h2>
+              <>
+                {upenConfirmDeletModal && (
+                  <ConfirmDeleteModal>
                     <button
-                      onClick={handleClosePopup}
-                      className="closePopUpBtn"
+                      className="closeModalBtn"
+                      onClick={() => setOpenConfirmDeleteModal(false)}
                     >
-                      <img
-                        src={Icons.ArrowLeftIcon}
-                        alt="Icone para fechar conteúdo"
-                        title="Fechar"
-                      />
-                      Voltar
+                      <img src={Icons.CloseIcon} alt="" />
                     </button>
-                    <form className="editInputs">
-                      <label htmlFor="newTitle">Título</label>
-                      <input
-                        type="text"
-                        id="newTitle"
-                        required
-                        defaultValue={event.title}
-                      />
-                      <label htmlFor="newText">Sobre o evento</label>
-                      <TextWriterContainer>
-                        {RichTextElement(event.text)}
-                      </TextWriterContainer>
-                      <label htmlFor="data">Data</label>
-                      <input
-                        className="dateInput"
-                        type="date"
-                        name="data"
-                        id="data"
-                        value={newData}
-                        onChange={(event) => setNewData(event.target.value)}
-                      />
-                      <label htmlFor="timeInput">Horário</label>
-                      <input
-                        type="time"
-                        id="newHour"
-                        className="grayInput"
-                        name="hora"
-                        required
-                        defaultValue={event.hour}
-
-                      />
-                      <label htmlFor="newLocal">Local</label>
-                      <input
-                        type="text"
-                        id="newLocal"
-                        className="grayInput"
-                        name="local"
-                        defaultValue={event.local}
-                      />
+                    <span>Deseja excluir este evento?</span>
+                    <div className="buttons">
                       <button
-                        type="submit"
-                        className="confirmEditBtn"
-                        onClick={() => updateEvent(event.id)}
+                        className="confirmBtn"
+                        onClick={() => deleteEvent(event.id, event.image)}
                       >
-                        Atualizar
+                        confirmar
                       </button>
-                    </form>
-                  </PopUpUpdateContainer>
+                      <button
+                        className="cancelBtn"
+                        onClick={() => setOpenConfirmDeleteModal(false)}
+                      >
+                        cancelar
+                      </button>
+                    </div>
+                  </ConfirmDeleteModal>
                 )}
-                <div className="cardHeader">
-                  <h2 className="cardTitle">{event.title}</h2>
-                </div>
-                <div className="cardHeaderContainer">
-                  <img className="cardImage" src={event.image} alt="" />
-                  <div className="managementOptions">
-                    <button
-                      className="deleteEventBtn"
-                      onClick={() => deleteEvent(event.id, event.image)}
-                    >
+                <div className="card" key={index}>
+                  {openPopupIndex === index && (
+                    <PopUpUpdateContainer className="fullPopUp">
+                      <h2 className="popUpUpdateTitle">Editando Postagem</h2>
+                      <button
+                        onClick={handleClosePopup}
+                        className="closePopUpBtn"
+                      >
+                        <img
+                          src={Icons.ArrowLeftIcon}
+                          alt="Icone para fechar conteúdo"
+                          title="Fechar"
+                        />
+                        Voltar
+                      </button>
+                      <form className="editInputs">
+                        <label htmlFor="newTitle">Título</label>
+                        <input
+                          type="text"
+                          id="newTitle"
+                          required
+                          defaultValue={event.title}
+                        />
+                        <label htmlFor="newText">Sobre o evento</label>
+                        <TextWriterContainer>
+                          {RichTextElement(event.text)}
+                        </TextWriterContainer>
+                        <label htmlFor="data">Data</label>
+                        <input
+                          className="dateInput"
+                          type="date"
+                          name="data"
+                          id="data"
+                          value={newData}
+                          onChange={(event) => setNewData(event.target.value)}
+                        />
+                        <label htmlFor="timeInput">Horário</label>
+                        <input
+                          type="time"
+                          id="newHour"
+                          className="grayInput"
+                          name="hora"
+                          required
+                          defaultValue={event.hour}
+                        />
+                        <label htmlFor="newLocal">Local</label>
+                        <input
+                          type="text"
+                          id="newLocal"
+                          className="grayInput"
+                          name="local"
+                          defaultValue={event.local}
+                        />
+                        <button
+                          type="submit"
+                          className="confirmEditBtn"
+                          onClick={() => updateEvent(event.id)}
+                        >
+                          Atualizar
+                        </button>
+                      </form>
+                      <div className="statusMessageContainer">
+                        {statusMessage != null && (
+                          <span className="statusMessage">
+                            {" "}
+                            <img src={Icons.AlertIconRed} alt="" />{" "}
+                            {statusMessage}
+                          </span>
+                        )}
+                      </div>
+                    </PopUpUpdateContainer>
+                  )}
+                  <div className="cardHeader">
+                    <h2 className="cardTitle">{event.title}</h2>
+                  </div>
+                  <div className="cardHeaderContainer">
+                    <img className="cardImage" src={event.image} alt="" />
+                    <div className="managementOptions">
+                      <button
+                        className="deleteEventBtn"
+                        onClick={() => setOpenConfirmDeleteModal(true)}
+                      >
+                        <img
+                          src={Icons.DeleteIconRed}
+                          alt="Icone de deletar postagem"
+                        />
+                      </button>
+                      <button
+                        className="updateEventBtn"
+                        onClick={() => handleOpenPopup(index)}
+                      >
+                        <img
+                          src={Icons.UpdateIcon}
+                          alt="Icone de deletar postagem"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="cardBotton">
+                    <span className="cardData">
+                      {" "}
                       <img
-                        src={Icons.DeleteIconRed}
-                        alt="Icone de deletar postagem"
-                      />
-                    </button>
-                    <button
-                      className="updateEventBtn"
-                      onClick={() => handleOpenPopup(index)}
-                    >
+                        src={Icons.CalendarIcon}
+                        alt="Ícone Calendário"
+                      />{" "}
+                      {formateDate(event.data)}
+                    </span>
+                    <span className="cardData">
+                      {" "}
+                      <img src={Icons.ClockIcon} alt="Ícone relógio" />{" "}
+                      {event.hour}
+                    </span>
+                    <span className="cardData">
+                      {" "}
                       <img
-                        src={Icons.UpdateIcon}
-                        alt="Icone de deletar postagem"
-                      />
-                    </button>
+                        src={Icons.MapIconDark}
+                        alt="Ícone Mapa Local"
+                      />{" "}
+                      {event.local}
+                    </span>
                   </div>
                 </div>
-                <div className="cardBotton">
-                  <span className="cardData">
-                    {" "}
-                    <img src={Icons.CalendarIcon} alt="Ícone Calendário" />{" "}
-                    {formateDate(event.data)}
-                  </span>
-                  <span className="cardData">
-                    {" "}
-                    <img src={Icons.ClockIcon} alt="Ícone relógio" />{" "}
-                    {event.hour}
-                  </span>
-                  <span className="cardData">
-                    {" "}
-                    <img src={Icons.MapIconDark} alt="Ícone Mapa Local" />{" "}
-                    {event.local}
-                  </span>
-                </div>
-              </div>
+              </>
             );
           })}
         </CardsContainer>

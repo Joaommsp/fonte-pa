@@ -793,6 +793,7 @@ export const PopUpUpdateContainer = styled.div`
 
   .confirmEditBtn {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     padding: 0.5rem;
     border: 0;
@@ -807,6 +808,27 @@ export const PopUpUpdateContainer = styled.div`
   .confirmEditBtn:hover {
     cursor: pointer;
     background-color: #ff9a00;
+  }
+
+  .statusMessageContainer {
+    width: 100%;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .statusMessage {
+    font-size: 0.8rem;
+    color: #e72929;
+    display: flex;
+    align-items: center;
+  }
+
+  .statusMessage img {
+    margin-right: 0.5rem;
   }
 
   @media only screen and (max-width: 560px) {
@@ -847,5 +869,83 @@ export const TextWriterContainer = styled.div`
 
   @media only screen and (min-width: 560px) and (max-width: 1000px) {
     margin-bottom: 1rem;
+  }
+`;
+
+export const ConfirmDeleteModal = styled.div`
+  width: 300px;
+  height: 200px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  .closeModalBtn {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+
+    border: 0;
+    background-color: transparent;
+
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .closeModalBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  span {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 24px;
+  }
+
+  .buttons button {
+    width: 100px;
+    padding: 0.5rem;
+
+    transition: 0.3s ease-in-out;
+
+    font-family: "Poppins", sans-serif;
+  }
+
+  .buttons button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  .confirmBtn {
+    background-color: transparent;
+    border: 2px solid #41b06e;
+    border-radius: 5px;
+    color: #41b06e;
+  }
+
+  .cancelBtn {
+    background-color: transparent;
+    border: 2px solid #ff1e00;
+    border-radius: 5px;
+    color: #ff1e00;
   }
 `;
