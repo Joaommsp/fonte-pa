@@ -155,6 +155,7 @@ const EventManager = () => {
   };
 
   const deleteEvent = async (id, imageUrl) => {
+    setOpenConfirmDeleteModal(null);
     const storage = getStorage();
 
     const postDoc = doc(db, "events", id);
@@ -174,8 +175,10 @@ const EventManager = () => {
       });
   };
 
-  const updateEvent = async (eventId) => {
+  const updateEvent = async (eventId, event) => {
     const eventRef = doc(db, "events", eventId);
+
+    event.preventDefault();
 
     const titleInput = document.getElementById("newTitle");
     const timeInput = document.getElementById("newHour");
@@ -380,7 +383,7 @@ const EventManager = () => {
         <CardsContainer>
           {events.map((event, index) => {
             return (
-              <>
+              <div key={index}>
                 {upenConfirmDeletModal && (
                   <ConfirmDeleteModal>
                     <button
@@ -421,7 +424,10 @@ const EventManager = () => {
                         />
                         Voltar
                       </button>
-                      <form className="editInputs">
+                      <form
+                        className="editInputs"
+                        onSubmit={(e) => updateEvent(event.id, e)}
+                      >
                         <label htmlFor="newTitle">Título</label>
                         <input
                           type="text"
@@ -459,11 +465,7 @@ const EventManager = () => {
                           name="local"
                           defaultValue={event.local}
                         />
-                        <button
-                          type="submit"
-                          className="confirmEditBtn"
-                          onClick={() => updateEvent(event.id)}
-                        >
+                        <button type="submit" className="confirmEditBtn">
                           Atualizar
                         </button>
                       </form>
@@ -528,7 +530,7 @@ const EventManager = () => {
                     </span>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </CardsContainer>

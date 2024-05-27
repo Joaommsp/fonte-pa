@@ -834,20 +834,46 @@ export const PopUpUpdateContainer = styled.div`
   @media only screen and (max-width: 560px) {
     width: 95vw;
     height: 80vh;
+    padding: 1rem;
 
     .closePopUpBtn {
       top: 1rem;
-      left: 1rem;
+      right: 1rem;
+    }
+
+    .popUpUpdateTitle {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+    }
+
+    .editInputs {
+      width: 100%;
+    }
+
+    .editInputs label {
+      font-size: 0.8rem;
+    }
+
+    .editInputs input {
+      font-size: 0.8rem;
+    }
+
+    .confirmEditBtn {
+      font-size: 0.8rem;
     }
   }
 
   @media only screen and (min-width: 560px) and (max-width: 1000px) {
-    width: 85vw;
+    width: 80%;
     height: 80vh;
 
     .closePopUpBtn {
       top: 1rem;
       right: 1rem;
+    }
+
+    .editInputs {
+      width: 90%;
     }
   }
 `;
@@ -864,11 +890,11 @@ export const TextWriterContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    margin-bottom: 1rem;
+    margin-bottom: 7rem;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 1000px) {
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
   }
 `;
 
@@ -913,7 +939,7 @@ export const ConfirmDeleteModal = styled.div`
 
   span {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .buttons {
@@ -947,5 +973,18 @@ export const ConfirmDeleteModal = styled.div`
     border: 2px solid #ff1e00;
     border-radius: 5px;
     color: #ff1e00;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 290px;
+    height: 190px;
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    .buttons button {
+      font-size: 0.8rem;
+    }
   }
 `;
