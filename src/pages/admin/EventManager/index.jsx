@@ -32,6 +32,7 @@ import {
   PopUpUpdateContainer,
   TextWriterContainer,
   ConfirmDeleteModal,
+  EmptyEvents,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -109,6 +110,7 @@ const EventManager = () => {
     );
     const data = await getDocs(queryOrderByDate);
     setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    console.log(events);
   };
 
   useEffect(() => {
@@ -381,6 +383,11 @@ const EventManager = () => {
           </span>
         </NoticeOldPostData>
         <CardsContainer>
+          {events.length == 0 && (
+            <EmptyEvents>
+              <h2>Você ainda não publicou nenhum evento</h2>
+            </EmptyEvents>
+          )}
           {events.map((event, index) => {
             return (
               <div key={index}>
@@ -520,7 +527,7 @@ const EventManager = () => {
                       <img src={Icons.ClockIcon} alt="Ícone relógio" />{" "}
                       {event.hour}
                     </span>
-                    <span className="cardData">
+                    <span className="cardData cardLocal">
                       {" "}
                       <img
                         src={Icons.MapIconDark}

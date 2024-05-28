@@ -164,7 +164,7 @@ export const PostCreatorContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
 
     .mainContainer {
       padding: 1rem 0.5rem;

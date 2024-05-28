@@ -272,7 +272,7 @@ export const PostManagerContentContainer = styled.div`
   padding: 0.5rem 5rem;
 
   @media only screen and (max-width: 560px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 1000px) {
@@ -597,6 +597,10 @@ export const CardsContainer = styled.div`
 
     .cardData {
       font-size: 0.8rem;
+    }
+
+    .cardLocal {
+      font-size: 0.7rem;
     }
 
     .readAllBtn {
@@ -987,4 +991,9 @@ export const ConfirmDeleteModal = styled.div`
       font-size: 0.8rem;
     }
   }
+`;
+
+export const EmptyEvents = styled.div`
+  width: 100%;
+  background-color: red;
 `;

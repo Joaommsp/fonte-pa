@@ -83,6 +83,44 @@ export const PostCreatorContainer = styled.div`
     color: #000000;
   }
 
+  .imageFormatContainer {
+    width: 100%;
+    background-color: #f4f4f4;
+    margin-bottom: 1rem;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+
+    padding: 1rem;
+  }
+
+  .imageFormatContainerText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageFormatContainerText img {
+    width: 36px;
+    margin-bottom: 1rem;
+  }
+
+  .imageFormatContainerText span {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .imageFormat {
+    width: 156px;
+    border-radius: 5px;
+  }
+
   .uploadImageBtn img {
     width: 36px;
     transform: scale(1);
@@ -164,7 +202,7 @@ export const PostCreatorContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
 
     .mainContainer {
       padding: 1rem 0.5rem;
@@ -183,6 +221,31 @@ export const PostCreatorContainer = styled.div`
       font-size: 0.8rem;
     }
 
+    .imageFormatContainer {
+      gap: 24px;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .imageFormatContainerText {
+      width: 100%;
+    }
+
+    .imageFormatContainerText img {
+      width: 36px;
+      margin-bottom: 1rem;
+    }
+
+    .imageFormatContainerText span {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .imageFormat {
+      width: 156px;
+      border-radius: 5px;
+    }
+
     .inputImage {
       height: 46px;
     }
@@ -199,6 +262,15 @@ export const PostCreatorContainer = styled.div`
 
       border: 1px solid #00000020;
       margin-bottom: 1rem;
+    }
+
+    .envStatusContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      height: 48px;
     }
   }
 
@@ -472,6 +544,7 @@ export const UserControlDropDown = styled.div`
 
 export const PreviewCardContainer = styled.div`
   width: 50%;
+  max-width: 478px;
   height: 100%;
 
   display: flex;
@@ -523,21 +596,6 @@ export const PreviewCardContainer = styled.div`
     word-wrap: break-word;
   }
 
-  .previewCardSubtitle {
-    display: block;
-    width: 100%;
-    min-height: 28px;
-    max-height: fit-content;
-
-    padding: 0 1rem;
-    border-radius: 5px;
-    text-align: justify;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-
-    font-size: 0.9rem;
-  }
-
   .previewCardHashtags {
     display: block;
     width: 100%;
@@ -573,6 +631,31 @@ export const PreviewCardContainer = styled.div`
     border: 1px solid #00000030;
     margin-bottom: 1rem;
     object-fit: cover;
+  }
+
+  .previewEventDetailsContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1rem;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .previewEventDetailsContainer span {
+    display: flex;
+    align-items: center;
+    height: 28px;
+  }
+
+  .previewEventDetailsContainer img {
+    width: 18px;
+    margin-right: 0.5rem;
   }
 
   .previewCardTextBox {
@@ -656,6 +739,10 @@ export const PreviewCardContainer = styled.div`
       width: 388px;
       height: 388px;
     }
+
+    .previewEventDetailsContainer span {
+      font-size: 0.8rem;
+    }
   }
 
   @media only screen and (min-width: 378px) and (max-width: 470px) {
@@ -679,6 +766,18 @@ export const PreviewCardContainer = styled.div`
     .previewCardUploadImage {
       width: 295px;
       height: 295px;
+    }
+
+    .previewEventDetailsContainer {
+      padding: 0.5rem;
+    }
+
+    .previewEventDetailsContainer img {
+      margin-right: 0.2rem;
+    }
+
+    .previewEventDetailsContainer span {
+      font-size: 0.8rem;
     }
   }
 
@@ -704,14 +803,18 @@ export const PreviewCardContainer = styled.div`
       width: 236px;
       height: 236px;
     }
+
+    .previewEventDetailsContainer {
+      display: none;
+    }
   }
 
   @media only screen and (min-width: 690px) and (max-width: 1000px) {
     width: 100%;
 
     .previewCardUploadImage {
-      width: 511px;
-      height: 511px;
+      width: 401px;
+      height: 401px;
     }
   }
 

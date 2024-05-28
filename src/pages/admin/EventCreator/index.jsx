@@ -30,6 +30,7 @@ import DefaultImage from "../../../assets/images/default-image.png";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
 import PostCreatedModalImage from "../../../assets/images/postCreatedModalImage.png";
+import Image11Format from "../../../assets/images/imageFormat/11.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -123,6 +124,7 @@ const EventCreator = () => {
     setNewTitle("");
     setNewText("");
     setNewData("");
+    setNewLocal("");
     setPreviewImageUrl("");
   };
 
@@ -373,10 +375,24 @@ const EventCreator = () => {
               id="local"
               className="grayInput"
               name="local"
+              maxLength={30}
+              value={newLocal}
               onChange={(event) => setNewLocal(event.target.value)}
             />
             <form>
-              <label htmlFor="imageInput">Imagem (Escala 1 : 1)</label>
+              <label htmlFor="imageInput">Imagem</label>
+              <div className="imageFormatContainer">
+                <div className="imageFormatContainerText">
+                  <img src={Icons.AlertIcon} alt="Ícone de atenção" />
+                  <span>Formato recomendado para evitar recorte da imagem</span>
+                  <span></span>
+                </div>
+                <img
+                  className="imageFormat"
+                  src={Image11Format}
+                  alt="Imagem Formato 1:1 ilustação"
+                />
+              </div>
               <input
                 type="file"
                 accept="image/jpeg, image/png"
@@ -418,11 +434,31 @@ const EventCreator = () => {
                   src={previewImageUrl}
                   alt=""
                 />
+                <div className="previewEventDetailsContainer">
+                  <span>
+                    {" "}
+                    <img
+                      src={Icons.CalendarIcon}
+                      alt="Calendário referente à data"
+                    />{" "}
+                    {newData}
+                  </span>
+                  <span>
+                    <img src={Icons.ClockIcon} alt="Relógio referente à hora" />
+                    {newHour}
+                  </span>
+                  <span>
+                    <img
+                      src={Icons.MapIconDark}
+                      alt="Ponto referente ao local"
+                    />
+                    {newLocal}
+                  </span>
+                </div>
                 <div
                   className="previewCardTextBox"
                   dangerouslySetInnerHTML={{ __html: newText }}
                 ></div>
-                <span className="previewCardData">{newData}</span>
               </div>
             </div>
           </PreviewCardContainer>

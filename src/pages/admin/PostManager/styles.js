@@ -129,13 +129,12 @@ export const DashBoardHeader = styled.aside`
   }
 
   @media only screen and (max-width: 480px) {
+    height: 50px;
+    padding: 0.5rem 1rem;
     .logo {
       width: 84px;
       filter: grayscale(1);
     }
-
-    height: 50px;
-    padding: 0.5rem 1rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 1000px) {
@@ -272,7 +271,7 @@ export const PostManagerContentContainer = styled.div`
   padding: 0.5rem 5rem;
 
   @media only screen and (max-width: 560px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 1000px) {
@@ -507,7 +506,7 @@ export const CardsContainer = styled.div`
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 0;
+    padding: 0 0.5rem;
 
     .card {
       width: 100%;
@@ -662,5 +661,7 @@ export const NoticeOldPostData = styled.div`
     span {
       font-size: 0.8rem;
     }
+
+    margin-bottom: 1rem;
   }
 `;

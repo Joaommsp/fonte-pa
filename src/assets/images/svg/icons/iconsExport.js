@@ -39,6 +39,7 @@ import CalendarIcon from "./calendar-icon.svg";
 import ClockIcon from "./clock-icon.svg";
 import MapIconDark from "./map-icon-dark.svg";
 import UpdateIcon from "./update-icon.svg";
+import AlertIcon from "./alert-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -82,6 +83,7 @@ const Icons = {
   ClockIcon: ClockIcon,
   MapIconDark: MapIconDark,
   UpdateIcon: UpdateIcon,
+  AlertIcon: AlertIcon,
 };
 
 export default Icons;
