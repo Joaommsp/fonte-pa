@@ -61,6 +61,28 @@ export const PostCreatorContainer = styled.div`
     outline: 0;
   }
 
+  .hashtagsWarnContainer {
+    width: 100%;
+    background-color: #f0f5f8;
+
+    padding: 0.5rem;
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .hashtagsWarn {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.9rem;
+  }
+
+  .hashtagsWarn img {
+    width: 18px;
+    margin-right: 0.5rem;
+  }
+
   .dateInput {
     font-family: "Poppins", sans-serif;
     background-color: #68d2e8;
@@ -72,6 +94,44 @@ export const PostCreatorContainer = styled.div`
     margin-bottom: 1rem;
     font-family: "Poppins", sans-serif;
     padding: 1rem;
+  }
+
+  .imageFormatContainer {
+    width: 100%;
+    background-color: #f4f4f4;
+    margin-bottom: 1rem;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+
+    padding: 1rem;
+  }
+
+  .imageFormatContainerText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageFormatContainerText img {
+    width: 36px;
+    margin-bottom: 1rem;
+  }
+
+  .imageFormatContainerText span {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .imageFormat {
+    width: 156px;
+    border-radius: 5px;
   }
 
   .inputImage {
@@ -183,6 +243,31 @@ export const PostCreatorContainer = styled.div`
       font-size: 0.8rem;
     }
 
+    .imageFormatContainer {
+      gap: 24px;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .imageFormatContainerText {
+      width: 100%;
+    }
+
+    .imageFormatContainerText img {
+      width: 36px;
+      margin-bottom: 1rem;
+    }
+
+    .imageFormatContainerText span {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .imageFormat {
+      width: 156px;
+      border-radius: 5px;
+    }
+
     .inputImage {
       height: 46px;
     }
@@ -277,10 +362,14 @@ export const FeatureHeaderContainer = styled.div`
   }
 
   .featureTitle {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #181a20;
     font-weight: 500;
-    text-shadow: -3px 3px 1px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+
+    padding: 1rem;
+
+    border-radius: 5px;
   }
 
   @media only screen and (max-width: 560px) {

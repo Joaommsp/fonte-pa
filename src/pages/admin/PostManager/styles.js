@@ -73,10 +73,14 @@ export const FeatureHeaderContainer = styled.div`
   }
 
   .featureTitle {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #181a20;
     font-weight: 500;
-    text-shadow: -3px 3px 1px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+
+    padding: 1rem;
+
+    border-radius: 5px;
   }
 
   @media only screen and (max-width: 560px) {
@@ -306,9 +310,9 @@ export const CardsContainer = styled.div`
   margin-bottom: 5rem;
 
   .card {
-    width: 650px;
-    height: 564px;
-    padding: 1rem;
+    width: 100%;
+    height: 452px;
+    padding: 2rem 2rem;
 
     display: flex;
     flex-direction: column;
@@ -320,6 +324,8 @@ export const CardsContainer = styled.div`
     border-radius: 5px;
 
     background-color: #ffffff;
+    box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.13),
+      0px 0px 12px rgba(0, 0, 0, 0.26);
   }
 
   .cardHeader {
@@ -335,13 +341,6 @@ export const CardsContainer = styled.div`
     font-size: 1.2rem;
     color: #181a20;
     text-align: left;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .cardHashtags {
-    font-size: 0.9rem;
-    color: #b4b4b8;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
@@ -382,8 +381,8 @@ export const CardsContainer = styled.div`
   }
 
   .cardImage {
-    width: 615px;
-    height: 346px;
+    width: 350px;
+    height: 197px;
     object-fit: cover;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -396,7 +395,7 @@ export const CardsContainer = styled.div`
 
   .cardTextContainer {
     width: 100%;
-    height: 64px;
+    height: 65px;
     overflow: hidden;
     margin-bottom: 2rem;
   }
@@ -467,51 +466,12 @@ export const CardsContainer = styled.div`
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 700px) {
-    .card {
-      width: 500px;
-      height: 474px;
-      padding: 0.5rem;
-
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .cardTitle {
-      font-size: 1rem;
-    }
-
-    .cardImage {
-      width: 444px;
-      height: 250px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .cardTextContainer p {
-      font-size: 14px;
-      line-height: 1.2;
-      text-align: justify;
-    }
-
-    .cardTextContainer span {
-      font-size: 14px;
-      line-height: 1.2;
-      text-align: justify;
-    }
-  }
-
   @media only screen and (max-width: 560px) {
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0 0.5rem;
-
+    height: 480px;
     .card {
       width: 100%;
-      height: fit-content;
-      padding: 0.5rem;
+      height: 400px;
+      padding: 1rem;
 
       flex-direction: column;
       align-items: center;
@@ -519,13 +479,14 @@ export const CardsContainer = styled.div`
 
     .cardHeader {
       width: 100%;
-      height: fit-content;
+      height: 100px;
       border-bottom: 2px solid #1c7ec2;
       margin-bottom: 1rem;
     }
 
     .cardTitle {
-      font-size: 1rem;
+      width: 100%;
+      font-size: 0.9rem;
       padding-bottom: 0.5rem;
       height: fit-content;
     }
@@ -663,5 +624,96 @@ export const NoticeOldPostData = styled.div`
     }
 
     margin-bottom: 1rem;
+  }
+`;
+
+export const ConfirmDeleteModal = styled.div`
+  width: 300px;
+  height: 200px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  .closeModalBtn {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+
+    border: 0;
+    background-color: transparent;
+
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .closeModalBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  span {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 24px;
+  }
+
+  .buttons button {
+    width: 100px;
+    padding: 0.5rem;
+
+    transition: 0.3s ease-in-out;
+
+    font-family: "Poppins", sans-serif;
+  }
+
+  .buttons button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  .confirmBtn {
+    background-color: transparent;
+    border: 2px solid #41b06e;
+    border-radius: 5px;
+    color: #41b06e;
+  }
+
+  .cancelBtn {
+    background-color: transparent;
+    border: 2px solid #ff1e00;
+    border-radius: 5px;
+    color: #ff1e00;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 290px;
+    height: 190px;
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    .buttons button {
+      font-size: 0.8rem;
+    }
   }
 `;

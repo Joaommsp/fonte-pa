@@ -21,6 +21,7 @@ import {
   CardsContainer,
   ActionStatusContainer,
   NoticeOldPostData,
+  ConfirmDeleteModal,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -38,6 +39,7 @@ const PostManager = () => {
   const [aouthCheck, setAothCheck] = useState(0);
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
+  const [upenConfirmDeletModal, setOpenConfirmDeleteModal] = useState(false);
 
   const postsColletcionRef = collection(db, "news");
 
@@ -142,13 +144,9 @@ const PostManager = () => {
   const closeActionStatusModal = () => {
     const timeToResetErro = setInterval(() => {
       setActionStatus(null);
-      reloadPage();
+      getPosts();
       clearInterval(timeToResetErro);
     }, 3000);
-  };
-
-  const reloadPage = () => {
-    window.location.reload();
   };
 
   const instantCloseActionStatusModal = () => {
@@ -221,7 +219,7 @@ const PostManager = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Gerenciador de postagens</h2>
+              <h2 className="featureTitle">Gerenciar postagens</h2>
             </div>
           </div>
         </FeatureHeaderContainer>
@@ -235,29 +233,55 @@ const PostManager = () => {
         <CardsContainer>
           {posts.map((post, index) => {
             return (
-              <div className="card" key={index}>
-                <div className="cardHeader">
-                  <h2 className="cardTitle">{post.title}</h2>
-                  <span className="cardHashtags">{post.hastags}</span>
-                </div>
-                <div className="cardHeaderContainer">
-                  <img className="cardImage" src={post.image} alt="" />
-                  <button
-                    className="deletePostBtn"
-                    onClick={() => deletePost(post.id, post.image)}
-                  >
-                    <img
-                      src={Icons.DeleteIconRed}
-                      alt="Icone de deletar postagem"
-                    />
-                  </button>
-                </div>
-                <div className="cardBotton">
-                  <div
-                    className="cardTextContainer"
-                    dangerouslySetInnerHTML={{ __html: post.text }}
-                  ></div>
-                  <span className="cardData">{formateDate(post.data)}</span>
+              <div key={index}>
+                {upenConfirmDeletModal && (
+                  <ConfirmDeleteModal>
+                    <button
+                      className="closeModalBtn"
+                      onClick={() => setOpenConfirmDeleteModal(false)}
+                    >
+                      <img src={Icons.CloseIcon} alt="" />
+                    </button>
+                    <span>Deseja excluir esta postagem?</span>
+                    <div className="buttons">
+                      <button
+                        className="confirmBtn"
+                        onClick={() => deletePost(post.id, post.image)}
+                      >
+                        confirmar
+                      </button>
+                      <button
+                        className="cancelBtn"
+                        onClick={() => setOpenConfirmDeleteModal(false)}
+                      >
+                        cancelar
+                      </button>
+                    </div>
+                  </ConfirmDeleteModal>
+                )}
+                <div className="card" key={index}>
+                  <div className="cardHeader">
+                    <h2 className="cardTitle">{post.title}</h2>
+                  </div>
+                  <div className="cardHeaderContainer">
+                    <img className="cardImage" src={post.image} alt="" />
+                    <button
+                      className="deletePostBtn"
+                      onClick={() => setOpenConfirmDeleteModal(true)}
+                    >
+                      <img
+                        src={Icons.DeleteIconRed}
+                        alt="Icone de deletar postagem"
+                      />
+                    </button>
+                  </div>
+                  <div className="cardBotton">
+                    <div
+                      className="cardTextContainer"
+                      dangerouslySetInnerHTML={{ __html: post.text }}
+                    ></div>
+                    <span className="cardData">{formateDate(post.data)}</span>
+                  </div>
                 </div>
               </div>
             );

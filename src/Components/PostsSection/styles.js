@@ -170,40 +170,6 @@ export const CardsContainer = styled.div`
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 700px) {
-    .card {
-      width: 500px;
-      height: 474px;
-      padding: 0.5rem;
-
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .cardTitle {
-      font-size: 1rem;
-    }
-
-    .cardImage {
-      width: 444px;
-      height: 250px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .cardTextContainer p {
-      font-size: 14px;
-      line-height: 1.2;
-      text-align: justify;
-    }
-
-    .cardTextContainer span {
-      font-size: 14px;
-      line-height: 1.2;
-      text-align: justify;
-    }
-  }
-
   @media only screen and (max-width: 560px) {
     height: 480px;
     .card {

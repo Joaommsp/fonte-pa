@@ -328,7 +328,7 @@ const EventCreator = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Criar eventos</h2>
+              <h2 className="featureTitle">Criar evento</h2>
             </div>
           </div>
         </FeatureHeaderContainer>

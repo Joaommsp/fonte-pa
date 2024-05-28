@@ -33,7 +33,7 @@ export const FeatureHeaderContainer = styled.div`
     display: flex;
     justify-content: flex-start;
 
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
   }
 
   .featureInfos {
@@ -73,10 +73,14 @@ export const FeatureHeaderContainer = styled.div`
   }
 
   .featureTitle {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #181a20;
     font-weight: 500;
-    text-shadow: -3px 3px 1px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+
+    padding: 1rem;
+
+    border-radius: 5px;
   }
 
   @media only screen and (max-width: 560px) {
@@ -795,6 +799,29 @@ export const PopUpUpdateContainer = styled.div`
     outline: 0;
   }
 
+  .dateUpdateWarnContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f5f8;
+
+    padding: 0.5rem;
+    margin: 1rem 0 0 0;
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .dateUpdateWarn {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .dateUpdateWarn img {
+    width: 18px;
+    margin-right: 0.5rem;
+  }
+
   .confirmEditBtn {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -995,5 +1022,58 @@ export const ConfirmDeleteModal = styled.div`
 
 export const EmptyEvents = styled.div`
   width: 100%;
-  background-color: red;
+  margin-top: 2rem;
+
+  .emptyEventsTitle {
+    font-weight: 500;
+    color: #181a20;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .emptyImageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .emptyImage {
+    width: 356px;
+    margin-bottom: 1rem;
+  }
+
+  .linkToCreatePost {
+    text-decoration: none;
+    color: #1c7ec2;
+    transition: 0.3s ease-in-out;
+  }
+
+  .linkToCreatePost:hover {
+    color: #01204e;
+  }
+
+  @media only screen and (max-width: 560px) {
+    .emptyEventsTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 256px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .emptyEventsTitle {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 304px;
+    }
+  }
 `;

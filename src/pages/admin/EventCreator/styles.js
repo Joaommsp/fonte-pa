@@ -349,10 +349,14 @@ export const FeatureHeaderContainer = styled.div`
   }
 
   .featureTitle {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #181a20;
     font-weight: 500;
-    text-shadow: -3px 3px 1px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+
+    padding: 1rem;
+
+    border-radius: 5px;
   }
 
   @media only screen and (max-width: 560px) {

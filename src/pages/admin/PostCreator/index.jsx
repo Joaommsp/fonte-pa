@@ -30,6 +30,7 @@ import DefaultImage from "../../../assets/images/default-image.png";
 import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
 import PostCreatedModalImage from "../../../assets/images/postCreatedModalImage.png";
+import Image169Format from "../../../assets/images/imageFormat/169.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -334,7 +335,7 @@ const PostCreator = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Criador de postagens</h2>
+              <h2 className="featureTitle">Criar postagem</h2>
             </div>
           </div>
         </FeatureHeaderContainer>
@@ -362,7 +363,13 @@ const PostCreator = () => {
               value={newSubTitle}
               onChange={(event) => setNewSubTitle(event.target.value)}
             />
-            <label htmlFor="subtitle">Hashtags (Inclua 3 no máx.) </label>
+            <label htmlFor="subtitle">Hashtags</label>
+            <div className="hashtagsWarnContainer">
+              <span className="hashtagsWarn">
+                <img src={Icons.AlertIcon} alt="Ícone de atenção" /> Recomendado
+                de 3 no máximo{" "}
+              </span>
+            </div>
             <input
               className="grayInput"
               type="text"
@@ -402,6 +409,18 @@ const PostCreator = () => {
             />
             <form>
               <label htmlFor="imageInput">Imagem (Escala 16:9)</label>
+              <div className="imageFormatContainer">
+                <div className="imageFormatContainerText">
+                  <img src={Icons.AlertIcon} alt="Ícone de atenção" />
+                  <span>Formato recomendado para evitar recorte da imagem</span>
+                  <span></span>
+                </div>
+                <img
+                  className="imageFormat"
+                  src={Image169Format}
+                  alt="Imagem Formato 16:9 ilustação"
+                />
+              </div>
               <input
                 type="file"
                 accept="image/jpeg, image/png"

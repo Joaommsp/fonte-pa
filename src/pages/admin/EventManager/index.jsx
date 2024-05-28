@@ -40,6 +40,7 @@ import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
 import SucessDeleteImage from "../../../assets/images/succesDeleteImage.png";
 import ErrorDeleteImage from "../../../assets/images/error-image.png";
+import NothingPosted from "../../../assets/images/nothingPostedYet.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -110,7 +111,6 @@ const EventManager = () => {
     );
     const data = await getDocs(queryOrderByDate);
     setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    console.log(events);
   };
 
   useEffect(() => {
@@ -210,7 +210,7 @@ const EventManager = () => {
         hour: timeInput.value,
         local: localInput.value,
       });
-      reloadPage();
+      getEvents();
     } else if (newText != "" && newData != "") {
       await updateDoc(eventRef, {
         title: titleInput.value,
@@ -219,7 +219,7 @@ const EventManager = () => {
         local: localInput.value,
         text: newText,
       });
-      reloadPage();
+      getEvents();
     } else if (newText != "") {
       await updateDoc(eventRef, {
         title: titleInput.value,
@@ -227,7 +227,7 @@ const EventManager = () => {
         local: localInput.value,
         text: newText,
       });
-      reloadPage();
+      getEvents();
     } else if (newData != "") {
       await updateDoc(eventRef, {
         title: titleInput.value,
@@ -235,7 +235,7 @@ const EventManager = () => {
         local: localInput.value,
         data: Timestamp.fromDate(new Date(newData)),
       });
-      reloadPage();
+      getEvents();
     } else {
       await updateDoc(eventRef, {
         title: titleInput.value,
@@ -243,7 +243,7 @@ const EventManager = () => {
         local: localInput.value,
         data: Timestamp.fromDate(new Date(newData)),
       });
-      reloadPage();
+      getEvents();
     }
   };
 
@@ -277,7 +277,7 @@ const EventManager = () => {
   const closeActionStatusModal = () => {
     const timeToResetErro = setInterval(() => {
       setActionStatus(null);
-      reloadPage();
+      getEvents();
       clearInterval(timeToResetErro);
     }, 3000);
   };
@@ -371,7 +371,7 @@ const EventManager = () => {
                 />
                 Voltar
               </Link>
-              <h2 className="featureTitle">Gerenciador de Eventos</h2>
+              <h2 className="featureTitle">Gerenciar de Eventos</h2>
             </div>
           </div>
         </FeatureHeaderContainer>
@@ -385,7 +385,19 @@ const EventManager = () => {
         <CardsContainer>
           {events.length == 0 && (
             <EmptyEvents>
-              <h2>Você ainda não publicou nenhum evento</h2>
+              <h2 className="emptyEventsTitle">
+                Você ainda não publicou nenhum evento ...
+              </h2>
+              <div className="emptyImageContainer">
+                <img
+                  className="emptyImage"
+                  src={NothingPosted}
+                  alt="Caixa vazia referente a nada postado"
+                />
+                <Link to="/postcreator" className="linkToCreatePost">
+                  Criar eventos
+                </Link>
+              </div>
             </EmptyEvents>
           )}
           {events.map((event, index) => {
@@ -447,6 +459,8 @@ const EventManager = () => {
                           {RichTextElement(event.text)}
                         </TextWriterContainer>
                         <label htmlFor="data">Data</label>
+                        <div className="dateUpdateWarnContainer">
+                        <span className="dateUpdateWarn"> <img src={Icons.AlertIconRed} alt="Exclamação de alerta" />Preencha apenas em caso de alteração</span></div>
                         <input
                           className="dateInput"
                           type="date"
