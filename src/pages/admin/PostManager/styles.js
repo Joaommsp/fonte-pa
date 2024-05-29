@@ -310,7 +310,7 @@ export const CardsContainer = styled.div`
   margin-bottom: 5rem;
 
   .card {
-    width: 100%;
+    width:  414px;
     height: 452px;
     padding: 2rem 2rem;
 

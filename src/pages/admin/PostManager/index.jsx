@@ -40,6 +40,8 @@ const PostManager = () => {
   const [actionStatus, setActionStatus] = useState("");
   const [actionStatusImage, setActionStatusImage] = useState(null);
   const [upenConfirmDeletModal, setOpenConfirmDeleteModal] = useState(false);
+  const [postId, setPostId] = useState("");
+  const [postImage, setPostImage] = useState("");
 
   const postsColletcionRef = collection(db, "news");
 
@@ -122,6 +124,7 @@ const PostManager = () => {
   };
 
   const deletePost = async (id, imageUrl) => {
+    setOpenConfirmDeleteModal(false);
     const storage = getStorage();
 
     const postDoc = doc(db, "news", id);
@@ -133,6 +136,7 @@ const PostManager = () => {
         setActionStatus("Conteúdo excluído com sucesso!");
         setActionStatusImage(SucessDeleteImage);
         closeActionStatusModal();
+        getPosts();
       })
       .catch((error) => {
         setActionStatus(error.message);
@@ -141,10 +145,15 @@ const PostManager = () => {
       });
   };
 
+  const openConfirmDelete = (postId, postImageUrl) => {
+    setOpenConfirmDeleteModal(true);
+    setPostId(postId);
+    setPostImage(postImageUrl);
+  };
+
   const closeActionStatusModal = () => {
     const timeToResetErro = setInterval(() => {
       setActionStatus(null);
-      getPosts();
       clearInterval(timeToResetErro);
     }, 3000);
   };
@@ -246,20 +255,24 @@ const PostManager = () => {
                     <div className="buttons">
                       <button
                         className="confirmBtn"
-                        onClick={() => deletePost(post.id, post.image)}
+                        onClick={() => {
+                          deletePost(postId, postImage);
+                        }}
                       >
                         confirmar
                       </button>
                       <button
                         className="cancelBtn"
-                        onClick={() => setOpenConfirmDeleteModal(false)}
+                        onClick={() => {
+                          setOpenConfirmDeleteModal(false);
+                        }}
                       >
                         cancelar
                       </button>
                     </div>
                   </ConfirmDeleteModal>
                 )}
-                <div className="card" key={index}>
+                <div className="card">
                   <div className="cardHeader">
                     <h2 className="cardTitle">{post.title}</h2>
                   </div>
@@ -267,7 +280,7 @@ const PostManager = () => {
                     <img className="cardImage" src={post.image} alt="" />
                     <button
                       className="deletePostBtn"
-                      onClick={() => setOpenConfirmDeleteModal(true)}
+                      onClick={() => openConfirmDelete(post.id, post.image)}
                     >
                       <img
                         src={Icons.DeleteIconRed}

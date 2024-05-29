@@ -59,6 +59,8 @@ const EventManager = () => {
   const [initialLocal, setInitialLocal] = useState(null);
   const [statusMessage, setStatusMessage] = useState(null);
   const [upenConfirmDeletModal, setOpenConfirmDeleteModal] = useState(false);
+  const [eventId, setEventId] = useState("");
+  const [eventImage, setEventImage] = useState("");
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -169,6 +171,7 @@ const EventManager = () => {
         setActionStatus("Conteúdo excluído com sucesso!");
         setActionStatusImage(SucessDeleteImage);
         closeActionStatusModal();
+        getEvents();
       })
       .catch((error) => {
         setActionStatus(error.message);
@@ -277,13 +280,14 @@ const EventManager = () => {
   const closeActionStatusModal = () => {
     const timeToResetErro = setInterval(() => {
       setActionStatus(null);
-      getEvents();
       clearInterval(timeToResetErro);
     }, 3000);
   };
 
-  const reloadPage = () => {
-    window.location.reload();
+  const openConfirmDelete = (eventId, eventImageUrl) => {
+    setOpenConfirmDeleteModal(true);
+    setEventId(eventId);
+    setEventImage(eventImageUrl);
   };
 
   const instantCloseActionStatusModal = () => {
@@ -415,7 +419,7 @@ const EventManager = () => {
                     <div className="buttons">
                       <button
                         className="confirmBtn"
-                        onClick={() => deleteEvent(event.id, event.image)}
+                        onClick={() => deleteEvent(eventId, eventImage)}
                       >
                         confirmar
                       </button>
@@ -428,7 +432,7 @@ const EventManager = () => {
                     </div>
                   </ConfirmDeleteModal>
                 )}
-                <div className="card" key={index}>
+                <div className="card">
                   {openPopupIndex === index && (
                     <PopUpUpdateContainer className="fullPopUp">
                       <h2 className="popUpUpdateTitle">Editando Postagem</h2>
@@ -460,7 +464,15 @@ const EventManager = () => {
                         </TextWriterContainer>
                         <label htmlFor="data">Data</label>
                         <div className="dateUpdateWarnContainer">
-                        <span className="dateUpdateWarn"> <img src={Icons.AlertIconRed} alt="Exclamação de alerta" />Preencha apenas em caso de alteração</span></div>
+                          <span className="dateUpdateWarn">
+                            {" "}
+                            <img
+                              src={Icons.AlertIconRed}
+                              alt="Exclamação de alerta"
+                            />
+                            Preencha apenas em caso de alteração
+                          </span>
+                        </div>
                         <input
                           className="dateInput"
                           type="date"
@@ -509,7 +521,7 @@ const EventManager = () => {
                     <div className="managementOptions">
                       <button
                         className="deleteEventBtn"
-                        onClick={() => setOpenConfirmDeleteModal(true)}
+                        onClick={() => openConfirmDelete(event.id, event.image)}
                       >
                         <img
                           src={Icons.DeleteIconRed}
