@@ -310,7 +310,7 @@ export const CardsContainer = styled.div`
   margin-bottom: 5rem;
 
   .card {
-    width:  414px;
+    width: 414px;
     height: 452px;
     padding: 2rem 2rem;
 
@@ -714,6 +714,64 @@ export const ConfirmDeleteModal = styled.div`
 
     .buttons button {
       font-size: 0.8rem;
+    }
+  }
+`;
+
+export const EmptyEvents = styled.div`
+  width: 100%;
+  margin-top: 2rem;
+
+  .emptyEventsTitle {
+    font-weight: 500;
+    color: #181a20;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .emptyImageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .emptyImage {
+    width: 356px;
+    margin-bottom: 1rem;
+  }
+
+  .linkToCreatePost {
+    text-decoration: none;
+    color: #1c7ec2;
+    transition: 0.3s ease-in-out;
+  }
+
+  .linkToCreatePost:hover {
+    color: #01204e;
+  }
+
+  @media only screen and (max-width: 560px) {
+    .emptyEventsTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 256px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .emptyEventsTitle {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 304px;
     }
   }
 `;

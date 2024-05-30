@@ -7,6 +7,7 @@ import SocialMediaCard from "../../Components/SocialMediaCard";
 import Footer from "../../Components/Footer";
 import ButtonWithLink from "../../Components/ButtonWithLink";
 import PostsSection from "../../Components/PostsSection";
+import EventsSection from "../../Components/EventsSection";
 
 import LogoImage from "../../assets/images/imagens-oficiais/banner.png";
 import Icons from "../../assets/images/svg/icons/iconsExport";
@@ -16,6 +17,8 @@ import {
   HomeContainer,
   ContentContainer,
   Banner,
+  EventsContainer,
+  EventsSectionTitle,
   BannerTextContent,
   TextContent,
   BannerVisualsContent,
@@ -124,6 +127,11 @@ const Home = () => {
                   <span>#pessoalidade</span> */}
             </Hashtag>
           </HashTags>
+
+          <EventsContainer>
+            <EventsSectionTitle>Próximas programações</EventsSectionTitle>
+            <EventsSection />
+          </EventsContainer>
 
           <BannerTextContent>
             <TextContent>

@@ -34,7 +34,8 @@ export const CardsContainer = styled.div`
   padding: 1rem 3rem 1rem 1rem;
 
   .card {
-    width: 100%;
+    width: 424px;
+    max-width: 424px;
     height: 452px;
     padding: 2rem 2rem;
 
@@ -173,7 +174,7 @@ export const CardsContainer = styled.div`
   @media only screen and (max-width: 560px) {
     height: 480px;
     .card {
-      width: 100%;
+      width: 424px;
       height: 400px;
       padding: 1rem;
 
@@ -612,6 +613,67 @@ export const PopUpContainer = styled.div`
     .popUpCardInfos__shareLinks a img {
       margin-left: 0.5rem;
       width: 16px;
+    }
+  }
+`;
+
+export const EmptyEvents = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .emptyEventsTitle {
+    font-weight: 400;
+    color: #686d76;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .emptyImageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .emptyImage {
+    width: 356px;
+    margin-bottom: 1rem;
+  }
+
+  .linkToCreatePost {
+    text-decoration: none;
+    color: #1c7ec2;
+    transition: 0.3s ease-in-out;
+  }
+
+  .linkToCreatePost:hover {
+    color: #01204e;
+  }
+
+  @media only screen and (max-width: 560px) {
+    .emptyEventsTitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 256px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .emptyEventsTitle {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .emptyImage {
+      width: 304px;
     }
   }
 `;

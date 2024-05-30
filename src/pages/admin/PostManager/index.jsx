@@ -22,6 +22,7 @@ import {
   ActionStatusContainer,
   NoticeOldPostData,
   ConfirmDeleteModal,
+  EmptyEvents,
 } from "./styles";
 
 import Icons from "../../../assets/images/svg/icons/iconsExport";
@@ -29,6 +30,7 @@ import Logo from "../../../assets/images/imagens-oficiais/banner.svg";
 import UserPhoto from "../../../assets/images/userDefaultPhoto.png";
 import SucessDeleteImage from "../../../assets/images/succesDeleteImage.png";
 import ErrorDeleteImage from "../../../assets/images/error-image.png";
+import NothingPosted from "../../../assets/images/nothingPostedYet.png";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -240,6 +242,21 @@ const PostManager = () => {
           </span>
         </NoticeOldPostData>
         <CardsContainer>
+          {posts.length == 0 && (
+            <EmptyEvents>
+              <h2 className="emptyEventsTitle">Você ainda não publicou ...</h2>
+              <div className="emptyImageContainer">
+                <img
+                  className="emptyImage"
+                  src={NothingPosted}
+                  alt="Caixa vazia referente a nada postado"
+                />
+                <Link to="/postcreator" className="linkToCreatePost">
+                  Criar postagem
+                </Link>
+              </div>
+            </EmptyEvents>
+          )}
           {posts.map((post, index) => {
             return (
               <div key={index}>

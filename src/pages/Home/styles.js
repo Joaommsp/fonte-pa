@@ -40,6 +40,33 @@ export const Banner = styled.div`
   position: relative;
 `;
 
+export const EventsContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EventsSectionTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 500;
+  color: #181a20;
+  padding: 1rem 5rem;
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+`;
+
 export const BannerTextContent = styled.div`
   width: 70%;
   height: 500px;

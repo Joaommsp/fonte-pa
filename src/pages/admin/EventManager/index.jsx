@@ -94,7 +94,7 @@ const EventManager = () => {
       const timeInput = document.getElementById("newHour");
       const localInput = document.getElementById("newLocal");
 
-      setInitialTitle(titleInput.value || ""); // Set to empty string if value is falsy
+      setInitialTitle(titleInput.value || "");
       setInitialHour(timeInput.value || "");
       setInitialLocal(localInput.value || "");
     }
@@ -398,8 +398,8 @@ const EventManager = () => {
                   src={NothingPosted}
                   alt="Caixa vazia referente a nada postado"
                 />
-                <Link to="/postcreator" className="linkToCreatePost">
-                  Criar eventos
+                <Link to="/eventcreator" className="linkToCreatePost">
+                  Criar evento
                 </Link>
               </div>
             </EmptyEvents>

@@ -6,9 +6,14 @@ import { query, orderBy } from "firebase/firestore";
 
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import logo from "../../assets/images/imagens-oficiais/banner.svg";
-import PopUpBannerImage from "../../assets/images/popUpPostBanner.jpg";
+import NothingPosted from "../../assets/images/notFound.png";
 
-import { NewsSectionContainer, CardsContainer, PopUpContainer } from "./styles";
+import {
+  NewsSectionContainer,
+  CardsContainer,
+  PopUpContainer,
+  EmptyEvents,
+} from "./styles";
 
 const PostsSection = () => {
   const [posts, setPosts] = useState([]);
@@ -56,6 +61,20 @@ const PostsSection = () => {
   return (
     <NewsSectionContainer>
       <CardsContainer>
+        {posts.length == 0 && (
+          <EmptyEvents>
+            <h2 className="emptyEventsTitle">
+              Nenhuma publicação encontrada , tente mais tarde ...
+            </h2>
+            <div className="emptyImageContainer">
+              <img
+                className="emptyImage"
+                src={NothingPosted}
+                alt="Caixa vazia referente a nada postado"
+              />
+            </div>
+          </EmptyEvents>
+        )}
         {posts.map((post, index) => {
           return (
             <div className="card" key={index}>
