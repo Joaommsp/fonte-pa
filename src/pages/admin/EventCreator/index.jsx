@@ -125,6 +125,7 @@ const EventCreator = () => {
     setNewText("");
     setNewData("");
     setNewLocal("");
+    setNewHour("");
     setPreviewImageUrl("");
   };
 
@@ -367,6 +368,7 @@ const EventCreator = () => {
               id="hora"
               className="grayInput"
               name="hora"
+              value={newHour}
               onChange={(event) => setNewHour(event.target.value)}
             />
             <label htmlFor="data">Local</label>

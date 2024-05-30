@@ -133,25 +133,28 @@ const PostsSection = () => {
                   </div>
                 </PopUpContainer>
               )}
+              <div className="carImageContainer">
+                <img className="cardImage" src={post.image} alt="" />
+              </div>
               <div className="cardHeader">
                 <h2 className="cardTitle">{post.title}</h2>
                 <span className="cardHashtags">{post.hashtags}</span>
-              </div>
-              <div className="carImageContainer">
-                <img className="cardImage" src={post.image} alt="" />
               </div>
               <div className="cardBotton">
                 <div
                   className="cardTextContainer"
                   dangerouslySetInnerHTML={{ __html: post.text }}
                 ></div>
-                <span className="cardData">{formateDate(post.data)}</span>
+                <span className="cardData">
+                  {" "}
+                  <img src={Icons.CalendarIconBlue} alt="" />{" "}
+                  {formateDate(post.data)}
+                </span>
                 <button
                   onClick={() => handleOpenPopup(index)}
                   className="readAllBtn"
                 >
                   Ler tudo
-                  <img src={Icons.ArrowRightSlim} alt="" />
                 </button>
               </div>
             </div>

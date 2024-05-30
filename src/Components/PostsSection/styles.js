@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NewsSectionContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 534px;
 
   background-color: #ffffff;
 
@@ -34,10 +34,10 @@ export const CardsContainer = styled.div`
   padding: 1rem 3rem 1rem 1rem;
 
   .card {
-    width: 424px;
-    max-width: 424px;
-    height: 452px;
-    padding: 2rem 2rem;
+    width: 484px;
+    max-width: 484px;
+    height: 484px;
+    padding: 0;
 
     display: flex;
     flex-direction: column;
@@ -56,8 +56,9 @@ export const CardsContainer = styled.div`
   .cardHeader {
     width: 100%;
     height: 82px;
-    border-bottom: 2px solid #1c7ec2;
     margin-bottom: 1rem;
+
+    padding: 0 1.5rem;
   }
 
   .cardTitle {
@@ -86,11 +87,12 @@ export const CardsContainer = styled.div`
   }
 
   .cardImage {
-    width: 350px;
-    height: 197px;
+    width: 400px;
+    height: 225px;
     object-fit: cover;
     margin-bottom: 1rem;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
   }
 
   .cardBotton {
@@ -103,6 +105,7 @@ export const CardsContainer = styled.div`
     overflow: hidden;
     margin-bottom: 2rem;
     text-overflow: ellipsis;
+    padding: 0 1.5rem;
   }
 
   .cardTextContainer h1,
@@ -136,14 +139,21 @@ export const CardsContainer = styled.div`
 
   .cardData {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    bottom: 1rem;
+    left: 1.5rem;
     color: #00000060;
     font-size: 0.8rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .cardData img {
+    margin-right: 0.5rem;
   }
 
   .readAllBtn {
-    background-color: transparent;
+    background-color: #1c7ec2;
     border: 0;
     border-radius: 5px;
     padding: 0.3rem 1rem;
@@ -152,18 +162,14 @@ export const CardsContainer = styled.div`
     align-items: center;
 
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: 1rem;
+    right: 1.5rem;
 
-    color: #1c7ec2;
+    color: #ffffff;
     font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
 
     transition: 0.3s ease-in-out;
-  }
-
-  .readAllBtn img {
-    margin-left: 0.3rem;
   }
 
   .readAllBtn:hover {
@@ -175,8 +181,8 @@ export const CardsContainer = styled.div`
     height: 480px;
     .card {
       width: 424px;
-      height: 400px;
-      padding: 1rem;
+      height: 424px;
+      padding: 0rem;
 
       flex-direction: column;
       align-items: center;
@@ -185,8 +191,8 @@ export const CardsContainer = styled.div`
     .cardHeader {
       width: 100%;
       height: 100px;
-      border-bottom: 2px solid #1c7ec2;
       margin-bottom: 1rem;
+      padding: 0 1rem;
     }
 
     .cardTitle {
@@ -211,6 +217,11 @@ export const CardsContainer = styled.div`
       margin-bottom: 1rem;
     }
 
+    .cardTextContainer {
+      height: 64px;
+      padding: 0 1rem;
+    }
+
     .cardTextContainer p {
       font-size: 13px;
       line-height: 1.2;
@@ -229,13 +240,14 @@ export const CardsContainer = styled.div`
     }
 
     .cardData {
-      top: 0;
+      left: 1rem;
+      bottom: 1rem;
       font-size: 0.8rem;
-      display: none;
     }
 
     .readAllBtn {
       font-size: 0.8rem;
+      right: 1rem;
     }
   }
 `;
