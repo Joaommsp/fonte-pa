@@ -61,11 +61,11 @@ const EventsSection = () => {
       {events.map((event, index) => {
         return (
           <div className="card" key={index}>
-            <div className="cardHeader">
-              <h2 className="cardTitle">{event.title}</h2>
-            </div>
             <div className="cardHeaderContainer">
               <img className="cardImage" src={event.image} alt="" />
+              <div className="cardHeader">
+                <h2 className="cardTitle">{event.title}</h2>
+              </div>
             </div>
             <div className="cardBotton">
               <span className="cardData">
@@ -83,6 +83,7 @@ const EventsSection = () => {
                 {event.local}
               </span>
             </div>
+            <button className="aboutTheEventBtn">Saiba mais</button>
           </div>
         );
       })}

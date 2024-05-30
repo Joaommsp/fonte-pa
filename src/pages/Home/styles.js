@@ -48,6 +48,8 @@ export const EventsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 1rem 5rem;
 `;
 
 export const EventsSectionTitle = styled.h2`
@@ -393,7 +395,7 @@ export const CardsContainer = styled.div`
 
   position: relative;
 
-  padding: 2rem 0;
+  padding: 2rem 5rem;
 
   background-color: #1c7ec020;
 
@@ -461,7 +463,7 @@ export const CardsSubTitle = styled.h2`
 
 export const Cards = styled.div`
   width: 100%;
-  padding: 2rem 5rem;
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: row;
   align-items: center;

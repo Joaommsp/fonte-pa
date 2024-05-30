@@ -13,13 +13,12 @@ export const EventsSectionContainer = styled.div`
 
   position: relative;
 
-  padding: 1rem 1rem;
+  padding: 2rem 1rem;
   margin-bottom: 5rem;
 
   .card {
     width: 436px;
-    height: 100%;
-    padding: 1rem;
+    height: 524px;
 
     display: flex;
     flex-direction: column;
@@ -37,28 +36,21 @@ export const EventsSectionContainer = styled.div`
   .cardHeader {
     width: 100%;
     height: 42px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 
   .cardTitle {
-    width: 80%;
-    font-size: 1rem;
+    width: 100%;
+    font-size: 0.9rem;
     color: #181a20;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
 
-  .cardHashtags {
-    font-size: 0.9rem;
-    color: #b4b4b8;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
   .cardHeaderContainer {
     width: 100%;
-    height: 100%;
 
     position: relative;
   }
@@ -122,18 +114,19 @@ export const EventsSectionContainer = styled.div`
   }
 
   .cardImage {
-    width: 404px;
-    height: 404px;
+    width: 304px;
+    height: 304px;
     object-fit: cover;
     margin-bottom: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #00000020;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
   }
 
   .cardBotton {
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 1rem;
   }
 
   .cardTextContainer {
@@ -188,8 +181,8 @@ export const EventsSectionContainer = styled.div`
     width: 18px;
   }
 
-  .readAllBtn {
-    background-color: transparent;
+  .aboutTheEventBtn {
+    background-color: #181a20;
     border: 0;
     border-radius: 5px;
     padding: 0.3rem 1rem;
@@ -198,21 +191,17 @@ export const EventsSectionContainer = styled.div`
     align-items: center;
 
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: 1rem;
+    right: 1rem;
 
-    color: #1c7ec2;
+    color: #ffffff;
     font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
 
     transition: 0.3s ease-in-out;
   }
 
-  .readAllBtn img {
-    margin-left: 0.3rem;
-  }
-
-  .readAllBtn:hover {
+  .aboutTheEventBtn:hover {
     opacity: 50%;
     cursor: pointer;
   }
