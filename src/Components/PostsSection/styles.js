@@ -254,7 +254,7 @@ export const CardsContainer = styled.div`
 
 export const PopUpContainer = styled.div`
   width: 854px;
-  height: 80vh;
+  height: 75vh;
 
   display: flex;
   flex-direction: column;
@@ -269,49 +269,28 @@ export const PopUpContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
 
-  border-radius: 5px;
-
-  padding: 2rem;
-
+  border-radius: 10px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
-
-  .popUpCardBannerContainer {
-    width: 100%;
-    height: 156px;
-    position: relative;
-  }
-
-  .bannerImageCover {
-    width: 100%;
-    height: 100%;
-    background-color: #181a2080;
-
-    position: absolute;
-    top: 0;
-  }
-
-  .popUpCardBanner {
-    width: 100%;
-    height: 156px;
-    object-fit: cover;
-  }
 
   .popUpCardHeader {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    align-items: flex-start;
+    padding: 1rem 4rem;
+    margin-bottom: 1rem;
   }
 
   .popUpCardTitle {
-    width: 80%;
+    width: 100%;
     color: #181a20;
     font-weight: 500;
     font-size: 1.2rem;
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
+
+    margin-bottom: 1rem;
   }
 
   .popUpCardSubtitle {
@@ -325,13 +304,42 @@ export const PopUpContainer = styled.div`
     text-align: center;
   }
 
-  .popUpCardImage {
-    width: 664px;
-    height: 376px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.23);
+  .popUpImageContainer {
+    width: 100%;
+    height: 276px;
+
+    position: relative;
     margin-bottom: 1rem;
+  }
+
+  .circleBorder {
+    width: 100%;
+    height: 32px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fakeScroolLine {
+    width: 200px;
+    height: 5px;
+    background-color: #b4b4b8;
+    border-radius: 50px;
+  }
+
+  .popUpCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
   }
 
   .PopUpCardAuthor {
@@ -339,7 +347,6 @@ export const PopUpContainer = styled.div`
   }
 
   .PopUpCardData {
-    color: #181a20;
     margin-left: 0.5rem;
   }
 
@@ -371,13 +378,12 @@ export const PopUpContainer = styled.div`
     width: 18px;
   }
 
-  .popUpCardBotton {
-    width: 80%;
+  .popUpCardBottom {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 0rem 2rem 1rem 2rem;
+    padding: 1rem 4rem;
   }
 
   .popUpCardInfos__text {
@@ -389,6 +395,20 @@ export const PopUpContainer = styled.div`
 
   .popUpCardInfos__text span {
     font-size: 0.9rem;
+
+    background-color: #eeeeee;
+    padding: 0.5rem 1rem;
+
+    border-radius: 5px;
+
+    color: #181a20;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .popUpCardInfos__text img {
+    margin-right: 0.5rem;
   }
 
   .popUpLogo {
@@ -425,42 +445,39 @@ export const PopUpContainer = styled.div`
   .closePopUpBtn {
     cursor: pointer;
     position: absolute;
-    right: 2rem;
+    left: 1rem;
     top: 2rem;
-    background-color: #1c7ec2;
 
-    width: 94px;
-    height: 28px;
+    background-color: #181a20;
+
     display: flex;
     align-items: center;
 
     text-decoration: none;
 
-    padding: 0.2rem 1rem;
+    padding: 0.1rem;
 
-    color: #ffffff;
     font-family: "Poppins", sans-serif;
 
-    border-radius: 64px;
+    border-radius: 5px;
     border: 0;
 
     transition: 0.3s ease-in-out;
     z-index: 1000;
   }
 
-  .closePopUpBtn img {
-    margin-right: 0.3rem;
-    width: 18px;
-    transition: 0.5s ease-in-out;
+  .closePopUpBtn:hover {
+    opacity: 50%;
   }
 
-  .closePopUpBtn:hover img {
-    width: 0px;
+  .closePopUpBtn img {
+    width: 32px;
+    transition: 0.5s ease-in-out;
   }
 
   @media only screen and (max-width: 560px) {
     width: 95vw;
-    height: 80vh;
+    height: 75vh;
 
     .closePopUpBtn {
       top: 1rem;
@@ -475,14 +492,6 @@ export const PopUpContainer = styled.div`
       width: 100%;
       height: 86px;
       object-fit: cover;
-    }
-
-    .popUpCardHeader {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.5rem;
     }
 
     .popUpCardTitle {

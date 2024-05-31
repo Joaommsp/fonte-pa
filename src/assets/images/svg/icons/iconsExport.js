@@ -41,6 +41,9 @@ import MapIconDark from "./map-icon-dark.svg";
 import UpdateIcon from "./update-icon.svg";
 import AlertIcon from "./alert-icon.svg";
 import CalendarIconBlue from "./calendar-icon-blue.svg";
+import ArrowSlimIcon from "./arrow-slim-icon.svg";
+import PersonIcon from "./person-icon.svg";
+import HashIcon from "./hash-icon.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -86,6 +89,9 @@ const Icons = {
   UpdateIcon: UpdateIcon,
   AlertIcon: AlertIcon,
   CalendarIconBlue: CalendarIconBlue,
+  ArrowSlimIcon: ArrowSlimIcon,
+  PersonIcon: PersonIcon,
+  HashIcon: HashIcon,
 };
 
 export default Icons;

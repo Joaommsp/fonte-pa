@@ -80,29 +80,46 @@ const PostsSection = () => {
             <div className="card" key={index}>
               {openPopupIndex === index && (
                 <PopUpContainer className="fullPopUp">
+                  <div className="popUpImageContainer">
+                    <img className="popUpCardImage" src={post.image} alt="" />
+                    <div className="circleBorder">
+                      <div className="fakeScroolLine"></div>
+                    </div>
+                  </div>
                   <button onClick={handleClosePopup} className="closePopUpBtn">
                     <img
-                      src={Icons.ArrowLeftIcon}
+                      src={Icons.ArrowSlimIcon}
                       alt="Icone para fechar conteúdo"
                       title="Fechar"
                     />
-                    Voltar
                   </button>
                   <div className="popUpCardHeader">
-                    <div className="popUpCardHeader__About"></div>
                     <h2 className="popUpCardTitle">{post.title}</h2>
                     <div className="popUpCardInfos__text">
                       <span className="PopUpCardAuthor">
-                        Por: {post.author} |
+                        <img
+                          src={Icons.PersonIcon}
+                          alt="Ícone de pessoa referente a escritor"
+                        />
+                        {post.author}
                       </span>
                       <span className="PopUpCardData">
-                        {" "}
+                        <img
+                          src={Icons.CalendarIcon}
+                          alt="Ícone de calendário referente a data da postagem"
+                        />
                         {formateDate(post.data)}
+                      </span>
+                      <span className="PopUpCardData">
+                        <img
+                          src={Icons.HashIcon}
+                          alt="Ícone de hashtags da postagem"
+                        />
+                        {post.hashtags}
                       </span>
                     </div>
                   </div>
-                  <img className="popUpCardImage" src={post.image} alt="" />
-                  <div className="popUpCardBotton">
+                  <div className="popUpCardBottom">
                     <p className="popUpCardSubtitle">{post.subtitle}</p>
                     <div
                       className="popUpCardTextContainer"
