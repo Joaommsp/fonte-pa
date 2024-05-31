@@ -84,15 +84,19 @@ const PostsSection = () => {
                     <img className="popUpCardImage" src={post.image} alt="" />
                     <div className="circleBorder">
                       <div className="fakeScroolLine"></div>
+                      <button
+                        onClick={handleClosePopup}
+                        className="closePopUpBtn"
+                      >
+                        <img
+                          src={Icons.ArrowSlimIcon}
+                          alt="Icone para fechar conteúdo"
+                          title="Fechar"
+                        />
+                        <span>Voltar</span>
+                      </button>
                     </div>
                   </div>
-                  <button onClick={handleClosePopup} className="closePopUpBtn">
-                    <img
-                      src={Icons.ArrowSlimIcon}
-                      alt="Icone para fechar conteúdo"
-                      title="Fechar"
-                    />
-                  </button>
                   <div className="popUpCardHeader">
                     <h2 className="popUpCardTitle">{post.title}</h2>
                     <div className="popUpCardInfos__text">

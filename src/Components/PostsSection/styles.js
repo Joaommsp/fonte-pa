@@ -346,10 +346,6 @@ export const PopUpContainer = styled.div`
     font-weight: 500;
   }
 
-  .PopUpCardData {
-    margin-left: 0.5rem;
-  }
-
   .popUpCardInfos__shareLinks {
     width: 100%;
     height: 100%;
@@ -387,10 +383,13 @@ export const PopUpContainer = styled.div`
   }
 
   .popUpCardInfos__text {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .popUpCardInfos__text span {
@@ -445,10 +444,9 @@ export const PopUpContainer = styled.div`
   .closePopUpBtn {
     cursor: pointer;
     position: absolute;
-    left: 1rem;
-    top: 2rem;
-
-    background-color: #181a20;
+    left: 2rem;
+    top: 0.5rem;
+    background-color: transparent;
 
     display: flex;
     align-items: center;
@@ -475,9 +473,27 @@ export const PopUpContainer = styled.div`
     transition: 0.5s ease-in-out;
   }
 
+  .closePopUpBtn span {
+    font-family: "Poppins", sans-serif;
+
+    transition: 0.3s ease-in-out;
+    font-size: 0.9rem;
+  }
+
   @media only screen and (max-width: 560px) {
     width: 95vw;
     height: 75vh;
+
+    .popUpCardHeader {
+      padding: 1rem 1rem;
+    }
+
+    .fakeScroolLine {
+      width: 100px;
+      height: 5px;
+      background-color: #b4b4b8;
+      border-radius: 50px;
+    }
 
     .closePopUpBtn {
       top: 1rem;
@@ -512,13 +528,12 @@ export const PopUpContainer = styled.div`
     }
 
     .popUpCardImage {
-      width: 300px;
-      height: 169px;
+      width: 100%;
+      height: 184px;
     }
 
-    .popUpCardBotton {
-      width: 100%;
-      padding: 0rem 1rem 1rem 1rem;
+    .popUpCardBottom {
+      padding: 1rem 1rem;
     }
 
     .PopUpCardAuthor,
@@ -574,10 +589,9 @@ export const PopUpContainer = styled.div`
 
     .popUpCardHeader {
       width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .popUpCardTitle {
@@ -598,8 +612,8 @@ export const PopUpContainer = styled.div`
     }
 
     .popUpCardImage {
-      width: 440px;
-      height: 247px;
+      width: 100%;
+      height: 200px;
     }
 
     .popUpCardBotton {
