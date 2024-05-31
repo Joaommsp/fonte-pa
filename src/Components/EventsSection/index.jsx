@@ -14,6 +14,7 @@ import NothingPosted from "../../assets/images/notFound.png";
 
 const EventsSection = () => {
   const [events, setEvents] = useState([]);
+  const [openPopUpcard, setOpenPopUpcard] = useState(false);
 
   const eventsColletcionRef = collection(db, "events");
 
@@ -46,6 +47,14 @@ const EventsSection = () => {
     return formatDDMMYYYY;
   };
 
+  const handleOpenPopUp = (index) => {
+    setOpenPopUpcard(index);
+  };
+
+  const handleClosePopUp = () => {
+    setOpenPopUpcard(false);
+  };
+
   return (
     <EventsSectionContainer>
       {events.length == 0 && (
@@ -65,7 +74,34 @@ const EventsSection = () => {
       {events.map((event, index) => {
         return (
           <div className="card" key={index}>
-            <PopUpCardContainer></PopUpCardContainer>
+            {openPopUpcard === index && (
+              <PopUpCardContainer>
+                <button
+                  className="closePopUpBtn"
+                  onClick={() => handleClosePopUp()}
+                >
+                  <img
+                    src={Icons.CloseIcon}
+                    alt="Ícone de X para fechar modal"
+                  />
+                </button>
+                <div className="eventImageContainer">
+                  <img className="eventImage" src={event.image} alt="" />
+                  <span className="eventData">
+                    {" "}
+                    <img src={Icons.CalendarIcon} alt="Ícone Calendário" />{" "}
+                    {formateDate(event.data)}
+                  </span>
+                </div>
+                <div className="eventDetailsContainer">
+                  <span className="eventTitle">{event.title}</span>
+                  <div
+                    className="eventTextContainer"
+                    dangerouslySetInnerHTML={{ __html: event.text }}
+                  ></div>
+                </div>
+              </PopUpCardContainer>
+            )}
             <div className="cardHeaderContainer">
               <img className="cardImage" src={event.image} alt="" />
               <div className="cardHeader">
@@ -88,7 +124,12 @@ const EventsSection = () => {
                 {event.local}
               </span>
             </div>
-            <button className="aboutTheEventBtn">Saiba mais</button>
+            <button
+              className="aboutTheEventBtn"
+              onClick={() => handleOpenPopUp(index)}
+            >
+              Saiba mais
+            </button>
           </div>
         );
       })}

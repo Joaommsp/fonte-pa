@@ -368,5 +368,228 @@ export const EmptyEvents = styled.div`
 `;
 
 export const PopUpCardContainer = styled.div`
+  width: 800px;
+  height: 60vh;
 
-`
+  max-height: 400px;
+  background-color: #ffffff;
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.57);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .eventImageContainer {
+    width: 50%;
+    height: 100%;
+
+    position: relative;
+  }
+
+  .eventImage {
+    width: 100%;
+    height: 100%;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    object-fit: cover;
+  }
+
+  .eventDetailsContainer {
+    width: 50%;
+    height: 100%;
+
+    padding: 1rem;
+  }
+
+  .eventTitle {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .eventTextContainer {
+    width: 100%;
+    height: 80%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+    background-color: #f6f6f6;
+  }
+
+  .eventTextContainer p {
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .eventTextContainer span {
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .eventTextContainer strong {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .eventTextContainer ul,
+  ol {
+    font-size: 13px;
+    margin-left: 1rem;
+  }
+
+  .eventTextContainer h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: #181a20;
+  }
+
+  .eventData {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    font-size: 0.8rem;
+  }
+
+  .eventData img {
+    margin-right: 0.5rem;
+  }
+
+  .closePopUpBtn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    border: 0;
+    background-color: transparent;
+  }
+
+  .closePopUpBtn img {
+    width: 18px;
+  }
+
+  .closePopUpBtn:hover {
+    cursor: pointer;
+    opacity: 50%;
+  }
+
+  @media only screen and (max-width: 402px) {
+    width: fit-content;
+    height: fit-content;
+    max-height: fit-content;
+
+    flex-direction: column;
+
+    .eventTitle {
+      font-size: 1rem;
+    }
+
+    .eventImageContainer {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eventImage {
+      width: 300px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .eventDetailsContainer {
+      height: 50%;
+      width: 100%;
+    }
+
+    .eventTextContainer {
+      height: 200px;
+    }
+
+    .closePopUpBtn {
+      background-color: #ffffff;
+      z-index: 500;
+      padding: 0.2rem 0.3rem;
+      border-radius: 50px;
+    }
+  }
+
+  @media only screen and (min-width: 420px) and (max-width: 860px) {
+    width: 400px;
+    height: fit-content;
+    max-height: fit-content;
+
+    flex-direction: column;
+
+    .eventTitle {
+      font-size: 1rem;
+    }
+
+    .eventImageContainer {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eventImage {
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .eventDetailsContainer {
+      height: 50%;
+      width: 100%;
+    }
+
+    .eventTextContainer {
+      height: 200px;
+    }
+
+    .closePopUpBtn {
+      background-color: #ffffff;
+      z-index: 500;
+      padding: 0.2rem 0.3rem;
+      border-radius: 50px;
+    }
+  }
+
+  @media only screen and (min-width: 860px) and (max-width: 1000px) {
+    width: 80vw;
+    height: 60vh;
+  }
+`;

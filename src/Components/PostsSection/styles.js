@@ -516,7 +516,7 @@ export const PopUpContainer = styled.div`
       text-align: center;
       font-size: 1rem;
       padding: 0 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     .PopUpCardAuthor,
@@ -538,8 +538,7 @@ export const PopUpContainer = styled.div`
       padding: 1rem 1rem;
     }
 
-    .PopUpCardAuthor,
-    .PopUpCardData {
+    .popUpCardInfos__text span {
       font-size: 0.8rem;
     }
 
