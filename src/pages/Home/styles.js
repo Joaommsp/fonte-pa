@@ -50,6 +50,14 @@ export const EventsContainer = styled.div`
   justify-content: center;
 
   padding: 1rem 5rem;
+
+  @media only screen and (max-width: 560px) {
+    padding: 1rem 1rem;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const EventsSectionTitle = styled.h2`

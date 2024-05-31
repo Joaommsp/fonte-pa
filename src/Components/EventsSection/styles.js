@@ -209,8 +209,7 @@ export const EventsSectionContainer = styled.div`
   @media only screen and (min-width: 560px) and (max-width: 700px) {
     .card {
       width: 388px;
-      height: fit-content;
-      padding: 1rem;
+      height: 574px;
 
       flex-direction: column;
       align-items: center;
@@ -245,8 +244,7 @@ export const EventsSectionContainer = styled.div`
 
     .card {
       width: 310px;
-      height: fit-content;
-      padding: 1rem;
+      height: 518px;
 
       flex-direction: column;
       align-items: center;
@@ -255,15 +253,14 @@ export const EventsSectionContainer = styled.div`
     .cardHeader {
       width: 100%;
       height: 64px;
-      border-bottom: 2px solid #1c7ec2;
       margin-bottom: 1rem;
     }
 
     .cardTitle {
       width: 100%;
-      font-size: 1rem;
+      font-size: 0.8rem;
       padding-bottom: 0.5rem;
-      height: 64px;
+      height: 54px;
     }
 
     .cardSubtitle {
