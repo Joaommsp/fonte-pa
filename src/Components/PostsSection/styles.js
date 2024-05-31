@@ -481,8 +481,10 @@ export const PopUpContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
-    width: 95vw;
-    height: 75vh;
+    width: 100vw;
+    height: 100vh;
+
+    border-radius: 0;
 
     .popUpCardHeader {
       padding: 1rem 1rem;

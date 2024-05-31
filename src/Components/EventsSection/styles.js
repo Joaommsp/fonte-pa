@@ -366,3 +366,7 @@ export const EmptyEvents = styled.div`
     }
   }
 `;
+
+export const PopUpCardContainer = styled.div`
+
+`

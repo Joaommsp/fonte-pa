@@ -3,7 +3,11 @@ import { db } from "../../services/firebase";
 import { query, orderBy } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
-import { EventsSectionContainer, EmptyEvents } from "./styles";
+import {
+  EventsSectionContainer,
+  EmptyEvents,
+  PopUpCardContainer,
+} from "./styles";
 
 import Icons from "../../assets/images/svg/icons/iconsExport";
 import NothingPosted from "../../assets/images/notFound.png";
@@ -61,6 +65,7 @@ const EventsSection = () => {
       {events.map((event, index) => {
         return (
           <div className="card" key={index}>
+            <PopUpCardContainer></PopUpCardContainer>
             <div className="cardHeaderContainer">
               <img className="cardImage" src={event.image} alt="" />
               <div className="cardHeader">
