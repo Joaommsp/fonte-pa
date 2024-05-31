@@ -24,7 +24,7 @@ export const CardsContainer = styled.div`
 
   display: flex;
   justify-content: flex-start;
-  gap: 34px;
+  gap: 24px;
 
   overflow-y: hidden;
   overflow-x: scroll;

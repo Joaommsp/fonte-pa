@@ -416,6 +416,8 @@ export const CardsContainer = styled.div`
   }
 
   @media only screen and (max-width: 560px) {
+    padding: 2rem 1rem;
+
     .arrowRight {
       top: 2.5rem;
       right: 2rem;
@@ -423,6 +425,8 @@ export const CardsContainer = styled.div`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
+    padding: 2rem 2rem;
+
     .arrowRight {
       top: 2.5rem;
       right: 2rem;
@@ -446,25 +450,20 @@ export const CardsSubTitle = styled.h2`
 
   line-height: 100%;
 
-  padding-left: 5rem;
-
   strong {
     color: #1c7ec2;
     font-weight: 500;
   }
 
   @media only screen and (max-width: 560px) {
-    padding-left: 2rem;
     font-size: 1.5rem;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
-    padding-left: 2rem;
     font-size: 2rem;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    padding-left: 2rem;
     font-size: 2.2rem;
   }
 `;
@@ -476,7 +475,7 @@ export const Cards = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 26px;
+  gap: 24px;
 
   overflow-x: scroll;
 
