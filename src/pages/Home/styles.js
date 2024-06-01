@@ -92,7 +92,7 @@ export const BannerTextContent = styled.div`
   background-position: left;
   background-size: 400px;
 
-  padding: 2rem;
+  padding: 0 2rem;
 
   @media only screen and (max-width: 560px) {
     width: 100%;

@@ -87,11 +87,29 @@ const EventsSection = () => {
                 </button>
                 <div className="eventImageContainer">
                   <img className="eventImage" src={event.image} alt="" />
-                  <span className="eventData">
-                    {" "}
-                    <img src={Icons.CalendarIcon} alt="Ícone Calendário" />{" "}
-                    {formateDate(event.data)}
-                  </span>
+                  <div className="eventAbout">
+                    <span className="eventAboutTitle">Informações:</span>
+                    <div className="eventAboutCards">
+                      <span className="">
+                        {" "}
+                        <img
+                          src={Icons.CalendarIcon}
+                          alt="Ícone Calendário"
+                        />{" "}
+                        {formateDate(event.data)}
+                      </span>
+                      <span className="">
+                        {" "}
+                        <img src={Icons.ClockIcon} alt="Ícone Calendário" />
+                        {event.hour}
+                      </span>
+                      <span className="">
+                        {" "}
+                        <img src={Icons.MapIconDark} alt="Ícone Calendário" />
+                        {event.local}
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div className="eventDetailsContainer">
                   <span className="eventTitle">{event.title}</span>

@@ -70,12 +70,12 @@ export const LogoContainer = styled.div`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
-    height: 92vh;
+    height: 424px;
     background-position: right;
   }
 
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    height: 650px;
+  @media only screen and (min-width: 900px) and (max-width: 1000px) {
+    height: 424px;
   }
 `;
 
@@ -88,8 +88,12 @@ export const Logo = styled.img`
     width: 300px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 560px) and (max-width: 1000px) {
     width: 500px;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
+    width: 400px;
   }
 `;
 
@@ -97,6 +101,14 @@ export const AboutUsTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 500;
   color: #ffffff;
+
+  @media only screen and (min-width: 900px) and (max-width: 1000px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
+    font-size: 1rem;
+  }
 `;
 
 export const WhatsAppLInk = styled.a`
@@ -206,7 +218,13 @@ export const ComunityContainer = styled.div`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding: 0 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -223,8 +241,12 @@ export const ComunityTitle = styled.h2`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -243,6 +265,11 @@ export const ComunityDescription = styled.p`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    argin-bottom: 0rem;
     font-size: 0.9rem;
   }
 `;
@@ -269,6 +296,14 @@ export const WhoAreWeContainer = styled.div`
   justify-content: center;
 
   margin-bottom: 2rem;
+
+  @media only screen and (min-width: 560px) and (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 0 5rem;
+  }
 `;
 
 export const WhoAreWeImageContainer = styled.div`
@@ -280,6 +315,10 @@ export const WhoAreWeImageContainer = styled.div`
 
 export const PeopleImg = styled.img`
   width: 456px;
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 426px;
+  }
 `;
 
 export const WhoAreWeTextContainer = styled.div`
@@ -296,6 +335,10 @@ export const WhoAreWeTitle = styled.h1`
   width: 80%;
   text-align: right;
   margin-bottom: 1rem;
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const WhoAreWeText = styled.div`
@@ -310,6 +353,12 @@ export const WhoAreWeText = styled.div`
   strong {
     font-weight: 500;
     color: #1c7ec2;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .emphasis {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -444,6 +493,23 @@ export const CardsContainer = styled.div`
     text-align: center;
     margin-top: 1rem;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .cardSection {
+      padding: 2rem 2rem;
+      gap: 18px;
+    }
+
+    .textEmphasis {
+      font-size: 1rem;
+      width: 80%;
+      margin-bottom: 1.5rem;
+    }
+
+    .textEmphasisLeft {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const InstagramContentContainer = styled.div`
@@ -455,6 +521,10 @@ export const InstagramContentContainer = styled.div`
   justify-content: center;
 
   margin-bottom: 2rem;
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 0rem 3rem;
+  }
 `;
 
 export const InstagramContent = styled.div`
@@ -494,6 +564,10 @@ export const InstagramContentTitle = styled.h2`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const InstagramImages = styled.div`
@@ -525,6 +599,11 @@ export const InstagramImageContainer = styled.div`
     filter: drop-shadow(-2px 4px 3px #00000050);
     z-index: 100;
   }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 114px;
+    height: 114px;
+  }
 `;
 
 export const InstagramImage = styled.img`
@@ -545,6 +624,10 @@ export const AdressMapContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #e3eff7;
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    padding: 2rem 3rem;
+  }
 `;
 
 export const AdressMapAbout = styled.div`
@@ -557,6 +640,10 @@ export const AdressMapTitle = styled.h2`
   font-size: 2rem;
   color: #181a20;
   margin-bottom: 0.5rem;
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const AdressMapText = styled.p`

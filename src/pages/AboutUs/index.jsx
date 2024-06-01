@@ -65,7 +65,7 @@ const AboutUs = () => {
             <LogoContainer>
               <DivisorLineLight></DivisorLineLight>
               <AboutUsTitle>Conheça-nos</AboutUsTitle>
-              <Logo src={LogoImage} alt="" />
+              <Logo src={LogoImage} alt="Logo Igreja Batista Fonte Paulo Afonso" />
 
               <SocialMedia>
                 <SocialMediaLinks>
@@ -109,7 +109,6 @@ const AboutUs = () => {
               toda a região do semi-árido brasileiro, conforme as Escrituras
               Sagradas.
             </ComunityDescription>
-            {/* <ImageGallery items={images} /> */}
           </ComunityContainer>
 
           <WhatsAppLInk
