@@ -44,6 +44,7 @@ import CalendarIconBlue from "./calendar-icon-blue.svg";
 import ArrowSlimIcon from "./arrow-slim-icon.svg";
 import PersonIcon from "./person-icon.svg";
 import HashIcon from "./hash-icon.svg";
+import TelegramIconLight from "./telegram-icon-light.svg";
 
 const Icons = {
   WhatsAppIcon: WhatsAppIcon,
@@ -92,6 +93,7 @@ const Icons = {
   ArrowSlimIcon: ArrowSlimIcon,
   PersonIcon: PersonIcon,
   HashIcon: HashIcon,
+  TelegramIconLight: TelegramIconLight,
 };
 
 export default Icons;

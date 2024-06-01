@@ -42,6 +42,7 @@ export const AdressContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  gap: 8px;
 
   p {
     font-size: 1rem;
@@ -53,6 +54,7 @@ export const AdressContainer = styled.div`
   span {
     font-size: 0.9rem;
     color: #ffffff90;
+
     text-align: center;
   }
 
@@ -60,6 +62,14 @@ export const AdressContainer = styled.div`
     text-decoration: none;
     color: #ffffff90;
     font-size: 0.9rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 18px;
+    margin-right: 0.5rem;
   }
 
   @media only screen and (max-width: 480px) {
@@ -75,9 +85,36 @@ export const Logo = styled.img`
   width: 156px;
 `;
 
+export const MapAppsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background-color: #e3eff7;
+  padding: 1rem;
+  border-radius: 5px;
+`;
+
 export const GoogleMapsLink = styled.a`
   img {
     width: 156px;
+  }
+`;
+
+export const WazeLink = styled.a`
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 126px;
   }
 `;
 
