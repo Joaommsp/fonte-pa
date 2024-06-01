@@ -559,9 +559,8 @@ export const PopUpCardContainer = styled.div`
     }
 
     .eventImage {
-      width: 310px;
-      height: 194px;
-      border-top-right-radius: 5px;
+      width: 100%;
+      height: 198px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -622,7 +621,6 @@ export const PopUpCardContainer = styled.div`
     .eventImage {
       width: 100%;
       height: 179px;
-      border-top-right-radius: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
