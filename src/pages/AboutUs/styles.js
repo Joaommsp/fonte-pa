@@ -64,12 +64,12 @@ export const LogoContainer = styled.div`
 
   position: relative;
 
-  @media only screen and (max-width: 560px) {
-    height: 92vh;
+  @media only screen and (max-width: 660px) {
+    height: 324px;
     background-position: right;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     height: 424px;
     background-position: right;
   }
@@ -84,15 +84,15 @@ export const Logo = styled.img`
   width: 664px;
   filter: drop-shadow(13px 5px 3px #00000060);
 
-  @media only screen and (max-width: 560px) {
-    width: 300px;
+  @media only screen and (max-width: 660px) {
+    width: 248px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 1000px) {
+  @media only screen and (min-width: 660px) and (max-width: 1000px) {
     width: 500px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     width: 400px;
   }
 `;
@@ -102,11 +102,15 @@ export const AboutUsTitle = styled.h1`
   font-weight: 500;
   color: #ffffff;
 
+  @media only screen and (max-width: 660px) {
+    font-size: 0.9rem;
+  }
+
   @media only screen and (min-width: 900px) and (max-width: 1000px) {
     font-size: 1.2rem;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     font-size: 1rem;
   }
 `;
@@ -128,7 +132,7 @@ export const WhatsAppLInk = styled.a`
 
   border-radius: 50px;
 
-  z-index: 1000;
+  z-index: 500;
 
   &:hover {
     opacity: 80%;
@@ -159,12 +163,12 @@ export const SocialMedia = styled.div`
   bottom: 3rem;
   left: 3rem;
 
-  @media only screen and (max-width: 560px) {
-    bottom: 1rem;
+  @media only screen and (max-width: 660px) {
+    bottom: 0.5rem;
     left: 1rem;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     bottom: 2rem;
     left: 2rem;
   }
@@ -182,11 +186,11 @@ export const SocialMediaLinks = styled.ul`
   justify-content: center;
   gap: 24px;
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     gap: 16px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     gap: 20px;
   }
 `;
@@ -196,9 +200,9 @@ export const SocialMediaLink = styled.li`
     width: 26px;
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     img {
-      width: 22px;
+      width: 18px;
     }
   }
 `;
@@ -213,11 +217,12 @@ export const ComunityContainer = styled.div`
 
   margin-bottom: 4rem;
 
-  @media only screen and (max-width: 560px) {
-    padding: 0 2rem;
+  @media only screen and (max-width: 660px) {
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     padding: 0;
     margin-bottom: 1rem;
   }
@@ -235,12 +240,12 @@ export const ComunityTitle = styled.h2`
 
   margin-bottom: 1rem;
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     font-size: 1.5rem;
     text-align: center;
   }
@@ -260,11 +265,12 @@ export const ComunityDescription = styled.p`
     font-weight: 500;
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     font-size: 0.9rem;
+    width: 100%;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     font-size: 0.9rem;
   }
 
@@ -279,6 +285,11 @@ export const DivisorLine = styled.div`
   height: 3px;
   background-color: #1c7ec2;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 660px) {
+    width: 56px;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const DivisorLineLight = styled.div`
@@ -286,6 +297,11 @@ export const DivisorLineLight = styled.div`
   height: 3px;
   background-color: #ffffff;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 660px) {
+    width: 56px;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const WhoAreWeContainer = styled.div`
@@ -297,8 +313,14 @@ export const WhoAreWeContainer = styled.div`
 
   margin-bottom: 2rem;
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (max-width: 660px) {
     flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 0rem;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: 0 2rem;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -311,10 +333,26 @@ export const WhoAreWeImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 660px) {
+    width: 100%;
+  }
 `;
 
 export const PeopleImg = styled.img`
   width: 456px;
+
+  @media only screen and (max-width: 420px) {
+    width: 290px;
+  }
+
+  @media only screen and (min-width: 420px) and (max-width: 660px) {
+    width: 356px;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    width: 356px;
+  }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     width: 426px;
@@ -326,6 +364,11 @@ export const WhoAreWeTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 660px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const WhoAreWeTitle = styled.h1`
@@ -335,6 +378,16 @@ export const WhoAreWeTitle = styled.h1`
   width: 80%;
   text-align: right;
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: 660px) {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    font-size: 1.2rem;
+  }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     font-size: 1.5rem;
@@ -353,6 +406,23 @@ export const WhoAreWeText = styled.div`
   strong {
     font-weight: 500;
     color: #1c7ec2;
+  }
+
+  @media only screen and (max-width: 660px) {
+    text-align: center;
+    font-size: 0.8rem;
+
+    .emphasis {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    font-size: 0.8rem;
+
+    .emphasis {
+      font-size: 0.9rem;
+    }
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -494,6 +564,115 @@ export const CardsContainer = styled.div`
     margin-top: 1rem;
   }
 
+  @media only screen and (max-width: 660px) {
+    margin-bottom: 0;
+
+    .cardSection {
+      flex-direction: column;
+      padding: 1rem 1.5rem;
+    }
+
+    .cardTextContent {
+      width: 100%;
+      padding: 0rem;
+    }
+
+    .textEmphasis {
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      text-align: center;
+    }
+
+    .textEmphasisLeft {
+      font-size: 1rem;
+    }
+
+    #cardVerse {
+      width: 100%;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    #cardVerseAdress {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .cardTextAbout {
+      align-items: center;
+    }
+
+    .cardTextContentLeft {
+      width: 100%;
+      padding: 0;
+      align-items: center;
+      padding: 0;
+    }
+
+    .textEmphasisLeft {
+      text-align: center;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .cardImageContainer img {
+      width: 256px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    .cardSection {
+      padding: 2rem 2rem;
+      gap: 18px;
+    }
+
+    .textEmphasis {
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .textEmphasisLeft {
+      font-size: 1rem;
+    }
+
+    #cardVerse {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+
+    #cardVerseAdress {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .cardTextAbout {
+      align-items: center;
+    }
+
+    .cardTextContentLeft {
+      width: 100%;
+      padding: 0;
+      align-items: center;
+      padding: 0;
+    }
+
+    .textEmphasisLeft {
+      text-align: center;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .cardImageContainer img {
+      width: 256px;
+      margin-bottom: 2rem;
+    }
+  }
+
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     .cardSection {
       padding: 2rem 2rem;
@@ -522,6 +701,14 @@ export const InstagramContentContainer = styled.div`
 
   margin-bottom: 2rem;
 
+  @media only screen and (max-width: 660px) {
+    padding: 0rem 1rem;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: 0rem 2rem;
+  }
+
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding: 0rem 3rem;
   }
@@ -533,6 +720,14 @@ export const InstagramContent = styled.div`
   align-items: center;
   justify-content: center;
   gap: 14px;
+
+  @media only screen and (max-width: 660px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    gap: 10px;
+  }
 `;
 
 export const InstagramProfileImage = styled.img`
@@ -542,6 +737,11 @@ export const InstagramProfileImage = styled.img`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media only screen and (max-width: 660px) {
+    margin-bottom: 1rem;
+    max-width: 400px;
   }
 `;
 
@@ -565,6 +765,14 @@ export const InstagramContentTitle = styled.h2`
     -webkit-text-fill-color: transparent;
   }
 
+  @media only screen and (max-width: 660px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    font-size: 1.2rem;
+  }
+
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     font-size: 1.5rem;
   }
@@ -577,6 +785,18 @@ export const InstagramImages = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  @media only screen and (max-width: 420px) {
+    grid-template-columns: 1fr 1fr;
+
+    .hiddenOnSmallScreen {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    gap: 14px;
+  }
 `;
 
 export const InstagramImageContainer = styled.div`
@@ -598,6 +818,16 @@ export const InstagramImageContainer = styled.div`
     top: 0.5rem;
     filter: drop-shadow(-2px 4px 3px #00000050);
     z-index: 100;
+  }
+
+  @media only screen and (max-width: 660px) {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    width: 100px;
+    height: 100px;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -625,6 +855,15 @@ export const AdressMapContainer = styled.div`
   align-items: center;
   background-color: #e3eff7;
 
+  @media only screen and (max-width: 660px) {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: 1rem 2rem;
+  }
+
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding: 2rem 3rem;
   }
@@ -633,6 +872,15 @@ export const AdressMapContainer = styled.div`
 export const AdressMapAbout = styled.div`
   width: 50%;
   padding: 0 2rem;
+
+  @media only screen and (max-width: 660px) {
+    width: 100%;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const AdressMapTitle = styled.h2`
@@ -640,6 +888,15 @@ export const AdressMapTitle = styled.h2`
   font-size: 2rem;
   color: #181a20;
   margin-bottom: 0.5rem;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    font-size: 1.2rem;
+  }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     font-size: 1.5rem;
@@ -650,6 +907,15 @@ export const AdressMapText = styled.p`
   font-size: 0.9rem;
   color: #181a20;
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Address = styled.div`
@@ -678,10 +944,38 @@ export const Address = styled.div`
     color: #181a20;
     font-family: "Noto Sans JP", sans-serif;
   }
+
+  @media only screen and (max-width: 660px) {
+    padding: 0.5rem;
+
+    .addressInfos span {
+      font-size: 0.9rem;
+    }
+
+    img {
+      width: 18px;
+    }
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: 0.5rem;
+
+    .addressInfos span {
+      font-size: 0.9rem;
+    }
+
+    img {
+      width: 18px;
+    }
+  }
 `;
 
 export const AdressMapMaps = styled.div`
   width: 50%;
+
+  @media only screen and (max-width: 660px) {
+    width: 100%;
+  }
 `;
 
 export const MapContainer = styled.div`
@@ -696,5 +990,9 @@ export const MapContainer = styled.div`
   @media only screen and (max-width: 480px) {
     padding: 0.8rem;
     margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    padding: .8rem;
   }
 `;

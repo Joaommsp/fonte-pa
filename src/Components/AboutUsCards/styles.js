@@ -31,4 +31,35 @@ export const AboutUsCardElement = styled.div`
     font-size: 0.85rem;
     text-align: center;
   }
+
+  @media only screen and (max-width: 420px) {
+    width: 290px;
+    height: 204px;
+  }
+
+  @media only screen and (min-width: 420px) and (max-width: 660px) {
+    width: 350px;
+    height: 164px;
+
+    .cardTitle {
+      font-size: 1rem;
+    }
+
+    .cardText {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    width: 350px;
+    height: 164px;
+
+    .cardTitle {
+      font-size: 1rem;
+    }
+
+    .cardText {
+      font-size: 0.8rem;
+    }
+  }
 `;

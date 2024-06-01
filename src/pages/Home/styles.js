@@ -171,7 +171,7 @@ export const LogoContainer = styled.div`
   background-image: url(${LogoBackground});
   background-size: cover;
   background-position: center;
-  background-repeat: n;
+  background-repeat: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,18 +181,20 @@ export const LogoContainer = styled.div`
 
   position: relative;
 
-  @media only screen and (max-width: 560px) {
-    height: 92vh;
+  @media only screen and (max-width: 660px) {
+    height: 324px;
     background-position: right;
+    margin-bottom: 0;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
-    height: 92vh;
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    height: 424px;
     background-position: right;
+    margin-bottom: 0;
   }
 
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    height: 650px;
+  @media only screen and (min-width: 900px) and (max-width: 1000px) {
+    height: 424px;
   }
 `;
 
@@ -201,12 +203,16 @@ export const Logo = styled.img`
   width: 664px;
   filter: drop-shadow(13px 5px 3px #00000060);
 
-  @media only screen and (max-width: 560px) {
-    width: 300px;
+  @media only screen and (max-width: 660px) {
+    width: 248px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 1000px) {
     width: 500px;
+  }
+
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
+    width: 400px;
   }
 `;
 
@@ -230,9 +236,10 @@ export const HashTags = styled.div`
 
   @media only screen and (max-width: 560px) {
     flex-direction: column;
-    gap: 26px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0rem;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {
@@ -373,11 +380,11 @@ export const SocialMediaLinks = styled.ul`
   justify-content: center;
   gap: 24px;
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     gap: 16px;
   }
 
-  @media only screen and (min-width: 560px) and (max-width: 900px) {
+  @media only screen and (min-width: 660px) and (max-width: 900px) {
     gap: 20px;
   }
 `;

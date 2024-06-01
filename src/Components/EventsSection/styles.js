@@ -207,6 +207,9 @@ export const EventsSectionContainer = styled.div`
   }
 
   @media only screen and (min-width: 560px) and (max-width: 700px) {
+
+    margin-bottom: 3rem;
+
     .card {
       width: 388px;
       height: 574px;
@@ -241,6 +244,7 @@ export const EventsSectionContainer = styled.div`
 
   @media only screen and (max-width: 560px) {
     padding: 2rem 0.5rem;
+    margin-bottom: 2rem;
 
     .card {
       width: 310px;

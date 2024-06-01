@@ -65,7 +65,10 @@ const AboutUs = () => {
             <LogoContainer>
               <DivisorLineLight></DivisorLineLight>
               <AboutUsTitle>Conheça-nos</AboutUsTitle>
-              <Logo src={LogoImage} alt="Logo Igreja Batista Fonte Paulo Afonso" />
+              <Logo
+                src={LogoImage}
+                alt="Logo Igreja Batista Fonte Paulo Afonso"
+              />
 
               <SocialMedia>
                 <SocialMediaLinks>
@@ -289,6 +292,7 @@ const AboutUs = () => {
                 </InstagramImageContainer>
               </a>
               <a
+                className="hiddenOnSmallScreen"
                 href="https://www.instagram.com/p/CxQI460L1g7/?img_index=1"
                 target="_blank"
               >
