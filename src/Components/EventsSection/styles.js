@@ -528,7 +528,7 @@ export const PopUpCardContainer = styled.div`
   }
 
   @media only screen and (max-width: 420px) {
-    width: fit-content;
+    width: 90vw;
     height: 80vh;
     min-height: 550px;
     max-height: 550px;
@@ -540,6 +540,12 @@ export const PopUpCardContainer = styled.div`
 
     .eventAbout {
       padding: 1rem;
+    }
+
+    .eventAboutCards span {
+      font-size: 0.8rem;
+
+      padding: 0.4rem 0.4rem;
     }
 
     .eventImageContainer {
@@ -568,6 +574,16 @@ export const PopUpCardContainer = styled.div`
 
     .eventTextContainer {
       height: 158px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .eventTextContainer p {
+      font-size: 13px;
+      line-height: 1.2;
+      text-align: justify;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
 
     .closePopUpBtn {
@@ -605,7 +621,7 @@ export const PopUpCardContainer = styled.div`
 
     .eventImage {
       width: 100%;
-      height: 176px;
+      height: 179px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
