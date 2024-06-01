@@ -530,7 +530,7 @@ export const MockUpImage = styled.img`
   width: 500px;
 
   @media only screen and (max-width: 560px) {
-    width: 320px;
+    width: 290px;
   }
 
   @media only screen and (min-width: 560px) and (max-width: 900px) {

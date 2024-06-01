@@ -402,8 +402,8 @@ export const PopUpCardContainer = styled.div`
   }
 
   .eventImage {
-    width: 264px;
-    height: 264px;
+    width: 204px;
+    height: 204px;
 
     border-radius: 5px;
 
@@ -529,13 +529,13 @@ export const PopUpCardContainer = styled.div`
 
   @media only screen and (max-width: 420px) {
     width: fit-content;
-    height: fit-content;
-    max-height: fit-content;
-
+    height: 80vh;
+    min-height: 550px;
+    max-height: 550px;
     flex-direction: column;
 
     .eventTitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     .eventAbout {
@@ -544,27 +544,30 @@ export const PopUpCardContainer = styled.div`
 
     .eventImageContainer {
       width: 100%;
-      height: 50%;
+      height: 60%;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      overflow: hidden;
     }
 
     .eventImage {
       width: 310px;
+      height: 194px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
 
     .eventDetailsContainer {
-      height: 50%;
+      height: 40%;
       width: 100%;
-      padding: 1rem;
+      padding: 0 1rem;
     }
 
     .eventTextContainer {
-      height: 200px;
+      height: 158px;
     }
 
     .closePopUpBtn {
@@ -580,14 +583,15 @@ export const PopUpCardContainer = styled.div`
   }
 
   @media only screen and (min-width: 420px) and (max-width: 900px) {
-    width: 400px;
     width: 80vw;
-    height: 100%;
+    height: 80vh;
+    min-height: 550px;
+    max-height: 550px;
 
     flex-direction: column;
 
     .eventTitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     .eventImageContainer {
@@ -596,24 +600,25 @@ export const PopUpCardContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
 
     .eventImage {
       width: 100%;
-      height: 100%;
+      height: 176px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
 
     .eventDetailsContainer {
-      height: 100%;
+      height: 50%;
       width: 100%;
       padding: 1rem 2rem;
     }
 
     .eventTextContainer {
-      height: 146px;
+      height: 156px;
     }
 
     .closePopUpBtn {
@@ -628,8 +633,15 @@ export const PopUpCardContainer = styled.div`
     }
   }
 
-  @media only screen and (min-width: 860px) and (max-width: 1000px) {
+  @media only screen and (min-width: 900px) and (max-width: 1000px) {
     width: 80vw;
     height: 60vh;
+    min-height: 500px;
+    max-height: 500px;
+
+    .eventImage {
+      width: 204px;
+      height: 204px;
+    }
   }
 `;
