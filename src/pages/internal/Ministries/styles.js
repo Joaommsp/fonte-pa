@@ -159,26 +159,9 @@ export const ContactsContainer = styled.div`
 
   margin-bottom: 5rem;
 
-  @media only screen and (max-width: 480px) {
-  }
-`;
-
-export const Verse = styled.p`
-  width: 50%;
-  text-align: center;
-
-  margin-bottom: 4rem;
-
-  strong {
-    font-weight: 500;
-  }
+  padding: 2rem 10rem;
 
   @media only screen and (max-width: 480px) {
-    width: 80%;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    width: 70%;
   }
 `;
 
@@ -186,10 +169,8 @@ export const ContactsContent = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 2rem 5rem;
-  gap: 16px;
-  overflow-x: scroll;
+  justify-content: center;
+  gap: 18px;
 
   @media only screen and (max-width: 480px) {
     padding: 2rem 0rem;
@@ -201,114 +182,5 @@ export const ContactsContent = styled.div`
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
     padding: 2rem 2rem;
-  }
-`;
-
-export const FamilyContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 4rem;
-
-  @media only screen and (max-width: 480px) {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0rem;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0rem;
-  }
-`;
-
-export const FamilyImageContainer = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 5rem;
-
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-    padding: 0;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    width: 100%;
-    padding: 0;
-  }
-`;
-
-export const FamilyImage = styled.img`
-  width: 256px;
-
-  @media only screen and (max-width: 480px) {
-    width: 320px;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    width: 320px;
-  }
-
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    width: 320px;
-  }
-`;
-
-export const FamilyContent = styled.div`
-  width: 50%;
-  padding-right: 5rem;
-
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-    padding: 2rem;
-    padding-right: 2rem;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    width: 100%;
-    padding: 3rem;
-    padding-right: 3rem;
-  }
-
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    padding-right: 3rem;
-  }
-`;
-
-export const FamilyTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: #181a20;
-  margin-bottom: 1rem;
-
-  @media only screen and (max-width: 480px) {
-    font-size: 2rem;
-
-    text-align: center;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    font-size: 2rem;
-    text-align: right;
-  }
-`;
-
-export const FamilyText = styled.p`
-  padding-right: 4rem;
-  color: #181a20;
-
-  strong {
-    font-weight: 500;
-    color: #1c7ec2;
-  }
-
-  @media only screen and (max-width: 480px) {
-    padding-right: 0;
-    text-align: center;
-    text-align: justify;
   }
 `;

@@ -129,7 +129,7 @@ const Home = () => {
           </HashTags>
 
           <EventsContainer>
-            <EventsSectionTitle>Próximas programações</EventsSectionTitle>
+            <EventsSectionTitle>Eventos</EventsSectionTitle>
             <EventsSection />
           </EventsContainer>
 
@@ -187,7 +187,7 @@ const Home = () => {
           <PostsSectionContainer>
             <img src={Icons.ArrowRight} alt="" className="arrowRight" />
             <DivisorLine></DivisorLine>
-            <PostsSectionTitle>Novidades</PostsSectionTitle>
+            <PostsSectionTitle>Devocionais</PostsSectionTitle>
             <PostsSection></PostsSection>
           </PostsSectionContainer>
 

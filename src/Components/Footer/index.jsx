@@ -30,7 +30,7 @@ const Footer = () => {
           <img src={MapsIcon} alt="" />{" "}
         </GoogleMapsLink>
         <WazeLink
-          href="https://www.google.com/maps/place/Igreja+Batista+Fonte/@-9.400342,-38.2472392,17z/data=!3m1!4b1!4m6!3m5!1s0x7093097213da37b:0xf2d4508b9d89bd1!8m2!3d-9.400342!4d-38.2446643!16s%2Fg%2F11ggt1n4tw?entry=tts"
+          href="https://www.waze.com/pt-PT/live-map/directions/br/ba/igreja-batista-fonte?to=place.ChIJe6M9IZcwCQcR0ZvYuQhFLQ8"
           target="_blank"
         >
           {" "}
@@ -61,5 +61,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// R. Mal. Deodoro da Fonseca, 204 - Cleriston Andrade, Paulo Afonso - BA, 48603-310

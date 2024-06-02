@@ -2,12 +2,11 @@ import { useEffect } from "react";
 
 import Header from "../../../Components/Header";
 import Footer from "../../../Components/Footer";
-import InfoCard from "../../../Components/InfoCard";
+import MinistryCard from "../../../Components/MinistryCard";
 
 import WhatsAppIcon from "../../../assets/images/svg/icons/whatsapp-icon.svg";
 
 import MistriesImageImage from "../../../assets/images/svg/ministriesImage.svg";
-import SchoolImageImage2 from "../../../assets/images/svg/family-school.svg";
 import SocialHeartImage from "../../../assets/images/svg/socialheart.svg";
 
 import InfantilMinister from "../../../assets/images/infantilMinisterio.png";
@@ -25,14 +24,7 @@ import {
   WhatsAppLInk,
   FormLink,
   ContactsContainer,
-  Verse,
   ContactsContent,
-  FamilyContainer,
-  FamilyContent,
-  FamilyImage,
-  FamilyImageContainer,
-  FamilyText,
-  FamilyTitle,
 } from "./styles";
 
 function Ministries() {
@@ -69,56 +61,13 @@ function Ministries() {
         </WhatsAppLInk>
       </SchoolContainer>
       <ContactsContainer>
-        {/* <Verse>
-          &quot;A tua palavra é lâmpada que ilumina os meus passos e luz que
-          clareia o meu caminho. &quot; <strong>Gálatas 6:2</strong>
-        </Verse> */}
         <ContactsContent>
-          <InfoCard
-            title="Ministério Infantil"
-            image={InfantilMinister}
-            text="Ensinando as crianças sobre a Bíblia e o amor de Deus, a crescerem em seu relacionamento com Cristo e a se tornarem discípulos de Jesus"
-          />
-          <InfoCard
-            title="Ministério de Louvor"
-            image={MusicMinister}
-            text="Ministério de Louvor e Adoração é exaltar a Deus, glorificar e honrar Teu nome, reconhecendo Sua grandeza, bondade e amor."
-          />
-          <InfoCard
-            title="Casais"
-            text="Fornecendo apoio, orientação e recursos para casais em seus relacionamentos , reflitindo os princípios cristãos."
-            image={CoupleMinister}
-          />
-          <InfoCard
-            title="Social"
-            text="Demonstrando o amor e o cuidado de Deus pelos necessitados e pela comunidade através de ações sociais na região."
-            image={SocialMinister}
-          />
+          <MinistryCard name="Ministério infantil" img={InfantilMinister} />
+          <MinistryCard name="Ministério de casais" img={CoupleMinister} />
+          <MinistryCard name="Ministério de louvor" img={MusicMinister} />
+          <MinistryCard name="Ministério social" img={SocialMinister} />
         </ContactsContent>
       </ContactsContainer>
-
-      <FamilyContainer>
-        <FamilyImageContainer>
-          <FamilyImage src={SocialHeartImage} />
-        </FamilyImageContainer>
-        <FamilyContent>
-          <FamilyTitle>Há um lugar para você </FamilyTitle>
-          <FamilyText>
-            Ao participar de um dos nossos ministérios, você não apenas
-            encontrará um sentido de pertencimento e comunidade, mas também terá
-            a oportunidade de crescer espiritualmente,{" "}
-            <strong>
-              desenvolver novas habilidades e impactar positivamente a vida
-              daqueles ao seu redor.
-            </strong>
-            Estamos empenhados em criar um ambiente acolhedor e inclusivo, onde
-            todos possam crescer espiritualmente e encontrar novos propósitos em
-            suas vidas. Para mais informações sobre como se envolver em um dos
-            nossos ministérios, entre em contato conosco ou visite-nos em nossos
-            cultos de adoração aos domingos.
-          </FamilyText>
-        </FamilyContent>
-      </FamilyContainer>
       <Footer></Footer>
     </>
   );

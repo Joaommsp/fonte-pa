@@ -91,19 +91,25 @@ export const MapAppsContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-
-  background-color: #e3eff7;
   padding: 1rem;
   border-radius: 5px;
 `;
 
 export const GoogleMapsLink = styled.a`
+  background-color: #e3eff7;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     width: 156px;
   }
 `;
 
 export const WazeLink = styled.a`
+  background-color: #e3eff7;
   width: 100%;
   padding: 0.3rem 0.5rem;
 

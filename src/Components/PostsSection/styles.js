@@ -70,6 +70,7 @@ export const CardsContainer = styled.div`
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+    text-transform: uppercase;
   }
 
   .cardHashtags {
@@ -291,6 +292,8 @@ export const PopUpContainer = styled.div`
     word-wrap: break-word;
 
     margin-bottom: 1rem;
+
+    text-transform: uppercase;
   }
 
   .popUpCardSubtitle {
