@@ -9,10 +9,6 @@ import WhatsAppIcon from "../../../assets/images/svg/icons/whatsapp-icon.svg";
 import KidsImageSource from "../../../assets/images/svg/kidsImage.svg";
 import SchoolImageImage2 from "../../../assets/images/svg/family-school.svg";
 
-import InfantilImage from "../../../assets/images/infantil.png";
-import EscolaImage from "../../../assets/images/escola2.png";
-import EscolaImage2 from "../../../assets/images/escola1.png";
-
 import {
   SchoolContainer,
   SchoolTextContent,
@@ -90,19 +86,19 @@ function Musical() {
         <ContactsContent>
           <InfoCard
             title="Ensino Infantil"
-            image={InfantilImage}
+            image={""}
             text='Então disse Jesus: "Deixem vir a mim as crianças e não as impeçam pois o Reino dos céus pertence aos que são semelhantes a elas"'
           />
           <InfoCard
             title="Aprenda da Palavra"
-            image={EscolaImage}
+            image={""}
             text='"Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça"'
           />
           <InfoCard
             title="Esteja em comunhão"
             text='"Um novo mandamento dou a vocês: Amem-se uns aos outros. Como eu os amei, vocês devem amar-se uns aos outros."
             João 13:34'
-            image={EscolaImage2}
+            image={""}
           />
         </ContactsContent>
       </ContactsContainer>

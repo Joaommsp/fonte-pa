@@ -6,21 +6,20 @@ import MinistryCard from "../../../Components/MinistryCard";
 
 import WhatsAppIcon from "../../../assets/images/svg/icons/whatsapp-icon.svg";
 
-import MistriesImageImage from "../../../assets/images/svg/ministriesImage.svg";
-import SocialHeartImage from "../../../assets/images/svg/socialheart.svg";
-
 import InfantilMinister from "../../../assets/images/infantilMinisterio.png";
 import MusicMinister from "../../../assets/images/louvorMinisterio.png";
 import CoupleMinister from "../../../assets/images/casaisMinisterio.png";
 import SocialMinister from "../../../assets/images/social.png";
+import JovensEAdolescentesIMG from "../../../assets/images/jovensMinisterio.png";
+import AconselhamentoIMG from "../../../assets/images/aconselhamentoMinisterio.png";
+import VisitacaoIMG from "../../../assets/images/visitacaoMinisterio.png";
+import OracaoIMG from "../../../assets/images/oracaoMinisterio.png";
 
 import {
   SchoolContainer,
   SchoolTextContent,
-  SchoolImageContainer,
   SchoolTitle,
   SchoolSubTitle,
-  SchoolImage,
   WhatsAppLInk,
   FormLink,
   ContactsContainer,
@@ -48,10 +47,6 @@ function Ministries() {
           </SchoolSubTitle>
           <FormLink></FormLink>
         </SchoolTextContent>
-
-        <SchoolImageContainer>
-          <SchoolImage src={MistriesImageImage} />
-        </SchoolImageContainer>
         <WhatsAppLInk
           href="https://api.whatsapp.com/send/?phone=5575999706296&text&type=phone_number&app_absent=0"
           target="_blank"
@@ -63,9 +58,16 @@ function Ministries() {
       <ContactsContainer>
         <ContactsContent>
           <MinistryCard name="Ministério infantil" img={InfantilMinister} />
+          <MinistryCard
+            name="Jovens e adolescentes"
+            img={JovensEAdolescentesIMG}
+          />
           <MinistryCard name="Ministério de casais" img={CoupleMinister} />
           <MinistryCard name="Ministério de louvor" img={MusicMinister} />
           <MinistryCard name="Ministério social" img={SocialMinister} />
+          <MinistryCard name="Aconselhamento" img={AconselhamentoIMG} />
+          <MinistryCard name="Ministério de oração" img={OracaoIMG} />
+          <MinistryCard name="Visitação" img={VisitacaoIMG} />
         </ContactsContent>
       </ContactsContainer>
       <Footer></Footer>

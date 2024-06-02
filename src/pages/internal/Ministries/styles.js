@@ -22,31 +22,28 @@ export const SchoolContainer = styled.div`
 `;
 
 export const SchoolTextContent = styled.div`
-  width: 40%;
+  width: 100%;
   height: 100%;
 
-  padding: 5rem 2rem 2rem 5rem;
+  padding: 2rem 10rem;
 
   @media only screen and (max-width: 480px) {
     width: 100%;
-    padding: 5rem 2rem;
   }
 
   @media only screen and (min-width: 480px) and (max-width: 900px) {
     width: 100%;
-    padding: 5rem 3rem;
   }
 
   @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    width: 50%;
-    padding: 5rem 3rem;
+    width: 100%;
     z-index: 10;
   }
 `;
 
 export const SchoolTitle = styled.h1`
   color: #181a20;
-  font-size: 3.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 500;
 
@@ -61,6 +58,8 @@ export const SchoolTitle = styled.h1`
 `;
 
 export const SchoolSubTitle = styled.p`
+  font-size: 0.9rem;
+
   strong {
     color: #1c7ec2;
     font-weight: 500;
@@ -76,35 +75,6 @@ export const SchoolSubTitle = styled.p`
 `;
 
 export const FormLink = styled.a``;
-
-export const SchoolImage = styled.img`
-  width: 400px;
-
-  @media only screen and (max-width: 480px) {
-    width: 320px;
-  }
-
-  @media only screen and (min-width: 480px) and (max-width: 900px) {
-    width: 390px;
-  }
-
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    width: 390px;
-  }
-`;
-
-export const SchoolImageContainer = styled.div`
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 20px;
-
-  position: relative;
-`;
 
 export const WhatsAppLInk = styled.a`
   position: fixed;
@@ -159,7 +129,7 @@ export const ContactsContainer = styled.div`
 
   margin-bottom: 5rem;
 
-  padding: 2rem 10rem;
+  padding: 0rem 8rem;
 
   @media only screen and (max-width: 480px) {
   }
@@ -170,7 +140,8 @@ export const ContactsContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 28px;
 
   @media only screen and (max-width: 480px) {
     padding: 2rem 0rem;
