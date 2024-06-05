@@ -8,6 +8,7 @@ import Footer from "../../Components/Footer";
 import ButtonWithLink from "../../Components/ButtonWithLink";
 import PostsSection from "../../Components/PostsSection";
 import EventsSection from "../../Components/EventsSection";
+import ImageSlider from "../../Components/ImageSlider";
 
 import LogoImage from "../../assets/images/imagens-oficiais/banner.png";
 import Icons from "../../assets/images/svg/icons/iconsExport";
@@ -58,8 +59,7 @@ const Home = () => {
         <Banner className="banner">
           <BannerVisualsContent>
             <LogoContainer>
-              <Logo src={LogoImage} alt="" />
-
+              <ImageSlider />
               <SocialMedia>
                 <SocialMediaLinks>
                   <SocialMediaLink>
@@ -245,8 +245,8 @@ const Home = () => {
             Fale Conosco
           </WhatsAppLInk>
         </Banner>
+        <div className="testando"></div>
       </ContentContainer>
-
       <Footer></Footer>
     </HomeContainer>
   );

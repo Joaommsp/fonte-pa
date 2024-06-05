@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import AboutUsCard from "../../Components/AboutUsCards";
+import ImageSlider from "../../Components/ImageSlider";
 
 import LogoImage from "../../assets/images/imagens-oficiais/banner.png";
 import Icons from "../../assets/images/svg/icons/iconsExport";
@@ -58,13 +59,13 @@ const AboutUs = () => {
 
   return (
     <HomeContainer>
-      <Header pageIndex={0} />
+      <Header pageIndex={null} />
       <ContentContainer>
         <Banner className="banner">
           <BannerVisualsContent>
             <LogoContainer>
               <DivisorLineLight></DivisorLineLight>
-              <AboutUsTitle>Conheça-nos</AboutUsTitle>
+              <ImageSlider />
               <Logo
                 src={LogoImage}
                 alt="Logo Igreja Batista Fonte Paulo Afonso"
@@ -135,104 +136,22 @@ const AboutUs = () => {
             <WhoAreWeText>
               <p className="emphasis">
                 A Igreja Batista Fonte, localizada em Paulo Afonso, Bahia, foi
-                fundada em 2017 com um propósito claro e missionário:
+                fundada em 2018 com um propósito missionário:
               </p>
               <br />
-              fazer, equipar e enviar discípulos de Cristo para o sertão
-              brasileiro e confins da Terra. Com base nesses princípios,
+              Fazer, equipar e enviar discípulos de Cristo para o sertão
+              brasileiro e confins da Terra.Com base nessa missão, nossa igreja
+              busca{" "}
               <strong>
-                nossa igreja se dedica a transformar vidas através do ensino da
-                Palavra de Deus
+                ser instrumento de Deus para o ensino fiel das Escrituras
+                Sagradas
               </strong>{" "}
-              e da capacitação de líderes comprometidos com a Grande Comissão.
+              e capacitação de discípulos de Cristo comprometidos com a Grande
+              Comissão.
             </WhoAreWeText>
           </WhoAreWeTextContainer>
         </WhoAreWeContainer>
 
-        <CardsContainer>
-          <div className="cardSection cardSectionBgBlue">
-            <div className="cards">
-              <AboutUsCard
-                title="Missão"
-                text="Fazer, equipar e enviar discípulos de Cristo é a nossa missão fundamental. Acreditamos que cada membro da nossa comunidade
-                 tem um papel vital no cumprimento desse chamado."
-              />
-              <AboutUsCard
-                title="Visão"
-                text=" Queremos ver o sertão brasileiro e além sendo impactados pela mensagem
-              de Jesus. Trabalhando para plantar igrejas, apoiar missionários e
-              desenvolver projetos sociais."
-              />
-            </div>
-            <div
-              className="cardTextContent
-            "
-            >
-              <p className="textEmphasis">
-                Alcançar e transformar , trazendo esperança e renovação através
-                do evangelho e ações concretas de amor e serviço.
-              </p>
-              <div className="cardTextAbout">
-                <p id="cardVerse">
-                  &quot;Foi-me dada toda a autoridade nos céus e na terra.
-                  Portanto, vão e façam discípulos de todas as nações,
-                  batizando-os em nome do Pai e do Filho e do Espírito Santo,
-                  ensinando-os a obedecer a tudo o que eu ordenei a vocês&quot;
-                  <br />
-                </p>
-                <div id="verseDivisor"></div>
-                <span id="cardVerseAdress">Mateus 28:18-20</span>
-              </div>
-            </div>
-          </div>
-          <div className="cardSection cardSectionBgWhite">
-            <div
-              className="cardTextContentLeft
-            "
-            >
-              <p className="textEmphasisLeft">
-                Encorajamos cada membro da nossa comunidade a{" "}
-                <strong>cultivar uma vida de oração constante</strong>, buscando
-                a orientação divina e intercedendo uns pelos outros.
-              </p>
-              <div className="cardImageContainer">
-                <img src={PrayImage} alt="Garota de joelhos em oração" />
-                <span className="attribution">
-                  Designed by <strong>storyset</strong> on freepik
-                </span>
-              </div>
-            </div>
-            <div className="cards">
-              <AboutUsCard
-                title="Fé e Oração"
-                text=" Confiamos plenamente em Deus e buscamos Sua direção em todas as nossas atividades e decisões."
-              />
-              <AboutUsCard
-                title="Comunhão e Amor"
-                text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
-              />
-            </div>
-          </div>
-          <div className="cardSection cardSectionBgBlue">
-            <div className="cards">
-              <AboutUsCard
-                title="Serviço"
-                text="Comprometemo-nos a servir aos outros, levando o amor de Cristo."
-              />
-            </div>
-            <div
-              className="cardTextContent
-            "
-            >
-              <p className="textEmphasis">
-                Nosso serviço é motivado pelo <strong>exemplo de Jesus</strong>,
-                que veio não para ser servido, mas para servir. Procuramos
-                atender às necessidades das pessoas em nossa comunidade e além,
-                oferecendo apoio espiritual, emocional e material.
-              </p>
-            </div>
-          </div>
-        </CardsContainer>
         <DivisorLine></DivisorLine>
         <InstagramContentContainer>
           <InstagramContentTitle>
@@ -388,6 +307,69 @@ const AboutUs = () => {
             </InstagramImages>
           </InstagramContent>
         </InstagramContentContainer>
+
+        <CardsContainer>
+          <div className="cardSection cardSectionBgBlue">
+            <div className="cards">
+              <AboutUsCard
+                title="Missão"
+                text="Fazer, equipar e enviar discípulos de Cristo é a nossa missão. Acreditamos que cada membro da nossa comunidade tem um papel importante no cumprimento dela."
+              />
+              <AboutUsCard
+                title="Visão"
+                text=" Ver as áreas rurais do sertão brasileiro alcançadas e influenciadas pelo evangelho do Senhor Jesus Cristo, com igrejas plantadas, serviço missionário e projetos sociais."
+              />
+            </div>
+            <div
+              className="cardTextContent
+            "
+            >
+              <p className="textEmphasis">
+                Alcançar e transformar , trazendo esperança e renovação através
+                do evangelho e ações concretas de amor e serviço.
+              </p>
+              <div className="cardTextAbout">
+                <p id="cardVerse">
+                  &quot;Foi-me dada toda a autoridade nos céus e na terra.
+                  Portanto, vão e façam discípulos de todas as nações,
+                  batizando-os em nome do Pai e do Filho e do Espírito Santo,
+                  ensinando-os a obedecer a tudo o que eu ordenei a vocês&quot;
+                  <br />
+                </p>
+                <div id="verseDivisor"></div>
+                <span id="cardVerseAdress">Mateus 28:18-20</span>
+              </div>
+            </div>
+          </div>
+          <div className="cardSection cardSectionBgWhite">
+            <div
+              className="cardTextContentLeft
+            "
+            >
+              <p className="textEmphasisLeft">
+                Encorajamos cada membro da nossa comunidade a{" "}
+                <strong>cultivar uma vida de oração constante</strong>, buscando
+                a orientação divina e intercedendo uns pelos outros.
+              </p>
+              <div className="cardImageContainer">
+                <img src={PrayImage} alt="Garota de joelhos em oração" />
+                <span className="attribution">
+                  Designed by <strong>storyset</strong> on freepik
+                </span>
+              </div>
+            </div>
+            <div className="cards">
+              <AboutUsCard
+                title="Fé e Oração"
+                text=" Confiamos plenamente em Deus e buscamos Sua direção em todas as nossas atividades e decisões."
+              />
+              <AboutUsCard
+                title="Comunhão e Amor"
+                text="Valorizamos o relacionamento fraterno, o cuidado mútuo e a unidade do corpo de Cristo."
+              />
+            </div>
+          </div>
+        </CardsContainer>
         <AdressMapContainer>
           <AdressMapAbout>
             <AdressMapTitle>Venha nos visitar</AdressMapTitle>

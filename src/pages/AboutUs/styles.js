@@ -10,7 +10,7 @@ export const HomeContainer = styled.header`
 export const ContentContainer = styled.div`
   width: 100%;
 
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   /* background-color: #FFFFFF; */
   background-color: #ffffff;
 
@@ -50,11 +50,10 @@ export const BannerVisualsContent = styled.div`
 export const LogoContainer = styled.div`
   width: 100%;
   height: 550px;
-  padding: 2rem 0;
-  background-image: url(${LogoBackground});
+  /* background-image: url(${LogoBackground});
   background-size: cover;
   background-position: center;
-  background-repeat: n;
+  background-repeat: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,8 +80,10 @@ export const LogoContainer = styled.div`
 
 export const Logo = styled.img`
   z-index: 10;
-  width: 664px;
+  width: 364px;
+  position: absolute;
   filter: drop-shadow(13px 5px 3px #00000060);
+  z-index: 200;
 
   @media only screen and (max-width: 660px) {
     width: 248px;
@@ -162,6 +163,7 @@ export const SocialMedia = styled.div`
   position: absolute;
   bottom: 3rem;
   left: 3rem;
+  z-index: 200;
 
   @media only screen and (max-width: 660px) {
     bottom: 0.5rem;
@@ -399,10 +401,6 @@ export const WhoAreWeText = styled.div`
   width: 80%;
   text-align: right;
 
-  .emphasis {
-    font-size: 1.2rem;
-  }
-
   strong {
     font-weight: 500;
     color: #1c7ec2;
@@ -411,24 +409,10 @@ export const WhoAreWeText = styled.div`
   @media only screen and (max-width: 660px) {
     text-align: center;
     font-size: 0.8rem;
-
-    .emphasis {
-      font-size: 0.9rem;
-    }
   }
 
   @media only screen and (min-width: 660px) and (max-width: 900px) {
     font-size: 0.8rem;
-
-    .emphasis {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media only screen and (min-width: 900px) and (max-width: 1200px) {
-    .emphasis {
-      font-size: 0.9rem;
-    }
   }
 `;
 
@@ -491,7 +475,6 @@ export const CardsContainer = styled.div`
   }
 
   .textEmphasis {
-    font-size: 1.2rem;
     text-align: right;
     width: 80%;
     margin-bottom: 2rem;
@@ -503,7 +486,6 @@ export const CardsContainer = styled.div`
   }
 
   .textEmphasisLeft {
-    font-size: 1.2rem;
     text-align: left;
     width: 80%;
     margin-bottom: 2rem;
@@ -578,15 +560,11 @@ export const CardsContainer = styled.div`
     }
 
     .textEmphasis {
-      font-size: 1rem;
       width: 100%;
       margin-bottom: 1rem;
+      font-size: 0.8rem;
 
       text-align: center;
-    }
-
-    .textEmphasisLeft {
-      font-size: 1rem;
     }
 
     #cardVerse {
@@ -614,8 +592,8 @@ export const CardsContainer = styled.div`
 
     .textEmphasisLeft {
       text-align: center;
-      font-size: 0.9rem;
       width: 100%;
+      font-size: 0.8rem;
     }
 
     .cardImageContainer img {
@@ -631,13 +609,9 @@ export const CardsContainer = styled.div`
     }
 
     .textEmphasis {
-      font-size: 1rem;
       width: 100%;
       margin-bottom: 1rem;
-    }
-
-    .textEmphasisLeft {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     #cardVerse {
@@ -663,8 +637,8 @@ export const CardsContainer = styled.div`
 
     .textEmphasisLeft {
       text-align: center;
-      font-size: 0.9rem;
       width: 100%;
+      font-size: 0.9rem;
     }
 
     .cardImageContainer img {
@@ -680,13 +654,8 @@ export const CardsContainer = styled.div`
     }
 
     .textEmphasis {
-      font-size: 1rem;
       width: 80%;
       margin-bottom: 1.5rem;
-    }
-
-    .textEmphasisLeft {
-      font-size: 1rem;
     }
   }
 `;
@@ -820,9 +789,14 @@ export const InstagramImageContainer = styled.div`
     z-index: 100;
   }
 
-  @media only screen and (max-width: 660px) {
-    width: 100px;
-    height: 100px;
+  @media only screen and (max-width: 368px) {
+    width: 125px;
+    height: 125px;
+  }
+
+  @media only screen and (min-width: 368px) and (max-width: 660px) {
+    width: 150px;
+    height: 150px;
   }
 
   @media only screen and (min-width: 660px) and (max-width: 900px) {
@@ -993,6 +967,6 @@ export const MapContainer = styled.div`
   }
 
   @media only screen and (min-width: 660px) and (max-width: 900px) {
-    padding: .8rem;
+    padding: 0.8rem;
   }
 `;

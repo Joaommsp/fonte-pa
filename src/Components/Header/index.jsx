@@ -254,6 +254,49 @@ const Header = (props) => {
           </HeaderLink>
         </HeaderLinks>
       );
+    } else if (indexLInk == null) {
+      return (
+        <HeaderLinks $show={menuOpen}>
+          <HeaderLink>
+            <Link to="/" className="headerLink">
+              Fonte
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ministerios" className="headerLink">
+              Ministérios
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/recursos" className="headerLink">
+              Recursos
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/ofertas" className="headerLink">
+              Contribua
+            </Link>
+          </HeaderLink>
+          <HeaderLink>
+            <Link to="/contato" className="headerLink">
+              Contato
+            </Link>
+          </HeaderLink>
+          <div className="divisor"></div>
+          <HeaderLink>
+            <Link className="helpPageLink" to={"/ajuda"}>
+              <ButtonWithLink
+                bgColor="#1c7ec2"
+                textColor="#FFFFFF"
+                textContent="Precisa de Ajuda?"
+                href=""
+                textSize="0.85rem"
+                click={() => null}
+              />
+            </Link>
+          </HeaderLink>
+        </HeaderLinks>
+      );
     }
   };
 

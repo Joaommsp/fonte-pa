@@ -21,6 +21,12 @@ export const ContentContainer = styled.div`
   justify-content: center;
 
   position: relative;
+
+  .testando {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
 `;
 
 export const Banner = styled.div`
@@ -167,17 +173,17 @@ export const BannerVisualsContent = styled.div`
 export const LogoContainer = styled.div`
   width: 100%;
   height: 550px;
-  padding: 2rem 0;
-  background-image: url(${LogoBackground});
+  padding: 0rem 0;
+  /* background-image: url(${LogoBackground});
   background-size: cover;
   background-position: center;
-  background-repeat: none;
+  background-repeat: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 
   position: relative;
 
@@ -356,6 +362,7 @@ export const SocialMedia = styled.div`
   position: absolute;
   bottom: 3rem;
   left: 3rem;
+  z-index: 200;
 
   @media only screen and (max-width: 560px) {
     bottom: 1rem;
